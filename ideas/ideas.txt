@@ -1,0 +1,9 @@
+
+
+El juego de pokemon
+LISP metaprogramación
+Creación de DSL
+Kevin Kutcha 
+Instalación
+Comparativa con otros lenguajes
+PSEINT vs pseudocódigo vs Ruby
