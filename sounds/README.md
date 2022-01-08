@@ -11,8 +11,9 @@ Licencia
 * SE REQUIERE ATRIBUCIÓN. Para poder utilizar nuestra música debes dar crédito a FiftySounds. 
 Incluye esta información en tu proyecto (copia y pega):
 
-Obra: Diferente
 Música de https://www.fiftysounds.com/es/ 
 
-Obra: Florencia
 Música de https://www.fiftysounds.com/es/ 
+Obra: Florencia
+Obra: Diferente
+
