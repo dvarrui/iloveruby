@@ -1,5 +1,4 @@
-
-
+# PSEUDOCODIGO
 # mostrar mensaje "Escribe un número: "
 # introducir numero
 #
@@ -9,7 +8,7 @@
 #   mostrar mensaje "El número está fuera del intervalo!"
 # fin si
 
-
+# RUBY
 print "Escribe un número: "
 number = gets
 
