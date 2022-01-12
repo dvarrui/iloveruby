@@ -19,3 +19,12 @@ https://stackoverflow.com/questions/16621073/when-to-use-symbols-instead-of-stri
 ======================================================
 Append in Python – How to Append to a List or an Array
 https://www.freecodecamp.org/news/append-in-python-how-to-append-to-a-list-or-an-array/
+
+============================
+Flatten Ruby vs Python vs JS
+https://twitter.com/dvarrui/status/1479873582545133570?t=wRVjlVT6iDqtxKkmqS3JIQ&s=09
+
+=============================================
+How Ruby and Web Components Can Work Together
+https://www.fullstackruby.dev/fullstack-development/2022/01/04/how-ruby-web-components-work-together/
+https://twitter.com/RubyInside/status/1479556953374437382?t=zzq2FbzXIi7Cr46f5QTrAQ&s=09
