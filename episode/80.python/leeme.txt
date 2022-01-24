@@ -1,0 +1,77 @@
+
+
+dvarrui
+: En el curso de Python nos dijeron que int(var) convertía a Integer... entonces no es así?
+dvarrui
+: pero entonces eso son dos cosas diferentes que se escriben igual???
+sdelquin
+: Es una manera de verlo, sí
+
+
+----------
+
+dvarrui
+: Boolean un subtipo de entero???? que raro!!!
+dvarrui
+: eso no es natural?
+dvarrui
+: Qué sentido/utilidad tiene que Boolean sea un subtipo de Int?
+
+Por qué dijo jileon que Boolean es un subtipo de Integer? Qué sentido tiene eso?
+
+
+cmaureir
+: es solo para facilitar la implementación del tipo, pues habían muchas implementaciones que 
+necesitaban un funcionamiento similar, y al reducirlo como un tipo int, con 0 y 1. Si no fuera así, 
+muchas cosas de Python no funcionarian como ahora.
+ https://www.python.org/dev/peps/pep-0285/
+
+dvarrui
+: O sea que es una característica para facilitar la implementación del intérprete python?
+
+
+----------
+
+
+cmaureir
+: int(x) es la función que sirve para crear un objeto int de x. 
+
+En otros lenguajes podrías entenderlo como un 'casting' o simplemente una transformación.
+ En cambio 'int' es la clase entero, que no es un statement sino la referencia a un tipo de dato.
+
+
+cmaureir
+: int(x) es la función que sirve para crear un objeto int de x. En otros lenguajes
+ podrías entenderlo como un 'casting' o simplemente una transformación. 
+
+En cambio 'int' es la clase entero, que no es un statement sino la referencia a un tipo de dato.
+cmaureir
+: y ojo, 'int' también te sirve para anotación de tipos, por ejemplo 
+yo puedo escribir `a = 1`, como también `a : int = 1`
+
+dvarrui
+: @sdelquin por qué si las clases en Python se escriben en Pascal case ... 
+int es una clase y str también?
+dvarrui
+: Qué es tipo de dato incorporado?
+
+
+https://docs.python.org/es/3/library/stdtypes.html
+
+
+Tipos Integrados
+
+Esta sección describe los tipos de datos estándar que vienen incluidos en el intérprete.
+
+Los principales tipos de datos son: numéricos, secuencias, mapas, clases, instancias y excepciones.
+
+Algunas clases de tipo colección son mutables. Los métodos que añaden, 
+retiran u ordenan los contenidos lo hacen internamente, y a no ser que retornen 
+un elemento concreto, nunca retornan la propia instancia contenedora, sino None.
+
+Algunas operaciones son soportadas por varios tipos de objetos diferentes; 
+por ejemplo, prácticamente todos los objetos pueden ser comparados por igualdad,
+evaluados para ser considerados como valores booleanos, o representarse en forma 
+de cadena de caracteres (Ya sea con la función repr() o la ligeramente diferente str()).
+ Esta última es la usada implícitamente por la función print().
+

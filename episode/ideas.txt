@@ -28,3 +28,18 @@ https://twitter.com/dvarrui/status/1479873582545133570?t=wRVjlVT6iDqtxKkmqS3JIQ&
 How Ruby and Web Components Can Work Together
 https://www.fullstackruby.dev/fullstack-development/2022/01/04/how-ruby-web-components-work-together/
 https://twitter.com/RubyInside/status/1479556953374437382?t=zzq2FbzXIi7Cr46f5QTrAQ&s=09
+
+========================
+> cp demo03.rb demo04.rb
+> nvim demo04.rb
+> ./demo04.rb
+./demo04.rb:7:in `assert': undefined method `tos' for #<Proc:0x0000000002003a28 ./demo04.rb:17> (NoMethodError)
+Did you mean?  to_s
+	from ./demo04.rb:17:in `<main>'
+> vi demo04.rb
+
+
+=================================
+Version end of life and use rbenv
+https://hmong.es/wiki/Ruby_programming_language
+
