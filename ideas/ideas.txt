@@ -7,3 +7,48 @@ Kevin Kutcha
 Instalación
 Comparativa con otros lenguajes
 PSEINT vs pseudocódigo vs Ruby
+
+
+============================================
+Explained: binding.pry vs byebug vs debugger
+https://blog.pawandubey.com/explained-binding-pry-byebug-debugger/
+
+=======================
+Design Patterns in Ruby
+https://github.com/nslocum/design-patterns-in-ruby
+
+================
+Refactoring Guru
+https://refactoring.guru/es/design-patterns/command
+
+===============================================
+When to use symbols instead of strings in Ruby?
+https://stackoverflow.com/questions/16621073/when-to-use-symbols-instead-of-strings-in-ruby
+
+======================================================
+Append in Python – How to Append to a List or an Array
+https://www.freecodecamp.org/news/append-in-python-how-to-append-to-a-list-or-an-array/
+
+============================
+Flatten Ruby vs Python vs JS
+https://twitter.com/dvarrui/status/1479873582545133570?t=wRVjlVT6iDqtxKkmqS3JIQ&s=09
+
+=============================================
+How Ruby and Web Components Can Work Together
+https://www.fullstackruby.dev/fullstack-development/2022/01/04/how-ruby-web-components-work-together/
+https://twitter.com/RubyInside/status/1479556953374437382?t=zzq2FbzXIi7Cr46f5QTrAQ&s=09
+
+========================
+> cp demo03.rb demo04.rb
+> nvim demo04.rb
+> ./demo04.rb
+./demo04.rb:7:in `assert': undefined method `tos' for #<Proc:0x0000000002003a28 ./demo04.rb:17> (NoMethodError)
+Did you mean?  to_s
+	from ./demo04.rb:17:in `<main>'
+> vi demo04.rb
+
+
+=================================
+Version end of life and use rbenv
+https://hmong.es/wiki/Ruby_programming_language
+
