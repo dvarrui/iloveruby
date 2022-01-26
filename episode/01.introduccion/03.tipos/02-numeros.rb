@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 
-# asigna valores iniciales
 a = 2
 b = -14
 c = 24

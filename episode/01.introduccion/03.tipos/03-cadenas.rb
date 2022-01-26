@@ -1,16 +1,13 @@
-# ASGMT strings
+#!/usr/bin/env ruby
 
-# asigna valores iniciales
 text = '2toc-penny3'
-
-# tu codigo debajo de aqui
 
 # Se pide transformar una cadena de texto de entrada text
 # en funcion de unas reglas:
-
 # El primer caracter indica el numero de veces que se repite
 # la primera subcadena.
 # Puedes suponer solo numeros del 1 al 9.
+
 repeat_word1 = int(text[0])
 
 # El ultimo caracter indica el numero de veces que se repite
