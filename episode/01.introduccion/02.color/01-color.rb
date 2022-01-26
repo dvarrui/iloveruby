@@ -13,4 +13,4 @@ puts "\n\n"
 
 iloveruby = "I love Ruby"
 puts iloveruby.on_red
-puts iloveruby.on_white.light_red
+puts iloveruby.on_white.red
