@@ -1,6 +1,6 @@
 
 print("Hola ")
 
-name = "David"
+name = "David\n"
 print(name)
 
