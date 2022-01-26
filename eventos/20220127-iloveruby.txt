@@ -1,0 +1,21 @@
+
+Recordatorio
+
+===========
+I love Ruby
+===========
+
+* Mañana jueves 27 de enero de 2022 a las 5 PM WET (Canarias) o 6 PM CET (Península)
+* Charla/taller sobre "Introducción a lenguage Ruby... una historia de amor para todos los públicos"
+* Duración 40 min.
+* Grabaremos la charla para subirla a Internet.
+
+Están todos invitad@s!
+Veremos qué rápido es instalar Ruby y aprenderlo.
+Leer Ruby es leer pseudocódigo, por tanto, sabiendo pseudocódio e inglés... ya sabes Ruby!
+
+Veremos las características más bonitas de un lenguaje creado para la felicidad del programador.
+
+;-)
+
+ 
