@@ -1,0 +1,82 @@
+<HTML>
+	<HEAD>
+		<TITLE>PSeudo Intérprete</TITLE>
+	</HEAD>
+	<BODY>
+<B>Funciones</B><BR><BR>
+&nbsp;&nbsp;&nbsp;Las funciones en el pseudocódigo se utilizan de forma similar a otros lenguajes. Se coloca su nombre seguido de los argumentos para la misma encerrados entre paréntesis (por ejemplo trunc(x)). Se pueden utilizar dentro de cualquier expresión, y cuando se evalúe la misma, se reemplazará por el resultado correspondiente. Actualmente, todas la funciones disponibles son matemáticas (es decir que devolverán un resultado de tipo numérico) y reciben un sólo parámetro de tipo numérico. A continuación se listan las funciones integradas disponibles:<BR><BR>
+<table border=0> <TD>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD><TD>
+<table border="1" cellpadding="2" cellspacing="0">
+<tr >
+<td><i>Función</i> </td><td> <i>Significado</i>
+</td></tr>
+<tr >
+<td>RC(X) o RAIZ(X)</td><td> Raíz Cuadrada de X
+</td></tr>
+<tr >
+<td>ABS(X) </td><td> Valor Absoluto de X
+</td></tr>
+<tr >
+<td>LN(X) </td><td> Logaritmo Natural de X
+</td></tr>
+<tr >
+<td>EXP(X) </td><td> Función Exponencial de X
+</td></tr>
+<tr >
+<td>SEN(X) </td><td> Seno de X
+</td></tr>
+<tr >
+<td>COS(X) </td><td> Coseno de X
+</td></tr>
+<tr >
+<td>TAN(X) </td><td> Tangente de X
+</td></tr>
+<tr >
+<td>ASEN(X) </td><td> Arcoseno de X
+</td></tr>
+<tr >
+<td>ACOS(X) </td><td> Arcocoseno de X
+</td></tr>
+<tr >
+<td>ATAN(X) </td><td> Arcotangente de X
+</td></tr>
+<tr >
+<td>TRUNC(X) </td><td> Parte entera de X
+</td></tr>
+<tr >
+<td>REDON(X) </td><td> Entero más cercano a X
+</td></tr>
+<tr >
+<td>AZAR(X) </td><td> Entero aleatorio en el rango [0;x-1]
+</td></tr>
+<tr >
+<td>ALEATORIO(A,B) </td><td> Entero aleatorio en el rango [A;B]
+</td></tr>
+<tr >
+<td>LONGITUD(S) </td><td> Cantidad de caracteres de la cadena S
+</td></tr>
+<tr >
+<td>MAYUSCULAS(S) </td><td> Retorna una copia de la cadena S con todos sus caracteres en mayúsculas
+</td></tr>
+<tr >
+<td>MINUSCULAS(S) </td><td> Retorna una copia de la cadena S con todos sus caracteres en minúsculas
+</td></tr>
+<tr >
+<td>SUBCADENA(S,X,Y) </td><td> Retorna una nueva cadena que consiste en la parte de la cadena S que va desde la posición X hasta la posición Y (incluyendo ambos extremos). Las posiciones utilizan la misma base que los arreglos, por lo  que la primer letra será la 0 o la 1 de acuerdo al perfil del lenguaje utilizado.
+</td></tr>
+<tr >
+<td>CONCATENAR(S1,S2) </td><td> Retorna una nueva cadena resulta de unir las cadenas S1 y S2.
+</td></tr><tr >
+<td>CONVERTIRANUMERO(X) </td><td> Recibe una cadena de caracteres que contiene un número y devuelve una variable numérica con el mismo.
+</td></tr><tr >
+<td>CONVERTIRATEXTO(S) </td><td> Recibe un real y devuelve una variable numérica con la representación como cadena de caracteres de dicho real.
+</td></tr>
+</table></TD></TABLE><BR>
+<BR><I>Notas:</I><UL>
+<LI>El módulo (resto de la división entera) no se encuentra entre las funciones ya que fue implementado como <A href="operadores.html">operador</A>.</LI>
+<LI>Las funciones trigonométricas reciben el ángulo en radianes. Para facilitar las conversiones se puede usar la constante PI (Ej: si A es un ángulo en grados, su coseno se obtiene con "cos(A*PI/180)").</LI>
+<LI>Las funciones que operan sobre cadenas de caracteres solo estarán disponibles si el perfil de lenguaje seleccionado lo permite (ver <A href="perfiles.html">Opciones del Pseudocódigo</A>).</LI>
+<LI>Para crear sus propias funciones en pseudocódigo para utilizar desde el procedimiento principal vea la sección <A href="subprocesos.html">SubProcesos</A>.</LI>
+</UL><BR>
+</BODY>
+</HTML>

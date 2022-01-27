@@ -1,7 +1,5 @@
 #!/usr/bin/env ruby
 
-require 'colorize'
-
 class Persona
   attr_accessor :name
 
@@ -28,7 +26,7 @@ class Persona
   end
 end
 
-adan = Persona.new("Adán")
+adan = Persona.new("Adan")
 eva = Persona.new("Eva ")
 
 adan.yosoy

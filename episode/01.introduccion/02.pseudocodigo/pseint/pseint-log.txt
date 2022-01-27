@@ -1,0 +1,55 @@
+
+LOG START
+   10:09:55  version 20210430-l64-wx3
+   10:09:55  Application::OnInit
+   10:09:55     cwd=/mnt/ex/pseint/bin
+   10:09:55     argc: 3
+   10:09:55        argv[0]: /mnt/ex/pseint/bin/bin/../bin/wxPSeInt
+   10:09:55        argv[1]: --logger
+   10:09:55        argv[2]: /mnt/ex/pseint/bin/pseint-log.txt
+   10:09:55  LangSettings::Load perfiles/UNL-FICH
+   10:09:55  Profile: 20210430 100001010000100001000
+   10:09:55  Logger::DumpVersions
+   10:09:56     pseint: PSeInt 20210427-l64-wx3
+   10:09:56     psterm: psTerm 20210408-l64-wx3
+   10:09:56     psdraw3: psDraw3 20210427-l64-wx3
+   10:09:56     psdrawe: psDrawE 20210427-l64-wx3
+   10:09:56     psexport: psExport 20180802-l64-wx3
+   10:09:56  ConfigManager
+   10:09:56     cwd=/mnt/ex/pseint/bin
+   10:09:56     filename=/home/zaskar/.pseint/config
+   10:09:56     profile=UNL-FICH
+   10:09:56     pseint_dir=/mnt/ex/pseint/bin/bin/..
+   10:09:56     home_dir=/home/zaskar/.pseint
+   10:09:56     psdraw3_command=./bin/psdraw3
+   10:09:56     psdrawe_command=./bin/psdrawE
+   10:09:56     pseint_command=./bin/pseint
+   10:09:56     pseval_command=./bin/pseval
+   10:09:56     psexport_command=./bin/psexport
+   10:09:56     psterm_command=./bin/psterm
+   10:09:56     temp_dir=/mnt/rm/pseint
+   10:09:56  mxSource::mxSource 45533424
+   10:09:57  mxSource::SetFocus 45533424
+   10:09:57  mxMainWindow::OnActivated
+   10:09:57  mxSource::OnTimes(flow) 45533424
+   10:09:57  CommunicationsManager::CommunicationsManager in -1
+   10:09:57  CommunicationsManager::CommunicationsManager out port=55653  server=45547264
+   10:09:57  mxSource::OnTimes(rt) 45533424
+   10:09:59  mxMainWindow::OnDeactivated
+   10:10:00  mxSource::SetFocus 45533424
+   10:10:00  mxMainWindow::OnActivated
+   10:10:00  mxSource::OnTimes(flow) 45533424
+   10:10:00  mxSource::OnTimes(reload) 45533424
+   10:10:01  mxMainWindow::OnDeactivated
+   10:10:01  mxSource::SetFocus 45533424
+   10:10:01  mxMainWindow::OnActivated
+   10:10:01  mxSource::OnTimes(flow) 45533424
+   10:10:06  mxMainWindow::OnDeactivated
+   10:10:07  mxSource::SetFocus 45533424
+   10:10:07  mxMainWindow::OnActivated
+   10:10:07  mxSource::OnTimes(flow) 45533424
+   10:11:26  mxMainWindow::OnDeactivated
+   10:11:44  mxSource::~mxSource 45533424
+   10:11:44  RTSyntaxManager::Stop
+LOG END
+

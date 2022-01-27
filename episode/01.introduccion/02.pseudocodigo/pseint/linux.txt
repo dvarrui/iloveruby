@@ -1,0 +1,15 @@
+ Notas sobre la distribución de PSeInt para Linux
+==================================================
+
+Este programa se distribuye bajo licencia GPL (ver help\gpl.html), por lo que está permitido copiar y redistribuir libremente bajo los términos de la misma. Para conseguir los fuentes visite pseint.sourceforge.net. Para más detalles sobre el código fuente, sus dependencias y otros recursos utilizados, vea el archivo help/about.html.
+
+Esta version no necesita instalarse.
+
+Para cargar el editor de pseint utilice el comando:
+    ./pseint
+
+Ante cualquier problema, consulta, sugerencia, etc, puede escribir a zaskar_84@yahoo.com.ar, o dejar un mensaje en el sitio http://pseint.sourceforge.net/contacto.php
+
+Para descargar actualizaciones u obtener mayor documentación consulte la ayuda en línea del programa o visite la página oficial del proyecto (http://pseint.sourceforge.net).
+
+Por Pablo Novara (zaskar_84@yahoo.com.ar)
