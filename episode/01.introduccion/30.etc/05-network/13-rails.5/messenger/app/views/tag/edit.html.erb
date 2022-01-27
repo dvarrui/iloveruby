@@ -1,0 +1,17 @@
+<%= render 'header' %>
+
+<h3>Edit Tag</h3>
+
+<%= form_for(@tag, url: tag_path) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.submit "Save changes" %>
+<% end %>
+
+<p>
+  <%= link_to "Show", tag_path(@tag) %> |
+  <%= link_to 'Destroy', @tag, method: :delete, data: { confirm: 'Are you sure?' } %>
+</p>
+
+<%= render 'footer' %>

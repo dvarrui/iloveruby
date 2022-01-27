@@ -1,0 +1,9 @@
+<%= @head %>
+
+<p>&Iacute;ndice de contenidos:</p>
+
+<ul>
+<% @map.pages.each do |page| %>
+<li><a href='<%=page%>'><%=page%></a></li>
+<% end %>
+</ul>

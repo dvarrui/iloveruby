@@ -1,0 +1,49 @@
+#!/usr/bin/ruby
+# encoding: utf-8
+
+require 'thor'
+require 'rainbow'
+require_relative 'lib/exec_manager'
+require_relative 'lib/settings'
+
+# Command Line User Interface
+class Freya < Thor
+
+  map ['h', '-h', '--help'] => 'help'
+
+  map ['s', '-s', '--say'] => 'say'
+    desc 'say COMMAND from HOSTS', 'Run COMMAND into HOSTS'
+    long_desc <<-LONGDESC
+
+COMMAND is one of files into ./command directory.
+This file contains one or more commands to be executed.
+
+HOST is one file into ./host directory.
+This file contains IP's of diferents hosts.
+
+  LONGDESC
+  def say(command, from=:from, hosts)
+    ExecManager.new(command, hosts).run
+  end
+
+  map ['v', '-v', '--version'] => 'version'
+  desc 'version', 'Show the program version'
+  def version
+    s = Settings.instance
+    print Rainbow(s.name).bright.blue
+    puts  ' (version ' + Rainbow(s.version).green + ')'
+  end
+
+  def method_missing(m, *_args, &_block)
+    puts m.to_s
+    self.help
+  end
+
+  def respond_to_missing?(method_name, include_private = false)
+    #super
+    puts method_name
+    self.help
+  end
+end
+
+Freya.start(ARGV)
