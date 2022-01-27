@@ -1,38 +1,30 @@
 #!/usr/bin/env ruby
 
-# 1. Asigna el valor entero 1985 a la variable bttf
-# y muestra su valor.
-bttf = 1985
-puts bttf
+myinteger = 1970
+myfloat = 1.82
 
-# 2. Descubre el tipo del literal 'Castle on the Hill' d<
-# espués de asignarlo a la variable song.
-song = 'Castle on the Hill'
-puts song.class
+mystring = 'I Love Ruby'
 
-# 3. Asigna el valor False a la variable make_war y
-# muestra su tipo.
-make_war = false
-puts make_war.class
+myboolean = false
 
-# 4. Asigna la expresión 4 + 3 a la variable result y
-# muestra su valor y su tipo.
-result = 4 + 3
-puts result
-puts result.class
+# Tipado dinámico y fuerte
+result1 = 4 + 3
+puts result1
+puts result1.class
 
-# 5. Asigna la expresión result + 3.0 a la variable result2
-# y muestra su valor y su tipo.
-result2 = result + 3.0
+result2 = result1 + 3.0
 puts result2
 puts result2.class
 
-# ¿Notas algo raro?
+# Calcular la raíz cuadrada
+a = 2
+b = -14
+c = 24
 
-# 6. Realiza la operación 7 / 4 y asígnala a la variable quotient.
-# Ahora realiza la operación 7// 4 y asígnala a la variable quotient2.
-# Mira sus resultados y reflexiona.
-quotient = 7 / 4
-quotient2 = 7.to_f / 4
-puts quotient
-puts quotient2
+raiz = (b**2 - 4*a*c)**0.5
+
+x1 = (-b - raiz) / (2*a)
+x2 = (-b + raiz) / (2*a)
+
+puts x1
+puts x2
