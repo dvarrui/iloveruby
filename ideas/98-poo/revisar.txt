@@ -1,5 +1,0 @@
-https://ferestrepoca.github.io/paradigmas-de-programacion/poo/poo_teoria/concepts.html
-
-
-
-https://dewitters.com/object-oriented-programming-doesnt-need-encapsulation/
