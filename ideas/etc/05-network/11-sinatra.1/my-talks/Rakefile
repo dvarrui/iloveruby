@@ -1,9 +1,0 @@
-#File: Rakefile
-#Usage: rake
-
-#Define tasks
-
-desc "Installation"
-task :install do
-	system('gem install sinatra')
-end

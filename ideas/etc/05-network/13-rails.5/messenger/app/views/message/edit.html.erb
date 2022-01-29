@@ -1,8 +1,0 @@
-<%= render 'header' %>
-<h3>Edit Message</h3>
-<%= form_for(@message) do |f| %>
-  <p><%= f.label :title %><%= f.text_field :title %></p>
-  <p><%= f.label :body %><%= f.text_field :body %></p>
-
-  <%= f.submit "Save changes" %>
-<% end %>

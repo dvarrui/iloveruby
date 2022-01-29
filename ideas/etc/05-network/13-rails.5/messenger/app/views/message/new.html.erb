@@ -1,9 +1,0 @@
-<%= render 'header' %>
-<h3>New Message</h3>
-
-<%= form_for @message, url: '/message'  do |f| %>
-  <p><%= f.label :title %><%= f.text_field :title %></p>
-  <p><%= f.label :body %><%= f.text_field :body %></p>
-
-  <%= f.submit "Create" %>
-<% end %>
