@@ -16,6 +16,8 @@ puts jedis.class
 for name in jedis do
   puts " * #{name}"
 end
+for name in jedis.sort.reverse { puts " * #{name}" }
+
 puts
 
 # Hash
@@ -23,5 +25,4 @@ data = { name: 'Obi-wan', rol: 'Jedi' }
 
 puts data.class
 puts data
-puts 
-
+puts
