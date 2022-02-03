@@ -1,0 +1,16 @@
+# TypeProf 0.21.2
+
+# Classes
+class Super
+  @val: String
+
+  def initialize: (String val) -> void
+  def val?: -> String
+end
+
+class Test < Super
+  @flag: bool
+
+  def initialize: (String val, bool flag) -> void
+  def flag?: -> bool
+end
