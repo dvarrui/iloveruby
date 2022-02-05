@@ -8,7 +8,7 @@ _En una serie de episodios, iré narrando mi historia de amor "**IloveRuby**":_
 ## Episodios
 
 1. Introducción al lenguaje Ruby: [ficheros](episode/01.introduccion/), [vídeo](https://tube.xy-space.de/w/xoHDj1T5zkfzuiATk5zG3Y).
-2. Resumen exprés del capítulo anterior.
+2. [PROXIMAMENTE] Resumen exprés del capítulo anterior.
 
 ## Histórico
 
