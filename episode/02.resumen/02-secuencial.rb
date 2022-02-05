@@ -46,7 +46,7 @@ puts state1 == state2
 puts state1.object_id == state2.object_id
 
 # Boolean
-now_cames(:symbol, <<-TEXT
+now_cames(:bool, <<-TEXT
 a = true
 b = false
 
