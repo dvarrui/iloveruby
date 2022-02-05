@@ -5,13 +5,12 @@ _En una serie de episodios, iré narrando mi historia de amor "**IloveRuby**":_
 
 ![](images/logo.png)
 
+## Episodios
 
-Episodios:
 1. Introducción al lenguaje Ruby: [ficheros](episode/01.introduccion/), [vídeo](https://tube.xy-space.de/w/xoHDj1T5zkfzuiATk5zG3Y).
 2. Resumen exprés del capítulo anterior.
 
-
-# Histórico
+## Histórico
 
 ¡Buenas tardes! Lo prometido es deuda.
 * Les paso enlace al vídeo de la charla "ILoveRuby. Episodio 1: Introducciòn al lenguaje Ruby"
