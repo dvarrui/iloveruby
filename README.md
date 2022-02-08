@@ -7,11 +7,15 @@ _En una serie de episodios, iré narrando mi historia de amor "**IloveRuby**":_
 
 ## Indice de episodios
 
-1. **Episodio 1**: Introducción al lenguaje Ruby - [ficheros](episode/01.introduccion/) y [vídeo](https://tube.xy-space.de/w/xoHDj1T5zkfzuiATk5zG3Y).
+1. **[Episodio 1](#episodio-1)**: Introducción al lenguaje Ruby - [ficheros](episode/01.introduccion/) y [vídeo](https://tube.xy-space.de/w/xoHDj1T5zkfzuiATk5zG3Y).
 2. [PROXIMAMENTE] _Resumen exprés del capítulo anterior_.
 3. [MARZO] _Scripting práctico y real con Ruby. Se incluyen actividades de clase_.
 
 ## Histórico
+
+```
+"El amor va creando su propia historia..."
+```
 
 ### Episodio 1
 
