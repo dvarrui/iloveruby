@@ -2,7 +2,7 @@
 
 require_relative 'lib/utils'
 
-# Estructura secuencial
+# Estructura secuencial2
 # Tipos: String, Symbol, Boolean
 
 # String
