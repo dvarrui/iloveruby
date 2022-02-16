@@ -8,7 +8,7 @@
 #   mostrar mensaje "El número está fuera del intervalo!"
 # fin si
 
-# RUBY
+# Código RUBY
 print "Escribe un número: "
 number = gets
 
