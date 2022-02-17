@@ -10,7 +10,7 @@ module Pipenable
     value = self.send(pout)
     new_obj = obj.send(pin, value)
     # msg = "#{obj.pipevalue}.#{obj.pipein}(#{self.pipelog})"
-    msg = "#{obj.pipein}(#{obj.pipevalue},#{self.pipelog})"
+    msg = "#{obj.pipein}(#{obj.pipevalue}, #{self.pipelog})"
     new_obj.pipelog(msg)
     new_obj
   end

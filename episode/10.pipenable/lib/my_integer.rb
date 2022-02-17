@@ -10,7 +10,7 @@ class MyInteger
     @pipelog = nil
 
     @pipeout = :myself
-    @pipein = :+
+    @pipein = :add
     @pipedebug = true
   end
 
@@ -23,8 +23,8 @@ class MyInteger
     new_obj
   end
 
-  def *(obj)
-    new_obj = MyInteger.new(@pipevalue * obj.pipevalue)
+  def add(obj)
+    new_obj = MyInteger.new(@pipevalue + obj.pipevalue)
     new_obj
   end
 
