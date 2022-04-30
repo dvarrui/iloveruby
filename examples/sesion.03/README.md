@@ -3,6 +3,8 @@
 
 # 1. Recopilar información de MACs
 
+Cada tarjeta de red tiene un identificador único que viene de fábrica llamado MAC (MAC Address). Lo primero que vamos a hacer es buscar estos valores.
+
 ## 1.1 Mi laptop
 
 * Comando: `ip a`
@@ -55,3 +57,16 @@ Vamos al laptop y consultamos nuevamente la tabla ARP:
 | laptop  | 14:f6:d8:44:1f:42 | 192.168.1.42 |
 | gateway | 0c:8e:29:2b:46:ee | 192.168.1.1  |
 | móvil   | f2:70:0c:5a:87:76 | 192.168.1.68 |
+
+# 2. Limpiar informacion de la tabla ARP
+
+```
+> ip n
+
+192.168.1.68 dev wlp6s0 lladdr f2:70:0c:5a:87:76 STALE
+192.168.1.1 dev wlp6s0 lladdr 0c:8e:29:2b:46:ee REACHABLE
+
+> sudo ip n flush dev wlp6s0
+
+> ip n
+```
