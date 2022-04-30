@@ -1,9 +1,9 @@
 
 require 'terminal-table'
 
-module MyNET
+module MAC
 
-  def self.mac_list
+  def self.list
     rows = `ip n`.split("\n")
     # => ["192.168.1.1 dev wlp6s0 lladdr 0c:8e:29:2b:46:ee REACHABLE "]
     list = []
@@ -18,20 +18,20 @@ module MyNET
     list
   end
 
-  def self.show_mac_list
-    list = self.mac_list
+  def self.show_list
+    list = self.list
     rows = list.map { [_1[:mac], _1[:ip], _1[:rol]] }
     table = Terminal::Table.new :headings => ['MAC', 'IP', 'Rol'], :rows => rows
     puts table
   end
 
-  def self.find_mac_for_ip(ip)
+  def self.find_for_ip(ip)
     #require 'debug'; binding.break
-    list = self.mac_list
+    list = self.list
     list.each do |item|
-      return item[:mac] if ip == item[:ip]
+      return item if ip == item[:ip]
     end
-    'Unkown'
+    { ip: '?', mac: '?', rol: '?'}
   end
 
   def self.local_mac
