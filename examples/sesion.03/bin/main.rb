@@ -13,12 +13,16 @@ get '/' do
   puts MAC.show_list
 
   ip = request.env['REMOTE_ADDR']
+  show_host_info(ip)
+
+  "<html>#{Time.now}<br>IP: #{ip}<br>"
+end
+
+def show_host_info(ip)
   data = MAC.find_for_ip(ip)
   puts " Rol : #{data[:rol]}"
   puts " IP  : #{ip}"
   puts " MAC : #{data[:mac]}"
 
   puts '='*40
-
-  "<html>#{Time.now}<br>data: #{data}<br>"
 end
