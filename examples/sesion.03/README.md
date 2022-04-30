@@ -58,7 +58,7 @@ Vamos al laptop y consultamos nuevamente la tabla ARP:
 | gateway | 0c:8e:29:2b:46:ee | 192.168.1.1  |
 | móvil   | f2:70:0c:5a:87:76 | 192.168.1.68 |
 
-# 2. Limpiar informacion de la tabla ARP
+## 1.4 Limpiar información de la tabla ARP
 
 ```
 > ip n
@@ -70,3 +70,8 @@ Vamos al laptop y consultamos nuevamente la tabla ARP:
 
 > ip n
 ```
+
+# 2. Detectar la MAC
+
+Vamos a hacer un programa para detectar las MAC de los clientes.
+Básicamente nos sirve un servidor web básico.
