@@ -4,17 +4,22 @@ require 'terminal-table'
 module MAC
 
   def self.list
+    route_ip = self.route_ip
     rows = `ip n`.split("\n")
-    # => ["192.168.1.1 dev wlp6s0 lladdr 0c:8e:29:2b:46:ee REACHABLE "]
+
     list = []
     rows.each do |row|
       items = row.split
-      data = { ip: items[0],
-               mac: items[4],
-               rol: 'host'}
-      list << data
+      ip = items[0]
+      mac = items[4]
+      rol = 'device'
+      rol = 'gateway' if ip == route_ip
+
+      list << { ip: ip,
+                mac: mac,
+                rol: rol}
     end
-    list << self.local_mac
+    list << self.localhost_info
     list
   end
 
@@ -34,10 +39,14 @@ module MAC
     { ip: '?', mac: '?', rol: '?'}
   end
 
-  def self.local_mac
+  def self.localhost_info
     ip = `ip a |grep global`.split[1].split("/")[0]
     mac = `ip a|grep 'link/ether'`.split[1]
     { ip: ip, mac: mac, rol: 'localhost' }
+  end
+
+  def self.route_ip
+    `ip route|grep default`.split()[2]
   end
 
 end
