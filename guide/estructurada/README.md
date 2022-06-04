@@ -4,6 +4,8 @@
 
 La programación estructurada es un paradigma de programación que recurre únicamente a subrutinas y tres estructuras básicas: secuencia, selección (if y switch) e iteración (bucles for y while).
 
+> [Ejemplos](files)
+
 ## Estructura de secuencial
 
 ```ruby
