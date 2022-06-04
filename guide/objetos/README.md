@@ -4,7 +4,7 @@
 
 Vamos a ver la POO de Ruby en varios niveles.
 
-# Clase
+## Clase
 
 Una clase es una especie de "plantilla" en la que se definen los atributos y métodos predeterminados de un tipo de objeto. Esta plantilla se crea para poder crear objetos fácilmente. Al método de crear nuevos objetos mediante la lectura y recuperación de los atributos y métodos de una clase se le conoce como instanciación.
 
