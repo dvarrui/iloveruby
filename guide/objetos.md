@@ -10,63 +10,32 @@ Una clase es una especie de "plantilla" en la que se definen los atributos y mé
 
 > Los atributos de una instancia de clase de escriben con "@" al principio. Por ejemplo `@name`. Los métodos/funciones de clase se definen dentro de la clase con `def`, igual que cualquier método/función.
 
-```ruby
-class Person
-  def initialize(name)
-    @name = name
-  end
-
-  def name
-    @name
-  end
-
-  def to_s
-    "Hi! I'm a Person and my name is #{@name}"
-  end
-end
-
-obiwan = Person.new("Obi-wan")
-
-puts obiwan.name
-puts obiwan
-```
+![Ejemplo](files/objetos-01-instancia.rb)
 
 ## Herencia
 
 Herencia de la clase `Person` a la clase `Jedi`, es la facilidad mediante la cual la clase `Jedi` hereda en ella cada uno de los atributos y operaciones de `Person`, como si esos atributos y operaciones hubiesen sido definidos por la misma `Jedi`.
 
-```ruby
-#!/usr/bin/env ruby
-
-class Person
-  attr_reader :name
-
-  def initialize(name)
-    @name = name
-  end
-end
-
-class Jedi < Person
-  def greet
-    "I'm Jedi, #{@name}"
-  end
-end
-
-class Sith < Person
-  def greet
-    "I'm Lord #{@name}"
-  end
-end
-
-obiwan = Jedi.new("Obi-wan")
-vader = Sith.new("Vader")
-
-puts obiwan.greet
-puts vader.greet
-```
+![Ejemplo](files/objetos-02-herencia.rb)
 
 ## Ocultación
 
 Cuando usamos una instancia de una clase, podemos usar los métodos y variables registrados como "públicos". En Ruby por defecto: todos los métodos/funciones son públicos, y todos los atributos por defecto son privados.
 
 Los componentes registrados como "privados" (private) mantienen escondidos al programador y solo pueden ser accedidos a través de otros métodos públicos.
+
+![Ejemplo](files/objetos-03-ocultacion.rb)
+
+Salida:
+```
+naw-ibO
+Can't invoke private method!
+```
+
+![Ejemplo](files/objetos-04-ocultacion-y-herencia.rb)
+
+Salida:
+```
+naw-ibO
+Can't invoke private method!
+```
