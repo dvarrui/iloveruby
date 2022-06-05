@@ -3,6 +3,8 @@
 
 Hemos dicho que por defecto los métodos de los objetos serán públicos, y los atributos serán privados.
 
+## Métodos privados
+
 Podemos establecer que un método sea privado:
 
 ```ruby
@@ -18,6 +20,8 @@ class Person
   end
 end
 ```
+
+## Atributo público
 
 Pero no podemos hacer que un atributo sea público. Si quieres acceder de forma pública a un atributo debes crearte métodos para ello (properties). En otros lenguajes se llama crear getters y setter. Veamos 2 formas de hacerlo:
 
@@ -36,6 +40,8 @@ end
 ![Ejemplo](files/objetos-10-getter-setter.rb)
 
 Creo que queda muy claro cuál es el getter y cuál es el setter.
+
+## Getters y setters
 
 En la filosofía de Ruby está el buscar la felicidad del programador. El crear getters y setters está claro que va a ser algo que usaremos con frecuencia así que Ruby nos quiere ayudar.
 
@@ -56,7 +62,7 @@ class Person
 end
 ```
 
-Consulto los ancestros de Person. Esto es, ¿de quién o de quienes hereda la clase Person?
+Consulto los ancestros de "Person". Es decir, ¿de quién o de quienes hereda la clase Person?
 
 ```
 >> Person.ancestors
