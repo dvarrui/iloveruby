@@ -39,3 +39,6 @@ Salida:
 naw-ibO
 Can't invoke private method!
 ```
+
+---
+[Continuar con objetos 2a parte >>](objetos2.md)
