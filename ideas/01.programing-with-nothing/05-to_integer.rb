@@ -9,5 +9,6 @@ def to_integer(proc)
   proc[ -> n {n + 1}][0]
 end
 
-puts to_integer(ZERO)
-puts to_integer(THREE)
+puts "to_integer(ZERO)  => #{to_integer(ZERO)}"
+puts "to_integer(THREE) => #{to_integer(THREE)}"
+
