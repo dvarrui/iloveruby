@@ -26,7 +26,6 @@ end
     puts 'FizzBuzz'
   ][IF[(n % to_integer(THREE)).zero?][
     puts 'Fizz'
-
   ][IF[(n % to_integer(FIVE)).zero?][
     puts 'Buzz'
   ][
