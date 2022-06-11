@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+require 'colorize' 
+
 def roll_dice(value)
   max = value + 1
   puts "Tiras el dado"
@@ -22,18 +24,19 @@ end
 
 def despertar
   system("cat txt/titulo.txt")
+
   puts "* Despiertas en una taberna, te encuentras tirado en el suelo, con dolor de cabeza." \
-       "A primera vista no hay nadie más.*"
+    "A primera vista no hay nadie más.*".white
   espera 3
   puts "*Pero al incorporporarte ves un hombre más alto que tú, te fijas en la" \
        "forma puntiaguda de las orejas, es el tabernero, es un elfo, está detrás " \
-       "de la barra, dando la espalda.*"
+       "de la barra, dando la espalda.*".white
   espera 3
 
-  puts "¿Qué haces?"
-  puts "1. Te acercas a preguntarle qué ha pasado."
+  puts "¿Qué haces?".light_yellow
+  puts "1. Te acercas a preguntarle qué ha pasado.".light_yellow
   puts "2. Intentas salir por la puerta sin hacer ruido. " \
-       "(Dado de sigilo D20 - Para �xito se requiere una tirada de 10 o superior)"
+    "(Dado de sigilo D20 - Para �xito se requiere una tirada de 10 o superior)".light_yellow
 
   option = gets.to_i
 
