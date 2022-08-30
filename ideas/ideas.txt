@@ -3,6 +3,7 @@
 dvarrui, [14.02.22 19:33]
 https://blog.g3ortega.com/2014/02/usando-r-desde-ruby-rserve-rserve-client.html?m=1
 
+* [Comparing implementations of the Monkey language VIII: The Spectacular Interpreted Special (Ruby, Python and Lua)](https://medium.com/@mario.arias.c/comparing-implementations-of-the-monkey-language-viii-the-spectacular-interpreted-special-ruby-2f9e4ed2e660)
 
 El juego de pokemon
 LISP metaprogramación
