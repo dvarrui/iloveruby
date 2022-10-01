@@ -301,3 +301,85 @@ Ractor.shareable?('string')
 ```
 
 Como se vio anteriormente, los objetos inmutables son compartibles y los mutables no lo son. En Ruby, generalmente llamamos al método `.freeze` en una cadena para que sea inmutable. Este es el mismo método que los ractores aplican para hacer que un objeto sea compartible.
+
+```ruby
+str = 'string'
+Ractor.shareable?(str)
+# => false
+Ractor.shareable?(str.freeze)
+# => true
+arr = [4]
+arr.frozen?
+# => false
+Ractor.make_shareable(arr)
+# => [4]
+arr.frozen?
+# => true
+```
+
+Los mensajes enviados a través de los ractors pueden ser compartibles o no compartibles. Cuando se puede compartir, se pasa el mismo objeto. Sin embargo, cuando no se puede compartir, los ractors realizan una copia completa del objeto de forma predeterminada y envían la copia completa en su lugar.
+
+```ruby
+SHAREABLE = 'share'.freeze
+# => "share"
+SHAREABLE.object_id
+# => 350840
+r = Ractor.new do
+  loop do
+    msg = Ractor.receive
+    puts msg.object_id
+  end
+end
+r.send(SHAREABLE)
+# 350840
+NON_SHAREABLE = 'can not share me'
+NON_SHAREABLE.object_id
+# => 572460
+r.send(NON_SHAREABLE)
+# 610420
+```
+
+Como se vio anteriormente, el objeto compartible es el mismo dentro y fuera del ractor. Sin embargo, el que no se puede compartir no se debe a que el ractor tenga un objeto diferente, solo idéntico a él.
+
+Otro método para enviar un objeto exacto cuando no se puede compartir es el discutido anteriormente `move: true`. Esto mueve un objeto a un destino sin necesidad de realizar una copia.
+
+**Algunas cosas a tener en cuenta sobre compartir objetos en ractors:**
+* Los objetos Ractor también son objetos compartibles.
+* Las constantes que son compartibles, pero definidas fuera del alcance de un ractor, pueden ser accedidas por un ractor. ¿Recuerde el ejemplo `outer_scope_object`? Pruebe de nuevo, definiendo `OUTER_SCOPE_OBJECT = "Soy un objeto de alcance externo".freeze`.
+* Los objetos class y module se pueden compartir, pero las variables de instancia o las constantes definidas en ellos no lo son si se asignan valores no compartibles.
+
+```ruby
+class C
+  CONST = 5
+  @share_me = 'share me'.freeze
+  @keep_me = 'unaccessible'
+  def bark
+   'barked'
+  end
+end
+
+Ractor.new C do |c|
+  puts c::CONST
+  puts c.new.bark
+  puts c.instance_variable_get(:@share_me)
+  puts c.instance_variable_get(:@keep_me)
+end
+# 5
+# barked
+# share me
+# (irb):161:in `instance_variable_get': can not get unshareable values from instance variables of classes/modules from non-main Ractors (Ractor::IsolationError)
+```
+
+* Un puerto entrante o un puerto saliente se pueden cerrar utilizando `Ractor#close_incoming` y `Ractor#close_outgoing`, respectivamente.
+
+## Conclusión y lecturas adicionales sobre los ractores
+
+En este artículo, presentamos el concepto de ractors, incluyendo cuándo y por qué usarlos y cómo comenzar. También analizamos cómo se comunican entre sí, qué objetos son compartibles y no compartibles, y cómo hacer que los objetos se puedan compartir.
+
+Los ractors van más allá de esto. Muchos otros métodos públicos pueden ser llamados a los ractores, como `select` para esperar por el éxito de take, yield y receive, `.count`, `.current`, etc.
+
+Para ampliar sus conocimientos sobre los ractors, consulte la [documentación del ractor](https://gist.github.com/Kukunin/960ccef0d3c0a2c4b28ff5345911c2a5). Este [GitHub gist](https://gist.github.com/Kukunin/960ccef0d3c0a2c4b28ff5345911c2a5) también podría interesarte si deseas comparar experimentalmente los ractors con los hilos.
+
+Los ractors son de hecho experimentales, pero ciertamente parecen tener un futuro brillante en la evolución de Ruby.
+
+Happy coding!
