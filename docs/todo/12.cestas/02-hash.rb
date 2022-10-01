@@ -9,8 +9,8 @@ letter_counter = {}
 word_list = words.split('|')
 
 word_list.each do |word|
-    counter = word.count(letter)
-    letter_counter[word] = counter
+  counter = word.count(letter)
+  letter_counter[word] = counter
 end 
 
 puts letter_counter
