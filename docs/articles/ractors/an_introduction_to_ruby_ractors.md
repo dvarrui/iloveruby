@@ -137,3 +137,165 @@ end
 Obtenemos un error en la invocación de `.new`, relacionado con un `Proc` que no está aislado. Esto se debe a que `Proc#isolate` se llama a la creación de un ractor para evitar compartir objetos no compartibles. Sin embargo, los objetos se pueden pasar hacia y desde los ractors a través de mensajes.
 
 ## Envío y recepción de mensajes en ractors
+
+Los ractors envían mensajes a través de un puerto saliente y reciben mensajes a través de un puerto entrante. El puerto entrante puede contener un número infinito de mensajes y se ejecuta según el principio FIFO.
+
+El método `.send` funciona de la misma manera que un cartero entrega un mensaje en el correo. El cartero toma el mensaje y lo deja caer en la puerta (puerto de entrada) del ractor.
+
+Sin embargo, dejar caer un mensaje en la puerta de una persona no es suficiente para que la abra. Entonces `.receive` está disponible para que el ractor abra la puerta y reciba cualquier mensaje que se haya eliminado.
+
+El ractor podría querer hacer un cálculo con ese mensaje y devolver una respuesta, entonces, ¿cómo lo obtenemos? Le pedimos al cartero que haga `.take` de la respuesta.
+
+```ruby
+tripple_number_ractor = Ractor.new do
+  puts "I will receive a message soon"
+  msg = Ractor.receive
+  puts "I will return a tripple of what I receive"
+  msg * 3
+end
+# I will receive a message soon
+tripple_number_ractor.send(15) # mailman takes message to the door
+# I will return a tripple of what I receive
+tripple_number_ractor.take # mailman takes the response
+# => 45
+```
+
+Como se vio anteriormente, el valor de retorno de un ractor también es un mensaje enviado y se puede recibir a través de `.take`. Dado que este es un mensaje saliente, va al puerto saliente.
+
+Aquí hay un ejemplo simple:
+
+```ruby
+r = Ractor.new do
+  5**2
+end
+r.take # => 25
+```
+
+Además de devolver un mensaje, un ractor también puede enviar un mensaje a su puerto saliente a través de `.yield`.
+
+```ruby
+r = Ractor.new do
+  squared = 5**2
+  Ractor.yield squared*2
+  puts "I just sent a message out"
+  squared*3
+end
+r.take
+# => 50
+r.take
+# => 75
+```
+
+El primer mensaje enviado al puerto saliente es `square*2` y el siguiente mensaje es `square*3`. Por lo tanto, cuando llamamos a `.take`, obtenemos `50` la primera vez. Tenemos que llamar a `.take` una segunda vez para obtener `75` ya que se envían dos mensajes al puerto saliente.
+
+Pongamos todo esto junto en un ejemplo de clientes que envían sus pedidos a un supermercado y reciben los pedidos cumplidos:
+
+```ruby
+supermarket = Ractor.new do
+  loop do
+    order = Ractor.receive
+    puts "The supermarket is preparing #{order}"
+    Ractor.yield "This is #{order}"
+  end
+end
+
+customers = 5.times.map{ |i|
+  Ractor.new supermarket, i do |supermarket, i|
+    supermarket.send("a pack of sugar for customer #{i}")
+    fulfilled_order = supermarket.take
+    puts "#{fulfilled_order} received by customer #{i}"
+  end
+}
+```
+
+El resultado es el siguiente:
+
+```
+The supermarket is preparing a pack of sugar for customer 3
+The supermarket is preparing a pack of sugar for customer 2
+This is a pack of sugar for customer 3 received by customer 3
+The supermarket is preparing a pack of sugar for customer 1
+This is a pack of sugar for customer 2 received by customer 2
+The supermarket is preparing a pack of sugar for customer 0
+This is a pack of sugar for customer 1 received by customer 1
+This is a pack of sugar for customer 0 received by customer 0
+The supermarket is preparing a pack of sugar for customer 4
+This is a pack of sugar for customer 4 received by customer 4
+```
+
+Ejecutarlo por segunda vez produce lo siguiente:
+
+```
+The supermarket is preparing a pack of sugar for customer 0
+This is a pack of sugar for customer 0 received by customer 0
+The supermarket is preparing a pack of sugar for customer 4
+This is a pack of sugar for customer 4 received by customer 4
+The supermarket is preparing a pack of sugar for customer 1
+This is a pack of sugar for customer 1 received by customer 1
+The supermarket is preparing a pack of sugar for customer 3
+The supermarket is preparing a pack of sugar for customer 2
+This is a pack of sugar for customer 3 received by customer 3
+This is a pack of sugar for customer 2 received by customer 2
+```
+
+La salida definitivamente puede estar en un orden diferente cada vez que lo ejecutamos (porque los ractors se ejecutan simultáneamente).
+
+Algunas cosas a tener en cuenta sobre el envío y la recepción de mensajes:
+* Los mensajes también se pueden enviar usando `<< msg`, en lugar de `.send(msg)`.
+* Se puede agregar una condición a `.receive` mediante `receive_if`.
+* Cuando se llama a `.send` en un ractor que ya está terminado (no en ejecución), se obtiene un `Ractor::ClosedError`.
+* El puerto saliente de un ractor se cierra después de que se llama a `.take` si se ejecuta solo una vez (no en un bucle).
+
+```ruby
+r = Ractor.new do
+  Ractor.receive
+end
+# => #<Ractor:#61 (irb):120 running>
+r << 5
+# => #<Ractor:#61 (irb):120 terminated>
+r.take
+# => 5
+r << 9
+# <internal:ractor>:583:in `send': The incoming-port is already closed (Ractor::ClosedError)
+r.take
+# <internal:ractor>:694:in `take': The outgoing-port is already closed (Ractor::ClosedError)
+```
+
+Los objetos se pueden mover a un ractor de destino a través de `.send(obj, move: true)`  o `.yield(obj, move: true)`. Estos objetos se vuelven inaccesibles en el emisor, lo que genera un `Ractor::MovedError` cuando se intenta llamar a un método en los objetos movidos.
+
+```ruby
+r = Ractor.new do
+  Ractor.receive
+end
+outer_object = "outer"
+r.send(outer_object, move: true)
+# => #<Ractor:#3 (irb):7 terminated>
+outer_object + "moved"
+# `method_missing': can not send any methods to a moved object (Ractor::MovedError)
+```
+
+Los threads no se pueden enviar como mensajes mediante `.send` y `.yield`. Al hacer esto, se produce un Error de tipo.
+
+```ruby
+r = Ractor.new do
+  Ractor.yield(Thread.new{})
+end
+# <internal:ractor>:627:in `yield': allocator undefined for Thread (TypeError)
+```
+
+## Objetos que se pueden compartir y no compartir
+
+Los objetos compartibles son objetos que se pueden enviar hacia y desde un ractor sin comprometer la seguridad del hilo. Un objeto inmutable es un buen ejemplo porque una vez creado, no se puede cambiar, por ejemplo, números y booleanos.
+
+Se puede comprobar la compartibilidad de un objeto a través de `Ractor.shareable?` y hacer que un objeto se pueda compartir a través de `Ractor.make_shareable`.
+
+```ruby
+Ractor.shareable?(5)
+# => true
+Ractor.shareable?(true)
+# => true
+Ractor.shareable?([4])
+# => false
+Ractor.shareable?('string')
+# => false
+```
