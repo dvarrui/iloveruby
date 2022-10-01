@@ -122,3 +122,17 @@ end
 # 5
 # 6
 ```
+
+¿Recuerdas que dijimos que los ractores no pueden acceder a objetos definidos fuera de su alcance? Veamos un ejemplo:
+
+```ruby
+outer_scope_object = "I am an outer scope object"
+Ractor.new do
+  puts outer_scope_object
+end
+# <internal:ractor>:267:in `new': can not isolate a Proc because it accesses outer variables (outer_scope_object). (ArgumentError)
+```
+
+Obtenemos un error en la invocación de `.new`, relacionado con un `Proc` que no está aislado. Esto se debe a que `Proc#isolate` se llama a la creación de un ractor para evitar compartir objetos no compartibles. Sin embargo, los objetos se pueden pasar hacia y desde los ractors a través de mensajes.
+
+## Envío y recepción de mensajes en ractors
