@@ -82,3 +82,7 @@ Did you mean?  to_s
 Version end of life and use rbenv
 https://hmong.es/wiki/Ruby_programming_language
 
+
+
+
+https://github.com/jiangmiao/ruby-file-monitor
