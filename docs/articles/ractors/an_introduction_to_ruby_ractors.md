@@ -299,3 +299,5 @@ Ractor.shareable?([4])
 Ractor.shareable?('string')
 # => false
 ```
+
+Como se vio anteriormente, los objetos inmutables son compartibles y los mutables no lo son. En Ruby, generalmente llamamos al método `.freeze` en una cadena para que sea inmutable. Este es el mismo método que los ractores aplican para hacer que un objeto sea compartible.
