@@ -1,6 +1,5 @@
-
-[<< back](../README.md)
-
+[<< back](../../../README.md)
+s
 # Metaprogramming Ruby 2 (traducido al español)
 
 > Enlaces de interés:
