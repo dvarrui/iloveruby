@@ -1,3 +1,4 @@
+[<< back](README.md)
 
 # Primer
 
@@ -52,4 +53,51 @@ Si nunca ha usado páginas de manual antes, puede comenzar invocando el comando 
 Perfecto, ¿verdad? Bueno, algo así. Las páginas de manual para la API de llamada al sistema son un gran recurso para las siguientes dos situaciones:
 
 1. Un programador de C que quiere saber cómo invocar una determinada llamada al sistema, o
-1. Averiguar el propósito de una determinada llamada al sistema
+2. Averiguar el propósito de una determinada llamada al sistema
+
+Si no somos programadores de C, el punto 1 no es tan útil, pero el 2 es muy útil.
+
+Veremos referencias a lo largo de este texto como esta: select(2). Este fragmento de texto le dice dónde puede encontrar la página de manual para una llamada al sistema determinada. Puede o no saber esto, pero hay muchas secciones en las páginas de manual de Unix.
+
+Echemos un vistazo a las secciones más utilizadas de las páginas de manual para los sistemas FreeBSD y Linux:
+
+* Sección 1: Comandos Generales
+* Sección 2: Llamadas al sistema
+* Sección 3: Funciones de la biblioteca C
+* Sección 4: Archivos Especiales
+
+Tenemos que la Sección 1 es para comandos generales (también conocidos como comandos de shell). Si quisiera remitirlo a la página del manual para el comando `find`, lo escribiría así: find(1). Esto le indica que hay una página de manual para `find` en la sección 1 de las páginas de manual.
+
+Si quisiera consultar la página del manual para la llamada al sistema `getpid`, la escribiría así: getpid(2). Esto le indica que hay una página de manual para `getpid` en la sección 2 de las páginas de manual.
+
+
+> **¿Por qué las páginas de manual necesitan múltiples secciones?**
+> Porque un comando puede estar disponible en más de una sección, es decir. disponible como comando de shell y como llamada al sistema.
+>
+> Tome stat(1) y stat(2) como ejemplo.
+
+Para acceder a otras secciones de las páginas de manual, puede especificarlo de la siguiente forma en la línea de comando:
+
+```
+$ man 2 getpid
+$ man 3 malloc
+$ man find # same as man 1 find
+```
+
+Esta nomenclatura no se inventó para este libro, es una [convención que se usa en todas partes](http://en.wikipedia.org/wiki/Man_page#Usage) cuando se hace referencia a las páginas de manual. Por lo tanto, es una buena idea aprenderlo ahora y sentirse cómodo viéndolo.
+
+## Procesos: Los átomos de Unix
+
+Los procesos son los componentes básicos de un sistema Unix. ¿Por qué? Porque cualquier código que se ejecuta ocurre dentro de un proceso.
+
+Por ejemplo, cuando inicia Ruby desde la línea de comando, se crea un nuevo proceso para su código. Cuando su código finaliza, ese proceso finaliza.
+
+```
+$ ruby -e "p Time.now"
+```
+
+Lo mismo es cierto para todo el código que se ejecuta en su sistema. ¿Conoces ese servidor MySQL que siempre está funcionando? Eso está funcionando en su propio proceso. ¿El software de lectura electrónica que está utilizando en este momento? Eso está funcionando en su propio proceso. ¿El cliente de correo electrónico que intenta desesperadamente decirte que tienes mensajes nuevos? ¡Deberías ignorarlo por cierto y seguir leyendo! También se ejecuta en su propio proceso.
+
+Las cosas empiezan a ponerse interesantes cuando te das cuenta de que un proceso puede generar y gestionar muchos otros. Echaremos un vistazo a eso a lo largo de este libro.
+
+[<< back](README.md)

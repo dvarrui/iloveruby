@@ -25,3 +25,5 @@ A través de problemas de depuración, me vi obligado a profundizar en los proye
 **Después de lograr una comprensión más profunda de cómo funcionaban, pude diagnosticar problemas más rápido y con mejor comprensión**, así como también depurar problemas molestos que no tenían sentido al mirar el código de la aplicación por sí mismo.
 
 Incluso comencé a idear soluciones nuevas, más rápidas y más eficientes para los problemas que estaba resolviendo que usaban las técnicas que estaba aprendiendo de estos proyectos. Muy bien, basta de mí. Bajemos por la madriguera del conejo.
+
+[<< back](README.md)
