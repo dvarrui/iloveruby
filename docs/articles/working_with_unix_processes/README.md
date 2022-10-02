@@ -1,3 +1,4 @@
+[<< back](../../README.md)
 
 # Working with Unix processes (traducido)
 
@@ -5,3 +6,4 @@
 > * https://workingwithruby.com/wwup/intro
 
 1. [Introducción](01-introduction.md)
+1. [Primer](02-primer.md)

@@ -1,0 +1,2 @@
+p Process.getrlimit(:NOFILE)
+
