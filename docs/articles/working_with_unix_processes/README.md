@@ -10,3 +10,4 @@
 1. [PID](03-pid.md)
 1. [PPID](04-ppid.md)
 1. [File Descriptor](05-file_descriptor.md)
+1. [Resource limits](06-resource_limits-md)
