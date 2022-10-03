@@ -7,5 +7,6 @@
 
 1. [Introducción](01-introduction.md)
 1. [Primer](02-primer.md)
-1. [Los procesos tienen un ID](03-processes_have_id.md)
-1. [Los procesos tienen padres](04-processes_have_parents.md)
+1. [PID](03-pid.md)
+1. [PPID](04-ppid.md)
+1. [File Descriptor](05-file_descriptor.md)
