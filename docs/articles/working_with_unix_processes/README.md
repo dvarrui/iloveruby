@@ -13,3 +13,5 @@
 1. [Resource limits](06-resource_limits-md)
 1. [Enviroment](07-enviroment.md)
 1. [Arguments](08-arguments.md)
+1. [Names](09-names.md)
+1. [Exit codes](10-exit_codes.md)
