@@ -10,7 +10,7 @@ De manera similar, los procesos pueden usar la red para abrir sockets y comunica
 
 Hay dos mecanismos que operan a nivel del proceso mismo que se pueden utilizar para comunicar información. Uno es el nombre del proceso, el otro son los códigos de salida.
 
-# Nomenclatura
+## Nomenclatura
 
 Cada proceso en el sistema tiene un nombre. Por ejemplo, cuando inicia una sesión de `irb`, ese proceso recibe el nombre de 'irb'. Lo bueno de los nombres de los procesos es que se pueden cambiar en tiempo de ejecución y usarse como un método de comunicación.
 
@@ -45,7 +45,7 @@ Como ejercicio divertido, puede iniciar una sesión `irb`, imprimir el pid y cam
 
 > Desafortunadamente, esta variable global (y su espejo `$0`) es el único mecanismo proporcionado por Ruby para esto. No hay una forma más reveladora de intenciones para cambiar el nombre del proceso actual.
 
-# En el mundo real
+## En el mundo real
 
 Para ver un ejemplo de cómo se usa esto en un proyecto real, lea Cómo gestiona los procesos [Resque](https://workingwithruby.com/wwup/resque) en los apéndices.
 

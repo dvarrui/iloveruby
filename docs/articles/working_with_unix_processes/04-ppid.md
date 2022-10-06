@@ -16,7 +16,7 @@ Dado que el kernel trata solo con pid, hay una manera de obtener el pid del proc
 puts Process.ppid
 ```
 
-# Referencias cruzadas
+## Referencias cruzadas
 
 Dejando su sesión irb abierta, ejecute el siguiente comando en una terminal:
 
@@ -26,11 +26,11 @@ $ ps -p <ppid-of-irb-process>
 
 Ese comando debería mostrar un proceso llamado 'bash' (o 'zsh' o lo que sea) con un pid que coincida con el que se imprimió en su sesión de `irb`.
 
-# En el mundo real
+## En el mundo real
 
 No hay muchos usos para el ppid en el mundo real. Puede ser importante cuando se detectan procesos daemon, algo que se tratará en un capítulo posterior.
 
-# Llamadas al sistema
+## Llamadas al sistema
 
 `Process.ppid` de Ruby se asigna a getppid(2).
 

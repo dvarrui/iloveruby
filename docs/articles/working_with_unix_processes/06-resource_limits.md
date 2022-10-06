@@ -20,7 +20,7 @@ Usamos `Process.getrlimit(:NOFILE)` para consultar la cantidad máxima de archiv
 
 El primer elemento de la matriz es el límite suave para la cantidad de descriptores de archivos, el segundo valor es el límite estricto para la cantidad de descriptores de archivos.
 
-# Límites blandos frente a límites duros
+## Límites blandos frente a límites duros
 
 ¿Cual es la diferencia? Me alegro de que preguntas. El límite suave no es realmente un límite. Lo que significa que si supera el límite suave (en este caso, al abrir más de 2560 recursos a la vez), se generará una excepción, pero siempre se puede cambiar ese límite si lo desea.
 
@@ -30,7 +30,7 @@ En mi sistema, ese número en realidad representa el infinito. Se repite en la c
 
 Entonces, cualquier proceso puede cambiar su propio límite suave, pero ¿qué pasa con el límite duro? Por lo general, eso solo lo puede hacer un superusuario. Sin embargo, su proceso también puede superar el límite estricto suponiendo que tenga los permisos necesarios. Si está interesado en cambiar los límites a nivel de todo el sistema, comience por echar un vistazo a sysctl(8).
 
-# Superando el límite suave
+## Superando el límite suave
 
 Avancemos y superemos el límite suave para el proceso actual:
 
@@ -52,7 +52,7 @@ El siguiente ejemplo es una forma común de aumentar el límite flexible de un r
 Process.setrlimit(:NOFILE, Process.getrlimit(:NOFILE)[1])
 ```
 
-# Excediendo el límite
+## Excediendo el límite
 
 Tenga en cuenta que exceder el límite suave generará `Errno::EMFILE`:
 
@@ -68,7 +68,7 @@ File.open('/dev/null')
 # => Errno::EMFILE: Too many open files - /dev/null
 ```
 
-# Otros recursos
+## Otros recursos
 
 Puede utilizar estos mismos métodos para comprobar y modificar los límites de otros recursos del sistema. Algunos comunes son:
 
@@ -86,7 +86,7 @@ Process.getrlimit(:STACK)
 
 Consulte la documentación (http://www.ruby-doc.org/core-1.9.3/Process.html#method-c-setrlimit) de `Process.getrlimit` para consultar el listado completo de las opciones disponibles.
 
-# En el mundo real
+## En el mundo real
 
 La necesidad de modificar los límites de los recursos del sistema no es una necesidad habitual para la mayoría de los programas. Sin embargo, para algunas herramientas especializadas esto puede ser muy importante.
 
@@ -94,7 +94,7 @@ Un caso de uso es cualquier proceso que necesite manejar miles de conexiones de 
 
 Otro caso de uso real para limitar los recursos del sistema es una situación en la que se ejecuta código de terceros y se necesita mantenerlo dentro de ciertas restricciones. Puede establecer límites para los procesos que ejecutan ese código y revocar los permisos necesarios para cambiarlos, asegurándose así de que no utilicen más recursos de los que les permite.
 
-# Llamadas al sistema
+## Llamadas al sistema
 
 `Process.getrlimit` y `Process.setrlimit` de Ruby se asignan a getrlimit(2) y setrlimit(2), respectivamente.
 

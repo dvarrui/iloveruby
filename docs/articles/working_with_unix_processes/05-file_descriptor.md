@@ -4,13 +4,13 @@
 
 De la misma manera que los pid representan procesos en ejecución, los descriptores de archivos representan archivos abiertos.
 
-# Todo es un archivo
+## Todo es un archivo
 
 Una parte de la filosofía Unix: en la tierra de Unix 'todo es un archivo'. Esto significa que los dispositivos se tratan como archivos, los sockets y las tuberías se tratan como archivos y los archivos se tratan como archivos.
 
 Dado que todas estas cosas se tratan como archivos, **usaré la palabra 'recurso' cuando hable de archivos en un sentido general** (incluidos dispositivos, tuberías, enchufes, etc.) y **usaré la palabra ' archivo' cuando me refiero a la definición clásica** (un archivo en el sistema de archivos).
 
-# Los descriptores representan recursos
+## Los descriptores representan recursos
 
 Cada vez que abre un recurso en un proceso en ejecución, se le asigna un número de descriptor de archivo. Los descriptores de archivo NO se comparten entre procesos no relacionados, viven y mueren con el proceso al que están vinculados, al igual que cualquier recurso abierto para un proceso se cierra cuando sale. Hay una semántica especial para compartir descriptores de archivos cuando bifurca un proceso, Veremos más sobre esto más adelante.
 
@@ -70,7 +70,7 @@ puts passwd.fileno
 
 Es posible que haya notado que cuando abrimos un archivo y solicitamos su número de descriptor de archivo, el valor más bajo que obtenemos es 3. ¿Qué pasó con 0, 1 y 2?
 
-# Flujos estándar
+## Flujos estándar
 
 Cada proceso de Unix viene con tres recursos abiertos. Estos son sus recursos de entrada estándar (STDIN), salida estándar (STDOUT) y error estándar (STDERR).
 
@@ -91,13 +91,13 @@ puts STDERR.fileno
 
 Ahí es donde tenemos los primeros 3 números descriptores de archivo.
 
-# En el mundo real
+## En el mundo real
 
 Los descriptores de archivos están en el centro de la programación de red usando sockets, pipes, etc. y también están en el centro de cualquier operación del sistema de archivos.
 
 Por lo tanto, se usan por todos los procesos en ejecución y son el núcleo de la mayoría de las cosas interesantes que puede hacer con una computadora. Verá muchos más ejemplos de cómo usarlos en los siguientes capítulos o en el proyecto Spyglass adjunto.
 
-# Llamadas al sistema
+## Llamadas al sistema
 
 Muchos métodos en la clase `IO` de Ruby se asignan a llamadas al sistema del mismo nombre. Estos incluyen open(2), close(2), read(2), write(2), pipe(2), fsync(2), stat(2), entre otros.
 

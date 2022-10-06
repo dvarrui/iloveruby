@@ -13,13 +13,13 @@ $ ruby argv.rb foo bar -va
 ["foo", "bar", "-va"]
 ```
 
-# ¡Es una lista!
+## ¡Es una lista!
 
 A diferencia del capítulo anterior, donde aprendimos que `ENV` no es un `Hash`, `ARGV` es simplemente un `Array`. Puede agregarle elementos, quitarle elementos, cambiar los elementos que contiene, lo que quiera. Pero si simplemente representa los argumentos pasados en la línea de comando, ¿por qué necesitaría cambiar algo?
 
 Algunas bibliotecas leerán desde `ARGV` para analizar las opciones de la línea de comandos, por ejemplo. Puede cambiar `ARGV` mediante programación antes de que tengan la oportunidad de verlo para modificar las opciones en tiempo de ejecución.
 
-# En el mundo real
+## En el mundo real
 
 Probablemente el caso de uso más común para `ARGV` es aceptar nombres de archivos en un programa. Es muy común escribir un programa que toma uno o más nombres de archivo como entrada en la línea de comandos y hace algo útil con ellos.
 
