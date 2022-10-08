@@ -17,3 +17,5 @@
 1. [Exit codes](10-exit_codes.md)
 1. [Fork](11-fork.md)
 1. [Orphaned processes](12-orphaned.md)
+1. [CoW friendly](13-cow_friendly.md)
+1. [Can wait](14-can_wait.md)
