@@ -1,10 +1,11 @@
-#!/usr/bin/env ruby 
+#!/usr/bin/env ruby
 
 fork do
   5.times do
     sleep 1
-    puts "I'm an orphan!"
+    puts "I am an orphan!"
   end
 end
 
+Process.wait
 abort "Parent process died..."
