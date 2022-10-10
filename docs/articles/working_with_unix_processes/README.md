@@ -20,3 +20,4 @@
 1. [CoW friendly](13-cow_friendly.md)
 1. [Can wait](14-can_wait.md)
 1. [Zombie](15-zombie.md)
+1. [Signals](16-signals.md)
