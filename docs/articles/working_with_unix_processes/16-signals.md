@@ -160,5 +160,88 @@ A continuación se muestra una tabla que muestra las señales comúnmente compat
 
 Cuando se nombran señales, la porción SIG del nombre es opcional. La columna Acción de la tabla describe la acción predeterminada para cada señal:
 
+**Term**: significa que el proceso terminará inmediatamente.
+
+**Core**: significa que el proceso terminará inmediatamente y volcará el core (seguimiento de pila).
+
+**Ign**: significa que el proceso ignorará la señal
+
+**Stop**: significa que el proceso se detendrá (es decir, pausa)
+
+**Cont**: significa que el proceso se reanudará (es decir, unpause)
+
+```
+Signal	  Value	    Action   Comment
+-------------------------------------------------------------------------
+SIGHUP	     1	     Term    Hangup detected on controlling terminal
+                             or death of controlling process
+SIGINT	     2	     Term    Interrupt from keyboard
+SIGQUIT      3	     Core    Quit from keyboard
+SIGILL       4	     Core    Illegal Instruction
+SIGABRT	     6	     Core    Abort signal from abort(3)
+SIGFPE       8	     Core    Floating point exception
+SIGKILL	     9	     Term    Kill signal
+SIGSEGV	    11	     Core    Invalid memory reference
+SIGPIPE	    13	     Term    Broken pipe: write to pipe with no readers
+SIGALRM	    14	     Term    Timer signal from alarm(2)
+SIGTERM	    15	     Term    Termination signal
+SIGUSR1	 30,10,16    Term    User-defined signal 1
+SIGUSR2	 31,12,17    Term    User-defined signal 2
+SIGCHLD	 20,17,18    Ign     Child stopped or terminated
+SIGCONT	 19,18,25    Cont    Continue if stopped
+SIGSTOP	 17,19,23    Stop    Stop process
+SIGTSTP	 18,20,24    Stop    Stop typed at tty
+SIGTTIN	 21,21,26    Stop    tty input for background process
+SIGTTOU	 22,22,27    Stop    tty output for background process
+
+The signals SIGKILL and SIGSTOP cannot be trapped, blocked, or ignored.
+```
+
+Esta tabla da una idea aproximada de qué debemos esperar cuando se envía una determinada señal a un proceso. Podemos ver que, por defecto, la mayoría de las señales terminan un proceso.
+
+Es interesante observar las señales SIGUSR1 y SIGUSR2. La acción de estas señales será definida por su proceso. Veremos en breve que somos libres de redefinir cualquiera de las acciones de señal que nos plazca, pero esas dos señales están destinadas a ese uso.
+
+## Redefinición de señales
+
+Volvamos a nuestras dos sesiones de `ruby` y divirtámonos.
+
+1. En la primera sesión de `ruby` utilice el siguiente código para redefinir el comportamiento de la señal INT:
+```ruby
+puts Process.pid
+trap(:INT) { print "Na na na, you can't get me" }
+sleep # so that we have time to send it a signal
+```
+Ahora nuestro proceso no saldrá cuando reciba la señal INT.
+
+2. ¡En la segunda sesión de `ruby` emita el siguiente comando y note que el primer proceso se está burlando de nosotros!
+```ruby
+Process.kill(:INT, <pid of first session>)
+```
+3. Puedes intentar usar Ctrl-C para matar esa primera sesión, ¡y notar que responde igual!
+4. Pero como decía la tabla hay algunas señales que no se pueden redefinir. SIGKILL le mostrará a ese tipo quién es el jefe.
+```ruby
+Process.kill(:KILL, <pid of first session>)
+```
+
+## Ignorar señales
+
+1. En la primera sesión de `ruby` utilice el siguiente código:
+```ruby
+puts Process.pid
+trap(:INT, "IGNORE")
+sleep # so that we have time to send it a signal
+```
+2. En la segunda sesión de `ruby`, ponga el siguiente comando y observe que el primer proceso no se ve afectado.
+```ruby
+```
+
+La primera sesión de `ruby` no se ve afectada.
+
+## Los gestores de señales son globales
+
+Las señales son una gran herramienta y son perfectas para ciertas situaciones. Pero es bueno tener en cuenta que **atrapar una señal es un poco como usar una variable global**, es posible que esté sobrescribiendo algo de lo que depende algún otro código. Y a diferencia de las variables globales, los gestores de señales no se pueden crear espacios de nombres.
+
+Así que asegúrese de leer esta siguiente sección antes de añadir gestores de señales a todas sus bibliotecas de código abierto :)
+
 
 [<< back](README.md)
