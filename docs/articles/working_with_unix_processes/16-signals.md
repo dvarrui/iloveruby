@@ -241,7 +241,50 @@ La primera sesión de `ruby` no se ve afectada.
 
 Las señales son una gran herramienta y son perfectas para ciertas situaciones. Pero es bueno tener en cuenta que **atrapar una señal es un poco como usar una variable global**, es posible que esté sobrescribiendo algo de lo que depende algún otro código. Y a diferencia de las variables globales, los gestores de señales no se pueden crear espacios de nombres.
 
-Así que asegúrese de leer esta siguiente sección antes de añadir gestores de señales a todas sus bibliotecas de código abierto :)
+Así que asegúrese de leer la siguiente sección antes de incluir gestores de señales en todas sus bibliotecas de código abierto :)
 
+## Ser amable con la redefinición de señales
+
+Hay una manera de preservar los controladores definidos por otro código de Ruby, de modo que su controlador de señales no pisotee a otros que ya estén definidos.
+
+Es algo como esto:
+
+```ruby
+trap(:INT) { puts 'This is the first signal handler' }
+
+old_handler = trap(:INT) {
+  old_handler.call
+  puts 'This is the second handler'
+  exit
+}
+sleep 5 # so that we have time to send it a signal
+```
+
+Solo envíe un Ctrl-C para ver el efecto. Ambos manejadores de señales serán invocados.
+
+Ahora veamos si podemos preservar el comportamiento predeterminado del sistema. Presiona el siguiente código con Ctrl-C.
+
+```ruby
+system_handler = trap(:INT) {
+  puts 'about to exit!'
+  system_handler.call
+}
+sleep 5 # so that we have time to send it a signal
+```
+
+:/ Explotó esta vez. Por lo tanto, no podemos conservar el comportamiento predeterminado del sistema con esta técnica, pero podemos conservar otros controladores de código de Ruby que se hayan definido.
+
+Según las buenas prácticas, su código no debería definir ningún controlador de señal, a menos que sea un servidor. Como en un proceso de ejecución prolongada que se inicia desde la línea de comandos. Es muy raro que el código de biblioteca atrape una señal.
+
+```ruby
+# The 'friendly' method of trapping a signal.
+
+old_handler = trap(:QUIT) {
+  # do some cleanup
+  puts 'All done!'
+
+  old_handler.call if old_handler.respond_to?(:call)
+}
+```
 
 [<< back](README.md)
