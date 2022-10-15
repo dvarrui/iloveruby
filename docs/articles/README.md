@@ -18,5 +18,5 @@ Scripting/sistemas:
 
 Avanzado:
 1. [An introduction to Ruby Ractors](an_introduction_to_ruby_ractors/README.md)
-1. [Monads in Ruby](docs/articles/monads_in_ruby/README.md)
+1. [Monads in Ruby](monads_in_ruby/README.md)
 
