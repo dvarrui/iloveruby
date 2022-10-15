@@ -11,7 +11,7 @@ Lenguaje de programación:
 
 Metaprogramación:
 1. Exploring metaprograming in Ruby
-1. [Metaprogram Akshay's blob](metaprogram_akshay_blog/README.md)
+1. [Metaprogram Akshay's blob](metaprogram_akshay_blog.md)
 
 Scripting/sistemas:
 1. [Working with Unix processes](working_with_unix_processes/README.md)
