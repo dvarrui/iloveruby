@@ -287,4 +287,30 @@ old_handler = trap(:QUIT) {
 }
 ```
 
+Este controlador para la señal QUIT conservará todos los controladores QUIT anteriores que se hayan definido. Aunque esto parece "amigable", generalmente no es una buena idea. Imagine un escenario en el que un servidor Ruby les dice a sus usuarios que pueden enviarle una señal de SALIR y se cerrará correctamente. Les dice a los usuarios de su biblioteca que pueden enviar una señal de SALIR y dibujará un arco iris ASCII. Ahora, si un usuario envía la señal QUIT, se invocarán ambos controladores. Esto viola las expectativas de ambas bibliotecas.
+
+Ya sea que decida o no conservar los manejadores de señales definidos previamente, depende de usted, solo asegúrese de saber por qué lo está haciendo. Si simplemente desea conectar algún comportamiento para limpiar los recursos antes de salir, puede usar un gancho `at_exit`, que mencionamos en el capítulo sobre códigos de salida.
+
+## ¿Cuándo no se pueden recibir señales?
+
+Su proceso puede recibir una señal en cualquier momento. ¡Esa es su belleza! Son asíncronos.
+
+Su proceso puede salir de un bucle `for` a un controlador de señal, o incluso salir de un `sueño` prolongado. Su proceso puede incluso pasar de un controlador de señal a otro si recibe una señal mientras procesa otra. Pero, como era de esperar, siempre volverá y finalizará el código en todos los controladores que se invocan.
+
+## En el mundo real
+
+Con las señales, cualquier proceso puede comunicarse con cualquier otro proceso del sistema, siempre que conozca su pid. Esto hace de las señales una herramienta de comunicación muy poderosa. Es habitual enviar señales desde la shell usando el comando kill(1).
+
+En el mundo real, las señales se usan principalmente por procesos de ejecución prolongada, como servidores y demonios. En su mayor parte serán los usuarios humanos quienes envíen señales en lugar de programas automatizados.
+
+Por ejemplo, el servidor web Unicorn (http://unicorn.bogomips.org) responde a la señal `INT` eliminando todos sus procesos y cerrándose inmediatamente. Responde a la señal `USR2` volviéndose a ejecutar para un reinicio sin tiempo de inactividad. Responde a la señal `TTIN` incrementando la cantidad de procesos de trabajo que tiene en ejecución.
+
+Consulte el [archivo SIGNALS incluido con Unicorn](http://unicorn.bogomips.org/SIGNALS.html) para obtener una lista completa de las señales que admite y cómo responde a ellas.
+
+El proyecto memprof tiene un [ejemplo interesante de cómo ser civilizado a la hora de manejar señales](https://github.com/ice799/memprof/blob/d4bc228aca323b58fea92dbde20c1f8ec36e5386/lib/memprof/signal.rb#L8-16).
+
+## Llamadas al sistema
+
+`Process.kill` de Ruby se asocia con kill(2), `Kernel#trap` se asocia aproximadamente a sigaction(2). signal(7) también es útil.
+
 [<< back](README.md)
