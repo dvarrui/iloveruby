@@ -1,4 +1,4 @@
-[<< back](../../README.md)
+[<< back](README.md)
 
 # 12 ways to call a method in Ruby (traducido)
 
