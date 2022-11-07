@@ -17,4 +17,4 @@ Metaprogramación: Es la capacidad que tiene un programa de modificar su propio 
 
 Avanzado:
 * [An introduction to Ruby Ractors](an_introduction_to_ruby_ractors/README.md): Los Ractors son la implementación Ruby de Actors. Los actores son una forma de implementar la programación concurrente.
-* [Monads](monads/monads_in_ruby.md): Las mónadas son un patrón de diseño originalmente de la programación funcional.
+* [Monads in Ruby](monads/monads_in_ruby.md): Las mónadas son un patrón de diseño originalmente de la programación funcional.
