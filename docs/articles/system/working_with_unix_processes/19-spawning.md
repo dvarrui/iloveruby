@@ -74,5 +74,57 @@ El valor de retorno de `Kernel#system` refleja el código de salida del comando 
 
 Los flujos estándar del comando de terminal se comparten con el proceso actual (a través de la magia de fork(2)), por lo que cualquier salida que provenga del comando de terminal debe verse de la misma manera que la salida del proceso actual.
 
+## Kernel#\`
+
+```ruby
+`ls`
+`ls --help`
+%x[git log | tail -10]
+```
+
+`Kernel#`\` funciona de forma diferente. El valor devuelto es el `STDOUT` del programa de terminal recopilado en una cadena.
+
+Como se mencionó, usa fork(2) por debajo del capó y no hace nada especial con `STDERR`, por lo que puede ver en el segundo ejemplo donde `STDERR` se muestra en pantalla al igual que con `Kernel#system`.
+
+`Kernel#`\` y `%x[]` hacen exactamente lo mismo.
+
+## Process.spawn
+
+```ruby
+# This call will start up the 'rails server' process with the
+# RAILS_ENV environment variable set to 'test'.
+Process.spawn({'RAILS_ENV' => 'test'}, 'rails server')
+
+# This call will merge STDERR with STDOUT for the duration
+# of the 'ls --help' program.
+Process.spawn('ls', '--zz', STDERR => STDOUT)
+```
+
+`Process.spawn` es diferente a los demás en que no bloquea.
+
+Si comparamos los siguientes dos ejemplos, vemos que el `Kernel#system` se bloquea hasta que finalice el comando, mientras que `Process.spawn` regresará inmediatamente.
+
+```ruby
+# Do it the blocking way
+system 'sleep 5'
+
+# Do it the non-blocking way
+Process.spawn 'sleep 5'
+
+# Do it the blocking way with Process.spawn
+# Notice that it returns the pid of the child process
+pid = Process.spawn 'sleep 5'
+Process.waitpid(pid)
+```
+
+Este último ejemplo es un buen ejemplo de la flexibilidad de la programación de Unix. En capítulos anteriores hablamos sobre `Process.wait`, pero siempre en el contexto de bifurcar y luego ejecutar código Ruby. En este ejemplo se puede ver que al kernel no le importa lo que esté haciendo en su proceso, siempre funcionará igual.
+
+Entonces, aunque hagamos un fork(2) y luego ejecutemos sleep(1) (un programa C), el kernel todavía sabe cómo esperar a que termine ese proceso. No solo eso, podrá devolver correctamente el código de salida tal como ocurría en nuestros programas de Ruby.
+
+Todo el código tiene la misma apariencia para el kernel; eso lo convierte en un sistema muy flexible. Puede usar cualquier lenguaje de programación para interactuar con cualquier otro lenguaje de programación, y todos se tratarán igual.
+
+`Process.spawn` tiene opciones que le permiten controlar el comportamiento del proceso hijo. Consulte el rdoc oficial (http://www.ruby-doc.org/core-1.9.3/Process.html#method-c-spawn) para tener más información.
+
+## IO.popen#
 
 [<< back](README.md)
