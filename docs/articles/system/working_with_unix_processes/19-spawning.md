@@ -28,5 +28,51 @@ Si su programa depende de la salida de la llamada execve(2), puede usar las herr
 
 ## Descriptores de archivos y exec
 
+En el nivel del sistema operativo, una llamada a execve(2) no cierra ningún descriptor de archivo abierto de forma predeterminada.
+
+Sin embargo, una llamada a `exec` de Ruby cerrará todos los descriptores de archivos abiertos de forma predeterminada (excluyendo los flujos estándar).
+
+En otras palabras, el comportamiento predeterminado del sistema operativo al ejecutar `exec ('ls')` sería el de dar a `ls` una copia de cualquier descriptor de archivo abierto, por ejemplo. una conexión de base de datos. Esto rara vez es lo que desea, por lo que el valor predeterminado en Ruby es cerrar todos los descriptores de archivos abiertos antes de ejecutar un `exec`.
+
+Este comportamiento predeterminado de cerrar los descriptores de archivos en `exec` evita las "fugas" de los descriptores de archivos. Puede ocurrir una fuga cuando se hace un fork + exec para generar otro proceso que no necesita los descriptores de archivo que haya abiertos actualmente (como las conexiones de su base de datos, archivos de registro, etc.) Una fuga puede desperdiciar recursos pero, lo que es peor, puede causar estragos cuando intenta cerrar la conexión de su base de datos, al descubrir que otro proceso erróneamente todavía tiene la conexión abierta.
+
+Sin embargo, a veces es posible que quiera mantener un descriptor de archivo abierto, para pasar un archivo de registro abierto o un socket en vivo a otro programa que se está iniciando a través de `exec` (el servidor web Unicorn tiene este comportamiento para permitir reinicios sin perder ninguna conexión. Al pasar el oyente abierto socket a la nueva versión de sí mismo a través de un `exec`, asegura que el socket del oyente nunca se cierre durante un reinicio) Podemos controlar este comportamiento pasando un hash de opciones al `exec` y asignando números de descriptor de archivo a objetos IO, como se ve en el siguiente ejemplo.
+
+```ruby
+hosts = File.open('/etc/hosts')
+
+python_code = %Q[import os; print os.fdopen(#{hosts.fileno}).read()]
+
+# The hash as the last arguments maps any file descriptors that should
+# stay open through the exec.
+exec 'python', '-c', python_code, {hosts.fileno => hosts}
+```
+
+En este ejemplo, se abre el archivo `/etc/hosts` al inicio. Luego se ejecuta un proceso de `python` con el número de descriptor asociado al archivo `/etc/hosts`. `python` reconoce este descriptor de archivo (porque se compartió a través de execve(2)) y puede leerlo sin tener que abrir el archivo nuevamente.
+
+Observe las opciones de asignación hash del número de descriptor de archivo al objeto `IO`. Si elimina ese hash, el programa Python no podrá abrir el descriptor del archivo, esa declaración lo mantiene abierto a través de execve (2).
+
+A diferencia de fork(2), execve(2) **no** comparte memoria con el proceso recién creado. En el ejemplo anterior de python, toda la asignación de memoria para el programa Ruby se eliminó cuando se llamó a execve(2), dejando al programa python con una pizarra en blanco en términos de uso de memoria.
+
+## Argumentos para `exec`
+
+En los ejemplos anteriores se envían una serie de argumentos a `exec`, en lugar de pasarlos como una cadena. Hay una sutil diferencia entre las dos formas de pasar los argumentos.
+
+Si pasamos un string a `exec`, se iniciará un proceso de shell y se pasa la cadena al shell para que la interprete. Si pasamos una lista, omitirá el shell y configurará la lista directamente como `ARGV` para el nuevo proceso.
+
+En general, evite pasar una cadena a menos que realmente sea necesario. Pase una lista siempre que sea posible. Pasar una cadena y ejecutar código a través del shell puede generar problemas de seguridad. Si hay datos de entrada por parte del usuario, es posible que se inyecte un comando malicioso directamente en la shell, y se podría obtener acceso a cualquier privilegio que tenga el proceso actual. En el caso de que desee hacer algo como `exec('ls * | awk '{print($1)}')`, entonces tiene que pasarlo como una cadena.
+
+## Kernel#system
+
+```ruby
+system('ls')
+system('ls', '--help')
+system('git log | tail -10')
+```
+
+El valor de retorno de `Kernel#system` refleja el código de salida del comando de terminal de una forma más simple. Si el código de salida del comando de terminal era 0, devuelve `true`; de lo contrario, devuelve `false`.
+
+Los flujos estándar del comando de terminal se comparten con el proceso actual (a través de la magia de fork(2)), por lo que cualquier salida que provenga del comando de terminal debe verse de la misma manera que la salida del proceso actual.
+
 
 [<< back](README.md)
