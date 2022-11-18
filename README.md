@@ -11,5 +11,5 @@ _En una serie de episodios, iré narrando mi historia de amor "**IloveRuby**":_
 2. [PROX] _Resumen exprés del capítulo anterior_.
 3. [PROX] _Scripting práctico y real con Ruby. Se incluyen actividades de clase_.
 
-* [Artículos de otros autores traducidos al español](docs/articles/README.md)
+* [Artículos de otros autores traducidos al español](articles/README.md)
 
