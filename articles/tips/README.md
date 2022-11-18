@@ -1,4 +1,34 @@
 
+# Diferencia entre `equal?` y `==`
+
+> (Kirill Shevchenko
+@kirill_shevch) https://twitter.com/kirill_shevch/status/1592652547420213248?t=5YIvGDyFHTVkRpUiLqgePw&s=35
+
+Los dos se usan para comparar datos, pero:
+
+1. `==` devuelve verdadero si ambos objetos contienen el mismo valor.
+2. `equal?` comprueba si las referencias apuntan al mismo objeto de la memoria (ambos valores son el mismo objeto).
+
+**Ejemplo**
+
+```ruby
+message1 = `Hello there!`
+message2 = `Hello there!`
+message3 = message1
+
+message1 === message2
+# => true
+
+message1.equal? message2
+# => false
+
+message1.equal? message3
+# => true
+
+message1.object_id # => 16000
+message2.object_id # => 16020
+message3.object_id # => 16000
+```
 
 # GEM_PATH y GEM_HOME
 
@@ -42,33 +72,31 @@ _¡Aquí es donde entra GEM_PATH!_
 * GEM_PATH y GEM_HOME son simples pero a menudo ocultas por el uso de herramientas como rvm o rbenv. Considero que la gestión de gemas es algo simple incluso sin herramientas adicionales.
 
 
-# Diferencia entre `equal?` y `==`
-
-> (Kirill Shevchenko
-@kirill_shevch) https://twitter.com/kirill_shevch/status/1592652547420213248?t=5YIvGDyFHTVkRpUiLqgePw&s=35
-
-Los dos se usan para comparar datos, pero:
-
-1. `==` devuelve verdadero si ambos objetos contienen el mismo valor.
-2. `equal?` comprueba si las referencias apuntan al mismo objeto de la memoria (ambos valores son el mismo objeto).
-
 **Ejemplo**
 
-```ruby
-message1 = `Hello there!`
-message2 = `Hello there!`
-message3 = message1
-
-message1 === message2
-# => true
-
-message1.equal? message2
-# => false
-
-message1.equal? message3
-# => true
-
-message1.object_id # => 16000
-message2.object_id # => 16020
-message3.object_id # => 16000
+Comportamiento sin variables de entorno:
 ```
+❯ echo $GEM_HOME
+
+❯ gem list|grep colorize
+
+```
+
+Resultado después de establecer las variables de entorno:
+```
+❯ gem list|grep colo
+colorize (0.8.1)
+
+❯ gem info colorize
+
+*** LOCAL GEMS ***
+
+colorize (0.8.1)
+    Author: Michał Kalbarczyk
+    Homepage: http://github.com/fazibear/colorize
+    License: GPL-2.0
+    Installed at: /home/david/proy/repos/lang.d/iloveruby/articles/tips/examples/.gems
+
+    Ruby gem for colorizing text using ANSI escape sequences.
+```
+
