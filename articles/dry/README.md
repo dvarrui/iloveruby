@@ -129,3 +129,5 @@ logger = Dry.Logger(:test, formatter: :rack)
 logger.info verb: "GET", path: "/users", elapsed: "12ms", ip: "127.0.0.1", status: 200, length: 312, params: {}
 # [test] [INFO] [2022-11-17 12:04:30 +0100] GET 200 12ms 127.0.0.1 /users 312
 ```
+
+> GitHub repo: https://github.com/dry-rb/dry-logger/tree/release-1.0
