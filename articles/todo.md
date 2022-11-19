@@ -9,6 +9,9 @@ https://medium.com/@iagobm/ruby-internals-1-ruby-scanning-and-tokens-78ee815cd63
 Design Patterns in Ruby
 https://refactoring.guru/design-patterns/ruby
 
+https://www.akshaykhot.com/render-dynamic-views-using-erb/
+
+
 Revise:
 * loop: unless
 * private methods
