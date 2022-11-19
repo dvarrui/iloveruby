@@ -50,3 +50,52 @@ logger = Dry.Logger(:test, template: :details).add_backend(stream: "logs/test.lo
 logger.info "Hello World"
 # [test] [INFO] [2022-11-17 11:46:12 +0100] Hello World
 ```
+
+# Registro condicional
+
+Se puede indicar a los `backends` cuándo deben iniciar sesión usando la opción `log_if`. Se puede configurar como un símbolo que representa un método que implementa `Dry::Logger::Entry` o como un proceso personalizado.
+
+Veamos un ejemplo:
+
+```ruby
+logger = Dry.Logger(:test, template: :details)
+  .add_backend(stream: "logs/requests.log", log_if: -> entry { entry.key?(:request) })
+
+# This goes only to $stdout
+logger.info "Hello World"
+# [test] [INFO] [2022-11-17 11:50:12 +0100] Hello World
+
+# This goes to $stdout and logs/requests.log
+logger.info "GET /posts", request: true
+# [test] [INFO] [2022-11-17 11:51:50 +0100] GET /posts request=true
+```
+
+## Usando plantillas personalizadas
+
+Puede proporcionar plantillas de registro de texto personalizadas utilizando la sintaxis normal Ruby de plantillas de cadenas tokenizadas:
+
+```ruby
+logger = Dry.Logger(:test, template: "[%<severity>s] %<message>s")
+
+logger.info "Hello World"
+# [INFO] Hello World
+```
+
+Se admiten los siguientes tokens:
+
+| Token        | Descripción |
+| ------------ | ----------- |
+| %\<progname>s | el nombre de su registrador, es decir, `Dry.Logger(:test)`` establece progname='test'|
+| %\<gravedad>s | nombre del nivel de registro |
+| %\<time>s     | marca de tiempo de entrada de registro |
+| %\<mensaje>s  | mensaje de texto de registro pasado como una cadena, es decir, `logger.info("Hello World")` establece el mensaje en "Hello World" |
+| %\<payload>s  | carga útil de entrada de registro opcional proporcionada como palabras clave, es decir, `logger.info(text: "Hello World")`` establece el payload en {text: "Hello World"} y su presentación depende del formateador que se utilice |
+
+Además, puede usar claves de payload que se espera que se pasen a un backend de registro específico. Aquí hay un ejemplo:
+
+```ruby
+logger = Dry.Logger(:test, template: "[%<severity>s] %<verb>s %<path>s")
+
+logger.info verb: "GET", path: "/users"
+# [INFO] GET /users 
+```
