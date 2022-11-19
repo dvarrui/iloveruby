@@ -97,5 +97,35 @@ Además, puede usar claves de payload que se espera que se pasen a un backend de
 logger = Dry.Logger(:test, template: "[%<severity>s] %<verb>s %<path>s")
 
 logger.info verb: "GET", path: "/users"
-# [INFO] GET /users 
+# [INFO] GET /users
+```
+
+## Usando de salida de texto en color
+
+Se pueden usar etiquetas de color simples para colorear valores específicos en la salida de texto:
+
+```ruby
+logger = Dry.Logger(:test, template: "[%<severity>s] <blue>%<verb>s</blue> <green>%<path>s</green>")
+
+# This is now colorized, you gotta trust us
+logger.info verb: "GET", path: "/users"
+# [INFO] GET /users
+```
+
+Se admiten las siguientes etiquetas de color: black, red, green, yellow, blue, magenta, cyan y gray.
+
+## Personalizar formatters
+
+Hay tres formatters incorporados:
+* `:string`: da formato a la carga útil en secuencia clave=valor y admite salida coloreada, adecuada para entornos de desarrollo
+* `:json`: adecuado para entornos de producción, da formato a las marcas de tiempo en UTC
+* `:rack` - adecuado para registrar solicitudes de racks
+
+Veamos un ejemplo:
+
+```
+logger = Dry.Logger(:test, formatter: :rack)
+
+logger.info verb: "GET", path: "/users", elapsed: "12ms", ip: "127.0.0.1", status: 200, length: 312, params: {}
+# [test] [INFO] [2022-11-17 12:04:30 +0100] GET 200 12ms 127.0.0.1 /users 312
 ```
