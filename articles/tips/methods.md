@@ -1,4 +1,10 @@
 
+# "x".chop.chop
+
+![](https://pbs.twimg.com/media/FhI6OfTXgAEBkoj?format=png&name=small)
+
+![](https://pbs.twimg.com/media/FhidqrYWIAAjJfv?format=jpg&name=small)
+
 # Cómo funciona `&:method` entre bastidores
 
 > URL: https://twitter.com/ak_rails/status/1580177106582896640?t=s3LPlhamb03jK6ONWy5pNQ&s=35
