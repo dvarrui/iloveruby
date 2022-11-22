@@ -13,3 +13,4 @@ Artículos de otros autores traducidos al español.
 | 05 | Metaprogramación | [Metaprogram Akshay's blob](mataprogram/metaprogram_akshay_blog.md) |
 | 06 | Ractors | [An introduction to Ruby Ractors](ractors/an_introduction_to_ruby_ractors/README.md) |
 | 07 | Monads | [Monads in Ruby](monads/monads_in_ruby.md): Las mónadas son un patrón de diseño originalmente de la programación funcional.|
+| 08 | Programación funcional | [Programación funcional en Ruby](fp/functional_programming_in_ruby.md)|
