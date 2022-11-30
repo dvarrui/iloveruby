@@ -1,8 +1,12 @@
 
+
+# Creando el metodo `++`
+
 It isn't possible to implement i++, but it is... kinda... possible to
 implement ++i. Take a look at the following code. Just please don't use
 it in production 😉
 
+```ruby
 class IntContainer
    def initialize(value, origref=nil)
      @value = value
@@ -45,6 +49,7 @@ p int + 10
 p int
 --int
 p int
+```
 
 On 10/14/22 19:01, iloveruby wrote:
 > Is it posible define new method :++ to Integer class?
@@ -130,5 +135,3 @@ On 10/14/22 19:01, iloveruby wrote:
  ruby-talk mailing list -- ruby-talk@ml.ruby-lang.org
  To unsubscribe send an email to ruby-talk-leave@ml.ruby-lang.org
  ruby-talk info -- https://ml.ruby-lang.org/mailman3/postorius/lists/ruby-talk.ml.ruby-lang.org/
-
-
