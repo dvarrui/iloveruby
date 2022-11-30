@@ -7,6 +7,7 @@ class IntContainer
    end
 
    def +@
+     puts "[DEBUG ] calling: +@"
      case @origref
      when nil
        IntContainer.new(+@value, self)
@@ -17,6 +18,7 @@ class IntContainer
    end
 
    def -@
+     puts "[DEBUG ] calling: -@"
      case @origref
      when nil
        IntContainer.new(-@value, self)
@@ -29,6 +31,7 @@ class IntContainer
    attr_accessor :value
 
    def method_missing(meth, ...)
+     puts "[DEBUG ] calling: #{meth}"
      IntContainer.new(@value.send(meth, ...))
    end
 
@@ -37,8 +40,16 @@ class IntContainer
 end
 
 int = IntContainer.new(5)
-p int + 10
+puts "[INFO  ] int -> #{int}"
+puts ""
+puts "[EXEC  ] int + 10"
+puts "[INFO  ] int + 10 -> #{int + 10}"
+puts "[INFO  ] int -> #{int}"
+puts ""
+puts "[EXEC  ] ++int"
 ++int
-p int
+puts "[INFO  ] int -> #{int}"
+puts ""
+puts "[EXEC  ] --int"
 --int
-p int
+puts "[INFO  ] int -> #{int}"
