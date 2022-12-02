@@ -2,6 +2,9 @@
 
 # Creando el metodo `++`
 
+> Enlace de interés:
+> https://docs.ruby-lang.org/en/master/syntax/methods_rdoc.html#label-Method+Names
+
 It isn't possible to implement i++, but it is... kinda... possible to
 implement ++i. Take a look at the following code. Just please don't use
 it in production 😉
