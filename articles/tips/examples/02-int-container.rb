@@ -7,23 +7,25 @@ class IntContainer
    end
 
    def +@
-     puts "[DEBUG ] calling: +@"
      case @origref
      when nil
-       IntContainer.new(+@value, self)
+       puts "[ DEBUG ] init.+@()\t\t| return new Init(value: #{@value}, self)"
+       IntContainer.new(@value, self)
      else
        @origref.value += 1
+       puts "[ DEBUG ] init.+@()\t\t| value=#{@origref.value}, return origref=#{@origref.object_id}"
        @origref
      end
    end
 
    def -@
-     puts "[DEBUG ] calling: -@"
      case @origref
      when nil
-       IntContainer.new(-@value, self)
+       puts "[ DEBUG ] init.-@()\t\t| return new Init(value: #{@value}, self)"
+       IntContainer.new(@value, self)
      else
        @origref.value -= 1
+       puts "[ DEBUG ] init.-@()\t\t| value=#{@origref.value}, return origref=#{@origref.object_id}"
        @origref
      end
    end
@@ -31,7 +33,7 @@ class IntContainer
    attr_accessor :value
 
    def method_missing(meth, ...)
-     puts "[DEBUG ] calling: #{meth}"
+     puts "[ DEBUG ] @value.send(#{meth}, ...)"
      IntContainer.new(@value.send(meth, ...))
    end
 
@@ -40,16 +42,19 @@ class IntContainer
 end
 
 int = IntContainer.new(5)
-puts "[INFO  ] int -> #{int}"
+puts "[ INFO  ] int -> #{int}\t\t| object_id=#{int.object_id}, value=#{int.value}"
+puts "[ EXEC  ] (int + 10)"
+puts "[ INFO  ] (int + 10) -> #{int + 10}"
+puts "[ INFO  ] int -> #{int}\t\t| object_id=#{int.object_id}, value=#{int.value}"
 puts ""
-puts "[EXEC  ] int + 10"
-puts "[INFO  ] int + 10 -> #{int + 10}"
-puts "[INFO  ] int -> #{int}"
-puts ""
-puts "[EXEC  ] ++int"
+puts "[ EXEC  ] ++int"
 ++int
-puts "[INFO  ] int -> #{int}"
+puts "[ INFO  ] int -> #{int}\t\t| object_id=#{int.object_id}, value=#{int.value}"
 puts ""
-puts "[EXEC  ] --int"
+puts "[ EXEC  ] --int"
 --int
-puts "[INFO  ] int -> #{int}"
+puts "[ INFO  ] int -> #{int}\t\t| object_id=#{int.object_id}, value=#{int.value}"
+puts ""
+puts "[ EXEC  ] ----int"
+----int
+puts "[ INFO  ] int -> #{int}\t\t| object_id=#{int.object_id}, value=#{int.value}"
