@@ -1,4 +1,25 @@
 
+# Los métodos +@ y -@
+
+```ruby
+class A
+  attr_accessor :data
+
+  def -@
+    @data.upcase
+  end
+
+  def -@
+    @data.downcase
+  end
+end
+
+a = A.new
+a.data = "Darth Vader"
+
+puts +a # => "DARTH VADER"
+puts -a # => "darth vader"
+```
 
 # Creando el metodo `++`
 
