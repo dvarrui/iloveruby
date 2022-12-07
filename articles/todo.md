@@ -11,6 +11,8 @@ https://refactoring.guru/design-patterns/ruby
 
 https://www.akshaykhot.com/render-dynamic-views-using-erb/
 
+Learning: Ruby for begginners
+http://ruby-for-beginners.rubymonstas.org/built_in_classes/true_false_nil.html
 
 Revise:
 * loop: unless
