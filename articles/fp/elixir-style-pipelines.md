@@ -15,7 +15,7 @@ Los `pipelines` de Elixir son una construcción elegante para secuenciar operaci
 
 ## Background: << y >>
 
-Ruby ofrece algunas primitivas de canalización. Los objetos `Proc` y `Method` responden a `#<<` y `#>>`, que se pueden usar en los `pipelines`:
+Ruby ofrece algunas primitivas. Los objetos `Proc` y `Method` responden a `#<<` y `#>>`, que se pueden usar para crear `pipelines`:
 
 ```ruby
 FindByLogin = proc { |login| ... }
