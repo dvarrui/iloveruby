@@ -29,7 +29,7 @@ SendConfirmationNotification = proc { |user| ... }
 
 Este enfoque tiene varios inconvenientes:
 
-* El `Proc` devuelto por `#>>` no se puede llamar usando `result(...)`, sino solo a través de `proc.call(...)` o `proc.(...)` o `proc[...]`, que es inconsistente con regular llamadas a métodos. Es cierto que esto es inevitable, pero se puede hacer que importe menos.
+* El `Proc` devuelto por `#>>` no se puede llamar usando `result(...)`, sino a través de `proc.call(...)`, `proc.(...)` o `proc[...]`, lo cual es inconsistente con las llamadas normales de métodos. Es cierto que esto es inevitable, pero se puede hacer que importe menos.
 * El argumento de la tubería viene al final, pero tenerlo al frente sería más legible y más consistente con la estructura de la tubería.
 * Las operaciones que toman más de un parámetro deben implementarse como procesos de orden superior o usar `curry`. Introducir o eliminar parámetros adicionales implica cambiar entre procesos normales y procesos de orden superior o `curry`.
 
@@ -70,7 +70,7 @@ Comencemos con las definiciones de los operadores. Inicialmente se usará "Monke
 
 Las `operation` con y sin parámetros deberán definirse de la misma manera. Crearemos un nuevo método del `Kernel` para que nos ayude:
 
-```ruby
+```
 module Kernel
   def operation(...) = proc(...).curry
 end
@@ -85,3 +85,44 @@ ConfirmUserAccount = operation { |user| ... }
 # Notice user comes last.
 SendConfirmationNotification = operation { |method, user| ... }
 ```
+
+Debido al "curry", el primer argumento de `SendConfirmationNotification` se puede proporcionar en el "pipeline", mientras que la ejecución se "pausa" hasta que también se proporcione el usuario. El siguiente código ahora funciona como queríamos:
+
+```ruby
+(FindByLogin >>
+  ConfirmUserAccount >>
+  SendConfirmationNotification[:sms])["gregnavis"]
+```
+
+El siguiente objetivo es mover el valor de entrada a la tubería al principio.
+
+## Paso 2: Canalización de argumentos con `callable`
+
+Las siguientes dos expresiones deben ser equivalentes:
+
+```ruby
+# When we write this:
+argument >> callable
+
+# we actually mean this:
+callable.call(argument)
+```
+
+El fragmento anterior una idea de lo que se pretende lograr: todos los objetos deben responder a `>>` y ese método, a su vez, debe hacer una llamada a `call`. Por tanto, hay que modificar la clase de nivel superior (`Object` o `BasicObject`) para que el método `#>>` esté disponible en todas los objetos. De este modo obtenemos lo siguiente:
+
+```Ruby
+class Object
+  def >>(callable) = callable.call(self)
+end
+```
+
+Finalmente, podemos escribir lo siguiente:
+
+```ruby
+"gregnavis" >>
+  FindUserByLogin >>
+  ConfirmUserAccount >>
+  SendConfirmationNotification[:sms]
+```
+
+Los parches en `Kernel` y en `Object` deberíamos convertirlos en `refine` (refinamientos) para evitar "Monkey-patching" a nivel global.
