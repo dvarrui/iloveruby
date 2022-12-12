@@ -1,9 +1,11 @@
 [<<back](../README.md)
 
 ```
-Greg Navis (https://t.co/oDeLpNi7T9?s=35)
 Elixir-style Pipelines in 9 Lines of Ruby
-Elixir pipelines are an elegant construct for sequencing operations in a readable way. Fortunately, 9 lines is all it takes to implement them in Ruby.
+Greg Navis (https://t.co/oDeLpNi7T9?s=35)
+
+Elixir pipelines are an elegant construct for sequencing operations in a readable way.
+Fortunately, 9 lines is all it takes to implement them in Ruby.
 ```
 
 # Pipelines estilo Elixir en 9 líneas de Ruby
