@@ -179,7 +179,7 @@ Lo explicaré en un próximo artículo.
 
 ----
 
-**Ejemplo**
+**Ejemplo 1**
 
 ```ruby
 module Pipelines
@@ -199,4 +199,26 @@ Reverse = operation { |text| text.reverse }
 
 puts ("obiwan" >> Upcase >> Reverse)
 # => NAWIBO
+```
+
+**Ejemplo 2**
+
+```ruby
+module Pipelines
+  refine Kernel do
+    def operation(...) = proc(...).curry
+  end
+
+  refine Object do
+    def |(callable) = callable.call(self)
+  end
+end
+
+using Pipelines
+
+Upcase = operation { |text| text.upcase }
+Reverse = operation { |text| text.reverse }
+
+puts ("redav htrad" | Upcase | Reverse)
+# => DARTH VADER
 ```
