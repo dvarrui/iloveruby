@@ -8,8 +8,7 @@ Elixir pipelines are an elegant construct for sequencing operations in a readabl
 
 # Pipelines estilo Elixir en 9 líneas de Ruby
 
-> Enlace de interés:
-> * https://t.co/oDeLpNi7T9?s=35
+> Artículo original de Greg Navis (https://t.co/oDeLpNi7T9?s=35)
 
 Los `pipelines` de Elixir son una construcción elegante para secuenciar operaciones de una manera legible. Afortunadamente, 9 líneas es todo lo que se necesita para implementarlas en Ruby.
 
@@ -126,3 +125,76 @@ Finalmente, podemos escribir lo siguiente:
 ```
 
 Los parches en `Kernel` y en `Object` deberíamos convertirlos en `refine` (refinamientos) para evitar "Monkey-patching" a nivel global.
+
+## Paso 3: Introduciendo refinamientos
+
+Los refinamientos son un tema para un artículo aparte, pero resumiendo, son coom "Monkey-patches" que definen dentro de un módulo o clase específico llamando a `Module#using`. Veamos el problema de afuera hacia adentro comenzando con cómo queremos que se use el código.
+
+Supongamos que estamos trabajando dentro de un controlador Rails. Nos gustaría poder escribir el código como:
+
+```ruby
+class UsersController < ApplicationController
+  using Pipelines
+
+  def confirm
+    params[:login] >>
+      FindUserByLogin >>
+      ConfirmUserAccount >>
+      SendConfirmationNotification[:sms]
+  end
+end
+```
+
+`using` está integrado en Ruby, y `Pipelines` es el refinamiento que queremos activar. Es un módulo Ruby ordinario que refina (es decir, "parchea") `Kernel` y `Object`:
+
+```
+module Pipelines
+  refine Kernel do
+    def operation(...) = proc(...).curry
+  end
+
+  refine Object do
+    def >>(callable) = callable.call(self)
+  end
+end
+```
+
+¡Eso es todo! Ahora los "pipelines" están activados solo en `UsersController` y ningún otro código se verá afectado. También debemos refinar con `using` cuando se definen las `operations`.
+
+## Resumen
+
+Esta implementación de `pipeline` cabe en una servilleta. Echemos un vistazo crítico a este enfoque.
+
+Primero, llamar a un proceso `curry` sin argumentos mantiene la ejecución "en pausa", por lo que perder un argumento puede hacer que la canalización devuelva un proceso `curry`, en lugar del valor de retorno esperado. Esto probablemente puede generar errores difíciles de entender.
+
+En segundo lugar, los procesos son difíciles de inspeccionar. Ver `#<Proc:0x...>` en el terminal no es útil durante la depuración. Es posible inspeccionar los parámetros pasados a una operación a través de `operation_object.binding.local_variables` y `operation_object.binding.local_variable_get(name)` para los parámetros que nos interesen. Sería más útil que la inspección de una operación produjera algo similar a `SendConfirmationNotification[método: :sms]`.
+
+## Próximos pasos
+
+Esta implementación fue mi segundo enfoque para implementar "pipelines". El primer enfoque estaba orientado a objetos y no tenía los inconvenientes mencionados anteriormente a expensas de una implementación un poco más compleja.
+
+Lo cubriré en un próximo artículo.
+
+----
+
+**Ejemplo**
+
+```ruby
+module Pipelines
+  refine Kernel do
+    def operation(...) = proc(...).curry
+  end
+
+  refine Object do
+    def >>(callable) = callable.call(self)
+  end
+end
+
+using Pipelines
+
+Upcase = operation { |text| text.upcase }
+Reverse = operation { |text| text.reverse }
+
+puts ("obiwan" >> Upcase >> Reverse)
+# => NAWIBO
+```
