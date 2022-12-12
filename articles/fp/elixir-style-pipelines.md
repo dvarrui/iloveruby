@@ -1,5 +1,7 @@
 [<<back](../README.md)
 
+# Pipelines estilo Elixir en 9 líneas de Ruby
+
 ```
 Elixir-style Pipelines in 9 Lines of Ruby
 Greg Navis (https://t.co/oDeLpNi7T9?s=35)
@@ -8,15 +10,13 @@ Elixir pipelines are an elegant construct for sequencing operations in a readabl
 Fortunately, 9 lines is all it takes to implement them in Ruby.
 ```
 
-# Pipelines estilo Elixir en 9 líneas de Ruby
+> Traducción del artículo de Greg Navis (https://t.co/oDeLpNi7T9?s=35)
 
-> Artículo original de Greg Navis (https://t.co/oDeLpNi7T9?s=35)
-
-Los `pipelines` de Elixir son una construcción elegante para secuenciar operaciones de una manera legible. Afortunadamente, 9 líneas es todo lo que se necesita para implementarlas en Ruby.
+Los `pipelines` de Elixir son una elegante construcción para secuenciar operaciones de manera legible. Por suerte, sólo se necesitan 9 líneas en Ruby para implementarlo.
 
 ## Background: << y >>
 
-Ruby ofrece algunas primitivas. Los objetos `Proc` y `Method` responden a `#<<` y `#>>`, que se pueden usar para crear `pipelines`:
+Los objetos `Proc` y `Method` responden a `#<<` y `#>>`, y éstos se pueden usar para crear los "pipelines":
 
 ```ruby
 FindByLogin = proc { |login| ... }
@@ -28,13 +28,13 @@ SendConfirmationNotification = proc { |user| ... }
   SendConfirmationNotification).call("gregnavis")
 ```
 
-Este enfoque tiene varios inconvenientes:
+Inconvenientes:
 
-* El `Proc` devuelto por `#>>` no se puede llamar usando `result(...)`, sino a través de `proc.call(...)`, `proc.(...)` o `proc[...]`, lo cual es inconsistente con las llamadas normales de métodos. Es cierto que esto es inevitable, pero se puede hacer que importe menos.
-* El argumento de la tubería viene al final, pero tenerlo al frente sería más legible y más consistente con la estructura de la tubería.
-* Las operaciones que toman más de un parámetro deben implementarse como procesos de orden superior o usar `curry`. Introducir o eliminar parámetros adicionales implica cambiar entre procesos normales y procesos de orden superior o `curry`.
+* El `Proc` devuelto por `#>>` no se puede llamar usando `result(...)`, sino que se debe invocar a través de `proc.call(...)`, `proc.(...)` o `proc[...]`. Es cierto que esto es inevitable, pero se puede hacer de forma más disimulada.
+* El argumento del "pipeline" está al final, pero sería más legible y más coherente con la estructura de las tuberías ponerlo al principio.
+* Las operaciones que tiene varios parámetros, se tienen que implementar como procesos de orden superior o usando `curry`. De modo que eliminar o introducir parámetros adicionales implica cambiar entre procesos normales y procesos de orden superior o `curry`.
 
-Para ilustrar el último problema, hagamos que `SendConfirmationNotification` tome un argumento que determine el tipo de notificación: correo electrónico o SMS. Ahora tenemos que reescribirlo como:
+Para ilustrar esto último vamos a hacer que `SendConfirmationNotification` tome como argumento el tipo de notificación: correo electrónico o SMS. Ahora lo reescribimos como:
 
 ```ruby
 # Using a higher-order proc.
@@ -48,7 +48,7 @@ SendConfirmationNotification = proc do |method, user|
 end.curry
 ```
 
-Desafortunadamente, el `pipeline` sigue con el problema del argumento que llega al final:
+Por desgracia, seguimos con el problema de tener el argumento de entrada al final del "pipeline":
 
 ```ruby
 (FindByLogin >>
@@ -56,7 +56,7 @@ Desafortunadamente, el `pipeline` sigue con el problema del argumento que llega 
   SendConfirmationNotification[:sms])["gregnavis"]
 ```
 
-En el resto del artículo mostraremos cómo usar los `refine` de Ruby, una función incorporada pero relativamente oscura, para hacer que funcione el siguiente código:
+A continuación veremos cómo usar `refine`, una función de Ruby pero relativamente oscur, para hacer funcionar el código siguiente:
 
 ```ruby
 "gregnavis" >>
@@ -65,11 +65,11 @@ En el resto del artículo mostraremos cómo usar los `refine` de Ruby, una funci
   SendConfirmationNotification[:sms]
 ```
 
-Comencemos con las definiciones de los operadores. Inicialmente se usará "Monkey-patching", pero se reemplazará con mejoras al final del artículo.
+Comencemos con las definiciones de las operaciones. Empezaremos usando "Monkey-patching", pero luego lo cambiaremos al final del artículo.
 
 ## Paso 1: Definición de `operation`
 
-Las `operation` con y sin parámetros deberán definirse de la misma manera. Crearemos un nuevo método del `Kernel` para que nos ayude:
+Las `operation` con y sin parámetros deberán definirse de manera similar. Creamos un nuevo método del `Kernel` para que nos ayude con eso:
 
 ```
 module Kernel
@@ -77,7 +77,7 @@ module Kernel
 end
 ```
 
-Básicamente, `operation` crea un `Proc` `curry` automáticamente. Ahora los `pipeline` se pueden definir de la siguiente forma:
+Básicamente, `operation` crea automáticamente un `Proc` de tipo `curry`. Ahora los "pipeline" se pueden definir de la siguiente forma:
 
 ```ruby
 FindByLogin = operation { |login| ... }
@@ -87,7 +87,7 @@ ConfirmUserAccount = operation { |user| ... }
 SendConfirmationNotification = operation { |method, user| ... }
 ```
 
-Debido al "curry", el primer argumento de `SendConfirmationNotification` se puede proporcionar en el "pipeline", mientras que la ejecución se "pausa" hasta que también se proporcione el usuario. El siguiente código ahora funciona como queríamos:
+Debido al "curry", el primer argumento de `SendConfirmationNotification` se puede proporcionar en el "pipeline", mientras que la ejecución se "pausa" hasta que también se proporcione el segundo argumento (usuario). El siguiente código ahora funciona como queríamos:
 
 ```ruby
 (FindByLogin >>
@@ -95,11 +95,11 @@ Debido al "curry", el primer argumento de `SendConfirmationNotification` se pued
   SendConfirmationNotification[:sms])["gregnavis"]
 ```
 
-El siguiente objetivo es mover el valor de entrada a la tubería al principio.
+Ahora el siguiente objetivo es mover el valor de entrada al principio de la turbería.
 
 ## Paso 2: Canalización de argumentos con `callable`
 
-Las siguientes dos expresiones deben ser equivalentes:
+Vamos a convertir en equivalentes las siguientes dos expresiones:
 
 ```ruby
 # When we write this:
@@ -109,7 +109,7 @@ argument >> callable
 callable.call(argument)
 ```
 
-El fragmento anterior una idea de lo que se pretende lograr: todos los objetos deben responder a `>>` y ese método, a su vez, debe hacer una llamada a `call`. Por tanto, hay que modificar la clase de nivel superior (`Object` o `BasicObject`) para que el método `#>>` esté disponible en todas los objetos. De este modo obtenemos lo siguiente:
+El fragmento anterior da una idea de lo que se pretende lograr: todos los objetos responderán a `>>` y ese método, a su vez, hará una llamada a `call`. Por tanto, hay que modificar la clase de nivel superior (`Object` o `BasicObject`) para que el método `#>>` esté disponible en todas los objetos. De este modo obtenemos lo siguiente:
 
 ```Ruby
 class Object
@@ -126,11 +126,11 @@ Finalmente, podemos escribir lo siguiente:
   SendConfirmationNotification[:sms]
 ```
 
-Los parches en `Kernel` y en `Object` deberíamos convertirlos en `refine` (refinamientos) para evitar "Monkey-patching" a nivel global.
+Los parches realizados en `Kernel` y `Object` debemos convertirlos a refinamientos con `refine`, para evitar un "Monkey-patching" a nivel global.
 
 ## Paso 3: Introduciendo refinamientos
 
-Los refinamientos son un tema para un artículo aparte, pero resumiendo, son coom "Monkey-patches" que definen dentro de un módulo o clase específico llamando a `Module#using`. Veamos el problema de afuera hacia adentro comenzando con cómo queremos que se use el código.
+Los refinamientos son tema para un artículo aparte, pero resumiendo, son como "Monkey-patches" que redefinen dentro de un módulo o clase específico llamando a `Module#using`. Veamos el problema de afuera hacia adentro comenzando con cómo queremos que se use el código.
 
 Supongamos que estamos trabajando dentro de un controlador Rails. Nos gustaría poder escribir el código como:
 
@@ -147,7 +147,7 @@ class UsersController < ApplicationController
 end
 ```
 
-`using` está integrado en Ruby, y `Pipelines` es el refinamiento que queremos activar. Es un módulo Ruby ordinario que refina (es decir, "parchea") `Kernel` y `Object`:
+`using` está integrado en Ruby, y `Pipelines` es el módulo de refinamiento que queremos activar. Es un módulo Ruby ordinario que refina (es decir, "parchea") `Kernel` y `Object`:
 
 ```
 module Pipelines
@@ -161,21 +161,21 @@ module Pipelines
 end
 ```
 
-¡Eso es todo! Ahora los "pipelines" están activados solo en `UsersController` y ningún otro código se verá afectado. También debemos refinar con `using` cuando se definen las `operations`.
+¡Eso es todo! Ahora los "pipelines" están activos solo en `UsersController` y no afecta a ningún otro código. También refinaremos con `using` cuando se definan las `operations`.
 
 ## Resumen
 
-Esta implementación de `pipeline` cabe en una servilleta. Echemos un vistazo crítico a este enfoque.
+Esta implementación de "pipeline" cabe en una servilleta. Hagamos un poco de crítica a esta solución.
 
-Primero, llamar a un proceso `curry` sin argumentos mantiene la ejecución "en pausa", por lo que perder un argumento puede hacer que la canalización devuelva un proceso `curry`, en lugar del valor de retorno esperado. Esto probablemente puede generar errores difíciles de entender.
+Primero, llamar a un proceso `curry` sin argumentos mantiene la ejecución "en pausa", por lo que perder un argumento puede hacer que la canalización devuelva un proceso `curry`, en lugar del valor de retorno esperado. Esto puede generar errores difíciles de entender.
 
-En segundo lugar, los procesos son difíciles de inspeccionar. Ver `#<Proc:0x...>` en el terminal no es útil durante la depuración. Es posible inspeccionar los parámetros pasados a una operación a través de `operation_object.binding.local_variables` y `operation_object.binding.local_variable_get(name)` para los parámetros que nos interesen. Sería más útil que la inspección de una operación produjera algo similar a `SendConfirmationNotification[método: :sms]`.
+En segundo lugar, los procesos son difíciles de inspeccionar. Ver `#<Proc:0x...>` en el terminal no es muy útil durante la depuración. Es posible inspeccionar los parámetros pasados a una operación a través de `operation_object.binding.local_variables` y `operation_object.binding.local_variable_get(name)` para los parámetros que nos interesen. Aunque sería más útil que la inspección de una operación produjera algo como `SendConfirmationNotification[método: :sms]`.
 
 ## Próximos pasos
 
-Esta implementación fue mi segundo enfoque para implementar "pipelines". El primer enfoque estaba orientado a objetos y no tenía los inconvenientes mencionados anteriormente a expensas de una implementación un poco más compleja.
+Este fue mi segunda idea para implementar "pipelines". La primera estaba orientado a objetos y no tenía los inconvenientes mencionados anteriormente, pero por el contrario la implementación era un poco más compleja.
 
-Lo cubriré en un próximo artículo.
+Lo explicaré en un próximo artículo.
 
 ----
 
