@@ -15,10 +15,20 @@ Welcome to RubyKickstart!
 RubyKickstart is an interactive guide to learning the Ruby programming language.
 https://github.com/Ghostglass/ruby-kickstart
 
+Data inmutable object
+https://blog.saeloun.com/2022/11/22/data-immutable-object
+
 ==================================================
 TIP
 
 https://www.rubycademy.com/cards/flip-flop
+
+Is gets a method or a function?
+Question
+
+Learning Ruby and it seems gets is referred to as a method, from my understanding methods have to be associated with an object. What is the object that gets is associated with that makes it a method? For example with gets.chomp, chomp is a method and is associated with the gets object.
+
+https://www.reddit.com/r/ruby/comments/yxw26u/is_gets_a_method_or_a_function/?utm_source=share&utm_medium=android_app&utm_name=androidcss&utm_term=14&utm_content=share_button
 
 ===================================================
 MEDIUM
