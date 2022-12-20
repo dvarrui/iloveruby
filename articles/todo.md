@@ -11,6 +11,10 @@ https://dev.to/mikelogaciuk/rubyme-my-minimalist-ruby-handbook-2jl9
 Learning: Ruby for begginners
 http://ruby-for-beginners.rubymonstas.org/built_in_classes/true_false_nil.html
 
+Welcome to RubyKickstart!
+RubyKickstart is an interactive guide to learning the Ruby programming language.
+https://github.com/Ghostglass/ruby-kickstart
+
 ==================================================
 TIP
 
@@ -57,6 +61,3 @@ https://www.akshaykhot.com/render-dynamic-views-using-erb/
 Revise:
 * loop: unless
 * private methods
-
-
-
