@@ -11,8 +11,17 @@ https://dev.to/mikelogaciuk/rubyme-my-minimalist-ruby-handbook-2jl9
 Learning: Ruby for begginners
 http://ruby-for-beginners.rubymonstas.org/built_in_classes/true_false_nil.html
 
+==================================================
+TIP
+
+https://www.rubycademy.com/cards/flip-flop
+
 ===================================================
 MEDIUM
+
+https://medium.com/rubycademy/ruby-is-a-multi-paradigm-programming-language-49c8bc5fca80
+
+https://dev.to/vladhilko/8-design-principles-that-every-ruby-developer-should-know-1e7e
 
 The Difference Between instance_eval And class_eval In Ruby.
 https://manny.codes/the-difference-between-instance-eval-and-class-eval-in-ruby/
@@ -37,6 +46,9 @@ A study based on Ruby Under a Microscope — An Illustrated Guide to Ruby Intern
 https://medium.com/@iagobm/ruby-internals-1-ruby-scanning-and-tokens-78ee815cd633
 
 YARV
+
+https://kddnewton.com/2022/12/03/advent-of-yarv-part-3.html
+https://twitter.com/yukihiro_matz/status/1599403326646341632?t=NUyYcG7kN0hjsD39CfBTXg&s=35
 https://kddnewton.com/2022/12/17/advent-of-yarv-part-17.html
 
 https://www.akshaykhot.com/render-dynamic-views-using-erb/
