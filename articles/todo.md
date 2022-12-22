@@ -44,6 +44,21 @@ Design Patterns in Ruby
 https://refactoring.guru/design-patterns/ruby
 
 ===================================================
+
+Ruby-Crystal-Rust Adventure of Code 2022
+https://wyhaines.io/rubycrystalrust-advent-of-code-2022-day-3
+
+Es curioso ver las diferencias (pocas) entre Ruby y Crystal, simplemente porque Crystal es un Ruby compilado.
+El hecho de usar tipos de datos que van en la pila(stack) o en el heap marca una diferencia relevante.
+A un programador Ruby, el tipo de dato le da igual en el sentido de que el intérprete se encargará de gestionarlo. Pero con Crystal al compilar necesita tener algunos datos. Necesita saber el tipo de dato usado para poder conocer el espacio que ocupa, y así poder hacer la reserva en la pila (stack) del programa. Si no fuera posible por el compilador de Crystal establecer dicho espacio (Por ejemplo para los Arrays mutables), entonces este datos deberá guardarse en el heap. Resulta que un programador Crystal si debe tener en cuenta estos aspectos.
+
+El tema de que un datos vaya al heap o al stack es relevante en cuanto al tema de velocidad por un lado y por otro si va al heap puede ser que cuando el heap se llene tengamos un error en tiempo de ejecución.
+
+La cuestión es que los lenguajes de programación deben elegir:
+1) Hacer esta información/circunstancia transparente para el programador y dejar que lo resuelva el intérprete como pueda. 
+2) Dejar la toma de decisiones en manos del programador.
+
+===================================================
 GEM - LIB
 
 TracePoint tip
