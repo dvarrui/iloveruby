@@ -58,6 +58,10 @@ La cuestión es que los lenguajes de programación deben elegir:
 1) Hacer esta información/circunstancia transparente para el programador y dejar que lo resuelva el intérprete como pueda. 
 2) Dejar la toma de decisiones en manos del programador.
 
+---
+Ruby/Crystal/Rust Advent of Code 2022 - Day 4
+https://wyhaines.io/rubycrystalrust-advent-of-code-2022-day-4
+
 ===================================================
 GEM - LIB
 
