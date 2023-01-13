@@ -38,6 +38,10 @@ Twitter (https://twitter.com/kddnewton/status/1612575680960802816?t=I8HR-IN6cgV1
 Kevin Newton
 In Ruby, the `not` keyword breaks down to a method call to the `!` method
 
+https://twitter.com/kddnewton/status/1613225554236551168?t=aIiwD3hcH_BmgURQrHeMxg&s=35
+In Ruby, the expression in the rescue clause that captures a variable can be a method call. That method call doesn't actually need to exist though, because it automatically has = appended to it.
+https://pbs.twimg.com/media/FmNTx5HXEB4RdZk?format=png&name=small
+
 ===================================================
 MEDIUM
 
