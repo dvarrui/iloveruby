@@ -30,6 +30,11 @@ Learning Ruby and it seems gets is referred to as a method, from my understandin
 
 https://www.reddit.com/r/ruby/comments/yxw26u/is_gets_a_method_or_a_function/?utm_source=share&utm_medium=android_app&utm_name=androidcss&utm_term=14&utm_content=share_button
 
+
+Twitter (https://twitter.com/kddnewton/status/1612575680960802816?t=I8HR-IN6cgV1c2z59bHD0A&s=35)
+Kevin Newton
+In Ruby, the `not` keyword breaks down to a method call to the `!` method
+
 ===================================================
 MEDIUM
 
