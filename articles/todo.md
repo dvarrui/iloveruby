@@ -18,6 +18,9 @@ https://github.com/Ghostglass/ruby-kickstart
 Data inmutable object
 https://blog.saeloun.com/2022/11/22/data-immutable-object
 
+Running ruby on jupiter notebooks
+https://alec-c4.com/blog/2022-12-25-jupyter-ruby
+
 ==================================================
 TIP
 
