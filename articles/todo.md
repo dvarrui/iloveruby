@@ -77,6 +77,9 @@ https://wyhaines.io/rubycrystalrust-advent-of-code-2022-day-4
 ===================================================
 GEM - LIB
 
+ruby-async
+https://brunosutic.com/blog/async-ruby
+
 TracePoint tip
 https://twitter.com/kirill_shevch/status/1603750607051005952?t=B1lrMErb1-dX3dT1YjFI0w&s=35
 
