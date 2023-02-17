@@ -21,6 +21,8 @@ https://blog.saeloun.com/2022/11/22/data-immutable-object
 Running ruby on jupiter notebooks
 https://alec-c4.com/blog/2022-12-25-jupyter-ruby
 
+* Greg Navis. Ruby tip: object allocation and initialization are two separate steps: https://twitter.com/gregnavis/status/1625983757022031878?t=M3_Bhq9fxq-nnBUqvqDHZQ&s=35
+
 ==================================================
 TIP
 
