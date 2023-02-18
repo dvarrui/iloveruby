@@ -26,6 +26,9 @@ https://alec-c4.com/blog/2022-12-25-jupyter-ruby
 ==================================================
 TIP
 
+https://twitter.com/alexandre_ruban/status/1619989010805555203?t=8TlgyFcvaahl9HV_BuNQWQ&s=35
+Alexandre Ruban. Here are two ways to define methods in Ruby using metaprogramming that you will encounter when reading gems.
+
 https://www.rubycademy.com/cards/flip-flop
 
 Is gets a method or a function?
