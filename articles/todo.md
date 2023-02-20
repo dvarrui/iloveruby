@@ -26,6 +26,8 @@ https://alec-c4.com/blog/2022-12-25-jupyter-ruby
 ==================================================
 TIP
 
+* https://twitter.com/gregnavis/status/1625983787418152964?t=oy4vTWCietHHY3LFov0agA&s=35. Greg Navis: allocate occurs only twice in the entire Rails code base. I haven't seen it or used it anywhere else.
+
 https://twitter.com/alexandre_ruban/status/1619989010805555203?t=8TlgyFcvaahl9HV_BuNQWQ&s=35
 Alexandre Ruban. Here are two ways to define methods in Ruby using metaprogramming that you will encounter when reading gems.
 
