@@ -2,6 +2,8 @@
 ===================================================
 RUBY
 
+* [Why do people like Ruby?](https://dev.to/cjbrooks12/why-do-people-like-ruby-374b)
+
 Percent notation
 https://deepsource.io/blog/ruby-percent-notation/
 
