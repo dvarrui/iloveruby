@@ -10,6 +10,8 @@ El personaje NAME, tiene AGE años de edad y mide HEIGHT metros.
 
 **[Ejemplo 1](./01-holamundo.rb)**: print y puts.
 
+> **NOTA**: En la primera línea del fichero tenemos `#!/usr/bin/env ruby`, esta instrucción sirve para poder ejecutar el script como `./01-holamundo.rb` directamente. La shell ya sabe quién es el responsable de interpretar el contenido de este fichero (El programa `ruby`). Si no ponemos esta línea o estamos en un SO no Unix, entonces para ejecutar el script haremos `ruby 01-holamundo.rb`.
+
 En este primer ejemplo vamos a mostrar por pantalla directamente el mensaje:
 
 ```
@@ -17,6 +19,7 @@ El pesonaje Obiwan, tiene 57 años de edad y mide 1.80 metros.
 ```
 
 Si nos fijamos en el código, vemos que hemos usado `print` y `puts`. Realmente con una línea lo resolvíamos pero se ha puesto así por motivos didácticos, para ver la diferencia entre `print` (Muestra por pantalla sin retorno de carro) y `puts` (Muestra por pantalla con retorno de carro).
+
 
 **[Ejemplo 2](./02-holamundo.rb)**: los paréntesis son opcionales
 
