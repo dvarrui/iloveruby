@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby
 
-print("Name: "); name = gets.chomp
-print("Age: "); age = gets.to_i
-print("Height: "); height = gets.to_i
+name = "Obiwan"
+age = 57
+height = 180
 
 puts "El personaje #{name}, tiene #{age} años de edad y mide #{180} metros."
+puts "NOTA: Estamos en el objeto #{self}, que es de tipo #{self.class}"
