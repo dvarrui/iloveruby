@@ -51,14 +51,15 @@ La variable `height` debe tener un valor Float, entonces siguiendo la misma lóg
 
 Vamos a usar la gema `pastel` (Librería Ruby) para darle color al texto de salida por pantalla. Se ha creado el fichero [Gemfile](./Gemfile) que contiene la gemas a instalar, demo que con el comando `bundle install` se instala lo especificado en Gemfile. ¡Sencillo! ¿verdad?
 
-Hemos instalado la gema, ahora para cargar la librería ponemos `require "pastel"` y para usarla creamos un objeto `pastel = Pastel.new`. Ahora con `pastel.yellow.bold("Obiwan")` estamos invocando a métodos del objeto pastel para dar color al String que pasamos por parámetro.
+> **INFO:** Si quieres ver la información de la gema o encontrar más gemas y consultar su información, entonces hay que ir a [RubyGems](https://rubygems.org/)
 
-Entiendo que esto puede ser un poco más "complicado" de entender ahora que todavía estamos empezando y todos los nuevos conceptos como librerías, objetos, métodos, etc, nos puede sonar raro. No te preocupes, esto lo iremos explicando más adelante pero ahora como quería usar la librería para añador color no me ha quedado más remedio que mencionarlo.
+Ya tenemos la gema instalada, ahora para usar la librería en nuestro prgorama ponemos `require "pastel"` y para hacer uso de sus métodos, creamos un objeto `pastel = Pastel.new`. A partir de ahora, invocamos los métodos del objeto para colorear los textos. Ejemplo: `pastel.yellow.bold("Obiwan")`. En este ejemplo invocamos el método del objeto pastel para dar color al String que pasamos por parámetro.
 
-**[Ejemplo 6](./05-holamundo.rb)**: Fácil de usar.
+> **NOTA:** Entiendo que esto puede ser un poco más "complicado" de entender ahora que todavía estamos empezando y todos los nuevos conceptos como librerías, objetos, métodos, etc, nos puede sonar raro. ¡No te preocupes!, esto lo iremos explicando más adelante pero ahora como quería usar la librería para añador color no me ha quedado más remedio que mencionarlo.
 
-Vamos a usar la gema `pastel` (Librería Ruby) para darle color al texto de salida por pantalla. Se ha creado el fichero [Gemfile](./Gemfile) que contiene la gemas a instalar, demo que con el comando `bundle install` se instala lo especificado en Gemfile. ¡Sencillo! ¿verdad?
+**[Ejemplo 6](./06-holamundo.rb)**: Mejorando el interfaz.
 
+Es este ejemplo vamos a usar otra gema (`tty-prompt`)
 ---
 # Modificación
 
