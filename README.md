@@ -5,6 +5,8 @@ EN DESARROLLO!!!
 
 # IloveRuby
 
+_"I love Ruby"... el inicio de una historia de amor._
+
 ## Aprender con ejemplos
 
 [Aprender con ejemplos](./aprender_con_ejemplos/README.md) contiene problemas de programación resueltos con el lenguaje de programación Ruby, y se van explicando las decisiones que se van tomando mientras el código va evolucionando.
@@ -15,7 +17,7 @@ En esta sección tenemos [artículos](./articulos/README.md) de otros autores qu
 
 ## Episodios
 
-1. Episodio 1: [Introducción al lenguaje Ruby](episode/01.introduccion/README.md)
+1. [Episodio 1: Introducción](./episodios/01.introduccion/README.md)
 2. [PROX] _Resumen exprés del capítulo anterior_.
 3. [PROX] _Scripting práctico y real con Ruby. Se incluyen actividades de clase_.
 
