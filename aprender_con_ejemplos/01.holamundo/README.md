@@ -2,9 +2,8 @@
 
 # Hola Mundo
 
-Vamos a hacer un programa que pida por teclado el nombre, edad y altura en metros.
+¡Hola Mundo! Lo típico es empezar por el "Hola Mundo!". Así que vamos, pero vamos a hacer un programa que pida por teclado el nombre, edad y altura en metros, y después mostraremos por pantalla un mensaje como el siguiente:
 
-Después mostraremos por pantalla un mensaje del tipo:
 ```
 El personaje NAME, tiene AGE años de edad y mide HEIGHT metros.
 ```
@@ -15,13 +14,17 @@ El personaje NAME, tiene AGE años de edad y mide HEIGHT metros.
 
 **[Ejemplo 2](./02-holamundo.rb)**
 
+Ahora vamos a usar variable para poner los valores de `name`, `age` y `height`. Esto, todavía, no es lo que se pedía pero es sólo para empezar. En Ruby los paréntesis de los métodos son opcionales por ese motivo lo ponemos omitir en el método `puts`.
+
+**[Ejemplo 3](./03-holamundo.rb)**
+
 ¿Por qué decimos que `puts` es un método y no una función como pasa en otros lenguajes de programación?. Aunque "parece" una función, es el método del objeto donde estamos escribiendo el código.
 
 En el ejemplo estamos mostrando los valores de `self` y `self.class` para que lo veas.
 
 > En Ruby, siempre estamos escribiendo código dentro de algún objeto.
 
-**[Ejemplo 3](./03-holamundo.rb)**
+**[Ejemplo 4](./04-holamundo.rb)**
 
 Ahora los valores de las variables los introduce el usuario mediante el método `gets`. Este método lee la entrada de teclado (incluyendo el salto de línea), de modo que para obtener el valor del nombre sin el retorno de carro usaremos `gets.chomp`.
 
