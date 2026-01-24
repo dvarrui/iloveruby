@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
-# Introducir el valor numérico
-print("Número? "); number = gets.to_i
+# Introducir el valor numérico por argumentos
+number = ARGV[0].to_i
 
 # Comprobamos que esté entre 10 y 20
 if number < 10 || number > 20
