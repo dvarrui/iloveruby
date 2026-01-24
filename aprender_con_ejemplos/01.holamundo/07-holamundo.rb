@@ -1,10 +1,10 @@
 #!/usr/bin/env ruby
 require "pastel"
 
-# Entrada de datos con gets
-print("Name: "); name = gets.chomp
-print("Age: "); age = gets.to_i
-print("Height: "); height = gets.to_f
+# Entrada de datos por argumentos
+name = ARGV[0]
+age = ARGV[1].to_i
+height = ARGV[2].to_f
 
 # Ponemos color a las variables
 pastel = Pastel.new

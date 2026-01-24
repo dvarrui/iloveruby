@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-# Entrada de datos
+# Entrada de datos con gets
 print("Name: "); name = gets.chomp
 print("Age: "); age = gets.to_i
 print("Height: "); height = gets.to_f

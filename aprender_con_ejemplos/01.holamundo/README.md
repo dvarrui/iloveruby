@@ -49,24 +49,39 @@ La variable `height` debe tener un valor Float, entonces siguiendo la misma lóg
 
 **[Ejemplo 5](./05-holamundo.rb)**: Poniendo un poco de color a la vida.
 
-Vamos a usar la gema `pastel` (Librería Ruby) para darle color al texto de salida por pantalla. Se ha creado el fichero [Gemfile](./Gemfile) que contiene la gemas a instalar, demo que con el comando `bundle install` se instala lo especificado en Gemfile. ¡Sencillo! ¿verdad?
+Para darle color a la salida por pantalla, vamos a usar la gema `pastel` (Librería Ruby). Se ha creado el fichero [Gemfile](./Gemfile) que contiene la gemas a instalar, A continuación con el comando `bundle install` se instala lo especificado en Gemfile. ¡Sencillo! ¿verdad?
 
 > **INFO:** Si quieres ver la información de la gema o encontrar más gemas y consultar su información, entonces hay que ir a [RubyGems](https://rubygems.org/)
 
 Ya tenemos la gema instalada, ahora para usar la librería en nuestro prgorama ponemos `require "pastel"` y para hacer uso de sus métodos, creamos un objeto `pastel = Pastel.new`. A partir de ahora, invocamos los métodos del objeto para colorear los textos. Ejemplo: `pastel.yellow.bold("Obiwan")`. En este ejemplo invocamos el método del objeto pastel para dar color al String que pasamos por parámetro.
 
+Para que el código sea un poco más legible hemos creado nuevas variables coloreadas. Por ejemplo `colored_name` tiene el mismo contenido de `name` pero incluyendo el color.
+
 > **NOTA:** Entiendo que esto puede ser un poco más "complicado" de entender ahora que todavía estamos empezando y todos los nuevos conceptos como librerías, objetos, métodos, etc, nos puede sonar raro. ¡No te preocupes!, esto lo iremos explicando más adelante pero ahora como quería usar la librería para añador color no me ha quedado más remedio que mencionarlo.
 
-**[Ejemplo 6](./06-holamundo.rb)**: Mejorando el interfaz.
+Cuando ponemos el nombre, puede ser que los escribamos `Obiwan` o nos equivoquemos y pongamos `obiwan` por ir un poco rápido. Esto lo podemos mejorar usando el método `capitalize()` del String. Ejemplo: ` "obiwan".capitalize => "Obiwan".
 
-Es este ejemplo vamos a usar otra gema (`tty-prompt`)
----
-# Modificación
+**[Ejemplo 6](./06-holamundo.rb)**: Mejorando el interfaz de entrada.
 
-¿Eres capaz de modificarlo para que el mensaje sea de la siguiente manera? Solo
-pidiendo los tres valores indicados.
-“El usuario NOMBRE, de EDAD años de edad y mide METROS metros y CENTÍMETROS
-centímetros.”.
-Ejemplos:
-“El usuario Juan tiene 44 años de edad y mide 1.85 metros”.
-“El usuario Juan tiene 44 años de edad y mide 1 metro y 85 centímetros”.
+Es este ejemplo vamos a usar otra gema (`tty-prompt`). Ya está instalada con el proceso del ejemplo anterior (`bundle install`). Ahora para usarla dentro de nuestro programa ponemos `require "tty-prompt"`.
+
+Se crea un objeto `prompt = TTY::Prompt.new`. Ahora usando el método `ask(MESSAGE, default: VALUE)` del objeto mostramos MESSAGE por pantalla y si pulsamos enter la variable de carga por defecto con el valor VALUE. Esto mejora notablemente la usabilidad del programa.
+
+**[Ejemplo 7](./07-holamundo.rb)**: Paso de argumentos.
+
+En esta versión del programa vamos a usar otra forma de introducir los datos al programa (script). Vamos a usar el paso de argumentos. En este caso el programa se invoca en el terminal de la siguiente forma: `./07-holamundo.rb NAME AGE HEIGHT`
+
+Ejemplo:
+
+```bash
+$ ./07-holamundo.rb obiwan 57 1.80
+El personaje Obiwan, tiene 57 años de edad y mide 1.8 metros.```
+```
+
+**[Ejemplo 8](./08-holamundo.rb)**: Separamos metros de centímetros.
+
+Vamos modificar el mensaje de salida del siguiente modo:
+
+```
+El usuario NAME, de AGE años de edad y mide MTS metros y CMS centímetros.”
+```
