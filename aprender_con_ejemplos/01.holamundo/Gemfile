@@ -1,1 +1,2 @@
 gem 'pastel'
+gem 'tty-prompt'
