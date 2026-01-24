@@ -8,15 +8,21 @@
 El personaje NAME, tiene AGE años de edad y mide HEIGHT metros.
 ```
 
-**[Ejemplo 1](./01-holamundo.rb)**
+**[Ejemplo 1](./01-holamundo.rb)**: print y puts.
 
- Empezamos poniendo los valores directamente en las variables. Esto no es lo que se pedía pero es sólo para empezar. En Ruby los paréntesis de los métodos son opcionales por ese motivo lo ponemos omitir en el método `puts`.
+En este primer ejemplo vamos a mostrar por pantalla directamente el mensaje:
 
-**[Ejemplo 2](./02-holamundo.rb)**
+```
+El pesonaje Obiwan, tiene 57 años de edad y mide 1.80 metros.
+```
 
-Ahora vamos a usar variable para poner los valores de `name`, `age` y `height`. Esto, todavía, no es lo que se pedía pero es sólo para empezar. En Ruby los paréntesis de los métodos son opcionales por ese motivo lo ponemos omitir en el método `puts`.
+Si nos fijamos en el código, vemos que hemos usado `print` y `puts`. Realmente con una línea lo resolvíamos pero se ha puesto así por motivos didácticos, para ver la diferencia entre `print` (Muestra por pantalla sin retorno de carro) y `puts` (Muestra por pantalla con retorno de carro).
 
-**[Ejemplo 3](./03-holamundo.rb)**
+**[Ejemplo 2](./02-holamundo.rb)**: los paréntesis son opcionales
+
+Ahora vamos a usar variables (`name`, `age` y `height`) para poner cada valore por separado. Una nueva observación es que en Ruby los paréntesis de los métodos son opcionales por ese motivo lo podemos omitir si queremos en el método `puts`. Normalmente se suele "omitir" los paréntesis para evitar "ruido" visual pero se aconseja ponerlos cuando son necesarios para definir mejor o aclarar el contenido.
+
+**[Ejemplo 3](./03-holamundo.rb)**: todo son objetos y/o métodos (que también son objetos) ¡No te asustes! ;-)
 
 ¿Por qué decimos que `puts` es un método y no una función como pasa en otros lenguajes de programación?. Aunque "parece" una función, es el método del objeto donde estamos escribiendo el código.
 
@@ -24,7 +30,7 @@ En el ejemplo estamos mostrando los valores de `self` y `self.class` para que lo
 
 > En Ruby, siempre estamos escribiendo código dentro de algún objeto.
 
-**[Ejemplo 4](./04-holamundo.rb)**
+**[Ejemplo 4](./04-holamundo.rb)**: gets
 
 Ahora los valores de las variables los introduce el usuario mediante el método `gets`. Este método lee la entrada de teclado (incluyendo el salto de línea), de modo que para obtener el valor del nombre sin el retorno de carro usaremos `gets.chomp`.
 
@@ -37,7 +43,15 @@ film = " star wars \n"
 film.chmop #=> " star wars "
 ```
 
-Las otras dos variables deben ser números, de modo que al leer la entrada del teclado (que es un String), sobre la marcha lo convertimos en un integer con `gets.to_i`.
+La variable `age` debe contener un número entero, de modo que al leer la entrada del teclado, que es un String (`gets` devuelve un String)), sobre la marcha lo convertimos en un integer con `gets.to_i`.
+
+La variable `height` debe tener un valor Float, entonces siguiendo la misma lógica lo hacemos con `gets.to_f`.
+
+**[Ejemplo 5](./05-holamundo.rb)**: Poniendo un poco de color a la vida.
+
+Vamos a usar la gema `pastel` (Librería Ruby) para darle color al texto de salida por pantalla. Se ha creado el fichero [Gemfile](./Gemfile) que contiene la gemas a instalar, demo que con el comando `bundle install` se instala lo especificado en Gemfile. ¡Sencillo! ¿verdad?
+
+
 
 # Modificación
 
