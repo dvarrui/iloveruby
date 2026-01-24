@@ -51,8 +51,15 @@ La variable `height` debe tener un valor Float, entonces siguiendo la misma lóg
 
 Vamos a usar la gema `pastel` (Librería Ruby) para darle color al texto de salida por pantalla. Se ha creado el fichero [Gemfile](./Gemfile) que contiene la gemas a instalar, demo que con el comando `bundle install` se instala lo especificado en Gemfile. ¡Sencillo! ¿verdad?
 
+Hemos instalado la gema, ahora para cargar la librería ponemos `require "pastel"` y para usarla creamos un objeto `pastel = Pastel.new`. Ahora con `pastel.yellow.bold("Obiwan")` estamos invocando a métodos del objeto pastel para dar color al String que pasamos por parámetro.
 
+Entiendo que esto puede ser un poco más "complicado" de entender ahora que todavía estamos empezando y todos los nuevos conceptos como librerías, objetos, métodos, etc, nos puede sonar raro. No te preocupes, esto lo iremos explicando más adelante pero ahora como quería usar la librería para añador color no me ha quedado más remedio que mencionarlo.
 
+**[Ejemplo 6](./05-holamundo.rb)**: Fácil de usar.
+
+Vamos a usar la gema `pastel` (Librería Ruby) para darle color al texto de salida por pantalla. Se ha creado el fichero [Gemfile](./Gemfile) que contiene la gemas a instalar, demo que con el comando `bundle install` se instala lo especificado en Gemfile. ¡Sencillo! ¿verdad?
+
+---
 # Modificación
 
 ¿Eres capaz de modificarlo para que el mensaje sea de la siguiente manera? Solo
