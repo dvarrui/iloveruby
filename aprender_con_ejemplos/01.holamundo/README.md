@@ -71,12 +71,20 @@ Se crea un objeto `prompt = TTY::Prompt.new`. Ahora usando el método `ask(MESSA
 
 En esta versión del programa vamos a usar otra forma de introducir los datos al programa (script). Vamos a usar el paso de argumentos. En este caso el programa se invoca en el terminal de la siguiente forma: `./07-holamundo.rb NAME AGE HEIGHT`
 
-Ejemplo:
+Ejemplo de uso:
 
 ```bash
 $ ./07-holamundo.rb obiwan 57 1.80
 El personaje Obiwan, tiene 57 años de edad y mide 1.8 metros.```
 ```
+
+Para leer los argumentos existe el objeto `ARGV`. Realmente es un Array (o lista)
+
+> **NOTA:** En Ruby a las listas se les llama Array. Los Array de Ruby no tienen tamaño fijo.
+>
+> Esto puede confundir, dependiendo del lenguaje de programación que vengas, ya que en otros lenguajes de programación a este tipo de objetos se les llama List, y se usa Array cuando son listas de tamaño fijo en memoria.
+>
+> IMHO: El nombre List hubiera sido un poco más "adecuado".
 
 **[Ejemplo 8](./08-holamundo.rb)**: Separamos metros de centímetros.
 
@@ -85,3 +93,16 @@ Vamos modificar el mensaje de salida del siguiente modo:
 ```
 El usuario NAME, de AGE años de edad y mide MTS metros y CMS centímetros.”
 ```
+
+El usuario introduce su altura en la forma `1.80` (variable `height`), y nosotros tenemos que separar la parte entera de la parte decimal de la siguiente forma:
+
+```ruby
+# Nos quedamos con la parte entera de la altura
+mts = height.to_i 
+# Nos quedamos con la parte decimal, luego ese valor lo multiplicamos por 100 y redondeamos sin dejar decimales en el resultado final.
+cms = ((height % mts) * 100).round(0) 
+```
+
+---
+
+_Hasta aquí hemos terminado de "evolucionar" el "hola mundo" ahora puedes seguir con el siguiente problema._
