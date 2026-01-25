@@ -7,7 +7,7 @@ Vamos a hacer un programa que haga lo siguiente:
 * Mostrar por pantalla todos los números enteros entre el 1 y el N.
 * Mostrar por pantalla todos los números enteros entre el 30 y el N, en orden inverso.
 
-**[Ejemplo 1](./01-numeros.rb)**: Pedir un número entre 10 y 20.
+**[Ejemplo 1](./01-numeros.rb): Pedir un número entre 10 y 20.**
 
 En esta primera versión empezamos leyendo el primer argumento `ARGV[0]`, ese valor lo convertimos a Integer `to_i` y luego nos aseguramos que el valor está entre 10 y 20.
 
@@ -35,7 +35,7 @@ $ echo $?
 1
 ```
 
-**[Ejemplo 2](./02-numeros.rb)**: Mostrar por pantalla todos los números enteros entre el 1 y el N.
+**[Ejemplo 2](./02-numeros.rb): Mostrar por pantalla todos los números enteros entre el 1 y el N.**
 
 Hay varias formas de hacer un bucle o iteraciones en Ruby. De momento, vamos a hacerlo usando un `for`, también usaremos como variable auxiliar del bucle o del iterador a la `i`. Esta variable auxiliar tomará valores entre 1 y number `1..number`.
 
@@ -59,7 +59,7 @@ a.count  #=> 3
 a.to_a   #=> [1, 2, 3]
 ```
 
-**[Ejemplo 3](./03-numeros.rb)**: Mostrar por pantalla todos los números enteros entre el 30 y el N, en orden inverso.
+**[Ejemplo 3](./03-numeros.rb): Mostrar por pantalla todos los números enteros entre el 30 y el N, en orden inverso.**
 
 Para este otro iterador entre 30 y number, volvemo a usar una estructura `for` similar al ejemplo anterior, usamos la misma variable auxiliar `i`, pero ahora el Range es diferente.
 
