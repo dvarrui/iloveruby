@@ -102,7 +102,9 @@ El usuario introduce su altura en la forma `1.80` (variable `height`), y nosotro
 ```ruby
 # Nos quedamos con la parte entera de la altura
 mts = height.to_i 
-# Nos quedamos con la parte decimal, luego ese valor lo multiplicamos por 100 y redondeamos sin dejar decimales en el resultado final.
+
+# Nos quedamos con la parte decimal, luego ese valor lo multiplicamos por 100
+# y redondeamos sin dejar decimales en el resultado final.
 cms = ((height % mts) * 100).round(0) 
 ```
 
