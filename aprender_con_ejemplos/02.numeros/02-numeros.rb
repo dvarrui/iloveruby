@@ -9,3 +9,8 @@ if number < 10 or number > 20
   puts "  El número NUMBER debe estar entre 10 y 20"
   exit 1
 end
+
+# Mostrar por pantalla todos los números enteros entre el 1 y el N.
+for i in 1..number
+  puts i
+end
