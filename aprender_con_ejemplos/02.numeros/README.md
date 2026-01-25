@@ -137,4 +137,4 @@ En diciembre de 2019, en Ruby 2.7.0, se intrudujeron los parámetros numerados (
 
 ---
 
-_Hasta aquí hemos terminado de "evolucionar" los "números", ahora puedes seguir con el siguiente problema._
+_Hasta aquí hemos terminado de "evolucionar" los "números", ahora puedes seguir con el [siguiente problema](../03.maxmin/README.md)._
