@@ -134,3 +134,7 @@ Otra forma de delimitar los bloques es usando las llaves. Tenemos estas dos form
 **[Ejemplo 6](./06-numeros.rb): Parámetros numerados _1, _2, etc.**
 
 En diciembre de 2019, en Ruby 2.7.0, se intrudujeron los parámetros numerados (_1, _2m etc.). Los parámetros numerados sirven para simplificar bloques pequeños sin definir explícitamente los nombres de los argumentos. Esto es, podemos usar `_1` en lugar de `|i|` y simplificar todavía un poco más el iterador.
+
+---
+
+_Hasta aquí hemos terminado de "evolucionar" los "números", ahora puedes seguir con el siguiente problema._

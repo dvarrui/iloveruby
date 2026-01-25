@@ -108,4 +108,4 @@ cms = ((height % mts) * 100).round(0)
 
 ---
 
-_Hasta aquí hemos terminado de "evolucionar" el "hola mundo" ahora puedes seguir con el siguiente problema._
+_Hasta aquí hemos terminado de "evolucionar" el "hola mundo" ahora puedes seguir con el [siguiente problema](../02.numeros/README.md)._
