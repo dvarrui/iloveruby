@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+# Pedir 10 números al usuario y almacenarlos en una lista
+numbers = []
+
+puts "Escribir 10 números:"
+10.times do
+  print("numbers[#{_1}]? ")
+  numbers[_1] = gets.to_i
+end
+
+puts numbers
