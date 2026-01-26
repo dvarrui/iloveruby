@@ -107,4 +107,4 @@ max = numbers.max
 
 ---
 
-_Hasta aquí hemos terminado de "evolucionar" los "números", ahora puedes seguir con el siguiente problema._
+_Hasta aquí hemos terminado de "evolucionar" los "máximos y mínimos", ahora puedes seguir con el siguiente problema._
