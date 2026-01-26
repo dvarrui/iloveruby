@@ -8,7 +8,7 @@
 El personaje NAME, tiene AGE años de edad y mide HEIGHT metros.
 ```
 
-**[Ejemplo 1](./01-holamundo.rb)**: print y puts.
+**[Ejemplo 1](./01-holamundo.rb): print() y puts() para mostrar por pantalla.**
 
 > **NOTA**: En la primera línea del fichero tenemos `#!/usr/bin/env ruby`, esta instrucción sirve para poder ejecutar el script como `./01-holamundo.rb` directamente. La shell ya sabe quién es el responsable de interpretar el contenido de este fichero (El programa `ruby`). Si no ponemos esta línea o estamos en un SO no Unix, entonces para ejecutar el script haremos `ruby 01-holamundo.rb`.
 
@@ -21,11 +21,11 @@ El pesonaje Obiwan, tiene 57 años de edad y mide 1.80 metros.
 Si nos fijamos en el código, vemos que hemos usado `print` y `puts`. Realmente con una línea lo resolvíamos pero se ha puesto así por motivos didácticos, para ver la diferencia entre `print` (Muestra por pantalla sin retorno de carro) y `puts` (Muestra por pantalla con retorno de carro).
 
 
-**[Ejemplo 2](./02-holamundo.rb)**: los paréntesis son opcionales
+**[Ejemplo 2](./02-holamundo.rb): los paréntesis son opcionales.**
 
 Ahora vamos a usar variables (`name`, `age` y `height`) para poner cada valore por separado. Una nueva observación es que en Ruby los paréntesis de los métodos son opcionales por ese motivo lo podemos omitir si queremos en el método `puts`. Normalmente se suele "omitir" los paréntesis para evitar "ruido" visual pero se aconseja ponerlos cuando son necesarios para definir mejor o aclarar el contenido.
 
-**[Ejemplo 3](./03-holamundo.rb)**: todo son objetos y/o métodos (que también son objetos) ¡No te asustes! ;-)
+**[Ejemplo 3](./03-holamundo.rb): todo son objetos y/o métodos (que también son objetos) ¡No te asustes! ;-)**
 
 ¿Por qué decimos que `puts` es un método y no una función como pasa en otros lenguajes de programación?. Aunque "parece" una función, es el método del objeto donde estamos escribiendo el código.
 
@@ -33,7 +33,7 @@ En el ejemplo estamos mostrando los valores de `self` y `self.class` para que lo
 
 > En Ruby, siempre estamos escribiendo código dentro de algún objeto.
 
-**[Ejemplo 4](./04-holamundo.rb)**: gets
+**[Ejemplo 4](./04-holamundo.rb): gets() para leer del teclado.**
 
 Ahora los valores de las variables los introduce el usuario mediante el método `gets`. Este método lee la entrada de teclado (incluyendo el salto de línea), de modo que para obtener el valor del nombre sin el retorno de carro usaremos `gets.chomp`.
 
@@ -50,7 +50,7 @@ La variable `age` debe contener un número entero, de modo que al leer la entrad
 
 La variable `height` debe tener un valor Float, entonces siguiendo la misma lógica lo hacemos con `gets.to_f`.
 
-**[Ejemplo 5](./05-holamundo.rb)**: Poniendo un poco de color a la vida.
+**[Ejemplo 5](./05-holamundo.rb): Poniendo un poco de color a la vida.**
 
 Para darle color a la salida por pantalla, vamos a usar la gema `pastel` (Librería Ruby). Se ha creado el fichero [Gemfile](./Gemfile) que contiene la gemas a instalar, A continuación con el comando `bundle install` se instala lo especificado en Gemfile. ¡Sencillo! ¿verdad?
 
@@ -64,13 +64,13 @@ Para que el código sea un poco más legible hemos creado nuevas variables color
 
 Cuando ponemos el nombre, puede ser que los escribamos `Obiwan` o nos equivoquemos y pongamos `obiwan` por ir un poco rápido. Esto lo podemos mejorar usando el método `capitalize()` del String. Ejemplo: ` "obiwan".capitalize => "Obiwan".
 
-**[Ejemplo 6](./06-holamundo.rb)**: Mejorando el interfaz de entrada.
+**[Ejemplo 6](./06-holamundo.rb): Mejorando el interfaz de entrada.**
 
 Es este ejemplo vamos a usar otra gema (`tty-prompt`). Ya está instalada con el proceso del ejemplo anterior (`bundle install`). Ahora para usarla dentro de nuestro programa ponemos `require "tty-prompt"`.
 
 Se crea un objeto `prompt = TTY::Prompt.new`. Ahora usando el método `ask(MESSAGE, default: VALUE)` del objeto mostramos MESSAGE por pantalla y si pulsamos enter la variable de carga por defecto con el valor VALUE. Esto mejora notablemente la usabilidad del programa.
 
-**[Ejemplo 7](./07-holamundo.rb)**: Paso de argumentos.
+**[Ejemplo 7](./07-holamundo.rb): Paso de argumentos de entrada. Es lo habitual en comandos y scripts.**
 
 En esta versión del programa vamos a usar otra forma de introducir los datos al programa (script). Vamos a usar el paso de argumentos. En este caso el programa se invoca en el terminal de la siguiente forma: `./07-holamundo.rb NAME AGE HEIGHT`
 
@@ -89,7 +89,7 @@ Para leer los argumentos existe el objeto `ARGV`. Realmente es un Array (o lista
 >
 > IMHO: El nombre List hubiera sido un poco más "adecuado".
 
-**[Ejemplo 8](./08-holamundo.rb)**: Separamos metros de centímetros.
+**[Ejemplo 8](./08-holamundo.rb): Cambiamos la lógica para separ metros de centímetros.**
 
 Vamos modificar el mensaje de salida del siguiente modo:
 
