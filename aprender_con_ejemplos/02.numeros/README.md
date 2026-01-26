@@ -135,6 +135,21 @@ Otra forma de delimitar los bloques es usando las llaves. Tenemos estas dos form
 
 En diciembre de 2019, en Ruby 2.7.0, se intrudujeron los parámetros numerados (_1, _2m etc.). Los parámetros numerados sirven para simplificar bloques pequeños sin definir explícitamente los nombres de los argumentos. Esto es, podemos usar `_1` en lugar de `|i|` y simplificar todavía un poco más el iterador.
 
+**[Ejemplo 7](./07-numeros.rb): El parámetros `it`.**
+
+En la versión 3.4.0 (publicada en diciembre de 2024) de Ruby se intrudujo la referencia a parámetros de bloque `it`. Esta funcionalidad permite utilizar `it` como una forma predeterminada y concisa para referirse al primer argumento de un bloque, facilitando una sintaxis más limpia y similar a otros lenguajes modernos.
+
+Vamos a usarla en nuestros iteradores. Ejemplo:
+
+```ruby
+>> 3.times { puts it }
+0
+1
+2
+```
+
+Con esta funcionalidad el código se lee de forma más "natural".
+
 ---
 
 _Hasta aquí hemos terminado de "evolucionar" los "números", ahora puedes seguir con el [siguiente problema](../03.maxmin/README.md)._
