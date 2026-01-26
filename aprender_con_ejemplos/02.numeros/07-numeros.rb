@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# Requiere Ruby 3.4.0 o superior
 
 # Introducir el valor numérico por argumentos
 number = ARGV[0].to_i
