@@ -5,8 +5,6 @@ number1 = ARGV[0].to_i
 number2 = ARGV[1].to_i
 number3 = ARGV[2].to_i
 
-puts("[input numbers] #{number1} #{number2} #{number3}")
-
 # Ordenamos los números
 if number1 > number2 
   # Itercambiar number1 con number2
@@ -23,12 +21,22 @@ if number1 > number2
   number1, number2 = number2, number1
 end
 
-puts("[order numbers] #{number1} #{number2} #{number3}")
-
 # Tenemos el mínimo y el máximo
 min = number1
 max = number3
 
+# Calculamos las paridades
+min_parity = "impar"
+max_parity = "impar"
+
+if (min % 2) == 0
+  min_parity = "par"
+end
+
+if (max % 2) == 0
+  max_parity = "par"
+end
+
 # Salida por pantalla
-puts "[Mínimo] #{min}"
-puts "[Máximo] #{max}"
+puts "[Mínimo] #{min} (#{min_parity})"
+puts "[Máximo] #{max} (#{max_parity})"

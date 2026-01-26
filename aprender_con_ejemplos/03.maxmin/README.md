@@ -29,6 +29,11 @@ end
 
 Al tener ordenados los 3 números, ya tenemos el mínimo y el máximo, sin hacer nada.
 
+**[Ejemplo 3](./03-maxmin.rb): Indicar si son pares o impares.**
+
+Lo que nos enseñan, para saber si un número es par o impar, es dividir el número por 2 y si el resto es cero, entonces es par, en caso contrario es impar. Vale, vamos a implementar este algoritmo. El operador para calcular el resto es `%`.
+
+
 ---
 
 _Hasta aquí hemos terminado de "evolucionar" los "números", ahora puedes seguir con el siguiente problema._
