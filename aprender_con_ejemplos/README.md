@@ -10,3 +10,4 @@ Vamos a plantear diferentes problemas de programación que iremos resolviendo us
 1. [Hola Mundo](./01.holamundo/README.md)
 2. [Números](./02.numeros/README.md)
 3. [Máximo y mínimo](./03.maxmin/README.md)
+4. [Listas de números](./04.listas/README.md)

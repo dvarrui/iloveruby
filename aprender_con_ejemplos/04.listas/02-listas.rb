@@ -8,3 +8,7 @@ puts "Escribir 10 números:"
   print("- numbers[#{_1}]? ")
   numbers[_1] = gets.to_i
 end
+
+# Motrar los números por pantalla
+puts "\nTenemos los siguientes valores:"
+puts "- numbers: #{numbers}"
