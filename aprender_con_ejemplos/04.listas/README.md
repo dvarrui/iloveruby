@@ -78,7 +78,42 @@ Pasos:
 * Calcular el total de apariciones (`occurrences`) de cada número de la lista(`numbers`).
 * Si `occurrences[i] > 1`, entonces `i` está repetido.
 
-En este momento, recuerdo haber leído sobre un método llamado `group_by`, que me "suena" podría ayudarnos. Pero no recuerdo bien. Entonces decido consultar la [documentación de group_by](https://www.rubydoc.info/stdlib/core/Enumerable:group_by). Creo que puede sernos útil. Pongo ejemplo de lo que hace:
+**Hash** 
+
+Antes de seguir, tengo que explicarte una clase nueva. Los Hash. Un Hash Ruby es como un diccionario de Python o un Map de Java. Es una estructura que guarda pares de clave-valor. Ejemplo: `h = { "clave" => "valor" }`, donde `h["clave"]` devuelve `"valor"`.
+
+El Hash de Ruby admite muchos tipos de objetos diferentes como clave. Como por ejemplo Integer, String y lo más usado en Ruby como clave... los Symbol. Un Symbol o símbolo es como un String inmutable. En Exilir por ejemplo existe algo es parecido llamado "atom".
+
+```ruby
+# Creando un Hash en la variable h1
+# Las claves son Integer
+h1 = { 1 => "Uno", 2 => "Dos", 3 => "Tres" }
+
+h1[1] #=> "Uno"
+
+# Creando un Hash en la variable h2
+# Las claves son Integer, String y Symbol
+h2 = { 1 => "Uno", "2" => 2, :3 => "Tres" }
+
+h2["2"] #=> "Dos"
+```
+
+Cuando se usan Symbol como clave en un Hash es habitual usar esta otra forma de escritura más concisa: `h = { clave: "valor"}`.
+
+```ruby
+# Creando un Hash en la variable h3
+# Las claves son Symbol (String inmutables)
+h3 = { name: "Obiwan", age: 57, height: 180 }
+
+h3[:name] #=> "Obiwan"
+h3[:age]    #=> 57
+```
+
+_Después de conocer los Hash, seguimos resolviendo nuestro problema._
+
+**Método `group_by`**
+
+En este momento, recuerdo haber leído sobre un método llamado `group_by`, que me "suena" que podría ayudarnos. Pero no recuerdo bien... Entonces decido consultar la [documentación de group_by](https://www.rubydoc.info/stdlib/core/Enumerable:group_by). Veamos cómo funciona el método a ver si nos sirve para algo. Ejemplo:
 
 ```ruby
 >> a = [1,2,2,3,3,3]
@@ -88,16 +123,12 @@ En este momento, recuerdo haber leído sobre un método llamado `group_by`, que 
 => {1=>[1], 2=>[2, 2], 3=>[3, 3, 3]}
 ```
 
-A partir de un Array de elementos, `group_by` devuelve un Hash agrupando los elementos que son similares.
-
-> **NOTA**: Un Hash Ruby es como un diccionario de Python o un Map de Java. Es una estructura que guarda pares clave-valor.
-
-En el ejemplo anterior tenemos las claves 1, 2, 3:
-* La clave 1 tiene el valor `[1]`. Este valor es a su vez un Array con un elemento.
+A partir de un Array de elementos, `group_by` devuelve un Hash agrupando los elementos que son similares. En el Hash devuelto tenemos como claves: 1, 2 y 3.
+* Donde la clave 1 tiene el valor `[1]`. Este valor es a su vez un Array con un elemento.
 * La clave 2 tiene el valor `[2, 2]`. Este valor es un Array con dos elementos.
 * La clave 3 tiene el valor `[3, 3, 3]`. Este valor es un Array con tres elementos.
 
-> A veces los problemas se resuelven mejor eligiendo adecuadamente la estructura de datos que almacena los valores de nuestro problema.
+> **OJO**: A veces los problemas se resuelven más fácilmente eligiendo la estructura de datos más adecuada para representar la estructura de los valores de nuestro problema.
 
 Para saber el número de ocurrencias de cada clave, podemos usar el método `size()` o `count()` de cada Array.
 
@@ -107,6 +138,7 @@ Para saber el número de ocurrencias de cada clave, podemos usar el método `siz
 | 2     | [2, 2]    | [2].count | 2           |
 | 3     | [3, 3, 3] | [3].count | 3           |
 
+> **Reflexión**: Toda esta evolución, tiene como objetivo que el código quede más sencillo, claro y fácil de entender. Bueno... desde mi punto de vista de "RubyLover". Si vienes de otro lenguaje puede que te parezcan más sencillos los primeros ejemplos, sin usar clases "raras" de Ruby. Pero para mí que conozco Ruby desde hace años veo más sencillo seguir evolucionando el código para aprovechar las clases y métodos que nos ofrece el lenguaje.
 
 ---
 

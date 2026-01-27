@@ -18,10 +18,7 @@ numbers.each do
   # Mostrar el texto "NEGATIVO" cuando el número sea negativo
   info1 = _1.negative? ? "(NEGATIVO)" : ""
   # Mostrar el texto "REPETIDO" cuando las "ocurrencias" > 1
-  info2 = if (occurrences[_1].size > 1)
-    "(REPETIDO)"
-  else
-    ""
-  end
+  info2 = (occurrences[_1].size > 1) ? "(REPETIDO)" : ""
+
   puts "- number #{_1} #{info1} #{info2}"
 end
