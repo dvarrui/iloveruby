@@ -11,13 +11,17 @@ end
 
 # Motrar los números por pantalla
 puts "\nTenemos los siguientes valores:"
-numbers_counter = numbers.group_by { _1 }
+# Calcular el total de ocurrencias de cada número
+occurrences = numbers.group_by { _1 }
 
 numbers.each do
   # Mostrar el texto "NEGATIVO" cuando el número sea negativo
   info1 = _1.negative? ? "(NEGATIVO)" : ""
-  # Mostrar el texto "REPETIDO" cuando el número esté repetido
-  info2 = (numbers_counter[_1].size > 1) ? "(REPETIDO)" : ""
-
+  # Mostrar el texto "REPETIDO" cuando las "ocurrencias" > 1
+  info2 = if (occurrences[_1].size > 1)
+    "(REPETIDO)"
+  else
+    ""
+  end
   puts "- number #{_1} #{info1} #{info2}"
 end

@@ -70,6 +70,14 @@ end
 
 **[Ejemplo 4](./04-listas.rb): Mostrar el texto "REPETIDO" cuando el número esté repetido.**
 
+Para saber si un número está repetido en el Array o no, bastaría con saber para cada número, el total de apariciones, y luego podríamos quedarnos o filtrar únicamente por aquellos que tengan el total mayor a 1. En principio hemos conseguido expresar con palabras la idea de los pasos que podemos ejecutar para solucionar nuestro problema.
+
+El siguiente paso es "descomponer" el párrafo anterior en varias frases, y ver si podemos "convertir" cada frase es líneas de código Ruby. Vamos allá.
+
+Pasos:
+* Calcular el total de apariciones de cada número de la lista 
+
+https://www.rubydoc.info/stdlib/core/Enumerable:group_by
 
 ```ruby
 >> a = [1,2,2,3,3,3]
