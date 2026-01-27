@@ -72,12 +72,13 @@ end
 
 Para saber si un número está repetido en el Array o no, bastaría con saber para cada número, el total de apariciones, y luego podríamos quedarnos o filtrar únicamente por aquellos que tengan el total mayor a 1. En principio hemos conseguido expresar con palabras la idea de los pasos que podemos ejecutar para solucionar nuestro problema.
 
-El siguiente paso es "descomponer" el párrafo anterior en varias frases, y ver si podemos "convertir" cada frase es líneas de código Ruby. Vamos allá.
+El siguiente paso es "descomponer" el párrafo anterior en varias frases, y ver si podemos "convertir" cada frase es líneas de código Ruby. Vuelvo a escribir el párrafo pero de otra forma un poco más programable:
 
 Pasos:
-* Calcular el total de apariciones de cada número de la lista 
+* Calcular el total de apariciones (`occurrences`) de cada número de la lista(`numbers`).
+* Si `occurrences[i] > 1`, entonces `i` está repetido.
 
-https://www.rubydoc.info/stdlib/core/Enumerable:group_by
+En este momento, recuerdo haber leído sobre un método llamado `group_by`, que me "suena" podría ayudarnos. Pero no recuerdo bien. Entonces decido consultar la [documentación de group_by](https://www.rubydoc.info/stdlib/core/Enumerable:group_by). Creo que puede sernos útil. Pongo ejemplo de lo que hace:
 
 ```ruby
 >> a = [1,2,2,3,3,3]
@@ -86,6 +87,27 @@ https://www.rubydoc.info/stdlib/core/Enumerable:group_by
 >> a.group_by { _1 }
 => {1=>[1], 2=>[2, 2], 3=>[3, 3, 3]}
 ```
+
+A partir de un Array de elementos, `group_by` devuelve un Hash agrupando los elementos que son similares.
+
+> **NOTA**: Un Hash Ruby es como un diccionario de Python o un Map de Java. Es una estructura que guarda pares clave-valor.
+
+En el ejemplo anterior tenemos las claves 1, 2, 3:
+* La clave 1 tiene el valor `[1]`. Este valor es a su vez un Array con un elemento.
+* La clave 2 tiene el valor `[2, 2]`. Este valor es un Array con dos elementos.
+* La clave 3 tiene el valor `[3, 3, 3]`. Este valor es un Array con tres elementos.
+
+> A veces los problemas se resuelven mejor eligiendo adecuadamente la estructura de datos que almacena los valores de nuestro problema.
+
+Para saber el número de ocurrencias de cada clave, podemos usar el método `size()` o `count()` de cada Array.
+
+| Clave | Valor     | count()   | Ocurrencias |
+| ----- | --------- | --------- | ----------- |
+| 1     | [1]       | [1].count | 1           |
+| 2     | [2, 2]    | [2].count | 2           |
+| 3     | [3, 3, 3] | [3].count | 3           |
+
+
 ---
 
 _Hasta aquí hemos terminado de "evolucionar" las "listas", ahora puedes seguir con el siguiente problema._
