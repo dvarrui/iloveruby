@@ -28,9 +28,6 @@ https://alec-c4.com/blog/2022-12-25-jupyter-ruby
 ==================================================
 BASIC
 
-lovingruby.com/reasons
-- https://lovingruby.com/reasons/28-string-grapheme_clusters
-
 ==================================================
 TIP
 
