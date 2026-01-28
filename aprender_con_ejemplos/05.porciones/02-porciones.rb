@@ -15,5 +15,5 @@ end
 # Fase 2: Mostrar por pantalla los números en posición par de la lista
 puts "==> [Fase 2] Salida de datos en posiciones pares:"
 numbers.each_with_index do |value, index|
-  puts "Value[#{index}] = #{value}" if index.even?
+  puts "Posición[#{index}] = #{value}" if index.even?
 end
