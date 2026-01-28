@@ -12,6 +12,8 @@ loop do
   numbers << number
 end
 
-# DEBUG: Salida por pantalla
-puts "--> [DEBUG] Salida de datos:"
-puts "Valores: #{numbers}"
+# Fase 2: Mostrar por pantalla los números en posición par de la lista
+puts "==> [Fase 2] Salida de datos en posiciones pares:"
+numbers.each_with_index do |value, index|
+  puts "Value[#{index}] = #{value}" if index.even?
+end

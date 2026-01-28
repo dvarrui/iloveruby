@@ -12,3 +12,21 @@ Vamos a hacer un programa que haga lo siguiente:
 7. Mostrar por pantalla el máximo y el mínimo de la segunda mitad.
 
 **[Ejemplo 1](./01-porciones.rb): Pedir números al usuario que se irán almacenandoen una lista. Cuando se introduce un cero, se termina de pedir números.**
+
+De entrada esta frase me sugiere que vamos a tener un bucle "infinito" donde se repite el proceso de pedir un número al usuario `number = gets.to_i` y guardarlo en un Array `numbers << number`. El bucle termina cuando `number == 0` o cuando `number.zero?` devuelve `true`.
+
+```ruby
+loop do
+  print("Número? "); number = gets.to_i
+  break if number.zero?
+  numbers << number
+end
+```
+
+**[Ejemplo 2](./02-porciones.rb): Mostrar por pantalla los números en posición par de la lista.**
+
+```ruby
+numbers.each_with_index do |value, index|
+  puts "Value[#{index}] = #{value}" if index.even?
+end
+```
