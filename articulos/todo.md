@@ -26,6 +26,12 @@ https://alec-c4.com/blog/2022-12-25-jupyter-ruby
 * Greg Navis. Ruby tip: object allocation and initialization are two separate steps: https://twitter.com/gregnavis/status/1625983757022031878?t=M3_Bhq9fxq-nnBUqvqDHZQ&s=35
 
 ==================================================
+BASIC
+
+lovingruby.com/reasons
+- https://lovingruby.com/reasons/28-string-grapheme_clusters
+
+==================================================
 TIP
 
 * https://twitter.com/gregnavis/status/1625983787418152964?t=oy4vTWCietHHY3LFov0agA&s=35. Greg Navis: allocate occurs only twice in the entire Rails code base. I haven't seen it or used it anywhere else.
