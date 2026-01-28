@@ -28,6 +28,8 @@ https://alec-c4.com/blog/2022-12-25-jupyter-ruby
 ==================================================
 BASIC
 
+* https://socketry.github.io/protocol-url/guides/getting-started/index#combining-urls
+
 ==================================================
 TIP
 
