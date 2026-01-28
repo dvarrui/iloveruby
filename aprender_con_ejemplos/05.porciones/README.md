@@ -30,3 +30,5 @@ numbers.each_with_index do |value, index|
   puts "Value[#{index}] = #{value}" if index.even?
 end
 ```
+
+**[Ejemplo 3](./03-porciones.rb): Mostrar por pantalla los números en orden inverso.**
