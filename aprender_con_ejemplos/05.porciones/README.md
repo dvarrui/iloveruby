@@ -149,3 +149,17 @@ Una imagen vale más que mil palabras o `imagen > palabras * 1000`.
 >> a
 => [2, 3]
 ```
+
+Quitar elementos de un Array es invocar al método `delete_at(N)`, donde `N` es la posición del elemento dentro del Array. La posición `0` es el primer elemento y el último elemento está en la posición `a.length - 1` o visto de como si el Array fuera circular, el último elemento está en la posición `-1`.
+
+> **IMHO**: Con los Array y los Hash se pueden resolver muchísimos problemas. Es importante estar familiarizado con sus métodos porque son muy útiles.
+
+Como la salida por pantalla empieza a ser "excesiva", usamos los colores para separar visualmente cada bloque de salida y facilitar su lectura.
+
+**[Ejemplo 7](./07-porciones.rb): Mostrar por pantalla el máximo y el mínimo de la segunda mitad.**
+
+La intuición nos pide usar un método `min` y otro `max` en la segunda mitad `half_numbers2`.
+
+---
+
+_Hasta aquí hemos terminado de "evolucionar" las "listas", ahora puedes seguir con el siguiente problema._

@@ -44,3 +44,9 @@ half_numbers1.delete_at(-1)
 
 puts pastel.green "==> [Fase 5] Mostrar mitad 1, sin los extremos:"
 puts "Mitad 1 : #{half_numbers1}"
+
+# Fase 6: Mostrar por pantalla el máximo y el mínimo de la segunda mitad.
+puts pastel.green "==> [Fase 6] Mostrar min y max de mitad 2:"
+puts "Mitad 2 min : #{half_numbers2.min}"
+puts "Mitad 2 max : #{half_numbers2.max}"
+
