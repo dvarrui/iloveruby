@@ -70,7 +70,7 @@ Tenemos que `numbers` es un Array que contiene a todos los números con los que 
 * Para "calcular" la segunda mitad hacemos `half_numbers2 = numbers - half_numbers1`, esto es, al Array de todos los números `numbers`, le "restamos" o le quitamos los elementos de la primera mitad `half_numnbers1`, y como resultado nos quedan los elementos de la segunda mitad.
 * Mostramos el resultado por pantalla.
 
-**[Ejemplo 5](./05-porciones.rb): Refactorizamos la fase 4 anterior.**
+**[Ejemplo 5](./05-porciones.rb): Refactorizamos lo anterior.**
 
 No termino de quedarme contento con la solución anterior. Vamos a pensar otra forma de resolver el mismo problema de dividir el Array en dos mitades. Resumiendo lo que queremos es:
 * Calcular cuántos elementos son la mitad del Array.
@@ -129,7 +129,7 @@ Abro sesión `irb` y pruebo con una Array de un número par de elementos:
 >> 
 ```
 
-**[Ejemplo 6](./06-porciones.rb): Refactorizamos la fase 4 anterior.**
+**[Ejemplo 6](./06-porciones.rb): Mostrar por pantalla todos los elementos de la primera mitad, exceptuando el primero y el último.**
 
 Una imagen vale más que mil palabras o `imagen > palabras * 1000`.
 
@@ -150,7 +150,7 @@ Una imagen vale más que mil palabras o `imagen > palabras * 1000`.
 => [2, 3]
 ```
 
-Quitar elementos de un Array es invocar al método `delete_at(N)`, donde `N` es la posición del elemento dentro del Array. La posición `0` es el primer elemento y el último elemento está en la posición `a.length - 1` o visto de como si el Array fuera circular, el último elemento está en la posición `-1`.
+Quitar elementos de un Array es tan sencillo como invocar al método `delete_at(N)`, donde `N` es la posición del elemento dentro del Array. La posición `0` es el primer elemento y el último elemento está en la posición `a.length - 1` o visto de como si el Array fuera circular, el último elemento está en la posición `-1`.
 
 > **IMHO**: Con los Array y los Hash se pueden resolver muchísimos problemas. Es importante estar familiarizado con sus métodos porque son muy útiles.
 
@@ -158,7 +158,7 @@ Como la salida por pantalla empieza a ser "excesiva", usamos los colores para se
 
 **[Ejemplo 7](./07-porciones.rb): Mostrar por pantalla el máximo y el mínimo de la segunda mitad.**
 
-La intuición nos pide usar un método `min` y otro `max` en la segunda mitad `half_numbers2`.
+La intuición nos pide usar un método `min` y otro `max` en la segunda mitad `half_numbers2`. Y nuestra intuición "nos sirve bien".
 
 ---
 
