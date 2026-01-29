@@ -142,4 +142,4 @@ Para saber el número de ocurrencias de cada clave, podemos usar el método `siz
 
 ---
 
-_Hasta aquí hemos terminado de "evolucionar" las "listas", ahora puedes seguir con el siguiente problema._
+_Hasta aquí hemos terminado de "evolucionar" las "listas", ahora puedes seguir con el [siguiente problema](../05.porciones/README.md)._
