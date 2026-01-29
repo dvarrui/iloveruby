@@ -28,3 +28,9 @@ puts "  Punto 1 (#{x1}, #{y1})"
 distance = Math.sqrt((x1 - x0)**2 + (y1 - y0)**2)
 
 puts pastel.green("==> La distancia es: ") + distance.to_s
+
+# Mostrar por pantalla las coordenadas del punto medio exacto de ambos.
+
+midpoint_x = (x0 + x1) / 2.0
+midpoint_y = (y0 + y1) / 2.0
+puts pastel.green("==> El punto medio es: ") + "(#{midpoint_x}, #{midpoint_y})"

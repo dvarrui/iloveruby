@@ -8,7 +8,7 @@ puts "==> Introducir las coordenas (x,y)"
   puts "Punto #{_1}:"
   print "  punto[#{_1}].x? "; x = gets.to_f
   print "  punto[#{_1}].y? "; y = gets.to_f
-  point = { x: x, y: y }
+  point = [x, y]
   points << point
 end
 
