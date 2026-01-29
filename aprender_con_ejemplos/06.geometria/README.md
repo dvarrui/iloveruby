@@ -9,6 +9,8 @@ Enunciado:
 
 **[Ejemplo 1](./01-geometria.rb): Pedir al usuario las coordenadas X e Y de dos puntos en el espacio.**
 
+(Sin comentarios)
+
 **[Ejemplo 2](./02-geometria.rb): Mejoramos la salida por pantalla.**
 
 ---
