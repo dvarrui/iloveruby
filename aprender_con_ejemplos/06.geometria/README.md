@@ -61,6 +61,7 @@ Los Struct de Ruby son clases, y por tanto, podemos abrir un bloque al definir e
 > **NOTA**: Mientras programaba este ejemplo, he aprendido algo nuevo del módulo `Math`. Este módulo tiene una función `hypot(x, y)` que calcula la hipotenusa de un triángulo rectángulo con lados `x` e `y`, devolviendo `sqrt(x^2+y^2)` como un Float. Es ideal para calcular distancias euclidianas.
 
 Ejemplo:
+```ruby
 Point = Struct.new(:x, :y) do
   # Calcular distancia a otro punto
   def distance_to(other)
@@ -71,8 +72,6 @@ Point = Struct.new(:x, :y) do
     "(#{x}, #{y})"
   end
 end
-
-```ruby
 
 p0 = Point.new(0, 0)
 p1 = Point.new(3, 4)
@@ -87,20 +86,8 @@ puts "La distancia de #{p0} a #{p1} es #{p0.distance_to(p1)}"
 > * Iteración: Puedes usar métodos como `.each` o `.each_pair` sobre los atributos del punto.
 > * Conversión: Puedes convertirlo a un `Hash` fácilmente con `.to_h`.
 
+Con este cambio, se mantiene la misma funcionalidad pero con diferente código. Y se supone que el código ha mejorado porque supone menos esfuerzo entenderlo. Lo que hemos hecho se llama refactorizar.
 
 ---
-4. keyword_init (Para mayor claridad)
 
-
-Si quieres obligar a pasar los nombres de los parámetros al crear el punto (estilo programación funcional moderna), puedes usar keyword_init:
-Ruby
-
-Point = Struct.new(:x, :y, keyword_init: true)
-
-# Ahora se crea así:
-punto = Point.new(x: 5, y: 12)
-
-¿Te gustaría que cree un script que genere una secuencia lazy de objetos Point aleatorios para practicar el filtrado por distancia?
----
-
-_Hasta aquí hemos terminado de "evolucionar" las "listas", ahora puedes seguir con el siguiente problema._
+_Hasta aquí hemos terminado de "evolucionar" la "geometría", ahora puedes seguir con el siguiente problema._

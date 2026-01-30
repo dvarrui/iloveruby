@@ -162,4 +162,4 @@ La intuición nos pide usar un método `min` y otro `max` en la segunda mitad `h
 
 ---
 
-_Hasta aquí hemos terminado de "evolucionar" las "listas", ahora puedes seguir con el [siguiente problema](../06.geometria/README.md)._
+_Hasta aquí hemos terminado de "evolucionar" las "porciones", ahora puedes seguir con el [siguiente problema](../06.geometria/README.md)._

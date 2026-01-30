@@ -4,7 +4,6 @@ pastel = Pastel.new
 
 # Definición de un Struct llamado Point
 Point = Struct.new(:x, :y) do
-  # Calcular ls distancia entre puntos
   def distance_to(other)
     Math.hypot(other.x - x, other.y - y)
   end
