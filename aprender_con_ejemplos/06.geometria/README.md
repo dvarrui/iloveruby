@@ -82,9 +82,9 @@ puts "La distancia de #{p0} a #{p1} es #{p0.distance_to(p1)}"
 
 > **NOTA**: Las ventajas de usar un Struct en lugar de la típica clase son:
 >
-> * Comparación automática: Si creas dos puntos con las mismas coordenadas Point.new(1,1) == Point.new(1,1), Ruby te dirá que son iguales (`true`). En una clase normal, tendrías que programar esa lógica.
-> * Iteración: Puedes usar métodos como `.each` o `.each_pair` sobre los atributos del punto.
-> * Conversión: Puedes convertirlo a un `Hash` fácilmente con `.to_h`.
+> * **Comparación automática**: Si creas dos puntos con las mismas coordenadas Point.new(1,1) == Point.new(1,1), Ruby te dirá que son iguales (`true`). En una clase normal, tendrías que programar esa lógica.
+> * **Iteración**: Puedes usar métodos como `.each` o `.each_pair` sobre los atributos del punto.
+> * **Conversión**: Puedes convertirlo a un `Hash` fácilmente con `.to_h`.
 
 Con este cambio, se mantiene la misma funcionalidad pero con diferente código. Y se supone que el código ha mejorado porque supone menos esfuerzo entenderlo. Lo que hemos hecho se llama refactorizar.
 
