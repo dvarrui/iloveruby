@@ -9,7 +9,7 @@
 
 **[Ejemplo 0](./00-holamundo.rb): Escribimos las ideas como comentarios.**
 
-Esto realmente, no es un programa porque no hace nada. Simplemente vamos a crear comentarios con los objetivos que queremos desarrollar para que nos se a utilidad a modo de tener un esquema inicial.
+Esto realmente, no es un programa porque no hace nada. Simplemente vamos a crear comentarios con los objetivos que queremos desarrollar para que tener un esquema inicial.
 
 **[Ejemplo 1](./01-holamundo.rb): print() y puts() para mostrar por pantalla.**
 
