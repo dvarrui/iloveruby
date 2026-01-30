@@ -3,8 +3,9 @@
 # Hola Mundo
 
 ¡Hola Mundo! Lo típico es empezar por el "Hola Mundo!". Así que vamos, pero vamos a hacer un programa que:
-* A) Pedir por teclado el nombre, edad y altura en metros, 
-* b) Mostrar por pantalla un mensaje como el siguiente: `El personaje NAME, tiene AGE años de edad y mide HEIGHT metros.`
+
+A. Pedir por teclado el nombre, edad y altura en metros, 
+B. Mostrar por pantalla un mensaje como el siguiente: `El personaje NAME, tiene AGE años de edad y mide HEIGHT metros.`
 
 **[Ejemplo 0](./00-holamundo.rb): Escribimos las ideas como comentarios.**
 
