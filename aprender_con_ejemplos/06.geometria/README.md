@@ -36,11 +36,11 @@ Para calcular la distancia en línea recta entre dos puntos en un plano cartesia
 
 **[Ejemplo 5](./05-geometria.rb): Refactorizar con Structs.**
 
-No me quedé del todo contento con la forma de almacenar los datos.
-* Primero leemos los datos y los guardamos en un Array 2x2 donde las posiciones de almacenamiento dentro del Array tienen un significado concreto. Por ejemplo: punto 0 vs punto 1, x vs y.
-* Luego tampoco me termina de dejar contento el que hubiéramos pasado el contenido del Array 2x2 a variables independientes `x0, y0, x1, y1`. Ahora sólo sólo 2 puntos, pero si fueran 10 puntos, o 20, entonces se volvería todo un poco engorroso.
+No me quedé del todo contento con la forma de almacenar los datos. En los ejemplos anteriores se hizo lo siguiente: 
+* Leer los datos y los guardamos en un Array 2x2 donde las posiciones de almacenamiento dentro del Array tienen un significado concreto. Por ejemplo: punto 0 vs punto 1, x vs y.
+* Pasar el contenido del Array 2x2 a variables independientes `x0, y0, x1, y1`. Ahora sólo tenemos 2 puntos, pero si fueran 10 puntos, o 20, entonces se volvería todo un poco engorroso.
 
-En Ruby, un Struct es la forma más rápida y elegante de crear una clase pequeña para agrupar atributos como coordenadas.
+En Ruby, un Struct es la forma más rápida y elegante de crear una pequeña clase para agrupar atributos como por ejemplo las coordenadas del punto.
 
 ```ruby
 # Definición de un Struct llamado Point
@@ -52,42 +52,45 @@ punto.x  # => 10
 punto.y = 30
 ```
 
+Entonces, este ejemplo tiene la misma funcionalidad que el anterior pero ahora usamos los Structs en lugar de Arrays o "variables sueltas".
 
----
-2. Definición con lógica interna (Recomendado)
+**[Ejemplo 6](./06-geometria.rb): Seguimos refactorizando Structs.**
 
-Podemos abrir un bloque al definir el Struct para añadirle métodos, como el cálculo de distancia que vimos antes.
-Ruby
+Los Struct de Ruby son clases, y por tanto, podemos abrir un bloque al definir el Struct para añadirle métodos, como por ejemplo el cálculo de distancia entre dos puntos, o el cálculo del punto medio. 
 
+> **NOTA**: Mientras programaba este ejemplo, he aprendido algo nuevo del módulo `Math`. Este módulo tiene una función `hypot(x, y)` que calcula la hipotenusa de un triángulo rectángulo con lados `x` e `y`, devolviendo `sqrt(x^2+y^2)` como un Float. Es ideal para calcular distancias euclidianas.
+
+Ejemplo:
 Point = Struct.new(:x, :y) do
-  # Método para calcular distancia a otro punto
+  # Calcular distancia a otro punto
   def distance_to(other)
     Math.hypot(other.x - x, other.y - y)
   end
 
-  # Representación amigable en consola
   def to_s
     "(#{x}, #{y})"
   end
 end
+
+```ruby
 
 p0 = Point.new(0, 0)
 p1 = Point.new(3, 4)
 
 puts "La distancia de #{p0} a #{p1} es #{p0.distance_to(p1)}"
 # => La distancia de (0, 0) a (3, 4) es 5.0
+```
 
-3. Ventajas de usar Struct en lugar de una Clase
+> **NOTA**: Las ventajas de usar un Struct en lugar de la típica clase son:
+>
+> * Comparación automática: Si creas dos puntos con las mismas coordenadas Point.new(1,1) == Point.new(1,1), Ruby te dirá que son iguales (`true`). En una clase normal, tendrías que programar esa lógica.
+> * Iteración: Puedes usar métodos como `.each` o `.each_pair` sobre los atributos del punto.
+> * Conversión: Puedes convertirlo a un `Hash` fácilmente con `.to_h`.
 
-    Comparación automática: Si creas dos puntos con las mismas coordenadas Point.new(1,1) == Point.new(1,1), Ruby te dirá que son iguales (true). En una clase normal, tendrías que programar esa lógica.
-
-    Iteración: Puedes usar métodos como .each o .each_pair sobre los atributos del punto.
-
-    Conversión: Puedes convertirlo a un hash fácilmente con .to_h.
-
-4. keyword_init (Para mayor claridad)
 
 ---
+4. keyword_init (Para mayor claridad)
+
 
 Si quieres obligar a pasar los nombres de los parámetros al crear el punto (estilo programación funcional moderna), puedes usar keyword_init:
 Ruby
