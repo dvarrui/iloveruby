@@ -90,4 +90,4 @@ Con este cambio, se mantiene la misma funcionalidad pero con diferente código. 
 
 ---
 
-_Hasta aquí hemos terminado de "evolucionar" la "geometría", ahora puedes seguir con el siguiente problema._
+_Hasta aquí hemos terminado de "evolucionar" la "geometría", ahora puedes seguir con el [siguiente problema](../07.convertir/README.md)._
