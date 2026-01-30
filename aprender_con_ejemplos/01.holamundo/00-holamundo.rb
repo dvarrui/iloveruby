@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 
 # Objetivos:
 # A. Pedir por teclado el nombre, edad y altura en metros
