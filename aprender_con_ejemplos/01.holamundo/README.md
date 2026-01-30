@@ -2,11 +2,13 @@
 
 # Hola Mundo
 
-¡Hola Mundo! Lo típico es empezar por el "Hola Mundo!". Así que vamos, pero vamos a hacer un programa que pida por teclado el nombre, edad y altura en metros, y después mostraremos por pantalla un mensaje como el siguiente:
+¡Hola Mundo! Lo típico es empezar por el "Hola Mundo!". Así que vamos, pero vamos a hacer un programa que:
+* A) Pedir por teclado el nombre, edad y altura en metros, 
+* b) Mostrar por pantalla un mensaje como el siguiente: `El personaje NAME, tiene AGE años de edad y mide HEIGHT metros.`
 
-```
-El personaje NAME, tiene AGE años de edad y mide HEIGHT metros.
-```
+**[Ejemplo 0](./00-holamundo.rb): Escribimos las ideas como comentarios.**
+
+Esto realmente, no es un programa porque no hace nada. Simplemente vamos a crear comentarios con los objetivos que queremos desarrollar para que nos se a utilidad a modo de tener un esquema inicial.
 
 **[Ejemplo 1](./01-holamundo.rb): print() y puts() para mostrar por pantalla.**
 
