@@ -2,9 +2,13 @@
 
 #  Máximos y mínimos, pares e impares
 
-Vamos a hacer un programa que pida tres números al usuario, y sin usar Array (listas), muestrar por pantalla:
-* El mínimo (indicar si es par o impar)
-* El máximo (indicar si es par o impar)
+Vamos a hacer un programa que haga lo siguiente:
+* A. Pedir tres números al usuario, y sin usar Array (listas)
+* B. Mostrar por pantalla
+* C. El mínimo (indicar si es par o impar)
+* D. El máximo (indicar si es par o impar)
+
+**[Ejemplo 0](./00-maxmin.rb): Esquema inicial.**
 
 **[Ejemplo 1](./01-maxmin.rb): Ordenamos los 3 números.**
 

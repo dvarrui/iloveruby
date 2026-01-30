@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-# Leer tres números por argumentos
+# A. Leer tres números por argumentos
 number1 = ARGV[0].to_i
 number2 = ARGV[1].to_i
 number3 = ARGV[2].to_i
@@ -23,12 +23,14 @@ if number1 > number2
   number1, number2 = number2, number1
 end
 
+# B. Mostrar por pantalla
 puts("[order numbers] #{number1} #{number2} #{number3}")
 
-# Tenemos el mínimo y el máximo
+# C. Tenemos el mínimo y el máximo
 min = number1
 max = number3
 
-# Salida por pantalla
 puts "[Mínimo] #{min}"
 puts "[Máximo] #{max}"
+
+# [TODO] D. Indicar si es par o impar, el mínimo y el máximo
