@@ -1,4 +1,4 @@
-[<< back](../README.md)
+[<< back](../../README.md)
 
 # Introdución a Ruby Ractors (traducido)
 

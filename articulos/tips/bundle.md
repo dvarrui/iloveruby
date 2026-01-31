@@ -34,8 +34,8 @@ unicode-display_width  1.8.0    2.3.0
 
 `bundle doctor` verifica su Gemfile y el entorno de gemas en busca de problemas como versiones de Ruby que no coinciden.
 
-```
-❯ bundle doctor
+```bash
+$ bundle doctor
 The Gemfile's dependencies are satisfied
 ```
 
@@ -43,8 +43,8 @@ The Gemfile's dependencies are satisfied
 
 `bundle gem <gem_name>`, crea una gema Ruby. Crea un esqueleto/estructura con opciones como linter, ci, motor de prueba, etc.
 
-```
-❯ bundle gem foo
+```bash
+$ bundle gem foo
 Creating gem 'foo'...
 Changelog enabled in config
 Standard enabled in config
