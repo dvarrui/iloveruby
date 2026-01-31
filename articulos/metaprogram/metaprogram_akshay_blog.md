@@ -1,4 +1,4 @@
-[<< back](README.md)
+[<< back](../README.md)
 
 # Metaprogramming Ruby 2 (traducido al español)
 
