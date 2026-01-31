@@ -1,4 +1,4 @@
-[<< back](../index.md)
+[<< back](../README.md)
 
 ```
 Las ideas para los enunciados has sido extraídas del pdf 
