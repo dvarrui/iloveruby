@@ -1,6 +1,6 @@
 
 ```
-Los siguientes enunciados están "copiados" del pdf 
+Las ideas para los enunciados has sido extraídas del pdf 
 "30 Ejercicios de Python" de Juan Monroy
 ```
 
