@@ -1,6 +1,6 @@
 [<< back](../README.md)
 
-# Numeros
+# Números
 
 Vamos a hacer un programa que haga lo siguiente:
 * A. Pedir al usuario un número entero N entre 10 y 20.
