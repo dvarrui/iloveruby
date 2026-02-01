@@ -11,4 +11,10 @@ David Backeus (@dbackeus) on X
 Reason #27 to love Ruby: String padding
 
 https://t.co/HjuxJ5rqih
+---
+
+https://x.com/dbackeus/status/2017281281688567960
+String.scan
+
+---
 
