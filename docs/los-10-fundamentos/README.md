@@ -2,11 +2,13 @@
 
 # Los 10 fundamentos
 
-Una pregunta que me hago: _"¿Cuáles serían los 10 fundamentos básicos para transmitir a un programador de otro lenguaje para ayudarle a entender la base de Ruby, y de este modo hacer el camino del aprendizaje un poco más feliz?"_
+Una pregunta que me hago: 
 
-Pues con esta idea en mente, empiezo a escribir este documento. _¿Por qué 10?_ Pues porque me pareció un número "redondo". Ni mucho, ni poco. A ver si me salen 10, o menos, o más.
+_"¿Cuáles serían los 10 fundamentos básicos para transmitir a un programador de otro lenguaje, para ayudarle a entender la base de Ruby, y de este modo hacer el camino del Ruby developer un poco más feliz?"_
 
-1. [Fichero de texto](#1-fichero-de-texto)
+Pues con esta idea en mente, empiezo a escribir este documento. _¿Por qué 10?_ Pues porque me pareció un número "redondo". Ni mucho, ni poco, "ni para comerse el coco". A ver si me salen 10, + o -.
+
+1. [Todo es texto](#1-todo-es-texto)
 2. [Tipado fuerte y dinámico](#2-tipado-fuerte-y-dinámico)
 3. [Todo es un objeto](#3-todo-es-un-objeto)
 4. [Tu amigo se llama "irb"](#4-tu-amigo-se-llama-irb)
@@ -14,11 +16,11 @@ Pues con esta idea en mente, empiezo a escribir este documento. _¿Por qué 10?_
 6. [El "idioma" Ruby](#6-el-idioma-ruby)
 7. [Tenemos métodos, no funciones](#7-tenemos-métodos-no-funciones)
 
-# 1. Fichero de texto
+# 1. Todo es texto
 
-Lo primero es instalar Ruby en tu sistema (¡Lo normal!). A continuación, bastaría con crear un fichero de texto con tu editor favorito y escribir. ¡Ya está! A ver, puedes usar un IDE, VS Code, Codium, o un editor de texto simple como vi, Zed, etc. ¡Lo que quieras!
+Lo primero es instalar Ruby en tu sistema (¡Lo normal!).
 
-Esta idea la "copió" Matz del lenguaje Perl, pero es lo mismo en Python, Bash, PHP, JavaScript, etc.
+A continuación, bastaría con crear un fichero de texto con tu editor favorito y escribir. ¡Ya está! A ver, puedes usar un IDE como VS Code, Codium, o un editor de texto plano como vi, Zed, Notepad, etc. ¡Lo que quieras! Esta idea la "cogió" Matz del lenguaje Perl, pero es lo mismo en Python, Bash, PHP, JavaScript, etc.
 
 Prueba lo siguiente:
 
@@ -27,7 +29,7 @@ Prueba lo siguiente:
 print("Hola Mundo!\n")
 ```
 
-Crea un fichero de texto con este contenido y lo ejecutas con `ruby holamundo.rb`. El resultado, será lo que esperas que sea.
+Crea un fichero de texto con este contenido, y lo ejecutas con `ruby holamundo.rb`. El resultado, será lo que esperas que sea.
 
 * Vemos que para los comentarios usamos `#`, como en otros lenguajes como: Python, Perl, PHP, R, Bash, PowerShell, YAML, Elixir, Crystal, etc.
 * Para mostrar un mensaje por consola usamos `print()` como en otros lenguajes: Python, Swift, Kotlin, Lua, Julia, etc.
@@ -36,12 +38,12 @@ Crea un fichero de texto con este contenido y lo ejecutas con `ruby holamundo.rb
 >
 > Por mi comodidad, y como suelo trabajar en GNU/Linux:
 >
-> * usaré la cabecera "shebang" ()`#!/usr/bin/env ruby`
+> * usaré la cabecera "shebang" (`#!/usr/bin/env ruby`)
 > * con permisos de ejecución en el fichero (`chmod +x holamundo.rb`)
 >
-> para poder ejecutar el fichero como `./holamundo.rb`.
+> y ahora puedo ejecutar el fichero directamente como `./holamundo.rb`.
 
-El mismo ejemplo con cabecera "shebang":
+Este es el mismo ejemplo pero con cabecera "shebang":
 
 ```ruby
 #!/usr/bin/env ruby
@@ -50,6 +52,58 @@ print("Hola Mundo!\n")
 ```
 
 # 2. Tipado fuerte y dinámico
+
+Ruby es un lenguaje con **tipado fuerte y dinámico**.
+
+Ejemplo:
+
+```ruby
+texto = "4"
+texto.class #=> String
+
+numero = 2
+numero.class #=> Integer
+
+texto + numero #=> Error: `+': no implicit conversion of Integer into String (TypeError)
+
+texto + numero
+        ^^^^^^
+	from (irb):5:in `<main>'
+	from /home/david/.rbenv/versions/3.2.8/lib64/ruby/gems/3.2.0/gems/irb-1.16.0/exe/irb:9:in `<top (required)>'
+	from /home/david/.rbenv/versions/3.2.8/bin/irb:25:in `load'
+	from /home/david/.rbenv/versions/3.2.8/bin/irb:25:in `<main>'
+>> texto + numero.to_s
+=> "42"
+>> texto.to_i + numero
+=> 6
+```
+
+## 2.1 Tipado Débil (INFO)
+
+La diferencia entre tipado fuerte vs débil es una de las distinciones más confusas porque, no existe una definición formal única. Sin embargo, en el día a día de la programación, se refiere a qué tan permisivo es el lenguaje con las operaciones entre tipos diferentes.
+
+Si se intenta realizar una operación con dos tipos distintos (como un número y un texto), el lenguaje intenta "adivinar" tu intención y realiza una conversión implícita (coerción).
+
+* El ejemplo clásico en JavaScript: 4 + "7" resulta en "47". El lenguaje convierte el 4 en texto automáticamente.
+* Problema: Puede ocultar errores lógicos que solo detectarás con tests de funcionamiento. El programa no "explota", pero da un resultado absurdo.
+* Lenguajes: JavaScript, PHP, C (en ciertos aspectos de memoria), B (El antecesor de C).
+
+## 2.2 Tipado Fuerte (Ruby)
+
+No permite operaciones entre tipos diferentes a menos que tú, como programador, hagas una conversión explícita (casting).
+
+* El ejemplo (Python): 4 + "7" lanzará un error (TypeError). El lenguaje dice: "No sé cómo sumar un número y un texto, dime qué quieres hacer exactamente".
+* Ventaja: Detecta el error en el momento en que ocurre.
+* Lenguajes: Python (aunque es dinámico, es fuerte), Java, Ruby, Go, Rust.
+
+## 2.3 Tipado estático (INFO)
+
+El tipo de las variables se conoce en tiempo de compilación.
+
+## 2.4 Tipado dinámico (Ruby)
+
+El tipo de las variables sólo se sabe en el momento de la ejecución.
+
 
 # 3. Todo es un objeto
 
