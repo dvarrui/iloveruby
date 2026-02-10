@@ -6,11 +6,14 @@ Una pregunta que me hago: _"¿Cuáles serían los 10 fundamentos básicos para t
 
 Pues con esta idea en mente, empiezo a escribir este documento. _¿Por qué 10?_ Pues porque me pareció un número "redondo". Ni mucho, ni poco. A ver si me salen 10, o menos, o más.
 
-1. [Fichero de texto](#fichero-de-texto)
-2. [Todo es un objeto](#todo-es-un-objeto)
-3. [Tu amigo se llama "irb"]
+1. [Fichero de texto](#1-fichero-de-texto)
+2. [Todo es un objeto](#2-todo-es-un-objeto
+3. [Tu amigo se llama "irb"](#3-tu-amigo-se-llama-irb)
+4. [Creando clases y objetos](#4-creando-clases-y-objetos)
+5. [El "idioma" Ruby](#5-el-idioma-ruby)
+6. [Tenemos métodos, no funciones](#6-tenemos-métodos-no-funciones)
 
-1. # Fichero de texto
+# 1. Fichero de texto
 
 Lo primero es instalar Ruby en tu sistema (¡Lo normal!). A continuación, bastaría con crear un fichero de texto con tu editor favorito y escribir. ¡Ya está! A ver, puedes usar un IDE, VS Code, Codium, o un editor de texto simple como vi, Zed, etc. ¡Lo que quieras!
 
@@ -45,7 +48,7 @@ El mismo ejemplo con cabecera "shebang":
 print("Hola Mundo!\n")
 ```
 
-2. # Todo es un objeto
+# 2. Todo es un objeto
 
 Lo siguiente que debes saber de Ruby, es que "todo es un objeto" (o casi casi todo). Ruby fue creado por Matz inspirándose en List, Perl y Samlltalk. Del Smalltalk de Alan Kay "copió" la idea de que "todo es un objeto" e invocar la ejecución de un método en un objeto es lo mismo que enviarle un mensaje. Por ejemplo: `perro.ladrar()` produce el mismo efecto que `perro.send(:ladrar)`.
 
@@ -113,3 +116,29 @@ irb(main):004> quit
 Si escribimos la variable y el punto, IRB espera un método pero con TAB se muestra una ayuda:
 
 ![](./images/irb-help.png)
+
+# 4. Creando clases y objetos
+
+Vamos con el ejemplo:
+
+```ruby
+# Ejemplo: Clase Perro y objeto snoopy
+class Perro
+  def initialize(name)
+    @name = name
+  end
+
+  def ladrar()
+    retrun "[#{@name}] Guau!"
+  end
+end
+
+snoopy = Perro.new("Snoopy")
+puts(snoopy.ladrar())
+```
+
+# 5. El "idioma" Ruby
+
+# 6. Tenemos métodos, no funciones
+
+En Ruby, estrictamente hablando, no hay funciones. No hay porque todo son métodos. Incluso cuando parece que no hay ningún objeto en "la sala", estamos dentro de uno.
