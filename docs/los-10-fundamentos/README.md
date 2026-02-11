@@ -59,51 +59,25 @@ Ejemplo:
 
 ```ruby
 texto = "4"
-texto.class #=> String
+texto.class   #=> String
 
 numero = 2
-numero.class #=> Integer
+numero.class   #=> Integer
 
+# Falla porque tiene tipado fuerte
 texto + numero #=> Error: `+': no implicit conversion of Integer into String (TypeError)
 
-texto + numero
-        ^^^^^^
-	from (irb):5:in `<main>'
-	from /home/david/.rbenv/versions/3.2.8/lib64/ruby/gems/3.2.0/gems/irb-1.16.0/exe/irb:9:in `<top (required)>'
-	from /home/david/.rbenv/versions/3.2.8/bin/irb:25:in `load'
-	from /home/david/.rbenv/versions/3.2.8/bin/irb:25:in `<main>'
->> texto + numero.to_s
-=> "42"
->> texto.to_i + numero
-=> 6
+# Forzar la conversión de tipo explícita
+texto + numero.to_s   #=> "42"
+texto.to_i + numero   #=> 6
 ```
 
-## 2.1 Tipado Débil (INFO)
-
-La diferencia entre tipado fuerte vs débil es una de las distinciones más confusas porque, no existe una definición formal única. Sin embargo, en el día a día de la programación, se refiere a qué tan permisivo es el lenguaje con las operaciones entre tipos diferentes.
-
-Si se intenta realizar una operación con dos tipos distintos (como un número y un texto), el lenguaje intenta "adivinar" tu intención y realiza una conversión implícita (coerción).
-
-* El ejemplo clásico en JavaScript: 4 + "7" resulta en "47". El lenguaje convierte el 4 en texto automáticamente.
-* Problema: Puede ocultar errores lógicos que solo detectarás con tests de funcionamiento. El programa no "explota", pero da un resultado absurdo.
-* Lenguajes: JavaScript, PHP, C (en ciertos aspectos de memoria), B (El antecesor de C).
-
-## 2.2 Tipado Fuerte (Ruby)
-
-No permite operaciones entre tipos diferentes a menos que tú, como programador, hagas una conversión explícita (casting).
-
-* El ejemplo (Python): 4 + "7" lanzará un error (TypeError). El lenguaje dice: "No sé cómo sumar un número y un texto, dime qué quieres hacer exactamente".
-* Ventaja: Detecta el error en el momento en que ocurre.
-* Lenguajes: Python (aunque es dinámico, es fuerte), Java, Ruby, Go, Rust.
-
-## 2.3 Tipado estático (INFO)
-
-El tipo de las variables se conoce en tiempo de compilación.
-
-## 2.4 Tipado dinámico (Ruby)
-
-El tipo de las variables sólo se sabe en el momento de la ejecución.
-
+| Tipado   | Ejemplo                             | Descripción | Lenguajes |
+| -------- | ----------------------------------- | ----------- | --------- |
+| Débil    | JavaScript: 4 + "2" resulta en "42" | En una operación con dos tipos distintos, el lenguaje intenta "adivinar" la intención del usuario y realiza una conversión implícita (coerción) | JavaScript, PHP, C (en ciertos aspectos de memoria), B (El antecesor de C)|
+| Fuerte   | Python: 4 + "2" lanzará un error (TypeError)| No permite operaciones entre tipos diferentes a menos que el programador, haga una conversión explícita (casting) | Python, Java, Ruby, Go, Rust |
+| Estático | int i; (Variable de tipo entero)| El tipo de las variables se conoce en tiempo de compilación | Java, Rust, C |
+| Dinámico | nombre = "Obi-wan" | El tipo de las variables sólo se sabe en el momento de la ejecución | Ruby, Python, JavaScript, PHP |
 
 # 3. Todo es un objeto
 
