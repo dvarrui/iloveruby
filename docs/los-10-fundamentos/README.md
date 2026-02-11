@@ -12,7 +12,8 @@ Pues con esta idea en mente, empiezo a escribir este documento. _¿Por qué 10?_
 2. [Tipado fuerte y dinámico](#2-tipado-fuerte-y-dinámico)
 3. [Todo es un objeto](#3-todo-es-un-objeto)
 4. [Tu amigo se llama "irb"](#4-tu-amigo-se-llama-irb)
-5. [Creando clases y objetos](#5-creando-clases-y-objetos)
+5. [Quitando "ruido" visual](#5-quitando-ruido-visual)
+6. [Clases y objetos](#6-clases-y-objetos)
 6. [El "idioma" Ruby](#6-el-idioma-ruby)
 7. [Tenemos métodos, no funciones](#7-tenemos-métodos-no-funciones)
 
@@ -48,7 +49,7 @@ Este es el mismo ejemplo pero con cabecera "shebang":
 ```ruby
 #!/usr/bin/env ruby
 # File: holamundo.rb
-print("Hola Mundo!\n")
+puts("Hola Mundo!")
 ```
 
 # 2. Tipado fuerte y dinámico
@@ -58,18 +59,20 @@ Ruby es un lenguaje con **tipado fuerte y dinámico**.
 Ejemplo:
 
 ```ruby
+# Tipo dinámico: el tipo de la variable sólo se sabe en tiempo de ejecución
 texto = "4"
 texto.class   #=> String
 
 numero = 2
 numero.class   #=> Integer
 
-# Falla porque tiene tipado fuerte
+# Tipado fuerte
 texto + numero #=> Error: `+': no implicit conversion of Integer into String (TypeError)
 
-# Forzar la conversión de tipo explícita
+# Casting: conversión de tipo explícita
 texto + numero.to_s   #=> "42"
 texto.to_i + numero   #=> 6
+"Quiero #{numero} manzanas" #=> "Quiero 2 manzanas"
 ```
 
 | Tipado   | Ejemplo                             | Descripción | Lenguajes |
@@ -109,13 +112,14 @@ age.class #=> Integer
 No existe la separación entre tipos de datos primitivos y objetos. Todo son objetos (o casi todo)
 
 ```ruby
-# Ejemplo: Las clases y los métodos son objetos
+# Ejemplo: Las clases son objetos
 age = 55
 
 age.class           #=> Integer
 Integer.class       #=> Class
 Integer.class.class #=> Class
 
+# Ejemplo: los métodos son objetos
 age.method(:to_s)         #=> #<Method: Integer#to_s(*)>
 convertir_a_string = age.method(:to_s) #=> #<Method: Integer#to_s(*)>
 convertir_a_string.class  #=> Method
@@ -148,28 +152,82 @@ Si escribimos la variable y el punto, IRB espera un método pero con TAB se mues
 
 ![](./images/irb-help.png)
 
-# 5. Creando clases y objetos
+# 5. Quitando "ruido" visual
+
+Ruby además tiene algunas "particularidades" que permiten que el lenguaje se "acerque" al lenguaje natural (el inglés). Por ejemplo:
+
+1. Los paréntesis se pueden omitir si la expresión se entiende bien sin ellos. Por defecto, no los pondremos.
+2. La sentencia `return` al final de un método, se puede omitir porque se asume que el valor de la última expresión evaluada será el valor devuelto por el método.
+3. Casi todas las sentencias son expresiones y por tanto siempre (o casi siempre) se devuelve algún valor.
+
+Ejemplos:
+
+```ruby
+nombre = "Obi-wan"
+# (1) Los paréntesis sobran la mayoría de las veces
+nombre.upcase #=> "OBI-WAN" 
+puts nombre   #=> Muestra "Obi-wan" por el terminal
+
+# (2) La sentencia return sobra al final del método
+def suma(a, b)
+  a + b
+end
+
+# (3) Casi todo es una expresión
+persona = if age >= 18
+  "Adulta"
+else
+  "Menor"
+end
+```
+
+# 6. Clases y objetos
 
 Vamos con el ejemplo:
 
 ```ruby
-# Ejemplo: Clase Perro y objeto snoopy
+# Ejemplo: Clase Perro
 class Perro
+  # Este es el constructor de las intancias.
   def initialize(name)
     @name = name
   end
 
-  def ladrar()
-    retrun "[#{@name}] Guau!"
+  def ladrar
+    "[#{@name}] Guau!"
   end
 end
 
+# Ejemplo: objeto snoopy
 snoopy = Perro.new("Snoopy")
-puts(snoopy.ladrar())
+puts snoopy.ladrar
 ```
-
-# 5. El "idioma" Ruby
 
 # 7. Tenemos métodos, no funciones
 
-En Ruby, estrictamente hablando, no hay funciones. No hay porque todo son métodos. Incluso cuando parece que no hay ningún objeto en "la sala", estamos dentro de uno.
+En Ruby, estrictamente hablando, no existen las funciones. No hay porque todo son métodos. Incluso cuando parece que no hay ningún objeto en "la sala", estamos dentro de uno.
+
+Ejemplo:
+
+```ruby
+# Ejemplo: factorial recursivo
+def factorial(n)
+  return 1 if n <= 1
+  n * factorial(n -1)
+end
+
+puts factorial(3)   #=> 3! = 3*2*1 = 6
+```
+
+Aparentemente, se puede pensar que `factorial()` es una función. Pero vamos a añadir una línea más `puts self`.
+
+```ruby
+# Ejemplo: factorial recursivo
+def factorial(n)
+  return 1 if n <= 1
+  n * factorial(n -1)
+end
+
+puts factorial(3)   #=> 3! = 3*2*1 = 6
+puts self
+```
