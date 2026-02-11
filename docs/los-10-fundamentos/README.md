@@ -14,8 +14,8 @@ Pues con esta idea en mente, empiezo a escribir este documento. _¿Por qué 10?_
 4. [Tu amigo se llama "irb"](#4-tu-amigo-se-llama-irb)
 5. [Quitando "ruido" visual](#5-quitando-ruido-visual)
 6. [Clases y objetos](#6-clases-y-objetos)
-6. [El "idioma" Ruby](#6-el-idioma-ruby)
 7. [Tenemos métodos, no funciones](#7-tenemos-métodos-no-funciones)
+8. [La metaprogramación](#8-la-metaprogramación)
 
 # 1. Todo es texto
 
@@ -219,15 +219,26 @@ end
 puts factorial(3)   #=> 3! = 3*2*1 = 6
 ```
 
-Aparentemente, se puede pensar que `factorial()` es una función. Pero vamos a añadir una línea más `puts self`.
+Aparentemente, se puede pensar que `factorial()` es una función. Pero vamos a añadir unas líneas más para inspeccionar el "contenedor".
 
 ```ruby
+#!/usr/bin/env ruby
 # Ejemplo: factorial recursivo
 def factorial(n)
   return 1 if n <= 1
   n * factorial(n -1)
 end
+  
+puts factorial(3)     #=> 3! = 3*2*1 = 6
 
-puts factorial(3)   #=> 3! = 3*2*1 = 6
-puts self
+# Inspeccionando el "contenedor"
+puts self                  #=> main
+puts self.class            #=> Object
+puts Object.ancestors.to_s #=> >> [Object, Kernel, BasicObject]
 ```
+
+Esto es, el código del factorial se escribió dentro de una instancia `main` que es de la clase `Object`. A su vez, y sólo por curiosidad, vemos que la clase `Object` hereda de `Kernel` y éste a su vez de `BasicObject`. Es bastante probable que `BasicObject` sea la raíz o el padre último de todos los objetos de Ruby.
+
+> Bueno, está claro que todo es un objeto y que hay que programar Ruby siguiendo la filosofía de la POO (Programación Orientada a Objetos).
+
+# 8. La metaprogramación
