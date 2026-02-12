@@ -82,7 +82,22 @@ Did you mean?  to_s
 Version end of life and use rbenv
 https://hmong.es/wiki/Ruby_programming_language
 
-
-
-
 https://github.com/jiangmiao/ruby-file-monitor
+
+================================
+Ruby benchmark
+https://x.com/kukicola/status/2021588916524978650
+Ruby batteries included #7/8: Benchmark  
+
+"I think X is faster" is not an argument. Prove it.  
+
+Ruby ships a benchmarking tool. Use it before every performance PR.
+
+```ruby
+require "benchmark"
+
+Benchmark.bm(15) do |x|
+  x.report("map + join") { [1,2,3].map(:to_s).join(",") }
+  x.report("interpolation") { n.times { "#{1}, #{2}, #{3}" } }
+end
+```
