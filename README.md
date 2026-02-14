@@ -9,11 +9,7 @@ _"I love Ruby"... el inicio de una historia de amor._
 
 ## Aprender con ejemplos
 
-```
-EN DESARROLLO!!!
-```
-
-[Aprender con ejemplos](./aprender_con_ejemplos/README.md) contiene problemas de programación resueltos con el lenguaje de programación Ruby, y se van explicando las decisiones que se van tomando mientras el código va evolucionando.
+[Aprender con ejemplos](./aprender-con-ejemplos/README.md) contiene problemas de programación resueltos con el lenguaje de programación Ruby, y se van explicando las decisiones que se van tomando mientras el código va evolucionando.
 
 ## Artículos
 

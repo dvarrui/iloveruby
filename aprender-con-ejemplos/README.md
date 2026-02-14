@@ -23,3 +23,7 @@ Vamos a plantear diferentes problemas de programación que iremos resolviendo us
 5. [Porciones](./05.porciones/README.md)
 6. [Geometría](./06.geometria/README.md)
 7. [Conversiones](./07.convertir/README.md)
+
+```
+EN DESARROLLO!!!
+```
