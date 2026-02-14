@@ -10,7 +10,7 @@ _"I love Ruby"... el inicio de una historia de amor._
 ## Documentos para empezar
 
 * [Los 10 fundamentos](./docs/los-10-fundamentos/README.md): Los 10 fundamentos del lenguaje.
-* [Aprender con ejemplos](./aprender-con-ejemplos/README.md) problemas de programación resueltos explicados paso a paso.
+* [Aprender con ejemplos](./docs/aprender-con-ejemplos/README.md): problemas de programación resueltos explicados paso a paso.
 
 ## Artículos de otros autores
 
