@@ -7,15 +7,12 @@ EN DESARROLLO!!!
 
 _"I love Ruby"... el inicio de una historia de amor._
 
-## Aprender con ejemplos
+## Documentos para empezar
 
-[Aprender con ejemplos](./aprender-con-ejemplos/README.md) contiene problemas de programación resueltos con el lenguaje de programación Ruby, y se van explicando las decisiones que se van tomando mientras el código va evolucionando.
+* [Los 10 fundamentos](./docs/los-10-fundamentos/README.md): Los 10 fundamentos del lenguaje.
+* [Aprender con ejemplos](./aprender-con-ejemplos/README.md) problemas de programación resueltos explicados paso a paso.
 
-## Artículos
-
-```
-EN DESARROLLO!!!
-```
+## Artículos de otros autores
 
 En esta sección tenemos [artículos](./articulos/README.md) de otros autores que se han traducido al español. Estos artículos tratarán temas más avanzados del lenguaje de programación Ruby.
 
