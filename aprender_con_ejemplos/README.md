@@ -1,8 +1,9 @@
 [<< back](../README.md)
 
 ```
-Las ideas para los enunciados has sido extraídas del pdf 
-"30 Ejercicios de Python" de Juan Monroy
+Las ideas para los enunciados has sido extraídas del pdf gratuito
+
+"30 Ejercicios de Python" de Juan Monroy (@codigopiton)
 ```
 
 > **NOTA**: Sería interesante realizar una comparativa entre las soluciones hechas con Python con las de Ruby.
