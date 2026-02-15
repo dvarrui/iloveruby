@@ -1,5 +1,5 @@
 
-# Consultar documentación en Markdown
+# I love Ruby
 
 * Ir a la [página principal "I love Ruby"](docs/index.md)
 
