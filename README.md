@@ -1,29 +1,19 @@
 
-```
-EN DESARROLLO!!!
-```
+# Consultar documentación en Markdown
 
-# IloveRuby
+* Ir a la [página principal "I love Ruby"](docs/index.md)
 
-_"I love Ruby"... el inicio de una historia de amor._
+## Activar el visor 
 
-## Documentos para empezar
+* `source venv/bin/activate`, activar el entorno.
+* `mkdocs serve`, iniciar el visor.
+* Abrir un navegador con URL `http://127.0.0.1:8000/`.
 
-* [Los 10 fundamentos](./docs/los-10-fundamentos/README.md): Los 10 fundamentos del lenguaje.
-* [Aprender con ejemplos](./docs/aprender-con-ejemplos/README.md): problemas de programación resueltos explicados paso a paso.
+## Instalación del visor
 
-## Artículos de otros autores
+* `python3 -m venv venv`, crear un entorno virtual. 
+* `source venv/bin/activate`, activar el entorno virtual.
+* `pip install -r requirements.txt`, instalar las dependencias.
 
-En esta sección tenemos [artículos](./articulos/README.md) de otros autores que se han traducido al español. Estos artículos tratarán temas más avanzados del lenguaje de programación Ruby.
-
-## Episodios
-
-```
-EN DESARROLLO!!!
-```
-
-1. [Episodio 1: Introducción](./episodios/01.introduccion/README.md)
-2. [PROX] _Resumen exprés del capítulo anterior_.
-3. [PROX] _Scripting práctico y real con Ruby. Se incluyen actividades de clase_.
-
-
+> Enlace de interés: 
+> * https://www.mkdocs.org/getting-started/
