@@ -2,11 +2,11 @@
 
 # Los 10 fundamentos
 
-Una pregunta que me hago: 
+Me pregunto: 
 
-_"¿Cuáles serían los 10 fundamentos básicos para transmitir a un programador de otro lenguaje, para ayudarle a entender la base de Ruby, y de este modo hacer el camino del Ruby developer un poco más feliz?"_
+_"¿Cuáles serían los fundamentos básicos para que un nuevo programador pueda entender Ruby más fácilmente?"_
 
-Pues con esta idea en mente, empiezo a escribir este documento. _¿Por qué 10?_ Pues porque me pareció un número "redondo". Ni mucho, ni poco, "ni para comerse el coco". A ver si me salen 10, + o -.
+Con este objetivo en mente, empiezo a escribir este documento. _¿Por qué 10?_ Pues porque me pareció un número "redondo". Ni mucho, ni poco, "ni para comerse el coco". A ver si me salen 10, `+ | -`.
 
 1. [Fichero de texto](#1-fichero-de-texto)
 2. [Tipado fuerte y dinámico](#2-tipado-fuerte-y-dinámico)
@@ -22,7 +22,11 @@ Pues con esta idea en mente, empiezo a escribir este documento. _¿Por qué 10?_
 
 Lo primero es instalar Ruby en tu sistema (¡Lo normal!).
 
-A continuación, bastaría con crear un fichero de texto con tu editor favorito y escribir. ¡Ya está! A ver, puedes usar un IDE como VS Code, Codium, o un editor de texto plano como vi, Zed, Notepad, etc. ¡Lo que quieras! Esta idea la "cogió" Matz del lenguaje Perl, pero es lo mismo en Python, Bash, PHP, JavaScript, etc.
+```
+En el principio sólo se necesita un fichero de texto
+```
+
+Basta con crear un fichero de texto con tu editor favorito y escribir. ¡Ya está! A ver, puedes usar un IDE como VS Code, Codium, o un editor de texto plano como vi, Zed, Notepad, etc. ¡Lo que quieras! Esta idea la "cogió" Matz del lenguaje Perl, pero es lo mismo en Python, Bash, PHP, JavaScript, etc. En general lo lenguajes dinámicos tienen esa característica. Lo bueno es que se requiere poco para empezar.
 
 Prueba lo siguiente:
 
@@ -33,7 +37,7 @@ print("Hola Mundo!\n")
 
 Crea un fichero de texto con este contenido, y lo ejecutas con `ruby holamundo.rb`. El resultado, será lo que esperas que sea.
 
-* Vemos que para los comentarios usamos `#`, como en otros lenguajes como: Python, Perl, PHP, R, Bash, PowerShell, YAML, Elixir, Crystal, etc.
+* Para los comentarios usamos `#`, como en otros lenguajes como: Python, Perl, PHP, R, Bash, PowerShell, YAML, Elixir, Crystal, etc.
 * Para mostrar un mensaje por consola usamos `print()` como en otros lenguajes: Python, Swift, Kotlin, Lua, Julia, etc.
 
 > **Shebang**: [Definición de Wikipedia](https://es.wikipedia.org/wiki/Shebang)
@@ -55,9 +59,9 @@ puts("Hola Mundo!")
 
 # 2. Tipado fuerte y dinámico
 
-> IMHO: El "tipado" es un de los motivos de discordia y/o separación más fuerte en el mundo de los lenguajes de programación... pero sigamos.
+> IMHO: El "tipado" es una de los motivos de mayor discordia y/o separación entre programadores... pero sigamos.
 
-Ruby es un lenguaje con **tipado fuerte y dinámico**. Si, dinámico y fuerte. A veces se entiende mal el concepto de tipado fuerte.
+Ruby es un lenguaje con **tipado fuerte y dinámico**. Si, dinámico y fuerte. A veces se entiende mal el concepto de tipado fuerte. Un ejemplo de lenguaje con tipado débil es el lenguaje B, predecesor de C. En B todos los datos eran bytes y el lenguaje no "entendía" el contenido. Era el programador el que debía acordarse de cuando una variable guardaba números o códigos ASCII, etc.
 
 Ejemplo:
 
@@ -87,9 +91,11 @@ texto.to_i + numero   #=> 6
 | Estático | int i; (Variable de tipo entero)| El tipo de las variables se conoce en tiempo de compilación | Java, Rust, C |
 | Dinámico | nombre = "Obi-wan" | El tipo de las variables sólo se sabe en el momento de la ejecución | Ruby, Python, JavaScript, PHP |
 
+Puede ser que estés pensando que los lenguajes de tipado dinámico no son para tí. En tal caso, mejor que lo dejes aquí, pero si quieres darle una oportunidad te lo agradeceré. Por si sirve de ayuda, en Ruby acompañamos el código con test. Los tests nos ayudan a mantener cierta calidad en el código y adegurarnos que las clases/objetos/métodos hacen lo que tienen que hacer, lo cual es fundamental siempre. Con código pequeño, grande o mediano.
+
 # 3. Todo es un objeto
 
-Lo siguiente que debes saber de Ruby, es que "todo es un objeto" (o casi casi todo). Ruby fue creado por Matz inspirándose en List, Perl y Samlltalk. Del Smalltalk de Alan Kay "copió" la idea de que "todo es un objeto" e invocar la ejecución de un método de un objeto es lo mismo que enviarle un mensaje dicho objeto. Por ejemplo: `perro.ladrar()` produce el mismo efecto que `perro.send(:ladrar)`.
+Lo siguiente que debes saber de Ruby, es que "todo es un objeto" (o casi casi todo). Ruby fue creado por Matz inspirándose en List, Perl y Samlltalk. Y precisamente del Smalltalk de Alan Kay "copió" la idea de que "todo es un objeto" y que invocar un método es lo mismo que enviarle un mensaje a dicho objeto. Por ejemplo: `perro.ladrar()` produce el mismo efecto que `perro.send(:ladrar)`.
 
 > NOTA: `:ladrar` es un símbolo o cadena de texto inmutable. La tienen otros lenguajes de programación. En Elixir las llaman átomos.
 
@@ -99,7 +105,9 @@ Ejemplos con String:
 # Ejemplo: Cadenas de texto
 nombre = "obi-wan kenobi"
 
-nombre.upcase  #=> "OBI-WAN KENOBI"
+nombre.upcase        #=> "OBI-WAN KENOBI"
+nombre.send(:upcase) #=> "OBI-WAN KENOBI"
+
 nombre.split   #=> ["obi-wan", "kenobi"]
 nombre.reverse #=> "ibonek naw-ibo"
 nombre.class   #=> String
@@ -118,9 +126,9 @@ age.between?(1, 100) #=> true
 age.class #=> Integer
 ```
 
-No existe la separación entre tipos de datos primitivos y objetos. Todo son objetos (o casi todo)
+> No existe la separación entre tipos de datos primitivos y objetos como tiene Java. Aquí todo son objetos (o casi todo).
 
-Ejemplos con clases:
+Ejemplos: Las clases son objetos también.
 
 ```ruby
 # Ejemplo: Las clases son objetos
@@ -131,7 +139,7 @@ Integer.class       #=> Class
 Integer.class.class #=> Class
 ```
 
-Ejemplos con métodos:
+Ejemplos: Hay clases para los métodos.
 
 ```ruby
 # Ejemplo: los métodos son objetos
@@ -142,11 +150,13 @@ convertir_a_string.class  #=> Method
 
 # 4. Mi amigo IRB
 
-IRB (Interactive Ruby), es lo que técnicamente llamamos un REPL (Read-Eval-Print Loop o Bucle de Lectura-Evaluación-Impresión). Es el sueño de cualquier programador que odia esperar: escribes una línea, pulsas Enter y ves el resultado al instante, sin archivos de por medio. Esta idea la "copió" Matz de List.
+A ver, pero ¿cómo podemos tener ayuda para programar en Ruby? (Y no me refiero a la IA)... por un lado consultando la documentación de [Ruby Docs](https://ruby-doc.org/), o también "hablando" con IRB.
 
-Otros lenguajes también lo tienen como: Python(`python`), JavaScript(`node`), Elixir(`iex`), Haskell(`ghci`), Closure, PHP(`php -a`), Java(`jshell`), C#(`csi`), etc.
+IRB (Interactive Ruby), es lo que técnicamente llamamos un REPL (Read-Eval-Print Loop o Bucle de Lectura-Evaluación-Impresión). Es el sueño de cualquier programador que odia esperar: escribes una línea, pulsas Enter y ves el resultado al instante, sin intermediarios. Esta idea la "copió" Matz de List.
 
-Iniciamos una sesión IRB con el comando `irb`, terminamos con `exit` o `quit`:
+Otros lenguajes también tienen un REPL: Python(`python`), JavaScript(`node`), Elixir(`iex`), Haskell(`ghci`), Closure, PHP(`php -a`), Java(`jshell`), C#(`csi`), etc.
+
+Iniciamos una sesión IRB con el comando `irb`, terminamos con `exit` o `quit`. Ruby no maximiza la ortogonalidad del lenguaje sino que prefiere la flexibilidad y comodidad del programador.
 
 ```console
 $ irb  
@@ -163,9 +173,11 @@ irb(main):003> nombre.split
 irb(main):004> quit
 ```
 
-Si escribimos la variable y el punto, IRB espera un método pero con TAB se muestra una ayuda:
+Si escribimos la variable y el punto, IRB espera que a continuación se escriba el método, pero pulsando TAB se muestra una ayuda como la siguiente:
 
 ![](./images/irb-help.png)
+
+> Los editores IDE pueden incorporar un [Ruby LSP](https://shopify.github.io/ruby-lsp/) para ayudar al autocompletado. Esto es una implementación del protocolo de servidor de lenguaje para Ruby, para mejorar las funciones de ayuda de los editores.
 
 # 5. Quitando "ruido" visual
 
