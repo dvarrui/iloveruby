@@ -148,6 +148,8 @@ convertir_a_string = age.method(:to_s) #=> #<Method: Integer#to_s(*)>
 convertir_a_string.class  #=> Method
 ```
 
+> Si no estás agusto con el paradigma de programación orientada a objetos... Ruby no es para tí. Pero si le das una oportunidad igual te gusta.
+
 # 4. Mi amigo IRB
 
 A ver, pero ¿cómo podemos tener ayuda para programar en Ruby? (Y no me refiero a la IA)... por un lado consultando la documentación de [Ruby Docs](https://ruby-doc.org/), o también "hablando" con IRB.
@@ -208,9 +210,9 @@ def suma(a, b)
 end
 ```
 
-# 6. Clases y objetos
+# 6. Clases, objetos, herencia
 
-Vamos con el ejemplo:
+En Ruby se trabaja mucho con clases y objetos, lógicamente. Vamos con el ejemplo:
 
 ```ruby
 # Ejemplo: Clase Perro
@@ -222,7 +224,13 @@ class Perro
 
   # Método de instancia (Los paréntesis no son necesarios si no hay argumentos)
   def ladrar
-    "[#{@name}] Guau!"
+    title + " Guau!"
+  end
+
+  private
+
+  def title
+    "[#{@name}]"
   end
 end
 
@@ -231,14 +239,43 @@ snoopy = Perro.new("Snoopy")
 puts snoopy.ladrar
 ```
 
-En Ruby por defecto:
-* Los métodos son públicos, a menos que especifiquemos los contrario. Para hacerlos privados se usa la palabra reservada `private`
-* Los atributos son privados, siempre. Para acceder desde fuera hay que crear los "getters" y "setters".
+* Una cosa "extraña" a primera vista. Es que los atributos del objeto comienzan con `@`. Por ejemplo, `@name` es el atributo name del objeto y `name` será un nombre de variable local y/o método, y `name()` es un nombre de método.
+* Los métodos son públicos por defecto. Para métodos privados se usa la palabra reservada `private`.
+* Los atributos son privados, siempre. No se puede hacerlos públicos, pero para ello hay que crear los "getters" y "setters". Y para que no sea "tan pesado" el proceso utilizamos los siguiente:
     * `attr_reader :name`: crea un getter `name()`
     * `attr_writter :color`: crea un getter `color=(value)`
     * `attr_accssor :name`:  crea el getter y el setter.
 
-> Otra cosa "extraña" a primera vista. Las variables que son los atributos del objeto comienzan con `@`. Por ejemplo, `@name` es el atributo name del objeto y `name` será un nombre de variable local y/o método, y `name()` es un nombre de método.
+`attr_reader`, `attr_writter` y `attr_accessor`, no son palabras reservadas del lenguaje. Son métodos "normales" que se definen en la clase `Module`. Dado que en Ruby todas las clases son instancias de la clase Class, y Class hereda de Module, el método está disponible automáticamente para ser invocado dentro de cualquier definición de clase o módulo.
+
+```ruby
+class Persona
+  attr_accessor :name
+end
+
+luke = Persona.new
+luke.name= "Luke"
+luke.name      #=> "Luke"
+
+Persona.class  #=> Class
+Class.ancestors
+# => [Class, Module, Object, JSON::Ext::Generator::GeneratorMethods::Object, PP::ObjectMixin, Kernel, BasicObject]
+Module.instance_method(:attr_accessor).owner #=> Module
+```
+
+En concreto invocar al método `attr_accessor(:name)` produce el siguiente resultado:
+
+```ruby
+# Método setter
+def name=(value)
+  @name = value
+end
+
+# Método getter
+def name
+  @name
+end
+```
 
 Vamos con otro ejemplo:
 
@@ -268,7 +305,7 @@ puts garfield
 
 # 7. Tenemos métodos, no funciones
 
-En Ruby, estrictamente hablando, no existen las funciones. No hay porque todo son métodos. Incluso cuando parece que no hay ningún objeto en "la sala", estamos dentro de uno.
+En Ruby, estrictamente hablando, no existen las funciones. Y no hay porque todo son métodos. Incluso cuando parece que no hay ningún objeto en "la sala", estamos dentro de uno.
 
 Ejemplo:
 
@@ -297,14 +334,19 @@ puts factorial(3)     #=> 3! = 3*2*1 = 6
 # Inspeccionando el "contenedor"
 puts self                  #=> main
 puts self.class            #=> Object
-puts Object.ancestors.to_s #=> >> [Object, Kernel, BasicObject]
+puts Object.ancestors.to_s #=> [Object, Kernel, BasicObject]
 ```
 
-Esto es, el código del factorial se escribió dentro de una instancia `main` que es de la clase `Object`. A su vez, y sólo por curiosidad, vemos que la clase `Object` hereda de `Kernel` y éste a su vez de `BasicObject`. Es bastante probable que `BasicObject` sea la raíz o el padre último de todos los objetos de Ruby.
+* Esto es, el código del factorial se escribió dentro de una instancia `main` que es un `Object`.
+* A su vez, y sólo por curiosidad, vemos que la clase `Object` hereda de `Kernel` y éste a su vez de `BasicObject`. Es bastante probable que `BasicObject` sea la raíz o el padre último de todos los objetos de Ruby.
 
-> Bueno, está claro que todo es un objeto y que hay que programar Ruby siguiendo la filosofía de la POO (Programación Orientada a Objetos).
+> Bueno, está claro que todo es un objeto y que hay que programar Ruby siguiendo la filosofía de la OOP (Programación Orientada a Objetos).
 
 Los nombres de los métodos pueden tener letras, números, guiones bajos, interrogantes, exclamaciones, emojis, etc.
+* Los nombres de los métodos se escriben en `snake_case` y representan una acción, o un sustantivo cuando es un getter/setter.
+* Los nombres acabados en `?`, por convención, devuelven `true/false`.
+* Los nombres acabados en `!`, por convención, son "destructores", en el sentido que modifican los atributos internos del propio objeto. En caso contrario suelen devolver un valor y el objeto no cambia internamente.
+* Cuando los métodos son acciones y no acaban en `?`, ni en `!`, por convención, suelen devolver el propio objeto `self` y por tanto se pueden construir sentencias como: `nombre.upcase.reverse.split`. Pongo el nombre en mayúsculas, lo invierto y lo divido en palabras separadas si es un nombre compuesto.
 
 Ejemplos:
 
@@ -319,7 +361,10 @@ name.upcase!  #=> "OBI-WAN KENOBI"
 name          #=> "OBI-WAN KENOBI"
 
 name.ascii_only? #=> true
+nombre.upcase.reverse.split #=> ["IBONEK", "NAW-IBO"]
 ```
+
+Más ejemplos "frikys":
 
 ```ruby
 # Ejemplo con emojis
@@ -334,9 +379,9 @@ puts b
 puts い 
 ```
 
-# 8. Bloques de código
+# 8. Bloques de código (Closures)
 
-En Ruby, casi todo es un objeto, y por ejemplo los bloques de código también lo son. Hay varias formas de escribir estos objetos de código o bloques de código. A veces nos puede interesar utilizar un estilo u otro dependiendo del caso, por lo que nos la podemos encontrar escrita de diferentes formas. Vamos al caso más común.
+En Ruby, casi todo es un objeto, y por ejemplo los bloques de código o Closures, también lo son. Hay varias formas de escribir estos objetos de código o bloques de código. A veces nos puede interesar utilizar un estilo u otro dependiendo del caso, por lo que nos la podemos encontrar escrita de diferentes formas. Vamos al caso más común.
 
 Lo más común es usar los delimitadores `{ ... }` o `do ... end` para definir los bloques de código. Se puede usar cuaquiera de las dos, pero los RubyLovers siguen el siguiente patrón:
 * `{ ... }` para bloques de código de una línea.
@@ -376,13 +421,15 @@ end
 # ---
 # Luke dice:
 # ¡Que la fuerza te acompañe!
-
-# Explicación:
-# - El objeto Array "names", tiene un método "each()"
-# - El método "each(block)" acepta un bloque como argumento
-#   y lo ejecuta en cada uno de los elementos de Array
-#
-# (El método "each()" es un iterador)
 ```
 
+Explicación:
+* El objeto Array "names", tiene un método "each()"
+* El método "each(block)" acepta un bloque como argumento y lo ejecuta en cada uno de los elementos de Array
+* El método `each()` es un iterador
+
 # 9. La metaprogramación
+
+```
+El arma secreta
+```
