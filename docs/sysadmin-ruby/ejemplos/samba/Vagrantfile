@@ -1,0 +1,17 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  config.vm.define "opensuse" do |i|
+    i.vm.box = "generic/opensuse15"
+    i.vm.hostname = "profesor.iespto"
+    #i.vm.network "public_network", bridge: [ "wlan0" ]
+    #i.vm.network :forwarded_port, host: 3000, guest: 3000
+
+    i.vm.synced_folder "./", "/vagrant"
+    i.vm.provider "virtualbox" do |v|
+      v.name = 'opensuse'
+      v.memory = 2048
+    end
+  end
+end

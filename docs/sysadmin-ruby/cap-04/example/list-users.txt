@@ -1,0 +1,4 @@
+# Action:Username:Password:HomeFolder:Shell
+create:obiwan:123456:/home/obiwan:/bin/bash
+create:luke:::
+delete:vader:::
