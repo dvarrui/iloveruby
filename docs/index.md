@@ -9,12 +9,12 @@ _"I love Ruby"... el inicio de una historia de amor._
 
 **Para empezar a entender el lenguaje Ruby**
 
-1. [Los 10 fundamentos](./01.los-10-fundamentos/README.md): 10 fundamentos del lenguaje.
-2. [Aprender con ejemplos](./02.aprender-con-ejemplos/README.md): problemas de programación resueltos y explicados paso a paso.
+1. [Los 10 fundamentos](./01.inicio/01.los-10-fundamentos/README.md): 10 fundamentos del lenguaje.
+2. [Aprender con ejemplos](./01.inicio/02.aprender-con-ejemplos/README.md): problemas de programación resueltos y explicados paso a paso.
 
 **Artículos y/o publicaciones de otros autores traducidas al español**
 
-* Ir al [índice de artículos](./articulos/README.md)
+* Ir al [índice de artículos](./02.ext/README.md)
 
 **Episodios**
 
