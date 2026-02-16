@@ -2,11 +2,11 @@
 
 # Los 10 fundamentos
 
-Me pregunto: 
-
 _"¿Cuáles serían los fundamentos básicos para que un nuevo programador pueda entender Ruby más fácilmente?"_
 
-Con este objetivo en mente, empiezo a escribir este documento. _¿Por qué 10?_ Pues porque me pareció un número "redondo". Ni mucho, ni poco, "ni para comerse el coco". A ver si me salen 10, `+ | -`.
+Con esta idea en mente, empiezo a escribir este documento. _¿Por qué 10?_ Pues porque me pareció un número "redondo".
+
+_Ni mucho, ni poco, "ni para comerse el coco". A ver si me salen 10, `+ | -`._
 
 1. [Fichero de texto](./01-fichero.md)
 2. [Tipado fuerte y dinámico](./02-tipado.md)

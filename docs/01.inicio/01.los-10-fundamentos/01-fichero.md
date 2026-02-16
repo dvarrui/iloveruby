@@ -5,10 +5,11 @@
 Lo primero es instalar Ruby en tu sistema (¡Lo normal!).
 
 ```
-En el principio sólo se necesita un fichero de texto
+Para empezar, un fichero de texto es suficiente. 
+Lo bueno es que se requiere poco para empezar.
 ```
 
-Basta con crear un fichero de texto con tu editor favorito y escribir. ¡Ya está! A ver, puedes usar un IDE como VS Code, Codium, o un editor de texto plano como vi, Zed, Notepad, etc. ¡Lo que quieras! Esta idea la "cogió" Matz del lenguaje Perl, pero es lo mismo en Python, Bash, PHP, JavaScript, etc. En general lo lenguajes dinámicos tienen esa característica. Lo bueno es que se requiere poco para empezar.
+Basta con crear un fichero de texto con tu editor favorito y escribir. ¡Ya está! A ver, puedes usar un IDE como Codium, o editores de texto plano como vi, Zed, Notepad, etc. ¡Lo que quieras! Esta idea la "cogió" Matz del lenguaje Perl, pero es lo mismo en Python, Bash, PHP, JavaScript, etc. En general lo lenguajes dinámicos tienen esa característica.
 
 Prueba lo siguiente:
 
@@ -38,3 +39,6 @@ Este es el mismo ejemplo pero con cabecera "shebang":
 # File: holamundo.rb
 puts("Hola Mundo!")
 ```
+
+---
+[next >>](./02-tipado.md)

@@ -28,3 +28,6 @@ def suma(a, b)
   a + b
 end
 ```
+
+---
+[next >>](./06-clases.md)

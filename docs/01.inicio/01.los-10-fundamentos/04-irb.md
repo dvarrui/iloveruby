@@ -30,3 +30,6 @@ Si escribimos la variable y el punto, IRB espera que a continuación se escriba 
 ![](./images/irb-help.png)
 
 > Los editores IDE pueden incorporar un [Ruby LSP](https://shopify.github.io/ruby-lsp/) para ayudar al autocompletado. Esto es una implementación del protocolo de servidor de lenguaje para Ruby, para mejorar las funciones de ayuda de los editores.
+
+---
+[next >>](./05-ruido.md)

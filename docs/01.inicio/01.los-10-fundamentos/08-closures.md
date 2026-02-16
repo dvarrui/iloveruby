@@ -60,3 +60,5 @@ Explicación:
 * El método `each` acepta un bloque como argumento y lo ejecuta en cada uno de los elementos de Array.
 * El método `each` es un iterador
 
+---
+[next >>](./09-metapro.md)

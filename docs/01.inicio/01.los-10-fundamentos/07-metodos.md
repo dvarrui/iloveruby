@@ -75,3 +75,6 @@ puts b
 い = "hola"
 puts い 
 ```
+
+---
+[next >>](./08-closures.md)

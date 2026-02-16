@@ -92,3 +92,6 @@ garfield.color = "naranja con rayas negras"
 puts garfield.mauyar
 puts garfield
 ```
+
+---
+[next >>](./07-metodos.md)
