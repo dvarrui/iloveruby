@@ -29,5 +29,13 @@ def suma(a, b)
 end
 ```
 
+**Reflexión**
+
+A menudo se critica a Ruby por ser un lenguaje demasiado flexible, poco ortogonal, que tiene varias formas de hacer lo mismo. Qué tiene magia...
+
+Matz va evolucionando el diseño de Ruby para mantenerlo coherente, OOP, y en la medida de lo posible va incorporando azúcar sintáctico o cambios para ampliar sus capacidades para poder programar Ruby casi como si estuviéramos escribiendo en inglés.
+
+Veremos más ejemplo, un poco más adelante.
+
 ---
 [next >>](./06-clases.md)

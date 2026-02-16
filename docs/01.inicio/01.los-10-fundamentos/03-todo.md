@@ -57,6 +57,8 @@ convertir_a_string.class  #=> Method
 
 > Si no estás agusto con el paradigma de programación orientada a objetos... Ruby no es para tí. Pero si le das una oportunidad igual te gusta.
 
+**Reflexión**
+
 Como hemos dicho Ruby es un lenguaje OOP, no es un lenguaje funcional pero tiene algunas características que con frecuencia se suelen asociar a lenguajes funcionales. Por ejemplo, Ruby no tiene inmutabilidad, pero los objetos tienen el método `freeze()` que los "congela". O dicho de otra manera, los convierte en objetos que no pueden cambiar.
 
 Ejemplo:

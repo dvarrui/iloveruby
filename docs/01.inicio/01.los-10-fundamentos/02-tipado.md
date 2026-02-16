@@ -36,6 +36,8 @@ texto.to_i + numero   #=> 6
 
 Puede ser que estés pensando que los lenguajes de tipado dinámico no son para tí. En tal caso, mejor que lo dejes aquí, pero si quieres darle una oportunidad te lo agradeceré. Por si sirve de ayuda, en Ruby acompañamos el código con test. Los tests nos ayudan a mantener cierta calidad en el código y adegurarnos que las clases/objetos/métodos hacen lo que tienen que hacer, lo cual es fundamental siempre. Con código pequeño, grande o mediano.
 
+**Reflexión**
+
 * Los lenguajes que se compilan, necesitan el tipado estático y fuerte para asegurar cómo se trasladará el almaceniento de las variables al código final. De esta forma se puede conseguir mayor rendimiento y optimización del producto final desde el punto de vista de la máquina.
 * Los lenguajes interpretados suelen tener tipado dinámico porque no están "pensando" en la máquina sino en optimizar y mejorar el rendimiento del humano.
 

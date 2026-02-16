@@ -60,5 +60,9 @@ Explicación:
 * El método `each` acepta un bloque como argumento y lo ejecuta en cada uno de los elementos de Array.
 * El método `each` es un iterador
 
+**Reflexión**
+
+Ya habíamos dicho que Ruby es un lenguaje OOP, y que no es funcional, pero sin embargo tiene características que "recuerdan" a los lenguajes funcionales. Por ejemplo, en los lenguajes funcionales, las funciones son ciudadanos de primer orden, esto quiere decir que las funciones se pueden pasar como argumentos de otra función y guardar en variables. En Ruby ya dijimos que no hay funciones, tenemos métodos y bloques de código, pero esos métodos, bloques de código, closures son objetos que podemos pasar como argumentos y guardar en variables "simulando" el comportamiento de los lenguajes funcionales.
+
 ---
 [next >>](./09-metapro.md)
