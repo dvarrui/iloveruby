@@ -1,15 +1,18 @@
 #!/usr/bin/env ruby
-require_relative 'lib/ruby2basic'
-require_relative 'lib/ruby2c'
+require "pastel"
+
+require_relative "lib/basic/ruby2basic"
+require_relative "lib/c/ruby2c"
 
 if ARGV.empty?
-  puts "Usage: #{$0} INPUTFILE.rb [basic|c]"
+  puts "Usage: #{$0} INPUTFILE.rb [basic|c|riscv]"
   exit 1
 end
 
 input_file = ARGV[0]
 input_source_code = File.read(input_file)
-puts input_source_code
+pastel = Pastel.new
+puts pastel.green(input_source_code)
 
 target = ARGV[1].downcase.to_sym
 transpiler = if target == :basic
@@ -22,4 +25,4 @@ result = transpiler.call(input_source_code)
     
 output_file = input_file.gsub('.rb', '.bas')
 puts "==> File: #{output_file}"
-puts result
+puts pastel.cyan(result)
