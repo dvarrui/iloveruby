@@ -2,7 +2,7 @@
 
 # 3. Todo es un objeto
 
-Lo siguiente que debes saber de Ruby, es que "todo es un objeto" (o casi casi todo). Ruby fue creado por Matz inspirándose en List, Perl y Samlltalk. Y precisamente del Smalltalk de Alan Kay "copió" la idea de que "todo es un objeto" y que invocar un método es lo mismo que enviarle un mensaje a dicho objeto. Por ejemplo: `perro.ladrar()` produce el mismo efecto que `perro.send(:ladrar)`.
+Lo siguiente que debes saber de Ruby, es que "todo es un objeto" (o casi casi todo). Ruby fue creado por Matz inspirándose en List, Perl y Smalltalk. Y precisamente del Smalltalk de Alan Kay "copió" la idea de que "todo es un objeto" y que invocar un método es lo mismo que enviarle un mensaje a dicho objeto. Por ejemplo: `perro.ladrar()` produce el mismo efecto que `perro.send(:ladrar)`.
 
 > NOTA: `:ladrar` es un símbolo o cadena de texto inmutable. La tienen otros lenguajes de programación. En Elixir las llaman átomos.
 
