@@ -6,7 +6,7 @@
 
 Ruby es un lenguaje con **tipado fuerte y dinámico**. Si, dinámico y fuerte. A veces se entiende mal el concepto de tipado fuerte. Un ejemplo de lenguaje con tipado débil es el lenguaje B, predecesor de C. En B todos los datos eran bytes y el lenguaje no "entendía" el contenido. Era el programador el que debía acordarse de cuando una variable guardaba números o códigos ASCII, etc.
 
-Ejemplo del tipado fuertey dinámico de Ruby:
+Ejemplo del tipado fuerte y dinámico de Ruby:
 
 ```ruby
 # Tipo dinámico: el tipo de la variable sólo se sabe en tiempo de ejecución
