@@ -2,11 +2,11 @@
 
 # 2. Tipado fuerte y dinámico
 
-> IMHO: El "tipado" es una de las características que generar mayor "fricción" entre programadores de diferentes "culturas" y/o lenguajes.
+> IMHO: El "tipado" es una de las características que generan mayor "fricción" entre programadores de diferentes "culturas" y/o lenguajes.
 
 Ruby es un lenguaje con **tipado fuerte y dinámico**. Si, dinámico y fuerte. A veces se entiende mal el concepto de tipado fuerte. Un ejemplo de lenguaje con tipado débil es el lenguaje B, predecesor de C. En B todos los datos eran bytes y el lenguaje no "entendía" el contenido. Era el programador el que debía acordarse de cuando una variable guardaba números o códigos ASCII, etc.
 
-Ejemplo:
+Ejemplo del tipado fuerte y dinámico de Ruby:
 
 ```ruby
 # Tipo dinámico: el tipo de la variable sólo se sabe en tiempo de ejecución
@@ -34,7 +34,7 @@ texto.to_i + numero   #=> 6
 | Estático | int i; (Variable de tipo entero)| El tipo de las variables se conoce en tiempo de compilación | Java, Rust, C |
 | Dinámico | nombre = "Obi-wan" | El tipo de las variables sólo se sabe en el momento de la ejecución | Ruby, Python, JavaScript, PHP |
 
-Puede ser que estés pensando que los lenguajes de tipado dinámico no son para tí. En tal caso, mejor que lo dejes aquí, pero si quieres darle una oportunidad te lo agradeceré. Por si sirve de ayuda, en Ruby acompañamos el código con test. Los tests nos ayudan a mantener cierta calidad en el código y adegurarnos que las clases/objetos/métodos hacen lo que tienen que hacer, lo cual es fundamental siempre. Con código pequeño, grande o mediano.
+Puede ser que estés pensando que los lenguajes de tipado dinámico no son para tí. En tal caso, mejor que lo dejes aquí, pero si quieres darle una oportunidad te lo agradeceré. Por si sirve de ayuda, en Ruby acompañamos el código con test. Los tests nos ayudan a mantener cierta calidad en el código y nos aseguramos de que las clases/objetos/métodos hacen lo que tienen que hacer, lo cual es fundamental siempre. Con código pequeño, grande o mediano.
 
 **Reflexión**
 
