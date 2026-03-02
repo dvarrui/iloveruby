@@ -104,8 +104,13 @@ puts p.instance_eval { @secreto } # => "1234"
 "Tío Ben: Un gran poder conlleva una gran responsabilidad".
 ```
 
+> Es un recordatorio de que un don es también una maldición. Para no caer en el "lado oscuro de la fuerza", hay que usar estas habilidades para ayudar a los demás.
+
 La metaprogramación hace que el código sea muy difícil de depurar (porque el método que falla no aparece en el buscador de tu editor). Úsala solo cuando simplifique drásticamente el problema.
 
 Una utilidad muy buena de la metaprogramación de Ruby es para ayudar a la creación de DSL. En esto Ruby es un "crack".
 
-> NOTA: Consultar la sección de DSL para ver algunos ejemplos.
+> NOTA: Consultar la sección de DSL para ver ejemplos.
+
+---
+[next >>](./10-gems.md)

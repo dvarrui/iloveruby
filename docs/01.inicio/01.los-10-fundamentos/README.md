@@ -17,3 +17,5 @@ _Ni mucho, ni poco, "ni para comerse el coco". A ver si me salen 10, `+ | -`._
 7. [Tenemos métodos, no funciones](./07-metodos.md)
 8. [Bloques de código - Closures](./08-closures.md)
 9. [La metaprogramación](./09-metapro.md)
+10. [Las gemas y otras herramientas](./10-gems.md)
+
