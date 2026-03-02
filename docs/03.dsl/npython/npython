@@ -1,0 +1,31 @@
+#!/usr/bin/env ruby
+
+VERSION="0.16.0"
+
+if ARGV.size.zero?
+  # Open irb
+  text = <<~TEXT
+  nPython 0.16.0 (main, Nov 16 2025, 18:38:03) [GCC] on linux
+  Type "help", "copyright", "credits" or "license" for more information.
+  TEXT
+  puts text
+
+  system("irb --prompt simple --nocolorize --noecho-on-assignment -Ilib -rnpython")
+elsif ["-v", "--version", "-V"].include? ARGV.first
+  puts "npython (#{VERSION})"
+elsif ["-h", "--help", "-?"].include? ARGV.first
+  text = <<~TEXT
+  usage: npython [option | file ]
+  Options:
+  -h     : print this help message and exit (also -? or --help)
+  -v     : show current version (also -V or --version)
+  
+  Arguments:
+  file   : program read from script file
+TEXT
+  puts text  
+else
+  require_relative "lib/nython"
+  content = File.read(ARGV.first)
+  eval(content)
+end

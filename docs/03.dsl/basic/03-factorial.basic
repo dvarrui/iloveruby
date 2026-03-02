@@ -1,0 +1,14 @@
+require_relative "modern_basic"
+
+ModernBasic.run do
+  let number, 3
+  let factorial, 1
+  let i, number
+  
+  repeat number do
+    let factorial, factorial  * i
+    let i, i - 1
+  end
+  
+  print "FACTORIAL DE", number, "ES", factorial
+end

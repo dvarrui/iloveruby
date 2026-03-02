@@ -1,0 +1,13 @@
+require_relative "modern_basic"
+
+ModernBasic.run do
+  print "--- BIENVENIDO AL TRADUCTOR BASIC ---"
+  input "COMO TE LLAMAS?", nombre
+
+  let saludo, "- Hola " + nombre + "!"
+  repeat 3 do
+    print saludo
+  end
+  
+  print "FIN DEL PROGRAMA."
+end

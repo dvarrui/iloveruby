@@ -1,0 +1,12 @@
+require_relative "modern/logo"
+
+logo do
+  pd
+  repeat 4 do
+    fd 100
+    rt 90
+  end
+  pu
+  fd 50
+  puts "Posición final de la tortuga: x:#{@x.round}, y:#{@y.round}"
+end
