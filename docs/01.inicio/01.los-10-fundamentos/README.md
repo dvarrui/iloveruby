@@ -10,7 +10,7 @@ _Ni mucho, ni poco, "ni para comerse el coco". A ver si me salen 10, `+ | -`._
 
 1. [Fichero de texto](./01-fichero.md)
 2. [Tipado fuerte y dinámico](./02-tipado.md)
-3. [Todo es un objeto](./03-todo.md)
+3. [Todo es un objeto](./03-oop.md)
 4. [Mi amigo IRB](./04-irb.md)
 5. [Quitando "ruido" visual](./05-ruido.md)
 6. [Clases, objetos y métodos](./06-clases.md)
