@@ -17,10 +17,11 @@ Scripting Ruby!
 
 # Contenido
 
-* [Introducción](./contexto.md)
-* [Presentación](./presentar.md)
+* Capítulo 0: Introducción
+    * [Introducción](./cap.00/intro.md)
+    * [Presentación](./cap.00/presentar.md)
 * Capítulo 1: preparando el entorno
-    * [Ejecución](cap-01/README.md)
+    * [Ejecución](cap.01/README.md)
 * Capítulo 2: entrada de datos
     * [Entrada de datos](cap-02/README.md)
     * [Entrada no interactiva](cap-02/entrada-no-interactiva.md)

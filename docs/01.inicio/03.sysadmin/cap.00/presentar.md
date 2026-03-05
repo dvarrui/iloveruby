@@ -1,7 +1,6 @@
-[<< back](README.md) | [HOME](./README.md) | [next >>](./cap-01/README.md)
+[<< back](../README.md) | [HOME](../README.md) | [next >>](./intro.md)
 
-# Introducción
-
+# Presentación
 
 **who**
 

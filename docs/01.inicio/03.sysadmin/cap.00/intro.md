@@ -1,4 +1,4 @@
-[<< back](README.md) | [HOME](./README.md) | [next >>](./presentar.md)
+[<< back](../README.md) | [HOME](../README.md) | [next >>](./presentar.md)
 
 # 0. Introducción
 
