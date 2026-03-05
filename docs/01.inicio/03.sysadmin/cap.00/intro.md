@@ -20,7 +20,19 @@ Hoy en día, un administrador que no sabe programar scripts no es realmente un a
 * **Monitorización proactiva**: Se pueden programar scripts para revisar el estado de los servicios y enviar una alerta (o intentar reiniciarlos) antes de que alguien se queje.
 * **Infraestructura como Código (IaC)**: En entornos de nube (AWS, Azure, Google Cloud), la infraestructura se despliega mediante scripts y código, no mediante interfaces visuales.
 
-# 0.2 Los lenguajes que dominan el mercado
+> **Consejo**: La regla de oro en administración de sistemas es: _"Si tienes que hacer algo más de dos veces, automatízalo"_. Al principio tardarás más escribiendo el script que haciendo la tarea a mano, pero a largo plazo, ese script te regalará horas de sueño y tranquilidad.
+
+# 0.2 ¿Por dónde empezar?
+
+No necesitas ser un desarrollador de software senior, pero sí entender la lógica de programación básica:
+
+* **Variables**: Para guardar nombres de servidores o rutas de archivos.
+* **Bucles (Loops)**: Para aplicar una acción a 100 servidores a la vez.
+* **Condicionales (If/Else)**: "Si el disco está lleno al 90%, borra temporales; si no, no hagas nada".
+* **Manejo de errores**: Qué debe hacer el script si un servidor no responde.
+
+
+# 0.3 Los lenguajes que dominan el mercado
 
 Dependiendo de tu entorno, deberías enfocarte en uno de estos dos (o ambos):
 
@@ -31,30 +43,9 @@ Dependiendo de tu entorno, deberías enfocarte en uno de estos dos (o ambos):
 | Python       | Multiplataforma   | Ideal para APIs y análisis de datos |
 | Ruby         | Multiplataforma   | La "navaja suiza". Ideal para automatizaciones complejas y herramientas de DevOps |
 
-# 0.3 ¿Por dónde empezar?
-
-No necesitas ser un desarrollador de software senior, pero sí entender la lógica de programación básica:
-
-* **Variables**: Para guardar nombres de servidores o rutas de archivos.
-* **Bucles (Loops)**: Para aplicar una acción a 100 servidores a la vez.
-* **Condicionales (If/Else)**: "Si el disco está lleno al 90%, borra temporales; si no, no hagas nada".
-* **Manejo de errores**: Qué debe hacer el script si un servidor no responde.
-
-# Un consejo de veterano
-
-La regla de oro en administración de sistemas es: _"Si tienes que hacer algo más de dos veces, automatízalo"_. Al principio tardarás más escribiendo el script que haciendo la tarea a mano, pero a largo plazo, ese script te regalará horas de sueño y tranquilidad.
-
-# 0.4 Por qué Ruby
-
-En esta sección de **Scripting con Ruby** iremos explicando el proceso de creación scripts para administradores de sistemas,  usando el lenguaje Ruby como base.
-
-¿Por qué Ruby y no otro lenguaje de scripting más clásico?
+**¿Por qué Ruby y no otro lenguaje de scripting más clásico?**
 
 * Matz diseñó Ruby pensando en crear un lenguaje de scripting, de hecho se inspiró en Perl (SmalLtalk y LISP) y el lenguaje proporciona de forma nativa muchos elementos similares a Bash.
 * Ruby es muy fácil de escribir y muy fácil de leer. Se lee y escribe de forma "natural" (como esccribir en Inglés).
 * Normalmente, cuando me ha tocado impartir clases de scripting dentro de loc cursos de administración de sistemas, tenemos "muy poco tiempo" (por lo menos, menos del que me gustaría) para impartir este contenido y tuvimos que buscar la forma de dar mucho en poco tiempo. En esto Ruby es ideal. 
 * Como Ruby hereda tanto de Perl (lenguaje clásico de administración de sistemas) y absorve tantos elementos de Bash, si ya los conoces entonces el proceso de aprendizaje te será muy fácil, rápido y divertido.
-
-```
-¡Espero que te guste!
-```
