@@ -1,15 +1,17 @@
 
-# I love Ruby
+# [I love Ruby](./docs/index.md)
 
-* Ir a la [página principal "I love Ruby"](docs/index.md)
+* Ir a la [página principal "I love Ruby"](./docs/index.md)
 
-## Activar el visor 
+---
+
+**Activar el visor**
 
 * `source venv/bin/activate`, activar el entorno.
 * `mkdocs serve`, iniciar el visor.
 * Abrir un navegador con URL `http://127.0.0.1:8000/`.
 
-## Instalación del visor
+**Instalación del visor**
 
 * `python3 -m venv venv`, crear un entorno virtual. 
 * `source venv/bin/activate`, activar el entorno virtual.
