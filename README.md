@@ -5,6 +5,8 @@
 
 ---
 
+## ANEXO
+
 **Activar el visor**
 
 * `source venv/bin/activate`, activar el entorno.
