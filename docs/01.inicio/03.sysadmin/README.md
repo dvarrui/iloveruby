@@ -23,10 +23,10 @@ Scripting Ruby!
 * Capítulo 1: preparando el entorno
     * [Ejecución](cap.01/README.md)
 * Capítulo 2: entrada de datos
-    * [Entrada de datos](cap-02/README.md)
-    * [Entrada no interactiva](cap-02/entrada-no-interactiva.md)
-    * [Entrada de números](cap-02/entrada-de-numeros.md)
-    * [Entrada desde fichero](cap-02/entrada-desde-fichero.md)
+    * [Entrada de datos](cap.02/README.md)
+    * [Entrada no interactiva](cap.02/entrada-no-interactiva.md)
+    * [Entrada de números](cap.02/entrada-de-numeros.md)
+    * [Entrada desde fichero](cap.02/entrada-desde-fichero.md)
 * Capítulo 3: ejecutar comandos del sistema
     * [Comandos del sistema](cap-03/README.md)
     * [Funciones](cap-03/funciones.md)
