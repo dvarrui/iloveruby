@@ -1,4 +1,4 @@
-[<< back](../index.md) | [HOME](../index.md) | [next >>](../index.md)
+[<< back](../index.md) | [HOME](../index.md) | [next >>](../01.inicio/README.md)
 
 ```
 iLoveRuby -> DSL
