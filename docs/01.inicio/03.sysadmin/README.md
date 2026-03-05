@@ -28,14 +28,14 @@ Scripting Ruby!
     * [Entrada de números](cap.02/entrada-de-numeros.md)
     * [Entrada desde fichero](cap.02/entrada-desde-fichero.md)
 * Capítulo 3: ejecutar comandos del sistema
-    * [Comandos del sistema](cap-03/README.md)
+    * [Comandos del sistema](cap.03/README.md)
     * [Funciones](cap-03/funciones.md)
-    * [Instalar software](cap-03/instalar-software.md)
-    * [Instalar software](cap-03/instalar-software2.md)
+    * [Instalar software](cap.03/instalar-software.md)
+    * [Instalar software](cap.03/instalar-software2.md)
 * Capítulo 4: tareas de un administrador
-    * [Crear usuarios](cap-04/README.md)
-    * [Multiplataforma](cap-04/multiplataforma.md)
-    * [Fitrado](cap-04/filtrado.md)
+    * [Crear usuarios](cap.04/README.md)
+    * [Multiplataforma](cap.04/multiplataforma.md)
+    * [Fitrado](cap.04/filtrado.md)
 * Capítulo 5: **EN CONSTRUCCIÓN!!!**
 
 ## Vídeos
