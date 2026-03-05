@@ -2,8 +2,19 @@
 
 # Working with Unix processes (traducido)
 
-> Enlace al artículo original:
-> * https://workingwithruby.com/wwup/intro
+```
+Autor: 
+Email: jesse@jstorimer.com
+Enlace al artículo original:  https://workingwithruby.com/wwup/intro
+```
+
+## Nota del autor
+
+Entre 2011 y 2016, publiqué y vendí estos ebooks en jstorimer.com. El contenido no se ha actualizado en bastante tiempo y no tengo intención de hacerlo próximamente. Se comparte aquí de forma gratuita para quien desee leerlo.
+
+El contenido puede estar desactualizado con respecto a la versión actual de Ruby, ya que se escribió para Ruby 1.9. Dicho esto, todos los ejemplos de código deberían seguir ejecutándose, ya que estas API de programación de sistemas no suelen cambiar mucho con el tiempo.
+
+## Contenidos
 
 1. [Introducción](01-introduction.md)
 1. [Primer](02-primer.md)
