@@ -1,6 +1,8 @@
-[<< back](../README.md)
+[<< back](../README.md) | [HOME](../../index.md)) | [next >>](../README.md)
 
 ```
+iLoveRuby -> Inicio
+
 EN CONSTRUCCION!!!
 ```
 

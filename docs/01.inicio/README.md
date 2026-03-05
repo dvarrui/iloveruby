@@ -1,5 +1,9 @@
 [<< back](../index.md)
 
+```
+ILoveRuby -> Inicio
+```
+
 # Para empezar a entender el lenguaje Ruby
 
 1. [Los fundamentos](./01.fundamentos/README.md): Leyendo estos 10 fundamentos o principios base del lenguaje se entenderá mejor como "piensa" Ruby. De esta forma, le quitamos la "magia oculta" y podremos pensar como "rubist".

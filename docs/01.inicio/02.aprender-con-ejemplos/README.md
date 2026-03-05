@@ -1,6 +1,8 @@
-[<< back](../README.md)
+[<< back](../README.md) | [HOME](../../index.md) | [next >>](../03.sysadmin/README.md)
 
 ```
+iLoveRuby -> Inicio
+
 Las ideas para los enunciados has sido extraídas del pdf gratuito
 
 "30 Ejercicios de Python" de Juan Monroy (@codigopiton)

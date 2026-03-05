@@ -1,4 +1,8 @@
-[<< back](../README.md)
+[<< back](../README.md) | [HOME](../../index.md) | [next >>](../02.aprender-con-ejemplos/README.md)
+
+```
+iLoveRuby -> Inicio
+```
 
 # Los 10 fundamentos
 
