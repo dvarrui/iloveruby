@@ -4,7 +4,7 @@
 ILoveRuby -> Inicio
 ```
 
-# Para empezar a entender el lenguaje Ruby
+# Sección 1: Para empezar a entender el lenguaje Ruby
 
 1. [Los fundamentos](./01.fundamentos/README.md): Leyendo estos 10 fundamentos o principios base del lenguaje se entenderá mejor como "piensa" Ruby. De esta forma, le quitamos la "magia oculta" y podremos pensar como "rubist".
 2. [Aprender con ejemplos](./02.aprender-con-ejemplos/README.md): Basándonos en ejemplos de programación de otros lenguajes, hemos creado esta secuencia de problemas explicados y resueltos paso a paso. Sin prisa.

@@ -6,5 +6,5 @@ iLoveRuby -> DSL
 EN CONSTRUCCION!!!
 ```
 
-# DSL
+# Sección 3: DSL
 
