@@ -4,7 +4,7 @@
 ILoveRuby -> Otros autores
 ```
 
-# Sección 2: Artículos
+# Sección 2: Artículos de otros autores traducidos al español
 
 Artículos de otros autores traducidos al español. La mayoría de los artículos tratarán temas más avanzados del lenguaje de programación Ruby.
 
