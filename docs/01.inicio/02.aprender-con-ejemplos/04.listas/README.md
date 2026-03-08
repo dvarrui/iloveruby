@@ -2,11 +2,11 @@
 
 # Listas de números
 
-Vamos a hacer un programa que:
-* Pedir 10 números al usuario y los almacenarlos en una lista.
-* Motrar todos los números por pantalla.
-* Mostrar el texto "NEGATIVO" cuando el número sea negativo.
-* Mostrar el texto "REPETIDO" cuando el número esté repetido.
+Vamos a hacer un programa con los siguiente "features":
+* F1: Pedir 10 números al usuario y los almacenarlos en una lista.
+* F2: Mostrar todos los números por pantalla.
+* F3: Mostrar el texto "NEGATIVO" cuando el número sea negativo.
+* F4: Mostrar el texto "REPETIDO" cuando el número esté repetido.
 
 **[Ejemplo 1](./01-listas.rb): Pedir 10 números al usuario y almacenarlos en una lista.**
 
@@ -72,9 +72,9 @@ end
 
 > **NOTA**: No sé si te has dado cuenta, pero algo que ha cambiado es que ahora la salida del programa muestra los índices de 0 a 9 y no de 1 a 10 como en los ejemplo anteriores. ¡Bueno! No es crítico pero tenía que decirlo.
 
-**[Ejemplo 4](./04-listas.rb): parámetros posicionales en el iterador.**
+**[Ejemplo 4](./04-listas.rb): parámetros numerados en el iterador.**
 
-Vamos a simplificar ruido visual usando los parámetros posicionales.
+Vamos a simplificar ruido visual usando los parámetros numerados.
 
 ```ruby
 numbers = []
@@ -85,21 +85,34 @@ numbers = []
 end
 ```
 
-* Los parámetros posicionales son:
+* Los parámetros numerados son:
     * `_1`, parámetro de la posición 1.
     * `_2`, parámetro de la posición 2.
     * `_3`, parámetro de la posición 3.
     * etc.
-* En nuestro caso sólo tenemos un parámetro. Hemos cambiado `index` por `_1`.
-* Nos hemos ahorrado escribir algo de código.
+* En nuestro caso sólo tenemos un parámetro. Hemos cambiado `index` por `_1`. Nos hemos ahorrado escribir algo de código.
+* `_1` es una variable (El primer parámetro). En nuestro caso irá tomando los valores 0, 1, 2, ... hasta 9.
+
+**[Ejemplo 5](./04-listas.rb): lenguaje natural.**
+
+El diseño de Ruby está pensado para acercarse lo más posible al lenguaje natural (Inglés) de modo que parezca que estamos leyendo y escribiendo en inglés. En las reciente versiones de Ruby se incorporado el siguiente cambio:
+
+```ruby
+numbers = []
+
+10.times do
+  print("- numbers[#{it}]? ")
+  numbers[it] = gets.to_i
+end
+```
+
+* En los parámetros numerados podemos usar `_1` o `it` de forma indistinta. Así suena más natural.
+
+**[Ejemplo 6](./06-listas.rb): Mostrar todos los números por pantalla.**
+
+Hacer el feature 2 (F2), no cuesta nada.
 
 ---
-> **Recordar:**  `_1` es un parámetro numerado (El primer parámetro). En nuestro caso será 0, 1, 2, ... hasta 9.
-
-**[Ejemplo 2](./02-listas.rb): Mostrar todos los números por pantalla.**
-
-No cuesta nada hacerlo.
-
 **[Ejemplo 3](./03-listas.rb): Mostrar el texto "NEGATIVO" cuando el número sea negativo.**
 
 Abrimos sesión `irb` y buscamos si existe un método que nos pueda ayudar:

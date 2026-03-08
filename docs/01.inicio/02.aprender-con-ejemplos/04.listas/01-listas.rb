@@ -1,11 +1,11 @@
 #!/usr/bin/env ruby
 
-# Pedir 10 números al usuario y almacenarlos en una lista (Array)
+# F1: Pedir 10 números al usuario y almacenarlos en una lista (Array)
 numbers = []
 
 puts "Escribir 10 números:"
 
-# Usar un bucle while
+# INFO: Usar un bucle while
 index = 1
 while(index <= 10)
   print("- numbers[#{index}]? ")
