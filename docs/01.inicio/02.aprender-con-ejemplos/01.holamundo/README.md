@@ -111,6 +111,14 @@ mts = height.to_i
 cms = ((height % mts) * 100).round(0) 
 ```
 
+## Notas: las estructuras
+
+Hay distintos paradígmas de programación, pero no vamos a liarnos ahora con eso. Sólo saber que estamos aprendiendo programación siguiendo el camino de la **programación imperativa estructurada**. Según esta forma de programar, sólo necesitamos aprender 3 estructuras básicas y con ellas podemos hacer cualquier programa. Estas son:
+
+* **Estructura secuencial**: La estructura secuencial implica que tenemos instrucciones/acciones que se ejecutan en secuencia, una detrás de otra. Esta estructura la acabamos de aprender. Todos los ejemplos de [holamundo](./) que hemos visto tienen estructura secuencial.
+* **Estructura condicional**: Esta estructura nos permite tomar decisiones en tiempo de ejecución y decidir y se ejecutan las acciones a1, a2, a3 o las acciones b1, b2, b3.
+* **Estructura bucle y/o iterador**: Bucle e iterador no son estrictamente lo mismo. Ya lo veremos. Pero nos basta con quedarnos con la idea de que con los bucles y/o iteradores podemos repetir las acciones.
+
 ---
 
 _Hasta aquí hemos terminado de "evolucionar" el "hola mundo" ahora puedes seguir con el [siguiente problema](../02.numeros/README.md)._
