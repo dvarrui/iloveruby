@@ -53,8 +53,6 @@ Bucle `while`:
 
 Otra forma de realizar tareas repetidas sin usar bucles, es usando iteradores. Un iterador parte de un conjunto de elementos y le aplica el bloque de código a cada uno de los elementos del conjunto. Usar iteradores es más natural en Ruby, aunque puedes seguir usando los `for` y los `while` siempre que quieras.
 
-Entiendo que los iteradores de Ruby, cuestan un poco al principio porque además se usan en conjunción con los closures o bloques de código, lo cual es muy potente. Pero no te preocupes, mi itención es ayudarte a pensar en Ruby poco a poco, y como entiendo que si vienes de otro lenguaje estarás más acostumbrado a los bucles, voy a ir intercalando bucles con iteradores poco a poco hasta que al final usaremos sólo iteradores.
-
 Vamos con nuestro primer iterador.
 
 ```ruby
@@ -206,14 +204,11 @@ end
 
 > **DUDA**: ¿El cero es positivo o es negativo? ¿Qué devuelve `0.negative?`?... Lo probamos y tenemos que `0.negative? #=> false`. O sea, que Ruby considera el 0 como un número positivo.
 
+**[Ejemplo 11](./11-listas.rb): F4: Mostrar el texto "REPETIDO" cuando el número esté repetido.**
 
----
+Para saber si un número está repetido en el Array o no, bastaría con saber para cada número, el total de apariciones. Si el total de apareciones (ocurrencias) > 0 entonces está repetido. En principio hemos conseguido expresar con palabras la idea de los pasos que queremos ejecutar para solucionar nuestro problema.
 
-**[Ejemplo 4](./04-listas.rb): Mostrar el texto "REPETIDO" cuando el número esté repetido.**
-
-Para saber si un número está repetido en el Array o no, bastaría con saber para cada número, el total de apariciones, y luego podríamos quedarnos o filtrar únicamente por aquellos que tengan el total mayor a 1. En principio hemos conseguido expresar con palabras la idea de los pasos que podemos ejecutar para solucionar nuestro problema.
-
-El siguiente paso es "descomponer" el párrafo anterior en varias frases, y ver si podemos "convertir" cada frase es líneas de código Ruby. Vuelvo a escribir el párrafo pero de otra forma un poco más programable:
+El siguiente paso es "descomponer" el párrafo anterior en varias frases, y ver si podemos "convertir" cada frase es líneas de código Ruby. De modo que vuelvo a escribir el párrafo pero de otra forma un poco más programable:
 
 Pasos:
 * Calcular el total de apariciones (`occurrences`) de cada número de la lista(`numbers`).
@@ -223,7 +218,9 @@ Pasos:
 
 Antes de seguir, tengo que explicarte una clase nueva. Los Hash. Un Hash Ruby es como un diccionario de Python o un Map de Java. Es una estructura que guarda pares de clave-valor. Ejemplo: `h = { "clave" => "valor" }`, donde `h["clave"]` devuelve `"valor"`.
 
-El Hash de Ruby admite muchos tipos de objetos diferentes como clave. Como por ejemplo Integer, String y lo más usado en Ruby como clave... los Symbol. Un Symbol o símbolo es como un String inmutable. En Exilir por ejemplo existe algo es parecido llamado "atom".
+El Hash de Ruby admite muchos tipos de objetos diferentes como clave. Como por ejemplo Integer, String y lo más usado en Ruby como clave... son los Symbol. Un Symbol o símbolo es como un String inmutable. En Exilir por ejemplo existe algo es parecido llamado "atom".
+
+Todo esto lo explico porque vamos a usar un método del Hash para ayudarnos.
 
 ```ruby
 # Creando un Hash en la variable h1
@@ -252,7 +249,7 @@ h3[:age]    #=> 57
 
 _Después de conocer los Hash, seguimos resolviendo nuestro problema._
 
-**Método `group_by`**
+**Método `group_by` del Array**
 
 En este momento, recuerdo haber leído sobre un método llamado `group_by`, que me "suena" que podría ayudarnos. Pero no recuerdo bien... Entonces decido consultar la [documentación de group_by](https://www.rubydoc.info/stdlib/core/Enumerable:group_by). Veamos cómo funciona el método a ver si nos sirve para algo. Ejemplo:
 
@@ -269,7 +266,7 @@ A partir de un Array de elementos, `group_by` devuelve un Hash agrupando los ele
 * La clave 2 tiene el valor `[2, 2]`. Este valor es un Array con dos elementos.
 * La clave 3 tiene el valor `[3, 3, 3]`. Este valor es un Array con tres elementos.
 
-> **OJO**: A veces los problemas se resuelven más fácilmente eligiendo la estructura de datos más adecuada para representar la estructura de los valores de nuestro problema.
+> **OJO**: A veces los problemas se resuelven más fácilmente eligiendo la estructura de datos más adecuada para representar la estructura de los valores de nuestro problema. Y los objetos más útiles son los Array, Hash y Enumerable...
 
 Para saber el número de ocurrencias de cada clave, podemos usar el método `size()` o `count()` de cada Array.
 
@@ -280,6 +277,10 @@ Para saber el número de ocurrencias de cada clave, podemos usar el método `siz
 | 3     | [3, 3, 3] | [3].count | 3           |
 
 > **Reflexión**: Toda esta evolución, tiene como objetivo que el código quede más sencillo, claro y fácil de entender. Bueno... desde mi punto de vista de "RubyLover". Si vienes de otro lenguaje puede que te parezcan más sencillos los primeros ejemplos, sin usar clases "raras" de Ruby. Pero para mí que conozco Ruby desde hace años veo más sencillo seguir evolucionando el código para aprovechar las clases y métodos que nos ofrece el lenguaje.
+
+## Bucles vs iteradores
+
+Entiendo que los iteradores de Ruby, cuestan un poco al principio porque además se usan en conjunción con los closures o bloques de código, lo cual es muy potente. Pero no te preocupes, mi itención es ayudarte a pensar en Ruby poco a poco, y como entiendo que si vienes de otro lenguaje estarás más acostumbrado a los bucles, voy a ir intercalando bucles con iteradores poco a poco hasta que al final usaremos sólo iteradores.
 
 ## Las estructuras básicas (3 de 3)
 
