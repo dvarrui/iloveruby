@@ -8,7 +8,7 @@ Vamos a hacer un programa con los siguiente "features":
 * F3: Mostrar el texto "NEGATIVO" cuando el número sea negativo.
 * F4: Mostrar el texto "REPETIDO" cuando el número esté repetido.
 
-**[Ejemplo 1](./01-listas.rb): Pedir 10 números al usuario y almacenarlos en una lista.**
+**[Ejemplo 1](./01-listas.rb): Feature 1 (F1). Pedir 10 números al usuario y almacenarlos en una lista.**
 
 Creamos la variable Array que va a almacenar los números: `numbers = []`, y a continuación tendremos un bucle `while`donde le solicitamos al usuario los números.
 
@@ -108,14 +108,68 @@ end
 
 * En los parámetros numerados podemos usar `_1` o `it` de forma indistinta. Así suena más natural.
 
-**[Ejemplo 6](./06-listas.rb): Mostrar todos los números por pantalla.**
+**[Ejemplo 6](./06-listas.rb): Feature 2 (F2). Mostrar todos los números por pantalla.**
 
 Hacer el feature 2 (F2), no cuesta nada.
 
----
-**[Ejemplo 3](./03-listas.rb): Mostrar el texto "NEGATIVO" cuando el número sea negativo.**
+**[Ejemplo 7](./07-listas.rb): Feature 3 (F3). Mostrar el texto "NEGATIVO" cuando el número sea negativo.**
 
-Abrimos sesión `irb` y buscamos si existe un método que nos pueda ayudar:
+```ruby
+numbers.each do
+  if it < 0 
+    info = "(NEGATIVO)"
+  else
+    info = ""
+  end
+  puts "- number #{it} #{info}"
+end
+```
+
+* Vamos a necesitar la "estructura condicional" `if` para saber cuando es negativo (`<0`) y positivo (`>=0`).
+* A la hora de mostrar los números usamos el método `each` del Array `numbers` para iterar. Volvemos a usar el parámetro `it`, porque es muy cómodo.
+* A su vez, dentro del bloque de código creamos la variable String `info`. Cuando el número es negativo `info` toma el valor `"(NEGATIVO)"` y sino será la cadena vacía.
+* Esta variable `info` se muestra en la salida junto al número.
+
+**[Ejemplo 8](./08-listas.rb): En Ruby casi todas las sentencias devuelven un valor.**
+
+En Ruby casi todas las sentencias devuelven un valor. Son como las expresiones. Vamos a cambiar sutilmente el código.
+
+```ruby
+numbers.each do
+  info = if it < 0 
+    "(NEGATIVO)"
+  else
+    ""
+  end
+  puts "- number #{it} #{info}"
+end
+```
+
+* Vamos a necesitar la "estructura condicional" `if` para saber cuando es negativo (`<0`) y positivo (`>=0`).
+* A la hora de mostrar los números usamos el método `each` del Array `numbers` para iterar. Volvemos a usar el parámetro `it`, porque es muy cómodo.
+* A su vez, dentro del bloque de código creamos la variable String `info`. Cuando el número es negativo `info` toma el valor `"(NEGATIVO)"` y sino será la cadena vacía.
+* Esta variable `info` se muestra en la salida junto al número.
+
+**[Ejemplo 9](./09-listas.rb): Operador ternario.**
+
+En casi todos los lenguaje de programación existe el operador ternario. Tiene la forma `var = COND ? TRUE_VALUE : FALSE_VALUE`. Si `COND` es verdadero `var = TRUE_VALUE` y si es falso `var = FALSE_VALUE`. El operador ternario se suele usar cuando tenemos un `if-then-else` y cada alternativa devuelve un valor.
+
+
+```ruby
+numbers.each do
+  info = (it < 0) ? "(NEGATIVO)" : ""
+  puts "- number #{it} #{info}"
+end
+```
+
+¡Me gusta como ha quedado esta versión! ¡Yo me quedaría aquí y estaría bien! 
+
+Poer por motivos didácticos voy a "rubinizar" un poco más sólo para conocer las posibilidades del lenguaje.
+
+---
+**[Ejemplo 10](./10-listas.rb): Rubinizando un poco más.**
+
+Abrimos sesión `irb` y buscamos si existe un método que nos pueda "rubinizar":
 
 ```bash
 >> 1.negative?
@@ -141,18 +195,19 @@ Abrimos sesión `irb` y buscamos si existe un método que nos pueda ayudar:
 
 ¡Lo tenemos! El método `negative?()` de los Integer devuelve `true` cuando es un número negativo y `false` en caso contrario.
 
-> **DUDA**: ¿Qué devuelve `0.negative?`?... Lo probamos y tenemos que `0.negative? #=> false`. O sea, que Ruby considera el 0 como un número positivo.
-
 A la hora de mostrar los números usamos el método `each` del Array `numbers` para iterar. Volvemos a usar el parámetro numerado `_1`, porque es muy cómodo.
-
-A su vez, dentro del bloque de código creamos la variable `info` con un "operador ternario" (que es como un condicional pero en una línea). Cuando el número es negativo info toma el valor `"(NEGATIVO)"` y sino será `""` (La cadena vacía). Esta variable `info` se muestra en la salida junto al número.
 
 ```ruby
 numbers.each do
-  info = _1.negative? ? "(NEGATIVO)" : ""
-  puts "- number #{_1} #{info}"
+  info = it.negative? ? "(NEGATIVO)" : ""
+  puts "- number #{it} #{info}"
 end
 ```
+
+> **DUDA**: ¿El cero es positivo o es negativo? ¿Qué devuelve `0.negative?`?... Lo probamos y tenemos que `0.negative? #=> false`. O sea, que Ruby considera el 0 como un número positivo.
+
+
+---
 
 **[Ejemplo 4](./04-listas.rb): Mostrar el texto "REPETIDO" cuando el número esté repetido.**
 
