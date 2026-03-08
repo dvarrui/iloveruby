@@ -111,7 +111,12 @@ mts = height.to_i
 cms = ((height % mts) * 100).round(0) 
 ```
 
-## Notas: las estructuras
+## Las estructuras básicas (1 de 3)
+
+```
+Estructuras básicas 
+de la programación imperativa estructurada
+```
 
 Hay distintos paradígmas de programación, pero no vamos a liarnos ahora con eso. Sólo saber que estamos aprendiendo programación siguiendo el camino de la **programación imperativa estructurada**. Según esta forma de programar, sólo necesitamos aprender 3 estructuras básicas y con ellas podemos hacer cualquier programa. Estas son:
 
