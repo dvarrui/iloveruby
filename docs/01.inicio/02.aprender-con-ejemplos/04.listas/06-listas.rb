@@ -5,8 +5,8 @@ numbers = []
 
 puts "Escribir 10 números:"
 10.times do
-  print("- numbers[#{_1}]? ")
-  numbers[_1] = gets.to_i
+  print("- numbers[#{it}]? ")
+  numbers[it] = gets.to_i
 end
 
 # F2: Mostrar los números por pantalla
