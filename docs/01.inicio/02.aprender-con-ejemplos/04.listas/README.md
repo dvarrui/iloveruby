@@ -10,17 +10,90 @@ Vamos a hacer un programa que:
 
 **[Ejemplo 1](./01-listas.rb): Pedir 10 números al usuario y almacenarlos en una lista.**
 
-Creamos la variable Array que va a almacenar los números: `numbers = []`.
-
-A continuación, iteramos 10 veces para solicitarle al usuario los números. Pero esta vez usamos otra forma de iterar. Cogemos el objeto número `10` e invocamos a su método `times()`, de forma que estamos diciendo "haz esto 10 veces". Al método le pasamos un objeto bloque `do..end` con las acciones que se van a repetir en cada iteración.
+Creamos la variable Array que va a almacenar los números: `numbers = []`, y a continuación tendremos un bucle `while`donde le solicitamos al usuario los números.
 
 ```ruby
+numbers = []
+
+index = 1
+while(index <= 10)
+  print("- numbers[#{index}]? ")
+  numbers[index] = gets.to_i
+  index += 1
+end
+```
+
+Explicación:
+* El código dentro del bloque `while(COND) BLOCK end`, se ejecuta mientras sea cierta la condición `COND`. Entonces mientras `index <= 10` se va pidiendo los números al usuario. 
+
+> **IMPORTANTE**: No olvidar actualizar la variable "index" con `index += 1`. Porque si no lo hacemos tenemos un "bucle infinito". Esto es, nunca cambia "index" y por tanto nunca se produce la condición de salida del bucle. Por eso se llama "bucle inifinito". Es un error típico del uso de los `while` olvidar que si no se desactiva la condición nos quedaremos atrapados.
+
+**[Ejemplo 2](./02-listas.rb): Lo mismo que antes pero cambiando `while` por `for`.**
+
+Como sabemos que con los `while` podemos cometer el error de los "bucles infinitos", y como sabemos antes de empezar el bucle el número de repeticiones entonces podemos usar un `for`. Veamos:
+
+```ruby
+numbers = []
+
+for index in 1..10
+  print("- numbers[#{index}]? ")
+  numbers[index] = gets.to_i
+end
+```
+
+Bucle `for`:
+* Son mejores para bucles cunado se sabe a priori el numéro de repeticiones.
+* Podemos notar que hemos resuelto el mismo problema pero con menos líneas y por tanto menos esfuerzo y menos carga cognitiva.
+
+Bucle `while`:
+* Son mejores para bucles donde no se sabe a priori el numéro de repeticiones.
+* Implica escribir más líneas y por tanto aumenta las posibilidades de equivocarse.
+
+**[Ejemplo 3](./03-listas.rb): cambiamos el bucle `for` por un iterador.**
+
+Otra forma de realizar tareas repetidas sin usar bucles, es usando iteradores. Un iterador parte de un conjunto de elementos y le aplica el bloque de código a cada uno de los elementos del conjunto. Usar iteradores es más natural en Ruby, aunque puedes seguir usando los `for` y los `while` siempre que quieras.
+
+Entiendo que los iteradores de Ruby, cuestan un poco al principio porque además se usan en conjunción con los closures o bloques de código, lo cual es muy potente. Pero no te preocupes, mi itención es ayudarte a pensar en Ruby poco a poco, y como entiendo que si vienes de otro lenguaje estarás más acostumbrado a los bucles, voy a ir intercalando bucles con iteradores poco a poco hasta que al final usaremos sólo iteradores.
+
+Vamos con nuestro primer iterador.
+
+```ruby
+numbers = []
+
+10.times do |index|
+  print("- numbers[#{index}]? ")
+  numbers[index] = gets.to_i
+end
+```
+
+* Cogemos el objeto número `10` e invocamos a su método `times()`, de forma que estamos diciendo "haz esto 10 veces".
+* Al método `times()`, le pasamos un objeto bloque `do...end` con las acciones que se van a repetir en cada iteración.
+* La variable `index`, va a tomar los valores 0, 1, 2, 3, etc.
+
+> **NOTA**: No sé si te has dado cuenta, pero algo que ha cambiado es que ahora la salida del programa muestra los índices de 0 a 9 y no de 1 a 10 como en los ejemplo anteriores. ¡Bueno! No es crítico pero tenía que decirlo.
+
+**[Ejemplo 4](./04-listas.rb): parámetros posicionales en el iterador.**
+
+Vamos a simplificar ruido visual usando los parámetros posicionales.
+
+```ruby
+numbers = []
+
 10.times do
-  print("numbers[#{_1}]? ")
+  print("- numbers[#{_1}]? ")
   numbers[_1] = gets.to_i
 end
 ```
 
+* Los parámetros posicionales son:
+    * `_1`, parámetro de la posición 1.
+    * `_2`, parámetro de la posición 2.
+    * `_3`, parámetro de la posición 3.
+    * etc.
+* En nuestro caso sólo tenemos un parámetro. Hemos cambiado `index` por `_1`.
+* Nos hemos ahorrado escribir algo de código.
+
+---
 > **Recordar:**  `_1` es un parámetro numerado (El primer parámetro). En nuestro caso será 0, 1, 2, ... hasta 9.
 
 **[Ejemplo 2](./02-listas.rb): Mostrar todos los números por pantalla.**
@@ -139,6 +212,10 @@ Para saber el número de ocurrencias de cada clave, podemos usar el método `siz
 | 3     | [3, 3, 3] | [3].count | 3           |
 
 > **Reflexión**: Toda esta evolución, tiene como objetivo que el código quede más sencillo, claro y fácil de entender. Bueno... desde mi punto de vista de "RubyLover". Si vienes de otro lenguaje puede que te parezcan más sencillos los primeros ejemplos, sin usar clases "raras" de Ruby. Pero para mí que conozco Ruby desde hace años veo más sencillo seguir evolucionando el código para aprovechar las clases y métodos que nos ofrece el lenguaje.
+
+## Las estructuras básicas (3 de 3)
+
+Ya conocíamos la "estructura secuencial", y la "estructura condicional", ahora con estos ejemplos hemos aprendido la **estructura bucle y/o iterador**.
 
 ---
 
