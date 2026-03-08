@@ -113,6 +113,8 @@ Hacer el feature 2 (F2), no cuesta nada.
 **[Ejemplo 7](./07-listas.rb): Feature 3 (F3). Mostrar el texto "NEGATIVO" cuando el número sea negativo.**
 
 ```ruby
+# F3: Mostrar el texto "NEGATIVO" cuando el número sea negativo
+
 numbers.each do
   if it < 0 
     info = "(NEGATIVO)"
@@ -133,6 +135,8 @@ end
 En Ruby casi todas las sentencias devuelven un valor. Son como las expresiones. Vamos a cambiar sutilmente el código.
 
 ```ruby
+# F3: Mostrar el texto "NEGATIVO" cuando el número sea negativo
+
 numbers.each do
   info = if it < 0 
     "(NEGATIVO)"
@@ -154,6 +158,8 @@ En casi todos los lenguaje de programación existe el operador ternario. Tiene l
 
 
 ```ruby
+# F3: Mostrar el texto "NEGATIVO" cuando el número sea negativo
+
 numbers.each do
   info = (it < 0) ? "(NEGATIVO)" : ""
   puts "- number #{it} #{info}"
@@ -196,6 +202,8 @@ Abrimos sesión `irb` y buscamos si existe un método que nos pueda "rubinizar":
 A la hora de mostrar los números usamos el método `each` del Array `numbers` para iterar. Volvemos a usar el parámetro numerado `_1`, porque es muy cómodo.
 
 ```ruby
+# F3: Mostrar el texto "NEGATIVO" cuando el número sea negativo
+
 numbers.each do
   info = it.negative? ? "(NEGATIVO)" : ""
   puts "- number #{it} #{info}"
