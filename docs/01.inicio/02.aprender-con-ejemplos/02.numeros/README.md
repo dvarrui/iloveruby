@@ -152,6 +152,12 @@ Vamos a usarla en nuestros iteradores. Ejemplo:
 
 Con esta funcionalidad el código se lee de forma más "natural".
 
+## Las estructuras básicas (2 de 3)
+
+Ya conocíamos la "estructura secuencial", ahora en estos ejemplos hemos aprendido la **estructura condicional**.
+
+Ya sólo nos faltaría la "estructura bucle y/o iterador".
+
 ---
 
 _Hasta aquí hemos terminado de "evolucionar" los "números", ahora puedes seguir con el [siguiente problema](../03.maxmin/README.md)._
