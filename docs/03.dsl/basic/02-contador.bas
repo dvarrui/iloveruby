@@ -1,5 +1,5 @@
 
-Basic.run do
+basic do
   print "--- BIENVENIDO AL TRADUCTOR BASIC ---"
   input "COMO TE LLAMAS?", nombre
 

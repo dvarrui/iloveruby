@@ -1,5 +1,5 @@
 
-Basic.run do
+basic do
   let number, 3
   let factorial, 1
   let i, number
