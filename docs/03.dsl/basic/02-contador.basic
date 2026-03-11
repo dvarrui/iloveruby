@@ -1,6 +1,5 @@
-require_relative "modern_basic"
 
-ModernBasic.run do
+Basic.run do
   print "--- BIENVENIDO AL TRADUCTOR BASIC ---"
   input "COMO TE LLAMAS?", nombre
 

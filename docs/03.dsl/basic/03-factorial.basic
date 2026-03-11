@@ -1,6 +1,5 @@
-require_relative "modern_basic"
 
-ModernBasic.run do
+Basic.run do
   let number, 3
   let factorial, 1
   let i, number

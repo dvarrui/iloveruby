@@ -6,7 +6,7 @@ def PRINT(*args)
   puts args.join(" ")
 end
 
-class ModernBasic
+class Basic
   def initialize
     @variables = {}
   end
