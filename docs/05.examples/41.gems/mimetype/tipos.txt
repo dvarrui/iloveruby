@@ -1,0 +1,30 @@
+01 marcel =================================
+
+      application/octet-stream: private
+             application/x-elf: private.bin
+                    image/jpeg: private.jpeg
+              application/x-sh: private.rb
+      application/octet-stream: private.text
+      application/octet-stream: private.txt
+      application/octet-stream: private.xml
+
+02 mimemagic ==============================
+
+      application/x-executable: private.bin
+                    image/jpeg: private.jpeg
+            application/x-ruby: private.rb
+                         Error: private.text
+                         Error: private.txt
+                         Error: private.xml
+
+03 mimemagic ===============================
+
+                    image/jpeg [U] https://i.ebayimg.com/images/g/rbIAAOSwojpgyQz1/s-l500.jpg
+                     text/html [U] https://www.nba.com
+      application/x-executable [F] private.bin
+                    image/jpeg [F] private.jpeg
+            application/x-ruby [F] private.rb
+               application/xml [P] private.xml
+                    text/plain [P] private.txt
+                         error [E] private.text
+                         error [E] private

@@ -1,0 +1,21 @@
+#!/usr/bin/env rake
+
+require "bundler/setup"
+require "bundler/gem_tasks"
+require "bump/tasks"
+
+Bundler::GemHelper.install_tasks
+
+task :default => :run
+
+task :run do
+  exec "./bin/words-game"
+end
+
+require 'rake/testtask'
+
+Rake::TestTask.new do |t|
+  t.libs << 'lib/words-game'
+  t.test_files = FileList['tests/lib/words-game/*_test.rb']
+  t.verbose = true
+end

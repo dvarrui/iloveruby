@@ -1,0 +1,6 @@
+*.log
+*.tmp
+*.txt
+*.key
+*.asc
+*.vbox-extpack

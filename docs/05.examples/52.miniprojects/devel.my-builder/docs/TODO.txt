@@ -1,0 +1,29 @@
+
+=============
+ERROR MESSAGE:
+
+[INFO] Loading params...
+/usr/lib64/ruby/1.9.1/psych.rb:203:in `parse': (<unknown>): mapping values are not allowed in this context at line 7 column 66 (Psych::SyntaxError)
+	from /usr/lib64/ruby/1.9.1/psych.rb:203:in `parse_stream'
+	from /usr/lib64/ruby/1.9.1/psych.rb:151:in `parse'
+	from /usr/lib64/ruby/1.9.1/psych.rb:127:in `load'
+	from /home/dawar/proy/teachertools/builder/lib/builder.rb:52:in `load_params'
+	from /home/dawar/proy/teachertools/builder/lib/builder.rb:26:in `build_system'
+	from /home/dawar/proy/teachertools/builder/lib/builder.rb:35:in `do'
+	from ./run:37:in `<main>'
+dawa
+
+---------
+SOLUTION:
+
+You have invalid YAML code somewhere. I mean invalid for Psych 
+(the new ruby YAML parser).
+
+If you cannot (or don't want to) fix your YAML code, try to load the 
+old YAML parser (syck), adding this at the beginning of config/boot.rb
+
+require 'yaml'
+YAML::ENGINE.yamler = 'syck'
+
+It's just a 'quick and dirty' fix, I know
+

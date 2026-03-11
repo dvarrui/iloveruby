@@ -1,0 +1,13 @@
+---
+:refresh_cmd: apt-get update
+:install_cmd: apt-get install -y
+:upgrade_cmd: apt-get upgrade -y
+:repo_url: http://leela.servidor/~general/repo/aula108
+:remove_cmd: apt-get remove -y
+:package_test_cmd: dpkg -l <%= package_name %> |grep 'ii' | wc -l  
+:debug_option: true
+:verbose_option: true
+:install_packages: true
+:download_files: true
+:process_commands: true
+:configure_users: true

@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+if ARGV.size.zero?
+  # Open irb
+  puts "Pythonend 0.1.0 (main, Feb 21 2023, 11:27:06) [GCC] on linux"
+  puts 'Type "help", "copyright", "credits" or "license" for more information.'
+  system("irb --prompt simple --nocolorize --noecho-on-assignment -Ilib -rrython")
+else
+  require_relative "lib/rython"
+  content = File.read(ARGV.first)
+  eval(content)
+end

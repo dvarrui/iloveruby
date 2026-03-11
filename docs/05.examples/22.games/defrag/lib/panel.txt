@@ -1,0 +1,6 @@
+ ┌─────────────────────────────────────┐ ┌───────────────────────────────────┐
+ │ Cluster                           % │ │    - Used           - Unused      │
+ │                                     │ │  r - Reading      W - Writing     │
+ │       Elapsed Time : 00:00:01       │ │  B - Bad          X - Unmovable   │
+ │   Full optimization                 │ │  Drive C:   1 Block = 41 clusters │
+ └─────────────────────────────────────┘ └───────────────────────────────────┘

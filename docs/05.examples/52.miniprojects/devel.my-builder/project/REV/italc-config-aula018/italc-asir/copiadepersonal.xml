@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE italc-config-file>
+<personalconfig version="1.0.13">
+  <head>
+    <globalsettings opened-tab="2" demoquality="0" icononlymode="0" defaultdomain="" role="1" client-update-interval="1" autoarranged="0" wincfg="AAAA/wAAAAD9AAAAAAAABGQAAALfAAAABAAAAAQAAAAIAAAACPwAAAACAAAAAAAAAAEAAAASAG0AXwBzAGkAZABlAEIAYQByAwAAAAD/////AAAAAAAAAAAAAAACAAAAAQAAABYAbQBhAGkAbgB0AG8AbwBsAGIAYQByAQAAAAD/////AAAAAAAAAAA=" notooltips="1" win-height="787" win-x="0" ismaximized="1" win-y="24" clientdoubleclickaction="1" win-width="1152" showUserColumn="1" toolbarcfg=""/>
+  </head>
+  <body>
+    <classroom name="Auto-detected computers">
+      <classroom name="Aula108">
+        <client w="792" x="-13" y="33" h="594" visible="yes" id="14329"/>
+        <client w="792" x="1" y="1" h="594" visible="yes" id="873892"/>
+        <client w="792" x="1" y="1" h="594" visible="yes" id="513249"/>
+        <client w="792" x="1" y="1" h="594" visible="yes" id="209905"/>
+        <client w="792" x="1" y="1" h="594" visible="yes" id="787057"/>
+        <client w="792" x="1" y="1" h="594" visible="yes" id="926623"/>
+        <client w="792" x="1" y="1" h="594" visible="yes" id="225234"/>
+        <client w="792" x="1" y="1" h="594" visible="yes" id="107362"/>
+        <client w="792" x="1" y="1" h="594" visible="yes" id="560003"/>
+        <client w="792" x="1" y="1" h="594" visible="yes" id="595550"/>
+        <client w="792" x="1" y="1" h="594" visible="yes" id="538431"/>
+        <client w="792" x="1" y="1" h="594" visible="yes" id="577968"/>
+        <client w="792" x="1" y="1" h="594" visible="yes" id="32154"/>
+        <client w="792" x="1" y="1" h="594" visible="yes" id="515001"/>
+        <client w="792" x="1" y="1" h="594" visible="yes" id="343195"/>
+        <client w="792" x="1" y="1" h="594" visible="yes" id="351381"/>
+        <client w="792" x="1" y="1" h="594" visible="yes" id="762271"/>
+        <client w="792" x="1" y="1" h="594" visible="yes" id="341466"/>
+        <client w="792" x="1" y="1" h="594" visible="yes" id="920786"/>
+        <client w="792" x="1" y="1" h="594" visible="yes" id="700316"/>
+        <client w="792" x="1" y="1" h="594" visible="yes" id="36426"/>
+        <client w="792" x="1" y="1" h="594" visible="yes" id="477770"/>
+        <client w="792" x="1" y="1" h="594" visible="yes" id="881995"/>
+        <client w="792" x="1" y="1" h="594" visible="yes" id="50754"/>
+        <client w="792" x="1" y="1" h="594" visible="yes" id="983523"/>
+        <client w="792" x="1" y="1" h="594" visible="yes" id="770487"/>
+        <client w="792" x="1" y="1" h="594" visible="yes" id="922666"/>
+        <client w="792" x="1" y="1" h="594" visible="yes" id="342589"/>
+        <client w="792" x="1" y="1" h="594" visible="yes" id="104385"/>
+        <client w="792" x="1" y="1" h="594" visible="yes" id="351860"/>
+      </classroom>
+    </classroom>
+  </body>
+</personalconfig>

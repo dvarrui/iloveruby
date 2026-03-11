@@ -1,0 +1,31 @@
+
+# to use your own menu, copy this to ~/.fluxbox/menu, then edit
+# ~/.fluxbox/init and change the session.menuFile path to ~/.fluxbox/menu
+
+[begin] (aul109)
+   [exec] (LXTerminal) {/usr/bin/lxterminal} </usr/share/pixmaps/lxterminal.xpm>
+   [exec] (Geany) {/usr/bin/geany} </usr/share/pixmaps/geany.xpm>
+   [exec] (Iceweasel) {iceweasel} </usr/share/pixmaps/iceweasel.xpm>
+   [exec] (VirtualBox) {/usr/bin/virtualbox} </usr/share/pixmaps/virtualbox.xpm>
+   [exec] (ROX Filer) {/usr/bin/rox} <>
+
+   [submenu] (Apps) {}
+      [exec] (Synaptic Package Manager) {x-terminal-emulator -e synaptic-pkexec} </usr/share/synaptic/pixmaps/synaptic_32x32.xpm>
+
+      [submenu] (Multimedia) {}
+         [exec] (Evince) {/usr/bin/evince} </usr/share/pixmaps/evince.xpm>
+         [exec] (The GIMP) {/usr/bin/gimp} </usr/share/pixmaps/gimp.xpm>
+         [exec] (VLC media player) {/usr/bin/qvlc} </usr/share/icons/hicolor/32x32/apps/vlc.xpm>
+         [exec] (Kdenlive) {/usr/bin/kdenlive} </usr/share/pixmaps/kdenlive.xpm>
+      [end]
+      [submenu] (Preferences)
+         [workspaces] (Workspaces)
+         [reconfig] (Reconfigure)
+      	 [restart] (Restart)
+   [end]
+   [end]
+
+   [exit] (Exit)
+
+[end]
+

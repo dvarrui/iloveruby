@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE italc-config-file>
+<globalclientconfig version="1.0.13">
+  <body>
+    <classroom name="aula109">
+      <client hostname="172.16.9.1" mac="" type="0" id="110814" name="pc01 - hueco"/>
+      <client hostname="172.16.9.2" mac="" type="0" id="29575" name="pc02 - hueco"/>
+      <client hostname="172.16.9.3" mac="" type="0" id="292314" name="pc03 - a3"/>
+      <client hostname="172.16.9.4" mac="" type="0" id="63539" name="pc04 - a4"/>
+      <client hostname="172.16.9.5" mac="" type="0" id="115824" name="pc05 - a5"/>
+      <client hostname="172.16.9.6" mac="" type="0" id="888340" name="pc06 - a6"/>
+      <client hostname="172.16.9.7" mac="" type="0" id="85332" name="pc07 - b4"/>
+      <client hostname="172.16.9.8" mac="" type="0" id="817763" name="pc08 - b3"/>
+      <client hostname="172.16.9.9" mac="" type="0" id="325538" name="pc09 - b2"/>
+      <client hostname="172.16.9.10" mac="" type="0" id="402093" name="pc10 - b1"/>
+      <client hostname="172.16.9.11" mac="" type="0" id="409056" name="pc11 - c1"/>
+      <client hostname="172.16.9.12" mac="" type="0" id="501257" name="pc12 - c2"/>
+      <client hostname="172.16.9.13" mac="" type="0" id="1032792" name="pc13 - c3"/>
+      <client hostname="172.16.9.14" mac="" type="0" id="405445" name="pc14 - c4"/>
+      <client hostname="172.16.9.15" mac="" type="0" id="463942" name="pc15 - d4"/>
+      <client hostname="172.16.9.16" mac="" type="0" id="757156" name="pc16 - d3"/>
+      <client hostname="172.16.9.17" mac="" type="0" id="766628" name="pc17 - d2"/>
+      <client hostname="172.16.9.18" mac="" type="0" id="420397" name="pc18 - d1"/>
+      <client hostname="172.16.9.19" mac="" type="0" id="391485" name="pc19 - e1"/>
+      <client hostname="172.16.9.20" mac="" type="0" id="229208" name="pc20 - e2"/>
+      <client hostname="172.16.9.21" mac="" type="0" id="771734" name="pc21 - e3"/>
+      <client hostname="172.16.9.22" mac="" type="0" id="784115" name="pc22 - e4"/>
+      <client hostname="172.16.9.23" mac="" type="0" id="657575" name="pc23 - hueco"/>
+      <client hostname="172.16.9.24" mac="" type="0" id="478495" name="pc24 - f4"/>
+      <client hostname="172.16.9.25" mac="" type="0" id="151749" name="pc25 - f3"/>
+      <client hostname="172.16.9.26" mac="" type="0" id="713274" name="pc26 - f2"/>
+      <client hostname="172.16.9.27" mac="" type="0" id="861509" name="pc27 - f1"/>
+    </classroom>
+    <classroom name="Auto-detected computers">
+      <client hostname="172.16.9.16:5900" mac="00:24:81:21:a5:7e" type="0" id="1" name="pc16.aula109"/>
+      <client hostname="172.16.9.17:5901" mac="00:24:81:21:6c:01" type="0" id="222844" name="pc17.aula109"/>
+    </classroom>
+  </body>
+</globalclientconfig>

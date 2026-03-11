@@ -1,0 +1,15 @@
+
+# Billetes y monedas
+
+Diseñar un programa en que se lea el coste de una factura
+y calcule el número de billetes y monedas de uso corriente
+en euros mínimo necesario para pagarla.
+
+Las cantidades de billetes y monedas de uso corriente
+se tienen almacenados en una lista con el siguiente contenido:
+[500, 200, 100, 50, 20, 10, 5, 1, 0.5, 0.2, 0.1, 0.05, 0.02, 0.01]
+
+## Analizamos el problema
+
+1. Introducir el importe de la factura
+2. Hacer el cálculo de billetes/monedas necesarios para hacer el pago.

@@ -1,0 +1,4 @@
+*.lock
+private*
+/unpack/
+/repo/

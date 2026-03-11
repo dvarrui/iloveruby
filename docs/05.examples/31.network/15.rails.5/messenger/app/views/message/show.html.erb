@@ -1,0 +1,22 @@
+<%= render 'header' %>
+
+<h3>Show Message</h3>
+
+<table>
+  <tr><td>id:</td><td><%= @message.id %></td></tr>
+  <tr><td>title:</td><td><%= @message.title %></td></tr>
+  <tr><td>body:</td><td><%= @message.body %></td></tr>
+  <tr><td>tags(<%= @message.tags.count%>):</td>
+      <td>
+      <% @message.tags.each do |tag| %>
+        <%= tag.name %>,
+      <% end %>
+      </td>
+  </tr>
+</table>
+
+<p>
+  <%= link_to "List", '/message' %> |
+  <%= link_to "Edit", edit_message_path(@message) %> |
+  <%= link_to 'Destroy', @message, method: :delete, data: { confirm: 'Are you sure?' } %>
+</p>

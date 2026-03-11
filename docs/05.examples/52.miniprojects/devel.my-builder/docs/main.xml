@@ -1,0 +1,119 @@
+<section xml:id="builder"> 
+	<title>Automatizar la personalización de un SO</title>
+	<para><emphasis>David Vargas - davidvargas.tenerife@gmail.com</emphasis></para>
+	<para>Esto es un script en ruby llamado <filename>builder.rb</filename>,
+	que sirve para automatizar el proceso de personalización y/o de 
+	configuración de un SO recién instalado.</para>
+	<para>Se puede configurar para personalizar distintos entornos. Los
+	ficheros de configuración se guardan en el directorio <filename>config</filename>.
+	A su vez denro de éste crearemos tantos subdirectorios como configuraciones
+	diferentes querramos. Adecuadamente configurado puede servir para 
+	la creación de equipos piloto (que servirán de origen para clonar) para
+	el aula108, el aula109 y el propio departamento.</para>
+	<para>Para iniciar el proceso debemos hacerlo en dos pasos. Estos son:</para>
+	<orderedlist>
+		<listitem><filename>./setup.sh --ubuntu</filename>: Para instalar los
+		programas necesarios para el configurador.</listitem>
+		<listitem><filename>./builder.rb ubuntu</filename>: Para iniciar el
+		script de configuración/personalización.</listitem>
+	</orderedlist>
+	<para>Para ver las configuraciones disponibles consultar el directorio 
+	<filename>config/</filename>.</para>
+
+	<section>
+		<title>builder.rb</title>
+		<para>Veamos el contenido de <filename>builder.rb</filename>.</para>
+		<programlisting>
+			<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="builder.rb" parse="text"/>
+		</programlisting>
+	</section>
+
+	<section>
+		<title>Ficheros de configuración</title>
+		<para>Los principales ficheros de configuración para la 
+		configuración <filename>config/ubuntu</filename> son:</para>
+		<itemizedlist>
+			<listitem><filename>params.yaml</filename></listitem>
+			<listitem><filename>packages.yaml</filename></listitem>
+			<listitem><filename>downloads.yaml</filename></listitem>
+			<listitem><filename>users.yaml</filename></listitem>
+			<listitem><filename>commands.yaml</filename></listitem>
+		</itemizedlist>
+		
+		<section>
+			<title>Ejemplo para config/ubuntu</title>
+			<para>Veamos a modo de ejemplo estos ficheros para la configuración 
+			<filename>config/ubuntu</filename>.</para>
+
+			<para>Fichero <filename>config/ubuntu/params.yaml</filename>: Establece
+			una serie de parámetros específicos para Ubuntu.</para>
+			<programlisting>
+				<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="config/ubuntu/params.yaml" parse="text"/>
+			</programlisting>
+
+			<para>Fichero <filename>config/ubuntu/packages.yaml</filename>: Lista
+			de paquetes de Ubuntu que se instalarán.</para>
+			<programlisting>
+				<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="config/ubuntu/packages.yaml" parse="text"/>
+			</programlisting>
+
+			<para>Fichero <filename>config/ubuntu/downloads.yaml</filename>: Lista
+			de ficheros que se descargarán desde el repositorio central, 
+			a la máquina local.</para>
+			<programlisting>
+				<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="config/ubuntu/downloads.yaml" parse="text"/>
+			</programlisting>
+
+			<para>Fichero <filename>config/ubuntu/users.yaml</filename>: Lista
+			de usuarios que se crearán con sus valores.</para>
+			<programlisting>
+				<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="config/ubuntu/users.yaml" parse="text"/>
+			</programlisting>
+
+			<para>Fichero <filename>config/ubuntu/commands.yaml</filename>: Estos
+			comandos se ejecutarán en secuencia.</para>
+			<programlisting>
+				<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="config/ubuntu/commands.yaml" parse="text"/>
+			</programlisting>
+		</section>
+
+		<section>
+			<title>Ficheros auxiliares para config/ubuntu</title>
+			<para>Fichero <filename>config/ubuntu/install_virtualbox.sh</filename>: 
+			Script de instalación de VirtualBox actualizado directamente de los
+			repositorios de Oracle.</para>
+			<programlisting>
+				<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="config/ubuntu/script/install_virtualbox.sh" parse="text"/>
+			</programlisting>
+
+			<para>Fichero <filename>config/ubuntu/configure_lightdm.sh</filename>: 
+			Oculta la lista de usuarios en el login gráfico Lightdm.</para>
+			<programlisting>
+				<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="config/ubuntu/script/configure_lightdm.sh" parse="text"/>
+			</programlisting>
+
+			<para>Fichero <filename>config/ubuntu/configure_host.rb</filename>: 
+			Realiza algunas configuración del host como actualizar el 
+			nombre de host según consultas a servidor DHCP.</para>
+			<programlisting>
+				<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="config/ubuntu/script/configure_host.rb" parse="text"/>
+			</programlisting>
+
+			<para>Fichero <filename>config/ubuntu/crontab.conf</filename>: 
+			Establece una configuración para <command>crontab</command>.</para>
+			<programlisting>
+				<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="config/ubuntu/crontab.conf" parse="text"/>
+			</programlisting>
+			
+			<para>Fichero <filename>config/ubuntu/update_host.rb</filename>: 
+			Este fichero se copia a /etc/cron.daily, de modo que diariamente
+			comprueba si es hora de actualizar el equipo seǵun su IP.</para>
+			<programlisting>
+				<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="config/ubuntu/script/update_host.rb" parse="text"/>
+			</programlisting>
+
+
+		</section>
+	</section>
+	
+</section>	

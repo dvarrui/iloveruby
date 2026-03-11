@@ -1,0 +1,24 @@
+=begin
+https://www.amberbit.com/blog/2014/6/12/calling-c-cpp-from-ruby/
+
+Compilation:
+ $ gcc -c -fPIC 01-ffi.c -o 01-ffi.o
+ $ gcc -shared -o 01-ffi.so 01-ffi.o
+=end
+
+desc 'Default: list'
+task :default do
+  system("rake -T")
+end
+
+desc 'Compile (C example)'
+task :compile do
+  system("gcc -c -fPIC ffi.c -o ffi.o")
+  system("gcc -shared -o ffi.so ffi.o")
+end
+
+desc 'Clean (Remove temp files)'
+task :clean do
+  system("rm ffi.o")
+  system("rm ffi.so")
+end

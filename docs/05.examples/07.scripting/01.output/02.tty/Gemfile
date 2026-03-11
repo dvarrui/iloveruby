@@ -1,0 +1,14 @@
+# frozen_string_literal: true
+
+source "https://rubygems.org"
+
+gem "pastel"
+gem "tty"
+gem "tty-box"
+gem "tty-prompt"
+gem "tty-progressbar"
+gem "tty-table"
+gem "tty-markdown"
+gem "tty-tree"
+gem "tty-spinner"
+gem "tty-config"

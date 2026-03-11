@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE italc-config-file>
+<personalconfig version="1.0.13">
+  <head>
+    <globalsettings opened-tab="1" demoquality="0" icononlymode="0" defaultdomain="" role="1" client-update-interval="1" autoarranged="0" wincfg="AAAA/wAAAAD9AAAAAAAAA+QAAAKAAAAABAAAAAQAAAAIAAAACPwAAAACAAAAAAAAAAEAAAASAG0AXwBzAGkAZABlAEIAYQByAwAAAAD/////AAAAAAAAAAAAAAACAAAAAQAAABYAbQBhAGkAbgB0AG8AbwBsAGIAYQByAQAAAAD/////AAAAAAAAAAA=" notooltips="1" win-height="692" win-x="0" ismaximized="1" win-y="24" clientdoubleclickaction="1" win-width="1024" showUserColumn="1" toolbarcfg=""/>
+  </head>
+  <body>
+    <classroom name="aula108">
+      <client w="256" x="18" y="5" h="192" visible="yes" id="1031118"/>
+      <client w="256" x="292" y="12" h="192" visible="yes" id="826889"/>
+      <client w="256" x="299" y="222" h="192" visible="yes" id="237484"/>
+      <client w="256" x="692" y="16" h="192" visible="yes" id="840905"/>
+      <client w="256" x="0" y="0" h="192" visible="no" id="870565"/>
+    </classroom>
+  </body>
+</personalconfig>

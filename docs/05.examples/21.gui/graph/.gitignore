@@ -1,0 +1,4 @@
+private*
+*.lock
+*.dot
+*.png

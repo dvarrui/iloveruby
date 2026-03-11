@@ -1,0 +1,27 @@
+---
+- :name: asir
+  :home: /mnt/asir/home
+  :passwd: adminelESPACIO
+  :othergroups: vboxusers
+  :force_delete: true
+  :uid: 1001
+  :italc_user: true
+- :name: daw
+  :home: /mnt/daw/home
+  :passwd: pensarconLOGICA
+  :othergroups: vboxusers
+  :force_delete: true
+  :uid: 1002
+  :italc_user: true
+- :name: root
+  :home: /root
+  :passwd: bienvenidoalCLUB
+  :othergroups: vboxusers
+  :italc_user: false
+  :ssh_user: true
+- :name: super
+  :home: /home/super
+  :passwd: dotherightTHING
+  :othergroups: vboxusers
+  :italc_user: true
+  :ssh_user: true

@@ -1,0 +1,11 @@
+*.gem
+/pkg/
+/test/tmp/
+/tmp/
+
+## Environment normalisation:
+/.bundle/
+
+Gemfile.lock
+.ruby-version
+

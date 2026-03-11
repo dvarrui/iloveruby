@@ -1,0 +1,34 @@
+
+FILENAME=`basename $1 .rb`
+
+echo "[Compile to bytecode c]"
+echo "$FILENAME.rb ==(compile)==> $FILENAME.c"
+mrbc -B$FILENAME $FILENAME.rb
+
+to_main() {
+  echo $1 >> main.c
+}
+echo "[Create stub: main.c]"
+
+rm main.c
+to_main "#include <mruby.h>"
+to_main "#include <mruby/irep.h>"
+to_main "#include \"$FILENAME.c\""
+to_main ""
+to_main "int"
+to_main "main(void)"
+to_main "{"
+to_main "  mrb_state *mrb = mrb_open();"
+to_main "  if (!mrb) {  }"
+to_main "  mrb_load_irep(mrb, $FILENAME);"
+to_main "  mrb_close(mrb);"
+to_main "  return 0;"
+to_main "}"
+
+
+echo "[Compile main.c]"
+echo "$FILENAME.c ==(compiled)==> $FILENAME.bin"
+INCLUDE=/home/quigon/.rbenv/versions/mruby-3.1.0
+LIB=/home/quigon/.rbenv/versions/mruby-3.1.0/lib/libmruby.a
+
+gcc -std=c99 -I$INCLUDE/include main.c -o main.bin $LIB -lm

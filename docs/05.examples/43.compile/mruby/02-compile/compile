@@ -1,0 +1,11 @@
+# home/quigon/.rbenv/versions/mruby-3.1.0/include/mruby.h
+# gcc -std=c99 -Imruby/include hello.c -o hello /home/quigon/.rbenv/versions/mruby-3.1.0/lib/libmruby.a -lm
+
+FILENAME=`basename $1 .c`
+
+INCLUDE=/home/quigon/.rbenv/versions/mruby-3.1.0
+LIB=/home/quigon/.rbenv/versions/mruby-3.1.0/lib/libmruby.a
+gcc -std=c99 -I$INCLUDE/include $FILENAME.c -o $FILENAME.bin $LIB -lm
+
+echo "$FILENAME.c ==(compiled)==> $FILENAME.bin"
+

@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+find /home/quigon -name libmruby.a
+# /home/quigon/.rbenv/versions/mruby-3.1.0/lib/libmruby.a
+
+
+To compile and link:
+
+$ gcc -std=c99 -Imruby/include test_program.c -o test_program mruby/build/host/lib/libmruby.a -lm
+
+To execute:
+
+$ ./test_program
+hello world

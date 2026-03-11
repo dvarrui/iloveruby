@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+#./bin/snake_game
+#$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+require_relative 'lib/snake_game'
+
+Game.new.play

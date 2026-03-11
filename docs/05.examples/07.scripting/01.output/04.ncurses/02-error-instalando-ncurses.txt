@@ -1,0 +1,41 @@
+❯ bundle install                                    
+
+Fetching gem metadata from https://rubygems.org/.
+Resolving dependencies...
+Using bundler 2.3.11
+Using curses 1.4.4
+Fetching ncurses 0.9.1
+Installing ncurses 0.9.1 with native extensions
+
+Gem::InstallError: #<Gem::Specification name=ncurses version=0.9.1> has an invalid specification_version
+  /home/david/.rbenv/versions/3.1.0/lib64/ruby/3.1.0/rubygems/installer.rb:736:in `verify_spec'
+  /home/david/.rbenv/versions/3.1.0/lib64/ruby/3.1.0/rubygems/installer.rb:910:in `pre_install_checks'
+/home/david/.rbenv/versions/3.1.0/lib64/ruby/gems/3.1.0/gems/bundler-2.3.11/lib/bundler/rubygems_gem_installer.rb:64:in
+`pre_install_checks'
+/home/david/.rbenv/versions/3.1.0/lib64/ruby/gems/3.1.0/gems/bundler-2.3.11/lib/bundler/rubygems_gem_installer.rb:12:in
+`install'
+/home/david/.rbenv/versions/3.1.0/lib64/ruby/gems/3.1.0/gems/bundler-2.3.11/lib/bundler/source/rubygems.rb:204:in
+`install'
+/home/david/.rbenv/versions/3.1.0/lib64/ruby/gems/3.1.0/gems/bundler-2.3.11/lib/bundler/installer/gem_installer.rb:54:in
+`install'
+/home/david/.rbenv/versions/3.1.0/lib64/ruby/gems/3.1.0/gems/bundler-2.3.11/lib/bundler/installer/gem_installer.rb:16:in
+`install_from_spec'
+/home/david/.rbenv/versions/3.1.0/lib64/ruby/gems/3.1.0/gems/bundler-2.3.11/lib/bundler/installer/parallel_installer.rb:186:in
+`do_install'
+/home/david/.rbenv/versions/3.1.0/lib64/ruby/gems/3.1.0/gems/bundler-2.3.11/lib/bundler/installer/parallel_installer.rb:177:in
+`block in worker_pool'
+  /home/david/.rbenv/versions/3.1.0/lib64/ruby/gems/3.1.0/gems/bundler-2.3.11/lib/bundler/worker.rb:62:in `apply_func'
+/home/david/.rbenv/versions/3.1.0/lib64/ruby/gems/3.1.0/gems/bundler-2.3.11/lib/bundler/worker.rb:57:in `block in
+process_queue'
+  /home/david/.rbenv/versions/3.1.0/lib64/ruby/gems/3.1.0/gems/bundler-2.3.11/lib/bundler/worker.rb:54:in `loop'
+  /home/david/.rbenv/versions/3.1.0/lib64/ruby/gems/3.1.0/gems/bundler-2.3.11/lib/bundler/worker.rb:54:in `process_queue'
+/home/david/.rbenv/versions/3.1.0/lib64/ruby/gems/3.1.0/gems/bundler-2.3.11/lib/bundler/worker.rb:91:in `block (2
+levels) in create_threads'
+
+An error occurred while installing ncurses (0.9.1), and Bundler cannot continue.
+
+In Gemfile:
+  ncurses
+
+
+

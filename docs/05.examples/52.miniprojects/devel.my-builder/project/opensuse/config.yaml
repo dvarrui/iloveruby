@@ -1,0 +1,14 @@
+---
+:install_cmd: zypper --non-interactive in --auto-agree-with-licenses
+:refresh_cmd: zypper refresh
+:upgrade_cmd: zypper --non-interactive update
+:repo_url: http://leela.servidor/~general/repo/aula108
+:remove_cmd: zypper --non-interactive remove
+:package_test_cmd: "zypper if <%= package_name %> | grep 'Instalado: Si'|wc -l"
+:debug_option: true
+:verbose_option: true
+:install_packages: true
+:download_files: false
+:process_commands: true
+:configure_users: false
+:room: aula108

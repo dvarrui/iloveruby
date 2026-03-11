@@ -1,0 +1,43 @@
+#!/usr/bin/ruby
+#File: run
+
+require 'optparse'
+require_relative 'lib/builder'
+
+
+options = {}
+ 
+optparse = OptionParser.new do|opts|
+	opts.banner = "Usage: #{$0} [options] configdir"
+ 
+	opts.on( '-c', '--configuration', 'Run configuration CONFIGDIR' ) do
+		options[:config] = true
+	end
+  
+	opts.on( '-l', '--list', 'List existing configurations' ) do|file|
+		options[:show_list] = true
+	end
+
+	opts.on( '-v', '--version', 'Show version' ) do
+		options[:show_version] = true
+	end 
+
+	opts.on( '-h', '--help', 'Display this screen' ) do
+		puts opts
+		exit
+ 	end
+end
+ 
+optparse.parse!
+
+if options[:show_list] then
+	e=Dir.new("project").entries-[".","..","REV"]
+	puts "Project configurations:\n * "+e.sort.join(", ")
+elsif options[:config]
+	Builder.new.do(ARGV)
+elsif options[:show_version] then
+	puts "tt-builder "+Builder.version
+else
+	puts optparse
+end
+

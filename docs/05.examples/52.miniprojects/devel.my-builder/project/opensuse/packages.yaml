@@ -1,0 +1,25 @@
+---
+:install:
+- MozillaFirefox filezilla midori
+- vim geany gedit libreoffice libreoffice-help-es
+- kdenlive gimp gimp-help-es audacity
+- recordmydesktop gtk-recordmydesktop gnome-screenshot
+- inkscape scribus blender create-resources
+- p7zip unrar tree wget curl xchat nmap htop
+- evince xournal pdftk 
+- git make ruby puppet smb4k
+- apache2 php5
+- libpng12-0
+- openssh samba-client
+- net-tools
+:remove:
+- vlc
+- mencoder gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav tumbler-plugins-extra
+- pdfchain impressive xdot ardesia
+- xsltproc fop docbook-xsl-ns docbook5-xml
+- ri docker fish 
+- libapache2-mod-php5 
+- eclipse netbeans glassfish-javaee glassfish-appserv
+- gsmartcontrol
+- abiword gnumeric gnumeric-common
+- ace-of-penguins

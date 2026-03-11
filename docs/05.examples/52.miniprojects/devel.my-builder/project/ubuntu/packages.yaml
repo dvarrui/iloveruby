@@ -1,0 +1,23 @@
+---
+:install:
+- synaptic firefox filezilla midori
+- vim geany gedit libreoffice libreoffice-help-es
+- kdenlive gimp gimp-help-es audacity xmlcopyeditor
+- recordmydesktop gtk-recordmydesktop gnome-screenshot shutter
+- inkscape scribus blender create-resources
+- vlc audacity
+- p7zip unrar tree htop p7zip-full
+- evince xournal pdftk
+- pdfchain impressive xournal impressive dia xdot ardesia
+- git make ruby ri puppet smb4k
+- openssh-server smbclient gkrellm
+- traceroute nmap wget curl xchat hexchat minicom putty
+- mencoder gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav tumbler-plugins-extra
+- xsltproc fop docbook-xsl-ns docbook5-xml
+- docker vagrant fish
+- libapache2-mod-php5 
+- eclipse netbeans glassfish-javaee glassfish-appserv
+- gsmartcontrol
+:remove:
+- abiword gnumeric gnumeric-common
+- ace-of-penguins

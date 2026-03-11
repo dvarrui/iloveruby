@@ -1,0 +1,6 @@
+---
+:dir: tmp
+:files:
+- flash-plugin-latest.rpm
+- oracle_vbox.asc
+- virtualbox-latest.rpm

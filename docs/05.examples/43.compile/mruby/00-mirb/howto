@@ -1,0 +1,10 @@
+
+REPL (mirb)
+
+$ mruby/bin/mirb
+mirb - Embeddable Interactive Ruby Shell
+
+> puts 'hello world'
+hello world
+ => nil
+

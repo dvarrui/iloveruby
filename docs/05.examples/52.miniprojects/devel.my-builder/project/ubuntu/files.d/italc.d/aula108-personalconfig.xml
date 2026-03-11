@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE italc-config-file>
+<personalconfig version="1.0.13">
+  <head>
+    <globalsettings opened-tab="0" demoquality="0" icononlymode="0" defaultdomain="" role="1" client-update-interval="1" autoarranged="0" wincfg="AAAA/wAAAAD9AAAAAAAABKMAAAO0AAAABAAAAAQAAAAIAAAACPwAAAACAAAAAAAAAAEAAAASAG0AXwBzAGkAZABlAEIAYQByAwAAAAD/////AAAAAAAAAAAAAAACAAAAAQAAABYAbQBhAGkAbgB0AG8AbwBsAGIAYQByAQAAAAD/////AAAAAAAAAAA=" notooltips="1" win-height="1000" win-x="65" ismaximized="1" win-y="24" clientdoubleclickaction="1" win-width="1215" showUserColumn="0" toolbarcfg=""/>
+  </head>
+  <body>
+    <classroom name="Aula108">
+      <client w="256" x="280" y="695" h="192" visible="yes" id="188968"/>
+      <client w="185" x="1" y="1" h="138" visible="yes" id="376649"/>
+      <client w="185" x="188" y="1" h="138" visible="yes" id="692001"/>
+      <client w="185" x="376" y="2" h="138" visible="yes" id="454200"/>
+      <client w="185" x="562" y="1" h="138" visible="yes" id="436310"/>
+      <client w="185" x="751" y="0" h="138" visible="yes" id="372715"/>
+      <client w="185" x="936" y="1" h="138" visible="yes" id="425036"/>
+      <client w="185" x="-2" y="138" h="138" visible="yes" id="975531"/>
+      <client w="185" x="184" y="140" h="138" visible="yes" id="127481"/>
+      <client w="185" x="375" y="141" h="138" visible="yes" id="197075"/>
+      <client w="185" x="564" y="141" h="138" visible="yes" id="731038"/>
+      <client w="185" x="750" y="141" h="138" visible="yes" id="1041935"/>
+      <client w="185" x="936" y="141" h="138" visible="yes" id="723016"/>
+      <client w="185" x="3" y="282" h="138" visible="yes" id="172234"/>
+      <client w="185" x="190" y="280" h="138" visible="yes" id="28513"/>
+      <client w="185" x="381" y="282" h="138" visible="yes" id="799709"/>
+      <client w="185" x="562" y="279" h="138" visible="yes" id="539224"/>
+      <client w="185" x="750" y="281" h="138" visible="yes" id="1002501"/>
+      <client w="185" x="936" y="281" h="138" visible="yes" id="403440"/>
+      <client w="185" x="1" y="421" h="138" visible="yes" id="642432"/>
+      <client w="185" x="189" y="421" h="138" visible="yes" id="76066"/>
+      <client w="185" x="376" y="420" h="138" visible="yes" id="521408"/>
+      <client w="185" x="562" y="421" h="138" visible="yes" id="285856"/>
+      <client w="185" x="749" y="421" h="138" visible="yes" id="530265"/>
+      <client w="185" x="937" y="421" h="138" visible="yes" id="442456"/>
+      <client w="185" x="1" y="561" h="138" visible="yes" id="820895"/>
+      <client w="185" x="188" y="560" h="138" visible="yes" id="655423"/>
+      <client w="185" x="375" y="557" h="138" visible="yes" id="653197"/>
+      <client w="185" x="563" y="560" h="138" visible="yes" id="29656"/>
+      <client w="185" x="749" y="559" h="138" visible="yes" id="319665"/>
+      <client w="185" x="938" y="561" h="138" visible="yes" id="118816"/>
+      <client w="256" x="10" y="699" h="192" visible="yes" id="86487"/>
+    </classroom>
+    <classroom name="Auto-detected computers"/>
+  </body>
+</personalconfig>

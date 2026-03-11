@@ -1,0 +1,6 @@
+private*
+*.lock
+*.html
+*.txt
+temp/*
+docker/temp/*

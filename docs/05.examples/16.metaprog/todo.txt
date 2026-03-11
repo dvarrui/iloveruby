@@ -1,0 +1,15 @@
+
+https://twitter.com/gregnavis/status/1619335102919761921?t=gvy4HcZi3GWFqQW8IGQeeg&s=35
+Greg Navis Ruby tip: don't rely on libraries calling refinement-provided methods
+
+Monkey-patching: Messing with your Ruby methods
+https://t.co/qizJt4WunE?s=35
+
+Monkey patching is a dynamic feature that basically refers to the ability to have classes open all the time
+https://twitter.com/the_ruby_dev/status/1620710799596552193?t=y7hrE-SeQdPWnPfzdh3bAA&s=35
+
+class_eval vs. instance_eval in Ruby
+https://www.akshaykhot.com/class_eval_vs_instance_eval_in_ruby/
+
+Evaluation Options in Ruby
+https://www.infoq.com/articles/eval-options-in-ruby/

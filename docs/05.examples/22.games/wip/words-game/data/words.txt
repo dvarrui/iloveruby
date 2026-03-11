@@ -1,0 +1,5 @@
+hello
+bye
+blue
+yellow
+red

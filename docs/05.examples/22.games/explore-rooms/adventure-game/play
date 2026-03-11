@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+if ARGV[0].nil?
+  puts "Usage: #{$0} adventure/FILENAME"
+  exit 0
+end
+
+require_relative 'lib/adventure'
+require_relative ARGV[0]
+
+Adventure.instance.start

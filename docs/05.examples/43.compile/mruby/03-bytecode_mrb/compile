@@ -1,0 +1,12 @@
+
+FILENAME=`basename $1 .rb`
+
+echo "[Compile to bytecode]"
+echo "$FILENAME.rb ==(compile)==> $FILENAME.mrb"
+mrbc -o $FILENAME.mrb $FILENAME.rb
+
+echo "[Show bytecode]"
+hexdump -C $FILENAME.mrb
+
+echo "[Run bytecode]"
+ruby -b $FILENAME.mrb

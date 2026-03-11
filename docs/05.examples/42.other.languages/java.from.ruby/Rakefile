@@ -1,0 +1,26 @@
+=begin
+https://www.amberbit.com/blog/2014/6/12/calling-c-cpp-from-ruby/
+
+Compilation:
+ $ gcc -c -fPIC 01-ffi.c -o 01-ffi.o
+ $ gcc -shared -o 01-ffi.so 01-ffi.o
+=end
+
+name = 'Test'
+
+desc 'Default: list'
+task :default do
+  system("rake -T")
+end
+
+desc 'Compile (Java example)'
+task :compile do
+  system("javac #{name}.java")
+  system("jar -cvf #{name.downcase}.jar #{name}.class")
+end
+
+desc 'Clean (Remove temp files)'
+task :clean do
+  system("rm #{name}.class")
+  system("rm #{name.downcase}.jar")
+end

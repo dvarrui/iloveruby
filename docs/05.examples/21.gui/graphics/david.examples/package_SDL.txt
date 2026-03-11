@@ -1,0 +1,74 @@
+Cargando datos del repositorio...
+Leyendo los paquetes instalados...
+
+S  | Name                      | Summary                                                           | Type
+---+---------------------------+-------------------------------------------------------------------+--------
+i  | libSDL-1_2-0              | Biblioteca Simple DirectMedia Layer                               | paquete
+   | libSDL-devel              | SDL Library Developer Files                                       | paquete
+i  | libSDL2-2_0-0             | Biblioteca Simple DirectMedia Layer                               | paquete
+i+ | libSDL2-devel             | SDL2 Library Developer Files                                      | paquete
+   | libSDL2_gfx-1_0-0         | SDL2 Graphics Routines for Primitives and Other Support Functions | paquete
+   | libSDL2_gfx-devel         | Libraries, includes and more to develop SDL2_gfx applications     | paquete
+i  | libSDL2_image-2_0-0       | Simple DirectMedia Layer 2 image loading library                  | paquete
+i+ | libSDL2_image-devel       | Development files for the SDL2 image loader library               | paquete
+i  | libSDL2_mixer-2_0-0       | Simple DirectMedia Layer 2 – Sound mixer library                  | paquete
+i+ | libSDL2_mixer-devel       | Development files for the SDL2 sound mixer library                | paquete
+i  | libSDL2_ttf-2_0-0         | Simple DirectMedia Layer 2 Truetype library                       | paquete
+   | libSDL2_ttf-2_0-0-32bit   | Simple DirectMedia Layer 2 Truetype library                       | paquete
+i+ | libSDL2_ttf-devel         | Header files for the Simple DirectMedia Layer 2 Truetype library  | paquete
+   | libSDL2_ttf-devel-32bit   | Header files for the Simple DirectMedia Layer 2 Truetype library  | paquete
+   | libSDL_gfx-devel-32bit    | Libraries, includes and more to develop SDL_gfx applications      | paquete
+i  | libSDL_gfx15              | SDL Graphics Routines for Primitives and Other Support Functions  | paquete
+   | libSDL_image-1_2-0        | Simple DirectMedia Layer – Image loading library                  | paquete
+   | libSDL_image-devel        | Libraries, includes and more to develop SDL_image applications    | paquete
+   | libSDL_mixer-1_2-0        | Simple DirectMedia Layer – Sound mixer library                    | paquete
+   | libSDL_mixer-devel        | Development files for the SDL sound mixer library                 | paquete
+   | libSDL_sound-1_0-1        | Sound Sample Library for SDL (Simple DirectMedia Layer)           | paquete
+   | libSDL_ttf-2_0-0          | Simple DirectMedia Layer – Truetype library                       | paquete
+   | libSDL_ttf-2_0-0-32bit    | Simple DirectMedia Layer – Truetype library                       | paquete
+   | libSDL_ttf-devel          | Development files for the SDL TrueType library                    | paquete
+   | libSDL_ttf-devel-32bit    | Development files for the SDL TrueType library                    | paquete
+   | libSDLmm-0_1-8            | Simple DirectMedia Layer C++ glue library                         | paquete
+   | libSDLmm-devel            | Development files for the SDL C++ API layer                       | paquete
+
+
+--with-sdl2-config
+	--without-sdl2-config
+	--with-SDL2_mixer-dir
+	--without-SDL2_mixer-dir
+	--with-SDL2_mixer-include
+	--without-SDL2_mixer-include=${SDL2_mixer-dir}/include
+	--with-SDL2_mixer-lib
+	--without-SDL2_mixer-lib=${SDL2_mixer-dir}/lib64
+	--with-SDL2_mixerlib
+	--without-SDL2_mixerlib
+	--with-SDL2_image-dir
+	--without-SDL2_image-dir
+	--with-SDL2_image-include
+	--without-SDL2_image-include=${SDL2_image-dir}/include
+	--with-SDL2_image-lib
+	--without-SDL2_image-lib=${SDL2_image-dir}/lib64
+	--with-SDL2_imagelib
+	--without-SDL2_imagelib
+	--with-SDL2_ttf-dir
+	--without-SDL2_ttf-dir
+	--with-SDL2_ttf-include
+	--without-SDL2_ttf-include=${SDL2_ttf-dir}/include
+	--with-SDL2_ttf-lib
+	--without-SDL2_ttf-lib=${SDL2_ttf-dir}/lib64
+	--with-SDL2_ttflib
+	--without-SDL2_ttflib
+	--with-SDL2_gfx-dir
+	--without-SDL2_gfx-dir
+	--with-SDL2_gfx-include
+	--without-SDL2_gfx-include=${SDL2_gfx-dir}/include
+	--with-SDL2_gfx-lib
+	--without-SDL2_gfx-lib=${SDL2_gfx-dir}/lib64
+	--with-SDL2_gfxlib
+	--without-SDL2_gfxlib
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  /home/david/.rbenv/versions/3.1.0/lib64/ruby/gems/3.1.0/extensions/x86_64-linux/3.1.0/graphics-1.0.1/mkmf.log
+
+

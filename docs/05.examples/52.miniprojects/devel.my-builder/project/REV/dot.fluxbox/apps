@@ -1,0 +1,15 @@
+[app] (name=fbrun)
+  [Position]	(CENTER)	{0 0}
+  [Layer]	{2}
+[end]
+[app] (name=Navigator) (class=Iceweasel) (role=browser)
+  [Workspace]	{0}
+  [Dimensions]	{1065 964}
+  [Position]	(UPPERLEFT)	{562 20}
+[end]
+[app] (name=Qt-subapplication) (class=VirtualBox)
+  [Workspace]	{0}
+  [Dimensions]	{770 579}
+  [Position]	(UPPERLEFT)	{875 126}
+  [Close]	{yes}
+[end]

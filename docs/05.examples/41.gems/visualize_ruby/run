@@ -1,0 +1,4 @@
+
+. ./local.env
+
+docker run -it --rm --name $DOCKER_NAME -v "$PWD":/opt -w /opt $DOCKER_IMAGE /bin/bash

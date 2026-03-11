@@ -1,0 +1,34 @@
+---
+- :name: asir
+  :maingroup: alumnos
+  :home: /mnt/asir/home
+  :passwd: QUEREResPODER
+  :shell: /bin/bash
+  :othergroups: vboxusers
+  :force_delete: true
+  :uid: 1001
+- :name: daw
+  :maingroup: alumnos
+  :home: /mnt/daw/home
+  :passwd: estoyenelPRESENTE
+  :shell: /bin/bash
+  :othergroups: vboxusers
+  :force_delete: true
+  :uid: 1002
+- :name: root
+  :maingroup: root
+  :home: /root
+  :passwd: bienvenidoalCLUB
+  :shell: /bin/bash
+  :othergroups: vboxusers
+  :force_delete: false
+  :uid: 0
+- :name: super
+  :maingroup: super
+  :home: /home/super
+  :passwd: dotherightTHING
+  :shell: /bin/bash
+  :othergroups: vboxusers
+  :force_delete: false
+  :uid: 1000
+  
