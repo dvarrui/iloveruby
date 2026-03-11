@@ -1,6 +1,6 @@
 # File: 02-fractalpy.py
 
-from modern.logo import logo
+from logo import logo
 
 def mi_dibujo(l):
     def dibujar_arbol(longitud):

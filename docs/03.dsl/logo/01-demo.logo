@@ -1,4 +1,4 @@
-require_relative "modern/logo"
+require_relative "lib/logo"
 
 logo do
   pd
