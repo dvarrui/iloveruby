@@ -8,11 +8,11 @@ EN CONSTRUCCION!!!
 
 # Sección 3: DSL
 
-**Definición**
+## Definición
 
 Un DSL (Domain Specific Languaje) es un lenguaje diseñado específicamente para resolver problemas en un dominio particular. El objeto de resolver un problema usando DSL es que de esta forma se aumenta la productividad al ofrecer una sintaxis concisa y cercana al lenguaje del negocio, facilitando la comunicación con usuarios no técnicos.
 
-**Características**
+## Características
 
 El lenguaje de programación Ruby tiene unas características que lo hacen ideal para crear DSL, por ejemplo:
 
@@ -25,7 +25,7 @@ El lenguaje de programación Ruby tiene unas características que lo hacen ideal
 * "Casi" toda sentencia es una expresión y por tanto, siempre devuelve algo.
 * etc.
 
-**Ejemplos**
+## Ejemplos
 
 Se han creado los siguientes DSL de ejemplo para demostrar en la práctica real que la teoría sobre Ruby funciona.
 
@@ -39,7 +39,7 @@ Se han creado los siguientes DSL de ejemplo para demostrar en la práctica real 
 
 > En Desarrollo: Javascript, LIST  y Logo.
 
-**Ejecutar los ejemplos**
+### Ejecutar los ejemplos de BASIC
 
 Para ejecutar los programas de ejemplo hacemos lo siguiente:
 
@@ -67,7 +67,48 @@ HOLA MUNDO!
 
 > En el caso del C, el comando `ncc` simula el comportamiento de un compilador y construye el ejecutable `a.out`.
 
-**Desarrollo**
+### Ejecutar los ejemplos de C
+
+Para ejecutar los programas de ejemplo hacemos lo siguiente:
+
+* Elegimos un DSL, por ejemplo C:
+```bash
+c
+├── 01-holamundo.c
+├── 02-contador.c
+├── 03-factorial.c
+├── lib/
+├── ncc
+└── README.md
+```
+
+* Cargamos los alias y entramos en la carpeta del DSL de C:
+```bash
+source .nalias
+cd c
+```
+
+* Consultamos el ejemplo: 
+```c
+#include <stdio.h>
+
+main {
+    printf("Hola Mundo!\n");
+    return 0;
+}
+```
+
+* "Compilamos" y ejecutamos el programa:
+```console
+$ ncc 01-holamundo.c 
+
+$ ./a.out 
+Hola Mundo!
+```
+
+En este caso, el comando `ncc` simula el comportamiento de un compilador y construye el ejecutable `a.out`.
+
+## Desarrollo
 
 * Para cada DSL se ha creado la subcarpeta `lib` que contiene los ficheros que hacen la "magia" de convertir Ruby en un lenguaje diferente.
 * La carga de los alias `.nalias` es para aumentar el efecto de la magia, creando los alias `nbasic`, `ncc`, `npython`, como si fueran los intérpretes o compiladores del lenguaje imitado.
