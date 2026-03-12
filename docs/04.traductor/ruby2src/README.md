@@ -1,4 +1,8 @@
-[<< back](../README.md)
+[<< back](../../index.md) | [HOME](../../index.md)
+
+```
+iLoveRuby -> Traductor
+```
 
 # Traductor
 
