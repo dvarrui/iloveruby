@@ -20,7 +20,7 @@ end
 filename = ARGV.first
 lines = File.readlines(filename, chomp: true)
 lines.insert(0, "#!/usr/bin/env ruby")
-lines.insert(1, 'require_relative "modern/c"')
+lines.insert(1, 'require_relative "lib/c"')
 
 File.open('a.out', 'w') do |file|
   file.puts(lines)
