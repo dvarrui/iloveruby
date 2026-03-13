@@ -1,5 +1,5 @@
-def si(block, scope = binding)
-  SpanishConditional.new(scope).si(block)
+def si(cond, scope = binding)
+  SpanishConditional.new(scope).si(cond)
 end
 
 class SpanishConditional
@@ -7,13 +7,8 @@ class SpanishConditional
     @scope = scope
   end
 
-  def si(block)
-    result = eval(block, @scope)
-    if result
-      @state = true
-    else
-      @state = false
-    end
+  def si(cond)
+    @state = cond
     self
   end
 

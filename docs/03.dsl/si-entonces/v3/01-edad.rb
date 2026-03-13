@@ -5,7 +5,7 @@ require_relative "lib/si-entonces-sino-v3"
 edad = 10
 puts "\nEdad: #{edad}"
 
-si('edad >= 18', binding)
+si(edad >= 18, binding)
   .entonces { puts "Adulto" }
   .sino { puts "Menor" }
 
@@ -13,6 +13,6 @@ si('edad >= 18', binding)
 edad = 55
 puts "\nEdad: #{edad}"
 
-si('edad >= 18', binding)
+si(edad >= 18, binding)
   .entonces { puts "Adulto" }
   .sino { puts "Menor" }
