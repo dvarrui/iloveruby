@@ -16,20 +16,22 @@ Ejemplos usando métodos y almacenando el estado temporalmente en variables glob
 
 ```ruby
 # Estructura si-entonces-sino sin ;
-number = 10
+edad = 10
+nombre = "Pitufo"
 
-si { number >= 18 }
-  entonces { puts "Adulto" }
-  sino { puts "Menor" }
+si (edad >= 18 )
+  entonces { puts "#{nombre} es adulto" }
+  sino { puts "#{nombre} es menor" }
 
 # Estructura si-entonces-sino con ;
-number = 52
+edad = 52
+nombre = "Obiwan"
 
-si { number >= 18 }
+si (edad >= 18)
 entonces {
-  puts "Adulto"
+  puts "#{nombre} es adulto"
 }; sino {
-  puts "Menor"
+  puts "#{nombre} es menor"
 }
 ```
 
@@ -37,10 +39,9 @@ entonces {
 
 Reflexiones:
 
-* Es un poco "feo" que la condición se tenga que delimitar con llaves en lugar de paréntesis.
-* Además la implementación se basa en almacenar el estado en variables globales, lo cual no es muy limpio y además no va a funcionar correctamente si se plantean condicionales dentro de otros, porque se alterarían los valores temporales de estas variables.
+* La implementación se basa en almacenar el estado en variables globales, lo cual no es muy limpio y además no va a funcionar correctamente si se plantean condicionales dentro de otras, porque se alterarían los valores temporales de estas variables.
 
-## Versión 2: Usando clases y binding para mover el contexto
+## Versión 2: Usando clases para encapsular
 
 Ejemplo usando una clase `SpanishConditional` envuelta en un método `si()`.
 
@@ -59,5 +60,5 @@ si(edad >= 18)
 
 Reflexiones:
 
-* Esta forma es más "limpia", aunque si nos fijamos bien podemos notar que estamos usando OOP.
-* Como el estado se almacena en una instancia sería posible anidar condicionales dentro de otro sin conflictos entre sus estados.
+* Esta forma es un poco "sucia", porque si nos fijamos bien podemos notar que estamos usando OOP. Pero a mí no me disgusta.
+* Como el estado se almacena dentro de una instancia, si es posible anidar condicionales dentro de otro sin conflictos entre sus estados.
