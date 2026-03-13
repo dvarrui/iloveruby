@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-require_relative "lib/si-entonces-sino-v3"
+require_relative "lib/si-entonces-sino-v2"
 
 # Ejemplo 1: si-entonces
 edad = 10
