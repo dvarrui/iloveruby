@@ -50,7 +50,7 @@ Ejemplo usando una clase `SpanishConditional` envuelta en un método `si()`.
 edad = 10
 puts "\nEdad: #{edad}"
 
-si('edad >= 18', binding)
+si(edad >= 18)
   .entonces { puts "Adulto" }
   .sino { puts "Menor" }
 ```
