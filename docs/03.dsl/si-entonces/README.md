@@ -40,23 +40,24 @@ Reflexiones:
 * Es un poco "feo" que la condición se tenga que delimitar con llaves en lugar de paréntesis.
 * Además la implementación se basa en almacenar el estado en variables globales, lo cual no es muy limpio y además no va a funcionar correctamente si se plantean condicionales dentro de otros, porque se alterarían los valores temporales de estas variables.
 
-## Versión 2: Usando clases y binding para mover el contexto
+## Versión 3: Usando clases y binding para mover el contexto
 
 Ejemplo usando una clase `SpanishConditional` envuelta en un método `si()`.
 
 **Modo de uso** del DSL `si-entonces-sino-v2`:
 
 ```ruby
-number = 10
+edad = 10
+puts "\nEdad: #{edad}"
 
-si('number >= 18', binding)
-  .entonces('puts "Adulto"')
-  .sino('puts "Menor"')
+si('edad >= 18', binding)
+  .entonces { puts "Adulto" }
+  .sino { puts "Menor" }
 ```
 
 **Consultar la biblioteca** [si-entonces-sino-v2](./v2/lib/si-entonces-sino-v2.rb).
 
-Relfexiones:
+Reflexiones:
 
-* Esta forma es más limpia visualmente, a excepción del argumento `binding` que lo estropea un poco.
+* Es un poco "sucio" pasar la condición como `String` y tener que pasar por parámetros el contexto (`binding`).
 * Como el estado se almacena en una instancia sería posible anidar condicionales dentro de otro sin conflictos entre sus estados.
