@@ -1,7 +1,6 @@
 
-def si(&block)
-  result = block.call
-  if result
+def si(cond)
+  if cond
     $SI = true
   else
     $SI = false
