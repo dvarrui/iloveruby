@@ -48,3 +48,8 @@ Se han creado los siguientes DSL de ejemplo para demostrar en la práctica real 
 * Para cada DSL se ha creado la subcarpeta `lib` que contiene los ficheros que hacen la "magia" de convertir Ruby en un lenguaje diferente.
 * La carga de los alias `.nalias` es para aumentar el efecto de la magia, creando los alias `nbasic`, `ncc`, `npython`, como si fueran los intérpretes o compiladores del lenguaje imitado.
 * El nombre `nbasic`, no significa "New Basic" sino "No es Basic".
+
+## Otros
+
+* [apiguy/kiddo](https://github.com/apiguy/kiddo): A Shoes-inspired Ruby DSL for building simple WPF and Silverlight applications (2010, IronRuby)
+
