@@ -5,7 +5,7 @@
 
 ---
 
-## ANEXO
+### ANEXO
 
 **Activar el visor**
 
