@@ -12,7 +12,7 @@ ILoveRuby -> Inicio
 4. [Ejemplos](./04.ejemplos/): 2k ejemplos de código Ruby, organizado según diferentes conceptos.
 5. [Episodios](./05.episodios/README.md): Esta sección está empezada pero parada por el momento. La idea es ir creando vídeos de sesiones grabadas y subidas a plataformas tipo Youtube o PeerTube. Pero sólo hay 1 episodio por el momento aunque hay planificado seguir en algún momento.
 
-# Otras lecturas recomendadas para aprender Ruby
+### Otras lecturas recomendadas para aprender Ruby
 
 > Para aprender un nuevo lenguaje de programación siempre hay varios caminos diferentes, cada uno adecuado para diferentes personas. No existe (IMHO) "un camino único preferente". Cada cúal debe descubrir el suyo. Sin embargo me voy a atrever a recomendar algunas opciones:
 
