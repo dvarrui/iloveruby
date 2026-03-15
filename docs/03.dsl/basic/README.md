@@ -1,13 +1,50 @@
+[<< back](../README.md)
 
 # DSL BASIC
 
-Programa basic de ejemplo
+## Ejecutar los ejemplos
 
-BASIC (Beginner's All-purpose Symbolic Instruction Code) es el abuelo de la simplicidad en la programación. Fue diseñado en 1964 con un objetivo puramente de Interacción Humano-Máquina (HCI): que los estudiantes de cualquier carrera pudieran usar una computadora sin ser expertos en matemáticas o ingeniería.
+Para ejecutar los programas de ejemplo hacemos lo siguiente:
 
-Aquí tienes un ejemplo clásico en el estilo de los 80 (como el Applesoft BASIC o el Commodore 64), donde la elegancia residía en la numeración de líneas.
+* Elegimos un DSL, por ejemplo BASIC:
+```bash
+basic
+├── 01-holamundo.bas
+├── 02-contador.bas
+├── 03-factorial.bas
+├── lib/
+└── README.md
+```
 
-## 1. Ejemplo: El juego de adivinar el número
+* Cargamos los alias y entramos en la carpeta del DSL BASIC:
+```bash
+source .nalias
+cd basic
+```
+
+* Ejecutamos un ejemplo:
+```bash
+$ nbasic 01-holamundo.bas 
+HOLA MUNDO!
+```
+
+## Basic Sin goto
+
+Hacer un BASIC sin GOTO es, irónicamente, lo que dio origen a la programación moderna (la programación estructurada). Si quitamos los saltos de línea arbitrarios, obligamos al código a usar bloques lógicos como IF/ELSE y bucles WHILE, que es precisamente lo que Go defiende a capa y espada.
+
+Vamos a crear un DSL en Ruby que capture la estética de BASIC (mayúsculas, comandos verbales y simplicidad) pero manteniendo una estructura limpia.
+
+Desde la perspectiva de la Interacción Humano-Máquina (HCI), este diseño es muy interesante:
+
+* Eliminación del Error de Salto: Al no tener GOTO, eliminamos la posibilidad de crear bucles infinitos accidentales o saltos a líneas que no existen. Esto reduce la carga cognitiva de depuración.
+* Verbosismo Positivo: El uso de PRINT y INPUT en mayúsculas crea un contraste visual claro entre los comandos del lenguaje y los datos del usuario. Es lo que Go hace con el PascalCase, pero llevado a toda la palabra.
+* Encapsulamiento: Aunque parece BASIC, cada bloque de código está contenido. No puedes "escapar" de un bloque a mitad de ejecución, lo que garantiza que el programa siempre termine de forma predecible.
+
+## El BASIC original
+
+BASIC (Beginner's All-purpose Symbolic Instruction Code) fue diseñado en 1964 con el objetivo de ser sencillo de aprender. Se pretendía que los estudiantes de cualquier carrera pudieran usar una computadora sin ser expertos en matemáticas o ingeniería.
+
+Ejemplo: El juego de adivinar el número
 
 ```ruby
 10 PRINT "--- EL JUEGO DEL NUMERO ---"
@@ -21,32 +58,9 @@ Aquí tienes un ejemplo clásico en el estilo de los 80 (como el Applesoft BASIC
 90 END
 ```
 
-## 2. Análisis del diseño de BASIC
-
-La elegancia de lo secuencial
-
 A diferencia de Ruby (basado en objetos) BASIC es puramente procedimental y lineal.
 
-* GOTO: Es la palabra clave más famosa (y odiada). Permite saltar de una línea a otra. Es una representación directa de cómo piensa la CPU, pero a nivel humano crea el famoso "Código Espagueti".
+* GOTO: Es la palabra clave más famosa (y odiada). Permite saltar de una línea a otra. Es una representación directa de cómo piensa la CPU, pero a nivel humano crea el famoso "Código Espagueti". La mayoría de lenguajes modernos no tienen GOTO.
 * LET: Era obligatorio en versiones antiguas para asignar variables, reforzando la idea de que estabas dando una orden matemática.
 
-## 3. El GOTO de BASIC
-
-> la mayoría de lenguajes modernos no tienen GOTO
-
 Hemos visto cómo Ruby puede imitar casi cualquier cosa debido a su flexibilidad. Sin embargo, BASIC nos recuerda que, a veces, la simplicidad de una lista de instrucciones numeradas es suficiente para que un humano se sienta poderoso frente a una máquina.
-
-BASIC con GOTO era impredecible (saltos locos).
-
-**Basic Sin goto**
-
-Hacer un BASIC sin GOTO es, irónicamente, lo que dio origen a la programación moderna (la programación estructurada). Si quitamos los saltos de línea arbitrarios, obligamos al código a usar bloques lógicos como IF/ELSE y bucles WHILE, que es precisamente lo que Go defiende a capa y espada.
-
-Vamos a crear un DSL en Ruby que capture la estética de BASIC (mayúsculas, comandos verbales y simplicidad) pero manteniendo una estructura limpia.
-
-
-Desde la perspectiva de la Interacción Humano-Máquina (HCI), este diseño es muy interesante:
-
-* Eliminación del Error de Salto: Al no tener GOTO, eliminamos la posibilidad de crear bucles infinitos accidentales o saltos a líneas que no existen. Esto reduce la carga cognitiva de depuración.
-* Verbosismo Positivo: El uso de PRINT y INPUT en mayúsculas crea un contraste visual claro entre los comandos del lenguaje y los datos del usuario. Es lo que Go hace con el PascalCase, pero llevado a toda la palabra.
-* Encapsulamiento: Aunque parece BASIC, cada bloque de código está contenido. No puedes "escapar" de un bloque a mitad de ejecución, lo que garantiza que el programa siempre termine de forma predecible.
