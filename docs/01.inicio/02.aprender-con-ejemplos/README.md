@@ -29,3 +29,7 @@ Vamos a plantear diferentes problemas de programación que iremos resolviendo us
 ```
 EN DESARROLLO!!!
 ```
+
+## ANEXO
+
+* [TheAlgorithms/Python:](https://github.com/TheAlgorithms/Python): All algorithms implemented in Python - for education. Implementations are for learning purposes only. They may be less efficient than the implementations in the Python standard library. Use them at your discretion.
