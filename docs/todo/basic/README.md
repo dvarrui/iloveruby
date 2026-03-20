@@ -14,3 +14,13 @@ YouTube (https://youtu.be/nA7ox0IiYiA?is=4NQddBEGmXEh4qEi)
 🟥🟥🟥
 ¿QUIERES APRENDER SOBRE EL LENGUAJE DE PROGRAMACIÓN RUBY DE MANERA GRATUITA? ¿BUSCAS DESCUBRIR QUÉ E
 
+---
+
+Topic: The Art Of Code | Fullstack Ruby
+https://www.fullstackruby.dev/topics/the-art-of-code/
+
+Fullstack Ruby (https://www.fullstackruby.dev/topics/the-art-of-code/)
+Topic: The Art Of Code
+Futuristic web dev that’s fast and
+
+
