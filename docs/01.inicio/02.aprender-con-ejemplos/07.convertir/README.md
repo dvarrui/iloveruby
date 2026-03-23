@@ -44,4 +44,4 @@ Esta conversión es así `value.to_i(8).to_s(16)`. Explicación:
 
 ---
 
-_Hasta aquí hemos terminado de "evolucionar" la "geometría", ahora puedes seguir con el siguiente problema._
+_Hasta aquí hemos terminado de "evolucionar" la "geometría", ahora puedes seguir con el [siguiente problema](../08.cambiar/README.md)._
