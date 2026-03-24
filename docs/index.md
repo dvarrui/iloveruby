@@ -23,5 +23,6 @@ Telegram : @canarias.rb
 GitHub   : github/dvarrui/canarias.rb
 ```
 
-* Comunidad Ruby de Madrid `madrid.rb`.
+* Comunidad Ruby de Argentina `RubySur` (https://ruby.com.ar/).
 * Comunidad Ruby de Barcelona `barcelona.rb`.
+* Comunidad Ruby de Madrid `madrid.rb`.
