@@ -4,8 +4,8 @@ LET factorial, 1
 LET i, number
   
 REPEAT number do
-  let factorial, factorial  * i
-  let i, i - 1
+  LET factorial, factorial  * i
+  LET i, i - 1
 end
   
-PRINT "FACTORIAL DE", number, "ES", factorial
+PRINT "El factorial de", number, "es", factorial

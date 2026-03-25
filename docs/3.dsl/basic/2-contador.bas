@@ -1,10 +1,11 @@
 
-print "--- BIENVENIDO AL NBASIC ---"
-input "COMO TE LLAMAS?", nombre
+PRINT "--- BIENVENIDO"
+# input "COMO TE LLAMAS?", nombre
 
-let saludo, "- Hola " + nombre + "!"
-repeat 3 do
-  print saludo
+LET nombre, "Obiwan"
+LET saludo, "- Hola " + nombre + "!"
+REPEAT 3 do
+  PRINT saludo
 end
   
-print "FIN DEL PROGRAMA."
+PRINT "--- FIN DEL PROGRAMA."

@@ -1,2 +1,3 @@
+LET nombre, "BASIC"
 
-PRINT "Hola Mundo BASIC!"
+PRINT "Hola mundo", nombre

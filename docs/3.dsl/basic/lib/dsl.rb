@@ -4,7 +4,7 @@ class BasicDSL
     @variables = {}
   end
 
-    # PRINT en BASIC siempre va en mayúsculas
+  alias_method :echo, :print
   def print(*args)
     items = args.map { |i|
       return @variables[i] if i.is_a? Symbol
@@ -17,6 +17,7 @@ class BasicDSL
   # INPUT para capturar datos
   def input(prompt, var_name)
     echo "#{prompt} "
+    STDIN.flush
     @variables[var_name] = gets.chomp
   end
   alias_method :INPUT, :input

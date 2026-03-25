@@ -2,16 +2,16 @@
 # File: nbasic (New BASIC is not BASIC)
 require_relative "lib/basic"
 
-NAME="nbasic"
+_NAME="nbasic"
 
 if ARGV.empty? || ARGV.first == '--help'
-  puts "Usage: #{NAME} [options] file..."
+  puts "Usage: #{_NAME} [options] file..."
   puts "Options:"
   puts "  --help                   Display this information."
   puts "  --version                Display compiler version information."
   exit 0
 elsif ARGV.first == '--version'
-  puts "#{NAME} (GNU/Linux) 0.1.0 20250324"
+  puts "#{_NAME} (GNU/Linux) 0.1.0 20250324"
   puts "Copyright (C) 2025 Free Software Foundation, Inc."
   puts "This is free software; see the source for copying conditions.  There is NO"
   puts "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE."
