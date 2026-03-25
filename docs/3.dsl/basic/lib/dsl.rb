@@ -23,8 +23,11 @@ class BasicDSL
   alias_method :INPUT, :input
 
   # LET para asignación (opcional en Ruby, pero le da el toque BASIC)
-  def let(var_name, value)
+  def let2(var_name, value)
     @variables[var_name] = value
+  end
+  def let(value)
+    value
   end
   alias_method :LET, :let
   

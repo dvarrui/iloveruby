@@ -1,3 +1,3 @@
-LET nombre, "BASIC"
+LET nombre="BASIC"
 
 PRINT "Hola mundo", nombre
