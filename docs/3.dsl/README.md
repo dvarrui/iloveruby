@@ -8,12 +8,9 @@ EN CONSTRUCCION!!!
 
 # Sección 3: DSL
 
-> Enlaces de interés:
-> * [Write your own DSL in Ruby | Tom de Bruijn](https://tomdebruijn.com/posts/ruby-write-your-own-domain-specific-language/): Let's create our own Domain Specific Language. We'll use our metaprogramming toolbox for Ruby to configure a gem and have Ruby write code for us.
-
 ## Definición
 
-Un DSL (Domain Specific Languaje) es un lenguaje diseñado específicamente para resolver problemas en un dominio particular. El objeto de resolver un problema usando DSL es que de esta forma se aumenta la productividad al ofrecer una sintaxis concisa y cercana al lenguaje del negocio, facilitando la comunicación con usuarios no técnicos.
+Un **DSL (Domain Specific Languaje)** es un lenguaje diseñado específicamente para resolver problemas de un dominio particular. El objetivo de resolver un problema usando DSL es porque de esta forma se aumenta la productividad ofreciendo una sintaxis concisa y cercana al lenguaje del dominio, facilitando la comunicación con usuarios no técnicos.
 
 ## Características
 
@@ -49,7 +46,8 @@ Se han creado los siguientes DSL de ejemplo para demostrar en la práctica real 
 * La carga de los alias `.nalias` es para aumentar el efecto de la magia, creando los alias `nbasic`, `ncc`, `npython`, como si fueran los intérpretes o compiladores del lenguaje imitado.
 * El nombre `nbasic`, no significa "New Basic" sino "No es Basic".
 
-## Otros
+## Enlaces de interés:
 
+* [Write your own DSL in Ruby | Tom de Bruijn](https://tomdebruijn.com/posts/ruby-write-your-own-domain-specific-language/): Let's create our own Domain Specific Language. We'll use our metaprogramming toolbox for Ruby to configure a gem and have Ruby write code for us.
 * [apiguy/kiddo](https://github.com/apiguy/kiddo): A Shoes-inspired Ruby DSL for building simple WPF and Silverlight applications (2010, IronRuby)
 
