@@ -1,10 +1,10 @@
 #include <stdio.h>
 
-main() {
+int main() {
   char nombre;
 
   printf("Introduce tu nombre: ");
-  fgets(nombre, stdin)
+  fgets(nombre, stdin);
 
   i = 0;
   while (i < 3)
