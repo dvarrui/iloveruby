@@ -40,3 +40,4 @@ Artículos de otros autores traducidos al español. La mayoría de los artículo
 * [How Sinatra works (a mini Sinatra in 23 lines of Code)](https://theseus.xyz/how-sinatra-works-or-how-to-create-sinatra-clone-in-23-lines-of-code/)
 * [Ruby::Box - The Game-Changing Isolation Feature in Ruby 4.0](https://rorindia.com/blog/ruby-box-the-game-changing-isolation-feature-in-ruby-4-0): Ruby::Box lets you run multiple gem versions simultaneously without conflicts. Learn how to isolate code, contain monkey patches, and migrate APIs safely in Ruby 4.0.
 * https://charm-ruby.dev/: Ruby bindings and ports of the beloved Charm terminal libraries. Build glamorous TUIs, style terminal output, create beautiful forms, and make your Ruby CLIs sparkle.
++ [Ruby Evolution](https://rubyreferences.github.io/rubychanges/evolution.html): A very brief list of new significant features that emerged in Ruby programming language since version 2.0 (2013).
