@@ -1,13 +1,11 @@
 
-basic do
-  let number, 3
-  let factorial, 1
-  let i, number
+LET number, 3
+LET factorial, 1
+LET i, number
   
-  repeat number do
-    let factorial, factorial  * i
-    let i, i - 1
-  end
-  
-  print "FACTORIAL DE", number, "ES", factorial
+REPEAT number do
+  let factorial, factorial  * i
+  let i, i - 1
 end
+  
+PRINT "FACTORIAL DE", number, "ES", factorial

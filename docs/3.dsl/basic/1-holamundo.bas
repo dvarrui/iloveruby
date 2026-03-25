@@ -1,2 +1,2 @@
 
-PRINT "HOLA MUNDO!"
+PRINT "Hola Mundo BASIC!"

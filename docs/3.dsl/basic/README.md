@@ -28,6 +28,8 @@ $ nbasic 01-holamundo.bas
 HOLA MUNDO!
 ```
 
+> El nombre `nbasic`, no significa "New Basic" sino "No es Basic".
+
 ## Basic Sin goto
 
 Hacer un BASIC sin GOTO es, irónicamente, lo que dio origen a la programación moderna (la programación estructurada). Si quitamos los saltos de línea arbitrarios, obligamos al código a usar bloques lógicos como IF/ELSE y bucles WHILE, que es precisamente lo que Go defiende a capa y espada.

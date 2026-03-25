@@ -1,4 +1,5 @@
-alias nbasic='ruby -r./lib/basic.rb'
+#alias nbasic='ruby -r./lib/basic.rb'
+alias nbasic='./nbasic'
 alias ncc='./ncc'
 alias nlisp='ruby'
 alias nlogo='ruby'
