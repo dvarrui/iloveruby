@@ -14,8 +14,9 @@ ILoveRuby -> Inicio
 
 ### Otras lecturas recomendadas para aprender Ruby
 
-> Para aprender un nuevo lenguaje de programación siempre hay varios caminos diferentes, cada uno adecuado para diferentes personas. No existe (IMHO) "un camino único preferente". Cada cúal debe descubrir el suyo. Sin embargo me voy a atrever a recomendar algunas opciones:
+Para aprender un nuevo lenguaje de programación siempre hay varios caminos diferentes, cada uno adecuado para diferentes personas. No existe (IMHO) "un camino único preferente". Cada cúal debe descubrir el suyo. Sin embargo me voy a atrever a recomendar algunas opciones:
 
+* [Guía para aprender a programar con Ruby - rubysur](https://github.com/rubysur/aprende.a.programar): Adaptación al español del libro "Learn to Program" de Chris Pine.
 * [Ruby Monstas -> Ruby For Beginners](http://ruby-for-beginners.rubymonstas.org/)
 * [Poignant Ruby guide](http://poignant.guide/book/chapter-1.html)
 * [Coursesity](https://t.co/b4defCHf0e?s=35) 50+ Free Ruby Courses for beginners [2023 MAR] Learn Ruby with free online courses and tutorials. Find free Ruby tutorials and courses and start learning Ruby. Ruby courses for all levels from beginners to advanced available for free.
