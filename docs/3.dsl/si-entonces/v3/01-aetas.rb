@@ -2,17 +2,17 @@
 require_relative "lib/latin"
 
 # Ejemplo 1: si-entonces
-aetas = 10
+aetas = X
 escribere "\nEdad: #{aetas}"
 
-si(aetas.maior 17)
+si(aetas.maior XVII)
   .tum { escribere "Adulto" }
   .si_non { escribere "Menor" }
 
 # Ejemplo 2: sino
-aetas = 55
+aetas = LV
 escribere "\nEdad: #{aetas}"
 
-si(aetas.maior 17)
+si(aetas.maior XVII)
   .tum { escribere "Adulto" }
   .si_non { escribere "Menor" }

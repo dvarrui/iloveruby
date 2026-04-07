@@ -6,6 +6,10 @@ def escribere(arg)
   puts arg
 end
 
+X = 10
+XVII = 17
+LV = 55
+
 class LatinConditional
   def initialize(state)
     @state = state
