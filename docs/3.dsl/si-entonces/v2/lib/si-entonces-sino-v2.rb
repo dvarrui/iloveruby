@@ -9,19 +9,19 @@ class SpanishConditional
   end
 
   def entonces(&block)
-    return self if @done
-
-    if @state == true
-      block.call
-      @done = true
-    end
-    self
+    ejecutar(true, block)
   end
 
   def sino(&block)
+    ejecutar(false, block)
+  end
+
+  private
+  
+  def ejecutar(state, block)
     return self if @done
 
-    if @state == false
+    if @state == state
       block.call
       @done = true
     end
