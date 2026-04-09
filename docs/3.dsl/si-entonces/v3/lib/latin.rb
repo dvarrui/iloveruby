@@ -38,11 +38,11 @@ class LatinConditional
 end
 
 class Integer
-  def maior(other)
+  def maior?(other)
     self > other
   end
 
-  def minor(other)
+  def minor?(other)
     self < other
   end
 

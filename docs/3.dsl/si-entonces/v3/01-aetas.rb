@@ -5,7 +5,7 @@ require_relative "lib/latin"
 aetas = X
 escribere "\nEdad: #{aetas}"
 
-si(aetas.maior XVII)
+si(aetas.maior? XVII)
   .tum { escribere "Adulto" }
   .si_non { escribere "Menor" }
 
@@ -13,6 +13,6 @@ si(aetas.maior XVII)
 aetas = LV
 escribere "\nEdad: #{aetas}"
 
-si(aetas.maior XVII)
+si(aetas.maior? XVII)
   .tum { escribere "Adulto" }
   .si_non { escribere "Menor" }

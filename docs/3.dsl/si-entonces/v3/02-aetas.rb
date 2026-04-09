@@ -6,7 +6,7 @@ aetas = X
 nomen = "Pitufo"
 escribere "\nEdad: #{aetas}"
 
-si(aetas.maior XVII)
+si(aetas.maior? XVII)
 .tum { 
   escribere "#{nomen} es adulto" 
 }
@@ -19,7 +19,7 @@ aetas = LV
 nomen = "Obiwan"
 escribere "\nEdad: #{aetas}"
 
-si(aetas.maior XVII)
+si(aetas.maior? XVII)
 .tum {
   escribere "#{nomen} es adulto" 
 }
