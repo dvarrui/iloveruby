@@ -1,49 +1,11 @@
 
+## Lisp DSL
 
-Hacer un DSL en Ruby para que parezca Lisp es llevar la flexibilidad de Ruby a su límite absoluto. En Lisp (y Racket), la elegancia proviene de que todo es una lista y el operador va al principio: (operador operando1 operando2).
+Hacer un DSL en Ruby para que se parezca al lenguaje Lisp (o Racket).
+Tene en cuenta que en Lisp/Racket:
+* todo es una lista
+* y el operador va al principio. Ejemplo: `(operador operando1 operando2)`.
 
-En Ruby, podemos imitar esto usando arrays, bloques y métodos de una sola letra.
-1. El motor: El evaluador Lisp
-
-Para que Ruby entienda la estructura (f, x, y), usaremos el hecho de que en Ruby los paréntesis son opcionales y podemos pasar arrays.
-Ruby
-
-class Lisp
-  # Definimos las funciones básicas
-  def self.+(a, b); a + b; end
-  def self.*(a, b); a * b; end
-  def self.println(val); puts val; end
-  
-  # El evaluador: toma un array donde el primer elemento es el método
-  def self.eval(list)
-    return list unless list.is_a?(Array)
-    
-    method, *args = list
-    # Evaluamos los argumentos recursivamente (por si son listas anidadas)
-    evaluated_args = args.map { |arg| eval(arg) }
-    
-    # Llamamos al método en esta clase
-    send(method, *evaluated_args)
-  end
-end
-
-# Definimos un método global "L" para crear la estructura de lista
-def L(*args)
-  args
-end
-
-2. El DSL en acción: Sintaxis Lisp en Ruby
-
-Ahora podemos escribir código que, aunque técnicamente es Ruby, se lee y estructura como Lisp.
-Ruby
-
-# Usamos el método de ayuda 'L' para simular los paréntesis de Lisp
-expresion = L(:*, 10, L(:+, 5, 5))
-
-# Resultado: (* 10 (+ 5 5))
-Lisp.eval(expresion) # => 100
-
-Lisp.eval L(:println, L(:*, 7, 6)) # Imprime 42
 
 3. Llevándolo al extremo: "S-Expressions" con Bloques
 
@@ -54,7 +16,7 @@ class LispEngine
   def method_missing(name, *args)
     # Si el argumento es un bloque, lo evaluamos
     args = args.map { |a| a.is_a?(Proc) ? a.call : a }
-    
+
     case name
     when :add then args.reduce(:+)
     when :mul then args.reduce(:*)
@@ -157,4 +119,3 @@ El reto final: Macros
 En Ruby, acabamos de hacer que el lenguaje parezca Lisp. Pero en Racket, podrías crear una macro que haga que el código se ejecute al revés, o que invente una estructura unless-even que no existe.
 
 ¿Te gustaría que te mostrara cómo Racket hace esto con su sistema de Macros, algo que ni Ruby ni Python pueden replicar de forma tan elegante?
-
