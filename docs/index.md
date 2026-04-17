@@ -1,15 +1,10 @@
 
 ```
 ADVERTENCIA:
-Algunos documentos están en desarrollo todavía!
+Algunas partes están todavía en desarrollo!
 ```
 
-```
-"La principal virtud que puede tener el lenguaje
-es la claridad"
-
-Hipócrates (460-370 a.C.)
-```
+_"La principal virtud que puede tener el lenguaje es la claridad"._ Hipócrates (460-370 a.C.)
 
 # IloveRuby
 
