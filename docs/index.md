@@ -4,6 +4,13 @@ ADVERTENCIA:
 Algunos documentos están en desarrollo todavía!
 ```
 
+```
+"La principal virtud que puede tener el lenguaje
+es la claridad"
+
+Hipócrates (460-370 a.C.)
+```
+
 # IloveRuby
 
 _"I love Ruby"... el inicio de una historia de amor._
