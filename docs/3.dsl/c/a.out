@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+require_relative "lib/c"
+#include <stdio.h>
+
+int main() {
+    printf("Hola Mundo!\n");
+    return 0;
+}
