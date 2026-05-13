@@ -6,6 +6,8 @@ Algunas partes están todavía en desarrollo!
 
 _"La principal virtud que puede tener el lenguaje es la claridad"._ Hipócrates (460-370 a.C.)
 
+Como decía el propio Matz: _"El lenguaje es una herramienta para tu mente. No solo debe servir para que la computadora haga algo, sino para que tú te sientas bien expresándolo". Eso no es idealismo, es optimización de recursos humanos._
+
 # IloveRuby
 
 _"I love Ruby"... el inicio de una historia de amor._
