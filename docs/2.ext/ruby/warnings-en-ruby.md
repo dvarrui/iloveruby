@@ -1,4 +1,8 @@
 
+```
+EN PROGRESO!!!
+```
+
 # Warnings en Ruby: No los ignores!!!
 
 > Enlace al vídeo original:
@@ -19,4 +23,5 @@ Tipos de warnings:
         - `:deprecated`
         - `:experimental`
         - `:performance`
-        - otros sin categoría? 
+        - otros sin categoría?
+
