@@ -3,6 +3,7 @@
 # Devolver el cambio
 
 Vamos a hacer un programa para:
+
 1. Recibir un número que represente una cantidad de dinero D, incluyendo céntimos.
 2. Calcular la mínima cantidad de monedas necesarias para sumar D, suponiendo que
 tenemos monedas de 2, 1, 0.5, 0.2, 0.1, 0.05, 0.02, y 0.01.
@@ -50,7 +51,7 @@ Vamos a ver cómo van cambiando las variables en cada iteración:
 | primera   | 2   | 1.4                | coin[2] = 1              |
 | segunda   | 1   | 0.3999999999999999 | coin[2] = 1, coin[1] = 1 |
 
-El programa no está bien. La culpa es de la CPU. Esto es, la CPU almacena los números en binario y hace las operaciones en binario. Cuando termina para mostrar el resultado en pantalla vuelve a convertir en decimal el valor que tiene. Las conversiones de números con decimales en base 10 a binario y viceversa no son "exactas" en algunas situaciones.
+El programa no consigue hacer su trabajo. La culpa es de los números Float. Esto es, la CPU almacena los números en binario y hace las operaciones en binario. Cuando termina para mostrar el resultado en pantalla vuelve a convertir en decimal el valor que tiene. Las conversiones de números con decimales en base 10 a binario y viceversa no son "exactas" en algunas situaciones.
 
 El programa no es correcto puesto que queremos que se ejecute en una máquina basada en las números binarios. De modo que tendremos que modificar el código. 
 
@@ -64,4 +65,4 @@ Explicar código y darle color.
 
 ---
 
-_Hasta aquí hemos terminado de "evolucionar" "devolver el cambio", ahora puedes seguir con el siguiente problema._
+_Hasta aquí hemos terminado de "evolucionar" "devolver el cambio", ahora puedes seguir con el [siguiente problema](../09.maths/README.md)._
