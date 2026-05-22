@@ -25,6 +25,8 @@ Vamos a plantear diferentes problemas de programación que iremos resolviendo us
 5. [Porciones](./05.porciones/README.md)
 6. [Geometría](./06.geometria/README.md)
 7. [Conversiones](./07.convertir/README.md)
+8. [Cambiar monedas](./08.cambiar/README.md)
+9. [MCD y MCM](./09.maths/README.md)
 
 ```
 EN DESARROLLO!!!
