@@ -9,13 +9,15 @@ EN CONSTRUCCION!!!
 Hacer un programa para:
 
 1. Pedir al usuario dos números enteros N y M.
-2. Calcular el máximo común divisor (MCD) de N y M.
-3. Mostrar por pantalla em MCD.
+2. Calcular y mostrar el máximo común divisor (MCD) de N y M.
 4. Calcular y mostrar por pantalla el mínimo común múltiplo (MCM) de N y M.
 5. Hacer lo mismo pero pidiendo varios números al usuario.
 6. Almacenar en una lista y calcular el MCM y el MCD de todos ellos.
 
----
+
+* **[Ejemplo 1](./01-maths.rb)**: Pedir al usuario dos números enteros N y M]
+
+* **[Ejemplo 2](./02-maths.rb)**: Calcular el máximo común divisor (MCD) de N y M, y mostrar por pantalla em MCD.
 
 Tenemos varios caminos para calcular el Máximo Común Divisor (MCD):
 
@@ -40,10 +42,13 @@ puts "El MCD de #{a} y #{b} es: #{result}"
 * El proceso se repite hasta que el resto sea cero.
 
 ```ruby
-
 def calcular_mcd(a, b)
   b == 0 ? a : calcular_mcd(b, a % b)
 end
 
 puts calcular_mcd(48, 18) # Salida: 6
 ```
+
+De momento seguimos el camino fácil (la vía 1).
+
+* **[Ejemplo 3]()**: Calcular y mostrar por pantalla el mínimo común múltiplo (MCM) de N y M.
