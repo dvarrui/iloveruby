@@ -16,11 +16,19 @@ ILoveRuby -> Inicio
 
 Para aprender un nuevo lenguaje de programación siempre hay varios caminos diferentes, cada uno adecuado para diferentes personas. No existe (IMHO) "un camino único preferente". Cada cúal debe descubrir el suyo. Sin embargo me voy a atrever a recomendar algunas opciones:
 
+Recursos en español:
+
 * [Guía para aprender a programar con Ruby - rubysur/aprende.a.programar](https://github.com/rubysur/aprende.a.programar): Adaptación al español del libro "Learn to Program" de Chris Pine.
+* GitHub - [vhf/free-programming-books](https://github.com/vhf/free-programming-books/blob/master/free-programming-books-es.md) con recursos en español de programación y sistemas operativos.
+
+Recursos en inglés:
+
 * [Ruby Monstas -> Ruby For Beginners](http://ruby-for-beginners.rubymonstas.org/)
 * [Poignant Ruby guide](http://poignant.guide/book/chapter-1.html)
-* [Coursesity](https://t.co/b4defCHf0e?s=35) 50+ Free Ruby Courses for beginners [2023 MAR] Learn Ruby with free online courses and tutorials. Find free Ruby tutorials and courses and start learning Ruby. Ruby courses for all levels from beginners to advanced available for free.
+* Cursos - [Coursesity](https://t.co/b4defCHf0e?s=35) 50+ Free Ruby Courses for beginners.
+    - Learn Ruby with free online courses and tutorials.
+    - Find free Ruby tutorials and courses and start learning Ruby.
+    - Ruby courses for all levels from beginners to advanced available for free.
 * [Interactive Ruby](https://ruby-doc.org/docs/Tutorial/part_01/first_steps.html)
 * [Ruby-Cheatsheet](https://github.com/lifeparticle/Ruby-Cheatsheet)
-* Repositorio GitHub [vhf/free-programming-books] (https://github.com/vhf/free-programming-books/blob/master/free-programming-books-es.md) con recursos en español de programación y sistemas operativos.
-
+* PDF - [The book of Ruby](https://wang1212.github.io/the-book-of-ruby/book_of_ruby.pdf)
