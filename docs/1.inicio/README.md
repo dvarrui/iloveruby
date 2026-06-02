@@ -20,6 +20,7 @@ Recursos en español:
 
 * [Guía para aprender a programar con Ruby - rubysur/aprende.a.programar](https://github.com/rubysur/aprende.a.programar): Adaptación al español del libro "Learn to Program" de Chris Pine.
 * GitHub - [vhf/free-programming-books](https://github.com/vhf/free-programming-books/blob/master/free-programming-books-es.md) con recursos en español de programación y sistemas operativos.
+* [Aprende Ruby: 1 - Introducción | Picando Código](https://picandocodigo.net/2026/aprende-ruby-introduccion/)
 
 Recursos en inglés:
 
