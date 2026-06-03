@@ -33,3 +33,5 @@ Recursos en inglés:
 * [Interactive Ruby](https://ruby-doc.org/docs/Tutorial/part_01/first_steps.html)
 * [Ruby-Cheatsheet](https://github.com/lifeparticle/Ruby-Cheatsheet)
 * PDF - [The book of Ruby](https://wang1212.github.io/the-book-of-ruby/book_of_ruby.pdf)
+* Reddit - [Best books to learn Ruby for beginners](https://www.reddit.com/r/ruby/s/OiEfpHOPyg)
+
