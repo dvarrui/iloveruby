@@ -26,7 +26,7 @@ Si nos fijamos en el código, vemos que hemos usado `print` y `puts`. Realmente 
 
 **[Ejemplo 2](./02-holamundo.rb): los paréntesis son opcionales.**
 
-Ahora vamos a usar variables (`name`, `age` y `height`) para poner cada valore por separado. Una nueva observación es que en Ruby los paréntesis de los métodos son opcionales por ese motivo lo podemos omitir si queremos en el método `puts`. Normalmente se suele "omitir" los paréntesis para evitar "ruido" visual pero se aconseja ponerlos cuando son necesarios para definir mejor o aclarar el contenido.
+Ahora vamos a usar variables (`name`, `age` y `height`) para poner cada valor por separado. Una nueva observación es que en Ruby los paréntesis de los métodos son opcionales por ese motivo lo podemos omitir si queremos en el método `puts`. Normalmente se suele "omitir" los paréntesis para evitar "ruido" visual pero se aconseja ponerlos cuando son necesarios para definir mejor o aclarar el contenido.
 
 **[Ejemplo 3](./03-holamundo.rb): todo son objetos y/o métodos (que también son objetos) ¡No te asustes! ;-)**
 
