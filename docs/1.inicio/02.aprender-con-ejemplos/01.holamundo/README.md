@@ -92,7 +92,7 @@ Para leer los argumentos existe el objeto `ARGV`. Realmente es un Array (o lista
 >
 > IMHO: El nombre List hubiera sido un poco más "adecuado".
 
-**[Ejemplo 8](./08-holamundo.rb): Cambiamos la lógica para separ metros de centímetros.**
+**[Ejemplo 8](./08-holamundo.rb): Cambiamos la lógica para separar metros de centímetros.**
 
 Vamos modificar el mensaje de salida del siguiente modo:
 
