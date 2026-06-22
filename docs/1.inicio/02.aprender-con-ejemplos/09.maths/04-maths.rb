@@ -14,7 +14,7 @@ n = ARGV[0].to_i
 m = ARGV[1].to_i
 
 # 2. Calcular el máximo común divisor (MCD) de N y M.
-mdc = n.gcd(m)
+mcd = n.gcd(m)
 
 # 3. Mostrar por pantalla em MCD.
 puts "Numbers:"
@@ -24,5 +24,9 @@ puts "Results:"
 puts "- MCD = #{mcd}"
 
 # 4. Calcular y mostrar por pantalla el mínimo común múltiplo (MCM) de N y M.
+# - MCM = (n * m) / MCD(n, m)
+mcm = (n * m).abs / mcd
+puts "- MCM = #{mcm}"
+
 # 5. Hacer lo mismo pero pidiendo varios números al usuario.
 # 6. Almacenar en una lista y calcular el MCM y el MCD de todos ellos.
