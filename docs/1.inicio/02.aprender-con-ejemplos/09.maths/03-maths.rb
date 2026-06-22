@@ -14,7 +14,11 @@ n = ARGV[0].to_i
 m = ARGV[1].to_i
 
 # 2. Calcular el máximo común divisor (MCD) de N y M.
-mdc = n.gcd(m)
+def calcular_mcd(a, b)
+  b == 0 ? a : calcular_mcd(b, a % b)
+end
+
+mdc = calcular_mcd(n, m)
 
 # 3. Mostrar por pantalla em MCD.
 puts "Numbers: n=#{n}, m=#{m} --> MDC=#{mdc}"
