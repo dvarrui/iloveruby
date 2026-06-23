@@ -31,7 +31,9 @@ puts "El MCD de #{a} y #{b} es: #{result}"
 # Salida: El MCD de 48 y 18 es: 6
 ```
 
-* **[Ejemplo 3](./03-maths.rb): Implementación con el Algoritmo de Euclides**: Ahora volvemos a calcular em MCD usando al algoritmia.
+* **[Ejemplo 3](./03-maths.rb): Calcular y mostrar por pantalla el mínimo común múltiplo (MCM) de N y M**
+
+Usamos el siguiente algoritmo:
 
 * El `MCD(a, b)` es lo mismo que `MCD(b, (a mod b))`.
 * El proceso se repite hasta que el resto sea cero.
@@ -44,6 +46,16 @@ end
 puts calcular_mcd(48, 18) # Salida: 6
 ```
 
-> De momento seguimos el camino fácil de Ruby.
+* **[Ejemplo 4](./04-maths.rb): Calcular y mostrar por pantalla el mínimo común múltiplo (MCM) de N y M**
 
-* **[Ejemplo 3]()**: Calcular y mostrar por pantalla el mínimo común múltiplo (MCM) de N y M.
+Usamos este otra fórmula: `MCM = (n * m) / MCD(n, m)`
+
+* **[Ejemplo 5](./05-maths.rb): Calcular y mostrar por pantalla el mínimo común múltiplo (MCM) de N y M**
+
+Al final, nos parece más sencillo usar directamentes lo métodos que proporciona Ruby.
+
+* **[Ejemplo 6](./06-maths.rb):**
+
+- Hacer lo mismo pero pidiendo varios números al usuario.
+- Almacenar en una lista y calcular el MCM y el MCD de todos ellos.
+
