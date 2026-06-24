@@ -28,7 +28,7 @@ b = 18
 result = a.gcd(b)
 
 puts "El MCD de #{a} y #{b} es: #{result}"
-# Salida: El MCD de 48 y 18 es: 6
+# => El MCD de 48 y 18 es: 6
 ```
 
 * **[Ejemplo 3](./03-maths.rb): Calcular y mostrar por pantalla el mínimo común múltiplo (MCM) de N y M**
@@ -39,16 +39,16 @@ Usamos el siguiente algoritmo:
 * El proceso se repite hasta que el resto sea cero.
 
 ```ruby
-def calcular_mcd(a, b)
-  b == 0 ? a : calcular_mcd(b, a % b)
+def mcd(a, b)
+  b == 0 ? a : mcd(b, a % b)
 end
 
-puts calcular_mcd(48, 18) # Salida: 6
+puts mcd(48, 18) # Salida: 6
 ```
 
 * **[Ejemplo 4](./04-maths.rb): Calcular y mostrar por pantalla el mínimo común múltiplo (MCM) de N y M**
 
-Usamos este otra fórmula: `MCM = (n * m) / MCD(n, m)`
+Usamos esta otra fórmula: `MCM = (n * m) / MCD(n, m)`
 
 * **[Ejemplo 5](./05-maths.rb): Calcular y mostrar por pantalla el mínimo común múltiplo (MCM) de N y M**
 
