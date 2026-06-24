@@ -6,10 +6,14 @@ EN CONSTRUCCION!!!
 
 # Fibonacci
 
-10.​ Sucesiones típicas
-Haz un programa que muestre por pantalla los N primeros elementos de la sucesión
-de Fibonacci.
-Mmmm, y ahora, escríbelos a un fichero llamado fibonacci.txt.
+Hacer un programa para:
+
+1. Pedir un número al usuario.
+2. Calcular los N primeros elementos de la sucesión de Fibonacci.
+3. Mostrar por pantalla
+4. Escribirlos en un fichero llamado `fibonacci.txt`.
+
+* **[Ejemplo 1](./01-fibonacci.rb)**: Pedir número al usuario.
 
 ---
 
