@@ -13,7 +13,7 @@ end
 number = ARGV[0].to_i
 puts "==> number=#{number}"
 
-# 2. Calcular lo N primeros elementos de la sucesión de Fibonacci.
+# 2. "Calculadora" de lo N primeros elementos de la sucesión de Fibonacci.
 fibonacci = Enumerator.new do |yielder|
   a, b = 0, 1
   loop do
