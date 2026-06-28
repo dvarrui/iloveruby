@@ -28,6 +28,7 @@ Vamos a plantear diferentes problemas de programación que iremos resolviendo us
 8. [Cambiar monedas](./08.cambiar/README.md)
 9. [MCD y MCM](./09.maths/README.md)
 10. [Fibonacci](./10.fibonacci/README.md)
+11. [Dibujitos](./11.dibujitos/README.md)
 
 ```
 EN DESARROLLO!!!
