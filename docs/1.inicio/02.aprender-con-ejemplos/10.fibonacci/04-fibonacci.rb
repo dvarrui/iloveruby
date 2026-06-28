@@ -14,11 +14,11 @@ number = ARGV[0].to_i
 puts "==> Calcular los #{number} primeros números de Fibonacci"
 
 # 2. Calcular lo N primeros elementos de la sucesión de Fibonacci.
-puts "==> Enfoque recursivo"
+puts "==> Enfoque con memoización"
 
-def fibonacci(n)
+def fibonacci(n, cache = {})
   return n if n <= 1
-  fibonacci(n - 1) + fibonacci(n - 2)
+  cache[n] ||= fibonacci(n - 1, cache) + fibonacci(n - 2, cache)
 end
 
 data = []

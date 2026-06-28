@@ -5,13 +5,13 @@ def show_usage
   exit 1
 end
 
-if ARGV.length != 2
+if ARGV.length != 1
   show_usage
 end
 
 # 1. Pedir un número al usuario.
 number = ARGV[0].to_i
-puts "==> number=#{number}"
+puts "==> Calcular los #{number} primeros números de Fibonacci"
 
 # 2. Calcular lo N primeros elementos de la sucesión de Fibonacci.
 # 3. Mostrar por pantalla
