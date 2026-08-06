@@ -1,5 +1,7 @@
 
-https://www.carlospohlod.com/blog
+
+* [GitHub - ruby/lrama](https://github.com/ruby/lrama): Pure Ruby LALR parser generator. Contribute to ruby/lrama development by creating an account on GitHub.
+* https://www.carlospohlod.com/blog
 
 ---
 Fuente: YouTube https://share.google/25BJB34CoH9QKFUaE
