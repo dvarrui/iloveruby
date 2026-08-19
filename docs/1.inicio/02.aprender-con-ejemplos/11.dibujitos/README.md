@@ -23,9 +23,6 @@ Por ejemplo, para N = 5:
 *   *
 *   *
 *   *
-*   *
-*   *
-*   *
 *****
 
 * * *
@@ -38,6 +35,14 @@ Por ejemplo, para N = 5:
  ***
 *****
 ```
+
+* **[Ejemplo 1](./01-dibujitos.rb)**: Pedir número al usuario.
+
+* **[Ejemplo 2](./02-dibujitos.rb)**: Dibujar el patrón 1.
+
+* **[Ejemplo 3](./03-dibujitos.rb)**: Dibujar el cuadrado.
+
+* **[Ejemplo 4](./04-dibujitos.rb)**: Dibujar el patrón 3.
 
 ---
 
