@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 def tarai(x, y, z) =
   x <= y ? y : tarai(tarai(x-1, y, z),
                      tarai(y-1, z, x),
