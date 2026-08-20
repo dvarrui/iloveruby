@@ -1,0 +1,20 @@
+{
+  "name": "hello",
+  "version": "v0.0.1",
+  "entrypoint": "game.rb",
+  "export_directory": "./exports",
+  "export_targets": [
+    "linux",
+    "windows",
+    "osx/apple",
+    "osx/intel",
+    "web"
+  ],
+  "load_paths": [
+    "./",
+    "./vendor"
+  ],
+  "copy_paths": [
+    "./assets"
+  ]
+}
