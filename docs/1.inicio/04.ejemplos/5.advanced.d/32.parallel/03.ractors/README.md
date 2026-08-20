@@ -20,10 +20,12 @@ $ ruby -e "Ractor.new {}"
 ```
 
 * Podemos deshabilitar los mensajes de advertencia con `$VERBOSE=nil`.
-* El primer Ractor [01-holamundo.rb](./01-holamundo.rb)
 
-Un Ractor contiene código que se ejecuta de forma independiente del flujo principal sin que le afecte el GVL.
+**Ejemplo [01-holamundo.rb](./01-holamundo.rb)**: Un Ractor contiene código que se ejecuta de forma independiente del flujo principal sin que le afecte el GVL.
 
 * `Ractor.new do ... end`: Creamos un nuevo Ractor y comienza a ejecutar el bloque de código de inmediato y en paralelo.
 * `ractor.take`: El hilo principal (main) espera hasta recibir un valor del Ractor.
 
+**Ejemplo [02-holamundo.rb](./02-holamundo.rb)**: Pasar un argumento al Ractor
+
+**Ejemplo [03-holamundo.rb](./03-holamundo.rb)**: Comprobamos que los ractor se están ejecutando dentro del mismo proceso.
