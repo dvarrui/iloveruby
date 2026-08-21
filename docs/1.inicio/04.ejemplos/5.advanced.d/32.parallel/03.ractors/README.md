@@ -29,3 +29,8 @@ $ ruby -e "Ractor.new {}"
 **Ejemplo [02-holamundo.rb](./02-holamundo.rb)**: Pasar un argumento al Ractor
 
 **Ejemplo [03-holamundo.rb](./03-holamundo.rb)**: Comprobamos que los ractor se están ejecutando dentro del mismo proceso.
+
+**Ejemplo [04-aislamiento.rb](./04-aislamiento.rb)**: Aislamiento de los datos entre Ractors.
+
+* Si se pasa un tipo de dato básico e inmutables (Por ejemplo: números, booleanos, símbolos o cadenas congeladas con `.freeze`), se copian para que ambos entornos no compartan la misma referencia en memoria.
+* Si intenta pasar un objeto mutable (como un Array) se pasa una copia del objeto.
