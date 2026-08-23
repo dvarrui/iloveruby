@@ -1,12 +1,39 @@
-tripple_number_ractor = Ractor.new do
-  puts "I will receive a message soon"
-  msg = Ractor.receive
-  puts "I will return a tripple of what I receive"
-  msg * 3
+#!/usr/bin/env ruby
+$VERBOSE=nil
+
+class Person
+  attr_accessor :name, :age
+
+  def initialize(name, age)
+    @name = name
+    @age = age
+  end
 end
-# I will receive a message soon
-puts "[INFO] Sending 15"
-tripple_number_ractor.send(15) # mailman takes message to the door
-# I will return a tripple of what I receive
-result = tripple_number_ractor.take # mailman takes the response
-puts "[INFO] Receiving #{result}" # => 45
+obiwan = Person.new("Obiwan", 55)
+
+ractors = []
+list = [
+  [ "ractor 1", :symbol ],
+  [ "ractor 2", [1,2,3] ],
+  [ "ractor 3", obiwan ]
+]
+
+ractors = []
+list.each do |name, data|
+  ractor = Ractor.new name do |name|
+    puts "[#{name}] Waiting..."
+    msg = Ractor.receive
+    puts "[#{name}] Received: #{data.class} | #{data} | id:#{data.object_id}"
+    msg
+  end
+  ractors << [name, data, ractor]
+end
+
+ractors.each do |item|
+  # name = item[0]
+  data = item[1]
+  ractor = item[2]
+  puts "[  main  ] #{data.class} | #{data} | id:#{data.object_id}"
+  ractor.send(data)
+  puts "[  main  ] Received: #{ractor.take}"
+end

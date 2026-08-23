@@ -32,5 +32,5 @@ $ ruby -e "Ractor.new {}"
 
 **Ejemplo [04-aislamiento.rb](./04-aislamiento.rb)**: Aislamiento de los datos entre Ractors.
 
-* Si se pasa un tipo de dato básico e inmutables (Por ejemplo: números, booleanos, símbolos o cadenas congeladas con `.freeze`), se copian para que ambos entornos no compartan la misma referencia en memoria.
-* Si intenta pasar un objeto mutable (como un Array) se pasa una copia del objeto.
+* Para mantener el aislamiento, los datos de "main" se copian al pasar al Ractor.
+
