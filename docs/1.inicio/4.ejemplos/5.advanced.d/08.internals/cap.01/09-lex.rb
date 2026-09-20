@@ -1,5 +1,6 @@
-require 'ripper'
-require 'pp'
+#!/usr/bin/env ruby
+require_relative "show"
+
 code = <<STR
 array = []
 10.times do |n|
@@ -8,4 +9,5 @@ end
 p array
 STR
 puts code
-pp Ripper.lex(code)
+
+show_lex code
