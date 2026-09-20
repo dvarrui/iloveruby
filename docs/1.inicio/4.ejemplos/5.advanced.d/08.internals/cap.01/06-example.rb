@@ -1,4 +1,5 @@
-require 'ripper'
+#!/usr/bin/env ruby
+require 'prism'
 require 'pp'
 code = <<STR
 10.times do |n|
@@ -6,4 +7,4 @@ code = <<STR
 end
 STR
 puts code
-pp Ripper.lex(code)
+pp Prism.lex(code).value
